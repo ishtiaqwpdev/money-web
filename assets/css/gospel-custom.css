@@ -36,7 +36,7 @@
 /* Shared inner breadcrumb (avoids inline CSS) */
 .gospel-inner-breadcrumb,
 .teacher-login-breadcrumb {
-  background: url(../../../assets/img/breadcrumb/01.jpg);
+  background: url(../img/breadcrumb/01.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2242,6 +2242,34 @@
 
 .onboarding-step.completed:not(:last-child)::after {
   background: var(--gospel-black);
+}
+
+/* Instructor portal landing page */
+.portal-intro-card .login-portal-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.portal-link-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.portal-link-grid .td-quick-card {
+  flex-direction: row;
+  align-items: center;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .portal-link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .portal-link-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Teacher profile management page */
