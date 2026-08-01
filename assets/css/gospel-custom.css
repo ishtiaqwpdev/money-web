@@ -2046,49 +2046,6 @@
   border-color: var(--gospel-black);
 }
 
-/* --- Dashboard sidebar: navy panel, white text, orange accents --- */
-.td-sidebar {
-  background: #062B5C;
-  border-color: #062B5C;
-}
-
-.td-nav-link {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.td-nav-link i {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.td-nav-link:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--color-white);
-}
-
-.td-nav-link:hover i {
-  color: var(--gospel-orange);
-}
-
-.td-nav-link.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-white);
-  border-left: 3px solid var(--gospel-orange);
-}
-
-.td-nav-link.active i {
-  color: var(--gospel-orange);
-}
-
-.td-nav-logout,
-.td-nav-logout i {
-  color: #FCA5A5;
-}
-
-.td-nav-logout:hover,
-.td-nav-logout:hover i {
-  color: #FECACA;
-}
-
 /* --- Dashboard header: white surface, dark text --- */
 .td-profile-header {
   background: var(--color-white);
