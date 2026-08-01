@@ -2290,3 +2290,59 @@
 .onboarding-step.completed:not(:last-child)::after {
   background: var(--gospel-black);
 }
+
+/* Teacher profile management page */
+.teacher-profile-form .form-group {
+  margin-bottom: 18px;
+}
+
+.teacher-profile-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--gospel-black);
+}
+
+.teacher-profile-form label i {
+  margin-right: 6px;
+  color: var(--gospel-orange);
+  width: 16px;
+  text-align: center;
+}
+
+.teacher-profile-form textarea.form-control {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.teacher-profile-form .bio-counter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.teacher-profile-form .bio-counter {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gospel-body);
+  white-space: nowrap;
+}
+
+.td-profile-form-actions {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+  .td-profile-form-actions .theme-btn,
+  .td-profile-form-actions .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .teacher-profile-form .bio-counter-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
