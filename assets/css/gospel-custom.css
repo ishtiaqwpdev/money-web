@@ -3190,3 +3190,199 @@ body {
     min-height: 0;
   }
 }
+
+/* Public class detail page */
+.cd-hero-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: stretch;
+  padding: 24px;
+  margin-bottom: 28px;
+  background: var(--color-white);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+}
+
+.cd-hero-media {
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 320px;
+  background: var(--gospel-bg-light);
+}
+
+.cd-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cd-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cd-hero-content h1 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 34px;
+  line-height: 1.25;
+  margin: 8px 0 14px;
+}
+
+.cd-hero-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0 20px;
+  padding: 14px 16px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 10px;
+}
+
+.cd-hero-price span {
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+.cd-hero-price strong {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-orange);
+  font-size: 28px;
+}
+
+.cd-hero-price small {
+  font-size: 14px;
+  color: var(--gospel-body);
+  font-weight: 600;
+}
+
+.cd-learn-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cd-learn-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  font-weight: 600;
+  color: var(--gospel-heading);
+}
+
+.cd-learn-list li i {
+  color: var(--gospel-orange);
+  margin-top: 2px;
+}
+
+.cd-info-list {
+  margin: 0;
+}
+
+.cd-teacher-mini {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cd-teacher-mini img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gospel-orange);
+}
+
+.cd-teacher-mini-info {
+  flex: 1;
+  min-width: 160px;
+}
+
+.cd-teacher-mini-info h3 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.cd-teacher-mini-info p {
+  margin-bottom: 4px;
+  color: var(--gospel-body);
+  font-weight: 600;
+}
+
+.cd-time-slots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cd-time-slot {
+  border: 1px solid var(--gospel-border);
+  background: var(--color-white);
+  color: var(--gospel-heading);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition2);
+}
+
+.cd-time-slot:hover {
+  border-color: var(--gospel-orange);
+  color: var(--gospel-orange);
+}
+
+.cd-time-slot.is-selected {
+  background: var(--gospel-orange);
+  border-color: var(--gospel-orange);
+  color: var(--color-white);
+}
+
+#cd-continue-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 991px) {
+  .cd-hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cd-hero-media {
+    min-height: 240px;
+  }
+
+  .cd-learn-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .cd-hero-content h1 {
+    font-size: 26px;
+  }
+
+  .cd-teacher-mini .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
