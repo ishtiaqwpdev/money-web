@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin control center for the Gospel Music Mastery platform">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Admin Dashboard - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="admin-portal-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <main class="main">
+
+        <!-- admin dashboard -->
+        <div class="admin-dashboard-area py-120">
+            <div class="container">
+
+                <!-- admin top header -->
+                <header class="sd-profile-header ad-topbar">
+                    <div class="sd-profile-main ad-topbar-main">
+                        <div class="sd-profile-avatar ad-topbar-avatar">
+                            <img src="assets/img/team/01.jpg" alt="Administrator">
+                        </div>
+                        <div class="sd-profile-meta">
+                            <h2>Administrator</h2>
+                            <span class="sd-role">Platform Admin</span>
+                            <div class="sd-profile-stats">
+                                <span class="sd-stat-item"><i class="far fa-shield-check"></i> Full Access</span>
+                                <span class="sd-stat-item"><i class="far fa-clock"></i> Last login: Today, 09:12 AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ad-topbar-actions">
+                        <!-- notifications -->
+                        <div class="dropdown ad-icon-dropdown">
+                            <button class="ad-icon-btn" type="button" id="ad-notifications" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Notifications">
+                                <i class="far fa-bell"></i>
+                                <span class="ad-icon-badge">4</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-notifications">
+                                <h6 class="ad-dropdown-title">Notifications</h6>
+                                <a class="dropdown-item ad-dropdown-item" href="#">
+                                    <i class="far fa-user-plus"></i>
+                                    <span><strong>John Smith</strong> applied as a teacher</span>
+                                </a>
+                                <a class="dropdown-item ad-dropdown-item" href="#">
+                                    <i class="far fa-chalkboard"></i>
+                                    <span>New class submitted for review</span>
+                                </a>
+                                <a class="dropdown-item ad-dropdown-item" href="#">
+                                    <i class="far fa-credit-card"></i>
+                                    <span>Payment of <strong>$40</strong> received</span>
+                                </a>
+                                <a class="dropdown-item ad-dropdown-item" href="#">
+                                    <i class="far fa-triangle-exclamation"></i>
+                                    <span>15 approvals are pending</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- messages -->
+                        <div class="dropdown ad-icon-dropdown">
+                            <button class="ad-icon-btn" type="button" id="ad-messages" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Messages">
+                                <i class="far fa-envelope"></i>
+                                <span class="ad-icon-badge">2</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-messages">
+                                <h6 class="ad-dropdown-title">Messages</h6>
+                                <a class="dropdown-item ad-dropdown-item" href="#">
+                                    <img src="assets/img/team/02.jpg" alt="Sarah Johnson">
+                                    <span><strong>Sarah Johnson</strong> asked about refunds</span>
+                                </a>
+                                <a class="dropdown-item ad-dropdown-item" href="#">
+                                    <img src="assets/img/team/03.jpg" alt="Emily Davis">
+                                    <span><strong>Emily Davis</strong> sent payout details</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- profile dropdown -->
+                        <div class="dropdown ad-profile-dropdown">
+                            <button class="ad-profile-btn" type="button" id="ad-profile-menu" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="assets/img/team/01.jpg" alt="Administrator">
+                                <span class="ad-profile-btn-text">
+                                    <strong>Administrator</strong>
+                                    <small>Platform Admin</small>
+                                </span>
+                                <i class="far fa-angle-down"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-profile-menu">
+                                <a class="dropdown-item ad-dropdown-item" href="admin-dashboard.html"><i class="far fa-user"></i> <span>My Profile</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-dashboard.html"><i class="far fa-gear"></i> <span>Settings</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item ad-dropdown-item is-logout" href="student-login.html"><i class="far fa-right-from-bracket"></i> <span>Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="sd-shell ad-shell">
+                    <button type="button" class="sd-sidebar-toggle theme-btn theme-btn-outline" id="sd-sidebar-toggle"
+                        aria-expanded="false" aria-controls="sd-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <!-- admin sidebar -->
+                    <aside class="sd-sidebar ad-sidebar" id="sd-sidebar" aria-label="Admin navigation">
+                        <nav class="sd-nav ad-nav">
+                            <ul>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link active" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+
+                                <li class="ad-nav-group is-open" id="ad-users-group">
+                                    <button type="button" class="sd-nav-link ad-nav-parent" id="ad-users-toggle"
+                                        aria-expanded="true" aria-controls="ad-users-submenu">
+                                        <i class="far fa-users"></i> Users
+                                        <i class="far fa-angle-down ad-nav-caret"></i>
+                                    </button>
+                                    <ul class="ad-submenu" id="ad-users-submenu">
+                                        <li><a href="admin-dashboard.html" class="sd-nav-link ad-sub-link" data-nav="teachers"><i class="far fa-chalkboard-user"></i> Teachers</a></li>
+                                        <li><a href="admin-dashboard.html" class="sd-nav-link ad-sub-link" data-nav="students"><i class="far fa-graduation-cap"></i> Students</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="classes"><i class="far fa-chalkboard"></i> Classes</a></li>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> Bookings</a></li>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="payments"><i class="far fa-credit-card"></i> Payments</a></li>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="programs"><i class="far fa-music"></i> Music Programs</a></li>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="blogs"><i class="far fa-newspaper"></i> Blogs</a></li>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="student-login.html" class="sd-nav-link sd-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="sd-sidebar-backdrop" id="sd-sidebar-backdrop" hidden></div>
+
+                    <!-- main content -->
+                    <div class="sd-main ad-main">
+
+                        <!-- welcome -->
+                        <section class="sd-card sd-welcome-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <span class="login-portal-badge">Admin Control Center</span>
+                                    <h3>Welcome Back, Admin!</h3>
+                                    <p>Manage your Gospel Music Mastery platform, instructors, students, classes and payments from one place.</p>
+                                </div>
+                                <a href="#ad-approvals" class="theme-btn"><i class="far fa-clipboard-check"></i> Review Approvals</a>
+                            </div>
+                        </section>
+
+                        <!-- statistics cards -->
+                        <section class="sd-stats-grid ad-stats-grid">
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-graduation-cap"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="1250" data-format="number">0</span>
+                                    <span class="sd-stat-title">Total Students</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-chalkboard-user"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="85" data-format="number">0</span>
+                                    <span class="sd-stat-title">Total Teachers</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-chalkboard"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="320" data-format="number">0</span>
+                                    <span class="sd-stat-title">Total Classes</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-calendar-check"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="540" data-format="number">0</span>
+                                    <span class="sd-stat-title">Total Bookings</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-sack-dollar"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="25000" data-format="currency">$0</span>
+                                    <span class="sd-stat-title">Total Revenue</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card is-pending">
+                                <div class="sd-stat-icon"><i class="far fa-clipboard-list-check"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="15" data-format="number">0</span>
+                                    <span class="sd-stat-title">Pending Approvals</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="ad-chart-grid">
+
+                            <!-- revenue chart -->
+                            <section class="sd-card ad-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Revenue Overview</h3>
+                                        <p>Monthly revenue for the first half of the year.</p>
+                                    </div>
+                                    <span class="ad-chart-total">$25,000</span>
+                                </div>
+                                <div class="ad-bar-chart" id="ad-revenue-chart" role="img"
+                                    aria-label="Monthly revenue bar chart from January to June">
+                                    <div class="ad-bar-col" data-value="2800">
+                                        <span class="ad-bar-value">$2,800</span>
+                                        <span class="ad-bar" data-height="42"></span>
+                                        <span class="ad-bar-label">January</span>
+                                    </div>
+                                    <div class="ad-bar-col" data-value="3400">
+                                        <span class="ad-bar-value">$3,400</span>
+                                        <span class="ad-bar" data-height="52"></span>
+                                        <span class="ad-bar-label">February</span>
+                                    </div>
+                                    <div class="ad-bar-col" data-value="3900">
+                                        <span class="ad-bar-value">$3,900</span>
+                                        <span class="ad-bar" data-height="60"></span>
+                                        <span class="ad-bar-label">March</span>
+                                    </div>
+                                    <div class="ad-bar-col" data-value="4600">
+                                        <span class="ad-bar-value">$4,600</span>
+                                        <span class="ad-bar" data-height="71"></span>
+                                        <span class="ad-bar-label">April</span>
+                                    </div>
+                                    <div class="ad-bar-col" data-value="5100">
+                                        <span class="ad-bar-value">$5,100</span>
+                                        <span class="ad-bar" data-height="79"></span>
+                                        <span class="ad-bar-label">May</span>
+                                    </div>
+                                    <div class="ad-bar-col is-peak" data-value="5200">
+                                        <span class="ad-bar-value">$5,200</span>
+                                        <span class="ad-bar" data-height="100"></span>
+                                        <span class="ad-bar-label">June</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- user growth chart -->
+                            <section class="sd-card ad-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>User Growth</h3>
+                                        <p>New students and teachers joining each month.</p>
+                                    </div>
+                                </div>
+                                <div class="ad-line-chart">
+                                    <svg viewBox="0 0 320 160" preserveAspectRatio="none" role="img"
+                                        aria-label="Line chart comparing student growth and teacher growth">
+                                        <line class="ad-grid-line" x1="0" y1="30" x2="320" y2="30"></line>
+                                        <line class="ad-grid-line" x1="0" y1="70" x2="320" y2="70"></line>
+                                        <line class="ad-grid-line" x1="0" y1="110" x2="320" y2="110"></line>
+                                        <line class="ad-grid-line" x1="0" y1="150" x2="320" y2="150"></line>
+                                        <polyline class="ad-line ad-line-students"
+                                            points="10,130 72,112 134,88 196,66 258,40 310,22"></polyline>
+                                        <polyline class="ad-line ad-line-teachers"
+                                            points="10,148 72,142 134,132 196,120 258,108 310,96"></polyline>
+                                    </svg>
+                                    <div class="ad-line-labels">
+                                        <span>Jan</span><span>Feb</span><span>Mar</span>
+                                        <span>Apr</span><span>May</span><span>Jun</span>
+                                    </div>
+                                </div>
+                                <ul class="ad-legend">
+                                    <li><span class="ad-legend-dot is-students"></span> Student Growth <strong>+1,250</strong></li>
+                                    <li><span class="ad-legend-dot is-teachers"></span> Teacher Growth <strong>+85</strong></li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <!-- booking analytics -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Booking Analytics</h3>
+                                    <p>Breakdown of all 540 bookings on the platform.</p>
+                                </div>
+                            </div>
+                            <div class="ad-booking-analytics">
+                                <div class="ad-donut" id="ad-booking-donut" role="img"
+                                    aria-label="Donut chart: 450 completed, 60 pending, 30 cancelled bookings">
+                                    <div class="ad-donut-center">
+                                        <strong>540</strong>
+                                        <small>Total</small>
+                                    </div>
+                                </div>
+                                <ul class="ad-booking-list">
+                                    <li>
+                                        <span class="ad-legend-dot is-completed"></span>
+                                        <div>
+                                            <strong class="ad-counter" data-count="450" data-format="number">0</strong>
+                                            <small>Completed Bookings</small>
+                                        </div>
+                                        <span class="sb-badge is-confirmed">83%</span>
+                                    </li>
+                                    <li>
+                                        <span class="ad-legend-dot is-pending"></span>
+                                        <div>
+                                            <strong class="ad-counter" data-count="60" data-format="number">0</strong>
+                                            <small>Pending Bookings</small>
+                                        </div>
+                                        <span class="sb-badge is-pending">11%</span>
+                                    </li>
+                                    <li>
+                                        <span class="ad-legend-dot is-cancelled"></span>
+                                        <div>
+                                            <strong class="ad-counter" data-count="30" data-format="number">0</strong>
+                                            <small>Cancelled Bookings</small>
+                                        </div>
+                                        <span class="sb-badge is-cancelled">6%</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <!-- recent activity -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Recent Activity</h3>
+                                    <p>Latest platform events across teachers, students and payments.</p>
+                                </div>
+                            </div>
+                            <ul class="ad-timeline">
+                                <li class="ad-timeline-item is-teacher">
+                                    <span class="ad-timeline-icon"><i class="far fa-chalkboard-user"></i></span>
+                                    <div class="ad-timeline-body">
+                                        <h4>New teacher registered: <strong>John Smith</strong></h4>
+                                        <p>Gospel piano instructor submitted an application for review.</p>
+                                    </div>
+                                    <span class="ad-timeline-time">10 min ago</span>
+                                </li>
+                                <li class="ad-timeline-item is-student">
+                                    <span class="ad-timeline-icon"><i class="far fa-graduation-cap"></i></span>
+                                    <div class="ad-timeline-body">
+                                        <h4>New student joined: <strong>Sarah Johnson</strong></h4>
+                                        <p>Signed up for intermediate gospel piano lessons.</p>
+                                    </div>
+                                    <span class="ad-timeline-time">45 min ago</span>
+                                </li>
+                                <li class="ad-timeline-item is-class">
+                                    <span class="ad-timeline-icon"><i class="far fa-chalkboard"></i></span>
+                                    <div class="ad-timeline-body">
+                                        <h4>New class submitted: <strong>Gospel Piano Basics</strong></h4>
+                                        <p>Awaiting admin review before it appears publicly.</p>
+                                    </div>
+                                    <span class="ad-timeline-time">2 hours ago</span>
+                                </li>
+                                <li class="ad-timeline-item is-payment">
+                                    <span class="ad-timeline-icon"><i class="far fa-credit-card"></i></span>
+                                    <div class="ad-timeline-body">
+                                        <h4>Payment received: <strong>$40</strong></h4>
+                                        <p>Lesson booking paid by Sarah Johnson via Stripe.</p>
+                                    </div>
+                                    <span class="ad-timeline-time">Today, 09:05 AM</span>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- pending approvals -->
+                        <section class="sd-card" id="ad-approvals">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Pending Approvals</h3>
+                                    <p>Review teacher applications and submitted classes.</p>
+                                </div>
+                                <span class="sf-count-pill"><i class="far fa-clipboard-list-check"></i> 15 Pending</span>
+                            </div>
+
+                            <div class="sl-tabs ad-filter-tabs" role="tablist" aria-label="Filter approvals">
+                                <button type="button" class="sl-tab is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+                                <button type="button" class="sl-tab" data-filter="teacher" role="tab" aria-selected="false">Teacher Applications</button>
+                                <button type="button" class="sl-tab" data-filter="class" role="tab" aria-selected="false">New Classes</button>
+                            </div>
+
+                            <div class="table-responsive td-table-wrap">
+                                <table class="table td-table sb-table ad-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Name</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ad-approvals-body">
+                                        <tr class="ad-row" data-type="teacher" data-name="John Smith">
+                                            <td data-label="Type">Teacher Application</td>
+                                            <td data-label="Name">
+                                                <div class="sb-teacher-cell">
+                                                    <img src="assets/img/team/01.jpg" alt="John Smith">
+                                                    <strong>John Smith</strong>
+                                                </div>
+                                            </td>
+                                            <td data-label="Date">Today</td>
+                                            <td data-label="Status"><span class="sb-badge is-pending">Pending</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn sd-action-btn ad-approve-btn">Approve</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn ad-reject-btn">Reject</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn ad-view-btn">View</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="ad-row" data-type="class" data-name="Beginner Gospel Piano">
+                                            <td data-label="Type">New Class</td>
+                                            <td data-label="Name">
+                                                <div class="sb-teacher-cell">
+                                                    <img src="assets/img/course/01.jpg" alt="Beginner Gospel Piano">
+                                                    <strong>Beginner Gospel Piano</strong>
+                                                </div>
+                                            </td>
+                                            <td data-label="Date">Today</td>
+                                            <td data-label="Status"><span class="sb-badge is-pending">Pending</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn sd-action-btn ad-approve-btn">Approve</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn ad-reject-btn">Reject</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn ad-view-btn">View</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="ad-row" data-type="teacher" data-name="Emily Davis">
+                                            <td data-label="Type">Teacher Application</td>
+                                            <td data-label="Name">
+                                                <div class="sb-teacher-cell">
+                                                    <img src="assets/img/team/03.jpg" alt="Emily Davis">
+                                                    <strong>Emily Davis</strong>
+                                                </div>
+                                            </td>
+                                            <td data-label="Date">Yesterday</td>
+                                            <td data-label="Status"><span class="sb-badge is-pending">Pending</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn sd-action-btn ad-approve-btn">Approve</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn ad-reject-btn">Reject</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn ad-view-btn">View</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="ad-row" data-type="class" data-name="Worship Vocal Training">
+                                            <td data-label="Type">New Class</td>
+                                            <td data-label="Name">
+                                                <div class="sb-teacher-cell">
+                                                    <img src="assets/img/course/02.jpg" alt="Worship Vocal Training">
+                                                    <strong>Worship Vocal Training</strong>
+                                                </div>
+                                            </td>
+                                            <td data-label="Date">Yesterday</td>
+                                            <td data-label="Status"><span class="sb-badge is-pending">Pending</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn sd-action-btn ad-approve-btn">Approve</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn ad-reject-btn">Reject</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn ad-view-btn">View</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="sl-empty" id="ad-approvals-empty" hidden>
+                                <i class="far fa-clipboard-check"></i>
+                                <h3>No approvals in this category.</h3>
+                                <p>Try a different filter to see pending items.</p>
+                            </div>
+                        </section>
+
+                        <!-- quick actions -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <h3>Quick Actions</h3>
+                            </div>
+                            <div class="sd-quick-grid">
+                                <a href="admin-dashboard.html" class="sd-quick-card">
+                                    <i class="far fa-chalkboard-user"></i>
+                                    <span>Manage Teachers</span>
+                                </a>
+                                <a href="admin-dashboard.html" class="sd-quick-card">
+                                    <i class="far fa-graduation-cap"></i>
+                                    <span>Manage Students</span>
+                                </a>
+                                <a href="admin-dashboard.html" class="sd-quick-card">
+                                    <i class="far fa-clipboard-check"></i>
+                                    <span>Review Classes</span>
+                                </a>
+                                <a href="admin-dashboard.html" class="sd-quick-card">
+                                    <i class="far fa-credit-card"></i>
+                                    <span>View Payments</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <!-- dashboard footer -->
+                        <footer class="ad-footer">
+                            <p>&copy; <span id="date"></span> Gospel Music Mastery — Admin Panel. All rights reserved.</p>
+                            <ul>
+                                <li><a href="admin-dashboard.html">Settings</a></li>
+                                <li><a href="admin-dashboard.html">Support</a></li>
+                                <li><a href="admin-dashboard.html">Privacy</a></li>
+                            </ul>
+                        </footer>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- admin dashboard end -->
+
+    </main>
+
+
+    <!-- approval review modal -->
+    <div class="modal fade gospel-demo-modal" id="ad-review-modal" tabindex="-1" aria-labelledby="ad-review-title"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ad-review-title">Review Submission</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-2"><strong id="ad-review-name">John Smith</strong></p>
+                    <p id="ad-review-type">Teacher Application</p>
+                    <p class="mb-0">This is a frontend demo. Approving or rejecting will not change any records.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="theme-btn" data-bs-dismiss="modal">
+                        <i class="far fa-check"></i> Mark Reviewed
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- demo toast -->
+    <div class="gospel-alert gospel-alert-success sl-toast" id="ad-toast" hidden>
+        <i class="far fa-circle-check"></i>
+        <span id="ad-toast-text">Action completed (demo).</span>
+    </div>
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- admin dashboard interactions -->
+    <script>
+        (function () {
+            var shell = document.querySelector('.ad-shell');
+            if (!shell) return;
+
+            /* ---------- sidebar toggle ---------- */
+            var toggle = document.getElementById('sd-sidebar-toggle');
+            var sidebar = document.getElementById('sd-sidebar');
+            var backdrop = document.getElementById('sd-sidebar-backdrop');
+
+            function closeSidebar() {
+                shell.classList.remove('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+
+            function openSidebar() {
+                shell.classList.add('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    if (shell.classList.contains('is-sidebar-open')) closeSidebar();
+                    else openSidebar();
+                });
+            }
+            if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+            if (sidebar) {
+                sidebar.querySelectorAll('a.sd-nav-link').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        if (window.matchMedia('(max-width: 991px)').matches) closeSidebar();
+                    });
+                });
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeSidebar();
+            });
+
+            /* ---------- collapsible Users submenu ---------- */
+            var usersToggle = document.getElementById('ad-users-toggle');
+            var usersGroup = document.getElementById('ad-users-group');
+            if (usersToggle && usersGroup) {
+                usersToggle.addEventListener('click', function () {
+                    var isOpen = usersGroup.classList.toggle('is-open');
+                    usersToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+
+            /* ---------- animated counters ---------- */
+            function formatValue(value, format) {
+                var text = value.toLocaleString('en-US');
+                return format === 'currency' ? '$' + text : text;
+            }
+
+            function runCounter(el) {
+                var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+                var format = el.getAttribute('data-format');
+                var duration = 1200;
+                var startTime = null;
+
+                function step(timestamp) {
+                    if (startTime === null) startTime = timestamp;
+                    var progress = Math.min((timestamp - startTime) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = formatValue(Math.round(target * eased), format);
+                    if (progress < 1) window.requestAnimationFrame(step);
+                }
+                window.requestAnimationFrame(step);
+            }
+
+            /* ---------- chart reveal animation ---------- */
+            function animateBars(chart) {
+                chart.querySelectorAll('.ad-bar').forEach(function (bar, index) {
+                    var height = bar.getAttribute('data-height') || '0';
+                    window.setTimeout(function () {
+                        bar.style.height = height + '%';
+                    }, index * 90);
+                });
+            }
+
+            function animateDonut(donut) {
+                donut.classList.add('is-visible');
+            }
+
+            function animateLines(chartEl) {
+                chartEl.querySelectorAll('.ad-line').forEach(function (line) {
+                    var length = line.getTotalLength ? line.getTotalLength() : 400;
+                    line.style.strokeDasharray = length;
+                    line.style.strokeDashoffset = length;
+                    /* force reflow so the transition runs */
+                    void line.getBoundingClientRect();
+                    line.style.strokeDashoffset = '0';
+                });
+            }
+
+            var animated = new WeakSet();
+
+            function reveal(el) {
+                if (animated.has(el)) return;
+                animated.add(el);
+                if (el.classList.contains('ad-counter')) runCounter(el);
+                else if (el.classList.contains('ad-bar-chart')) animateBars(el);
+                else if (el.classList.contains('ad-donut')) animateDonut(el);
+                else if (el.classList.contains('ad-line-chart')) animateLines(el);
+            }
+
+            var targets = document.querySelectorAll('.ad-counter, .ad-bar-chart, .ad-donut, .ad-line-chart');
+
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            reveal(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25 });
+                targets.forEach(function (el) { observer.observe(el); });
+            } else {
+                targets.forEach(reveal);
+            }
+
+            /* ---------- toast helper ---------- */
+            var toast = document.getElementById('ad-toast');
+            var toastText = document.getElementById('ad-toast-text');
+            var toastTimer = null;
+
+            function showToast(message, isError) {
+                if (!toast) return;
+                if (toastText) toastText.textContent = message;
+                toast.classList.toggle('gospel-alert-error', !!isError);
+                toast.classList.toggle('gospel-alert-success', !isError);
+                var icon = toast.querySelector('i');
+                if (icon) icon.className = isError ? 'far fa-circle-exclamation' : 'far fa-circle-check';
+                toast.hidden = false;
+                window.clearTimeout(toastTimer);
+                toastTimer = window.setTimeout(function () { toast.hidden = true; }, 3200);
+            }
+
+            /* ---------- approvals: filters ---------- */
+            var filterTabs = document.querySelectorAll('.ad-filter-tabs .sl-tab');
+            var rows = document.querySelectorAll('.ad-row');
+            var emptyState = document.getElementById('ad-approvals-empty');
+
+            function applyFilter(filter) {
+                var visible = 0;
+                rows.forEach(function (row) {
+                    var match = filter === 'all' || row.getAttribute('data-type') === filter;
+                    row.hidden = !match;
+                    if (match) visible++;
+                });
+                if (emptyState) emptyState.hidden = visible > 0;
+            }
+
+            filterTabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    filterTabs.forEach(function (t) {
+                        t.classList.remove('is-active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('is-active');
+                    tab.setAttribute('aria-selected', 'true');
+                    applyFilter(tab.getAttribute('data-filter'));
+                });
+            });
+
+            /* ---------- approvals: approve / reject / view ---------- */
+            function resolveRow(row, isApproved) {
+                var badge = row.querySelector('.sb-badge');
+                var name = row.getAttribute('data-name') || 'Submission';
+
+                if (badge) {
+                    badge.classList.remove('is-pending');
+                    badge.classList.add(isApproved ? 'is-confirmed' : 'is-cancelled');
+                    badge.textContent = isApproved ? 'Approved' : 'Rejected';
+                }
+                row.classList.add('is-resolved');
+                row.querySelectorAll('.ad-approve-btn, .ad-reject-btn').forEach(function (btn) {
+                    btn.disabled = true;
+                });
+                showToast(name + (isApproved ? ' approved (demo).' : ' rejected (demo).'), !isApproved);
+            }
+
+            var reviewModalEl = document.getElementById('ad-review-modal');
+            var reviewModal = reviewModalEl && window.bootstrap ? new bootstrap.Modal(reviewModalEl) : null;
+            var reviewName = document.getElementById('ad-review-name');
+            var reviewType = document.getElementById('ad-review-type');
+
+            rows.forEach(function (row) {
+                var approve = row.querySelector('.ad-approve-btn');
+                var reject = row.querySelector('.ad-reject-btn');
+                var view = row.querySelector('.ad-view-btn');
+
+                if (approve) approve.addEventListener('click', function () { resolveRow(row, true); });
+                if (reject) reject.addEventListener('click', function () { resolveRow(row, false); });
+                if (view) {
+                    view.addEventListener('click', function () {
+                        if (reviewName) reviewName.textContent = row.getAttribute('data-name') || '';
+                        var typeCell = row.querySelector('td[data-label="Type"]');
+                        if (reviewType && typeCell) reviewType.textContent = typeCell.textContent.trim();
+                        if (reviewModal) reviewModal.show();
+                    });
+                }
+            });
+
+            /* ---------- footer year ---------- */
+            var dateEl = document.getElementById('date');
+            if (dateEl) dateEl.textContent = new Date().getFullYear();
+        })();
+    </script>
+
+</body>
+
+</html>

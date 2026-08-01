@@ -6612,3 +6612,689 @@ body {
     text-align: center;
   }
 }
+
+/* ==========================================================
+   Admin dashboard — ad-*
+   Builds on the shared sd-* dashboard shell
+   ========================================================== */
+.admin-portal-page {
+  background: var(--gospel-bg-light);
+}
+
+/* --- Admin top header --- */
+.ad-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ad-icon-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid var(--gospel-border);
+  background: var(--gospel-bg-light);
+  color: var(--gospel-heading);
+  font-size: 17px;
+  transition: var(--transition2);
+}
+
+.ad-icon-btn:hover,
+.ad-icon-btn:focus,
+.ad-icon-btn[aria-expanded="true"] {
+  border-color: var(--gospel-orange);
+  color: var(--gospel-orange);
+  background: var(--gospel-orange-soft);
+}
+
+.ad-icon-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--gospel-orange);
+  color: var(--color-white);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 20px;
+  text-align: center;
+}
+
+.ad-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--gospel-border);
+  background: var(--gospel-bg-light);
+  color: var(--gospel-heading);
+  transition: var(--transition2);
+}
+
+.ad-profile-btn:hover,
+.ad-profile-btn:focus,
+.ad-profile-btn[aria-expanded="true"] {
+  border-color: var(--gospel-orange);
+  background: var(--gospel-orange-soft);
+}
+
+.ad-profile-btn img {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gospel-orange);
+}
+
+.ad-profile-btn-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.ad-profile-btn-text strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--gospel-heading);
+}
+
+.ad-profile-btn-text small {
+  font-size: 12px;
+  color: var(--gospel-body);
+}
+
+.ad-dropdown {
+  min-width: 280px;
+  padding: 10px;
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow2);
+}
+
+.ad-dropdown-title {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 14px;
+  padding: 6px 10px 10px;
+  margin: 0;
+  border-bottom: 1px solid var(--gospel-border);
+}
+
+.ad-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  white-space: normal;
+  color: var(--gospel-body);
+  font-size: 14px;
+}
+
+.ad-dropdown-item strong {
+  color: var(--gospel-heading);
+}
+
+.ad-dropdown-item i {
+  width: 20px;
+  text-align: center;
+  color: var(--gospel-orange);
+}
+
+.ad-dropdown-item img {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ad-dropdown-item:hover,
+.ad-dropdown-item:focus {
+  background: var(--gospel-bg-light);
+  color: var(--gospel-heading);
+}
+
+.ad-dropdown-item.is-logout,
+.ad-dropdown-item.is-logout i {
+  color: #c0392b;
+}
+
+/* --- Sidebar submenu --- */
+.ad-nav-parent {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ad-nav-caret {
+  margin-left: auto;
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+
+.ad-nav-group.is-open .ad-nav-caret {
+  transform: rotate(180deg);
+}
+
+.ad-submenu {
+  list-style: none;
+  margin: 0 0 4px;
+  padding: 0 0 0 18px;
+  display: none;
+}
+
+.ad-nav-group.is-open .ad-submenu {
+  display: block;
+}
+
+.ad-sub-link {
+  font-size: 14px;
+  padding: 9px 12px;
+}
+
+/* --- Statistics cards --- */
+.ad-stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ad-stat-card.is-pending .sd-stat-icon {
+  background: rgba(192, 57, 43, 0.1);
+  color: #c0392b;
+}
+
+/* --- Chart layout --- */
+.ad-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ad-chart-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-chart-total {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--gospel-orange);
+}
+
+/* --- Bar chart --- */
+.ad-bar-chart {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+  height: 260px;
+  padding-top: 10px;
+  border-bottom: 1px solid var(--gospel-border);
+}
+
+.ad-bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: 0;
+}
+
+.ad-bar-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gospel-heading);
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+.ad-bar {
+  display: block;
+  width: 100%;
+  max-width: 42px;
+  height: 0;
+  border-radius: 8px 8px 0 0;
+  background: var(--gospel-orange-soft);
+  border: 1px solid var(--gospel-orange-line);
+  border-bottom: none;
+  transition: height 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ad-bar-col:hover .ad-bar,
+.ad-bar-col.is-peak .ad-bar {
+  background: var(--gospel-orange);
+  border-color: var(--gospel-orange);
+}
+
+.ad-bar-label {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gospel-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* --- Line chart --- */
+.ad-line-chart {
+  margin-top: 4px;
+}
+
+.ad-line-chart svg {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+.ad-grid-line {
+  stroke: var(--gospel-border);
+  stroke-width: 1;
+}
+
+.ad-line {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 1.4s ease;
+}
+
+.ad-line-students {
+  stroke: var(--gospel-orange);
+}
+
+.ad-line-teachers {
+  stroke: var(--gospel-heading);
+}
+
+.ad-line-labels {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gospel-body);
+  text-align: center;
+}
+
+.ad-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 16px 0 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--gospel-border);
+}
+
+.ad-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+.ad-legend strong {
+  color: var(--gospel-heading);
+}
+
+.ad-legend-dot {
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ad-legend-dot.is-students,
+.ad-legend-dot.is-completed {
+  background: var(--gospel-orange);
+}
+
+.ad-legend-dot.is-teachers {
+  background: var(--gospel-heading);
+}
+
+.ad-legend-dot.is-pending {
+  background: #f0b429;
+}
+
+.ad-legend-dot.is-cancelled {
+  background: #c0392b;
+}
+
+/* --- Booking analytics donut --- */
+.ad-booking-analytics {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.ad-donut {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: conic-gradient(var(--gospel-border) 0 100%);
+  transition: background 1s ease;
+}
+
+.ad-donut.is-visible {
+  background: conic-gradient(
+    var(--gospel-orange) 0 83%,
+    #f0b429 83% 94%,
+    #c0392b 94% 100%
+  );
+}
+
+.ad-donut::after {
+  content: "";
+  position: absolute;
+  inset: 26px;
+  border-radius: 50%;
+  background: var(--color-white);
+}
+
+.ad-donut-center {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.ad-donut-center strong {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--gospel-heading);
+}
+
+.ad-donut-center small {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+.ad-booking-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.ad-booking-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  transition: var(--transition2);
+}
+
+.ad-booking-list li:hover {
+  border-color: var(--gospel-orange-line);
+  transform: translateY(-2px);
+}
+
+.ad-booking-list li > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.ad-booking-list strong {
+  display: block;
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--gospel-heading);
+  line-height: 1.2;
+}
+
+.ad-booking-list small {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+/* --- Recent activity timeline --- */
+.ad-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.ad-timeline::before {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: var(--gospel-border);
+}
+
+.ad-timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.ad-timeline-icon {
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gospel-orange-soft);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 0 0 1px var(--gospel-orange-line);
+  color: var(--gospel-orange);
+  font-size: 16px;
+}
+
+.ad-timeline-item.is-student .ad-timeline-icon,
+.ad-timeline-item.is-class .ad-timeline-icon {
+  background: var(--gospel-black-soft);
+  box-shadow: 0 0 0 1px var(--gospel-black-line);
+  color: var(--gospel-heading);
+}
+
+.ad-timeline-item.is-payment .ad-timeline-icon {
+  background: rgba(34, 197, 94, 0.12);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+  color: #15803d;
+}
+
+.ad-timeline-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ad-timeline-body h4 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--gospel-heading);
+  margin-bottom: 4px;
+}
+
+.ad-timeline-body p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--gospel-body);
+}
+
+.ad-timeline-time {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gospel-body);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --- Approvals table --- */
+.ad-filter-tabs {
+  padding-bottom: 14px;
+}
+
+.ad-table tbody tr.is-resolved {
+  opacity: 0.72;
+}
+
+.ad-table .sb-actions .theme-btn:disabled,
+.ad-table .sb-actions .theme-btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Dashboard footer --- */
+.ad-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  background: var(--color-white);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+}
+
+.ad-footer p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--gospel-body);
+}
+
+.ad-footer ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.ad-footer a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gospel-heading);
+  transition: var(--transition2);
+}
+
+.ad-footer a:hover {
+  color: var(--gospel-orange);
+}
+
+@media (max-width: 1199px) {
+  .ad-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ad-chart-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ad-booking-analytics {
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .ad-donut {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ad-topbar-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .ad-booking-analytics {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+  }
+
+  .ad-booking-list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .ad-stats-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ad-profile-btn-text {
+    display: none;
+  }
+
+  .ad-dropdown {
+    min-width: 240px;
+  }
+
+  .ad-bar-chart {
+    height: 220px;
+    gap: 6px;
+  }
+
+  .ad-bar-value {
+    font-size: 10px;
+  }
+
+  .ad-bar-label {
+    font-size: 10px;
+  }
+
+  .ad-timeline-item {
+    flex-wrap: wrap;
+  }
+
+  .ad-timeline-time {
+    padding-left: 60px;
+  }
+
+  .ad-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
