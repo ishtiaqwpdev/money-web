@@ -881,9 +881,10 @@
 .availability-calendar-card,
 .availability-slots-card {
   padding: 22px;
-  background: var(--theme-bg-light);
+  background: var(--color-white);
   border: 1px solid var(--border-info-color);
   border-radius: 12px;
+  box-shadow: var(--box-shadow);
 }
 
 .calendar-header {
@@ -933,12 +934,15 @@
 
 .cal-weekday {
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.2px;
   text-transform: uppercase;
   color: var(--body-text-color);
   padding-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cal-day {
@@ -978,19 +982,25 @@
   background: transparent;
 }
 
-.cal-day.is-available .cal-day-status {
-  background: var(--theme-color);
-}
-
-.cal-day.is-booked {
+.cal-day.is-available {
   background: var(--gospel-orange-soft);
   border-color: var(--gospel-orange-line);
   color: var(--gospel-orange-text);
+}
+
+.cal-day.is-available .cal-day-status {
+  background: var(--gospel-orange);
+}
+
+.cal-day.is-booked {
+  background: rgba(6, 43, 92, 0.12);
+  border-color: rgba(6, 43, 92, 0.35);
+  color: #062B5C;
   cursor: not-allowed;
 }
 
 .cal-day.is-booked .cal-day-status {
-  background: var(--theme-color2);
+  background: #062B5C;
 }
 
 .cal-day.is-unavailable {
@@ -1004,8 +1014,8 @@
 }
 
 .cal-day.is-selected {
-  background: var(--theme-color);
-  border-color: var(--theme-color);
+  background: var(--gospel-orange);
+  border-color: var(--gospel-orange);
   color: var(--color-white);
   box-shadow: var(--box-shadow2);
 }
@@ -1015,11 +1025,11 @@
 }
 
 .cal-day.is-today:not(.is-selected) {
-  border-color: var(--theme-color2);
+  border-color: var(--gospel-orange);
 }
 
 .cal-day:not(:disabled):not(.is-empty):hover {
-  border-color: var(--theme-color2);
+  border-color: var(--gospel-orange);
 }
 
 .calendar-legend {
@@ -1048,11 +1058,11 @@
 }
 
 .legend-dot.is-available {
-  background: var(--theme-color);
+  background: var(--gospel-orange);
 }
 
 .legend-dot.is-booked {
-  background: var(--theme-color2);
+  background: #062B5C;
 }
 
 .legend-dot.is-unavailable {
@@ -1130,7 +1140,7 @@
 }
 
 .slot-card-info span {
-  color: var(--theme-color);
+  color: var(--gospel-orange);
   font-weight: 700;
   font-size: 14px;
 }
@@ -1139,6 +1149,17 @@
   font-style: normal;
   font-size: 13px;
   color: var(--body-text-color);
+}
+
+.slot-status.is-available {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--gospel-orange-soft);
+  color: var(--gospel-orange-text);
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .slot-remove-btn {
