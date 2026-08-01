@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your favourite Gospel Music Mastery teachers">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Favourite Teachers - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="student-portal-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <main class="main">
+
+        <!-- student favourites -->
+        <div class="student-dashboard-area py-120">
+            <div class="container">
+
+                <!-- dashboard profile header -->
+                <div class="sd-profile-header">
+                    <div class="sd-profile-main">
+                        <div class="sd-profile-avatar">
+                            <img src="assets/img/team/02.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="sd-profile-meta">
+                            <h2>Sarah Johnson</h2>
+                            <span class="sd-role">Music Student</span>
+                            <div class="sd-profile-stats">
+                                <span class="sd-stat-item"><i class="far fa-signal"></i> Learning Level: Intermediate</span>
+                                <span class="sd-stat-item"><i class="far fa-music"></i> Gospel Piano</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sd-profile-actions">
+                        <a href="teachers.html" class="theme-btn"><i class="far fa-search"></i> Find Teachers</a>
+                    </div>
+                </div>
+
+                <div class="sd-shell">
+                    <button type="button" class="sd-sidebar-toggle theme-btn theme-btn-outline" id="sd-sidebar-toggle"
+                        aria-expanded="false" aria-controls="sd-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <!-- sidebar -->
+                    <aside class="sd-sidebar" id="sd-sidebar" aria-label="Student navigation">
+                        <nav class="sd-nav">
+                            <ul>
+                                <li><a href="student-dashboard.html" class="sd-nav-link" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+                                <li><a href="student-profile.html" class="sd-nav-link" data-nav="profile"><i class="far fa-user"></i> My Profile</a></li>
+                                <li><a href="student-lessons.html" class="sd-nav-link" data-nav="lessons"><i class="far fa-book-open"></i> My Lessons</a></li>
+                                <li><a href="student-bookings.html" class="sd-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> My Bookings</a></li>
+                                <li><a href="student-favourites.html" class="sd-nav-link active" data-nav="favourites"><i class="far fa-heart"></i> Favourite Teachers</a></li>
+                                <li><a href="student-payments.html" class="sd-nav-link" data-nav="payments"><i class="far fa-credit-card"></i> Payments</a></li>
+                                <li><a href="student-settings.html" class="sd-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="student-login.html" class="sd-nav-link sd-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="sd-sidebar-backdrop" id="sd-sidebar-backdrop" hidden></div>
+
+                    <!-- main content -->
+                    <div class="sd-main">
+
+                        <!-- page header -->
+                        <section class="sd-card sd-welcome-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <span class="login-portal-badge">My Favorites</span>
+                                    <h3>Favourite Teachers</h3>
+                                    <p>View the instructors you have saved and continue your learning journey with your preferred teachers.</p>
+                                </div>
+                                <div class="sf-count-pill">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Saved Teachers: <strong id="sf-count">8</strong></span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- empty state -->
+                        <div class="sd-card sl-empty" id="sf-empty" hidden>
+                            <i class="far fa-heart"></i>
+                            <h3>No Favourite Teachers Yet</h3>
+                            <p>Save your favourite instructors to quickly access their profiles and lessons.</p>
+                            <a href="teachers.html" class="theme-btn"><i class="far fa-search"></i> Find Teachers</a>
+                        </div>
+
+                        <!-- favourites grid -->
+                        <section class="sf-grid" id="sf-grid">
+
+                            <article class="tm-card sf-card" data-name="John Smith">
+                                <button type="button" class="sf-heart-btn is-active" aria-label="Remove John Smith from favourites" title="Remove favourite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/01.jpg" alt="John Smith">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>John Smith</h3>
+                                    <p class="tm-specialty">Gospel Piano Instructor</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>4.9</strong></span>
+                                        <span><i class="far fa-users"></i> 25 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 10+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$40 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card sf-card" data-name="Emily Davis">
+                                <button type="button" class="sf-heart-btn is-active" aria-label="Remove Emily Davis from favourites" title="Remove favourite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/02.jpg" alt="Emily Davis">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Emily Davis</h3>
+                                    <p class="tm-specialty">Vocal Coach</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>5.0</strong></span>
+                                        <span><i class="far fa-users"></i> 32 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 8+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$45 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card sf-card" data-name="Michael Brown">
+                                <button type="button" class="sf-heart-btn is-active" aria-label="Remove Michael Brown from favourites" title="Remove favourite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/03.jpg" alt="Michael Brown">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Michael Brown</h3>
+                                    <p class="tm-specialty">Guitar Instructor</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★☆ <strong>4.7</strong></span>
+                                        <span><i class="far fa-users"></i> 18 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 7+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$40 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card sf-card" data-name="David Wilson">
+                                <button type="button" class="sf-heart-btn is-active" aria-label="Remove David Wilson from favourites" title="Remove favourite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/04.jpg" alt="David Wilson">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>David Wilson</h3>
+                                    <p class="tm-specialty">Worship Leader</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>4.8</strong></span>
+                                        <span><i class="far fa-users"></i> 40 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 12+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$55 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card sf-card" data-name="Sophia Martinez">
+                                <button type="button" class="sf-heart-btn is-active" aria-label="Remove Sophia Martinez from favourites" title="Remove favourite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/05.jpg" alt="Sophia Martinez">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Sophia Martinez</h3>
+                                    <p class="tm-specialty">Drums Instructor</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★☆ <strong>4.6</strong></span>
+                                        <span><i class="far fa-users"></i> 14 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 6+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$42 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card sf-card" data-name="James Lee">
+                                <button type="button" class="sf-heart-btn is-active" aria-label="Remove James Lee from favourites" title="Remove favourite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/06.jpg" alt="James Lee">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>James Lee</h3>
+                                    <p class="tm-specialty">Hammond Organ Teacher</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>4.9</strong></span>
+                                        <span><i class="far fa-users"></i> 21 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 15+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$50 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card sf-card" data-name="Olivia Harris">
+                                <button type="button" class="sf-heart-btn is-active" aria-label="Remove Olivia Harris from favourites" title="Remove favourite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/07.jpg" alt="Olivia Harris">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Olivia Harris</h3>
+                                    <p class="tm-specialty">Music Theory Tutor</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>4.8</strong></span>
+                                        <span><i class="far fa-users"></i> 27 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 9+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$38 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card sf-card" data-name="Daniel Clark">
+                                <button type="button" class="sf-heart-btn is-active" aria-label="Remove Daniel Clark from favourites" title="Remove favourite">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/08.jpg" alt="Daniel Clark">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Daniel Clark</h3>
+                                    <p class="tm-specialty">Gospel Guitar Coach</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★☆ <strong>4.5</strong></span>
+                                        <span><i class="far fa-users"></i> 11 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 4+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$35 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- student favourites end -->
+
+    </main><div class="gospel-alert gospel-alert-success sl-toast" id="sf-toast" hidden>
+        <i class="far fa-circle-check"></i>
+        <span id="sf-toast-text">Teacher removed from favourites.</span>
+    </div>
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- student favourites interactions -->
+    <script>
+        (function () {
+            var shell = document.querySelector('.sd-shell');
+            var toggle = document.getElementById('sd-sidebar-toggle');
+            var sidebar = document.getElementById('sd-sidebar');
+            var backdrop = document.getElementById('sd-sidebar-backdrop');
+            var navLinks = sidebar ? sidebar.querySelectorAll('.sd-nav-link') : [];
+
+            function closeSidebar() {
+                if (!shell) return;
+                shell.classList.remove('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+
+            function openSidebar() {
+                if (!shell) return;
+                shell.classList.add('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+
+            if (toggle && shell) {
+                toggle.addEventListener('click', function () {
+                    if (shell.classList.contains('is-sidebar-open')) closeSidebar();
+                    else openSidebar();
+                });
+            }
+            if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+            var currentPage = window.location.pathname.split('/').pop() || 'student-favourites.html';
+            navLinks.forEach(function (link) {
+                link.classList.toggle('active', link.getAttribute('href') === currentPage);
+                link.addEventListener('click', function () {
+                    if (window.matchMedia('(max-width: 991px)').matches) closeSidebar();
+                });
+            });
+
+            var grid = document.getElementById('sf-grid');
+            var emptyState = document.getElementById('sf-empty');
+            var countEl = document.getElementById('sf-count');
+            var toast = document.getElementById('sf-toast');
+            var toastText = document.getElementById('sf-toast-text');
+
+            function showToast(message) {
+                if (!toast) return;
+                if (toastText) toastText.textContent = message;
+                toast.hidden = false;
+                window.setTimeout(function () { toast.hidden = true; }, 2200);
+            }
+
+            function updateCount() {
+                var remaining = grid ? grid.querySelectorAll('.sf-card:not([hidden])').length : 0;
+                if (countEl) countEl.textContent = String(remaining);
+                if (emptyState) emptyState.hidden = remaining > 0;
+                if (grid) grid.hidden = remaining === 0;
+            }
+
+            document.querySelectorAll('.sf-heart-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var card = btn.closest('.sf-card');
+                    if (!card) return;
+                    var name = card.getAttribute('data-name') || 'Teacher';
+
+                    btn.classList.remove('is-active');
+                    btn.classList.add('is-removing');
+                    card.classList.add('is-removing');
+
+                    window.setTimeout(function () {
+                        card.hidden = true;
+                        card.classList.remove('is-removing');
+                        updateCount();
+                        showToast(name + ' removed from favourites.');
+                    }, 280);
+                });
+            });
+
+            updateCount();
+        })();
+    </script>
+
+</body>
+
+</html>

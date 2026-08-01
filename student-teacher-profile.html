@@ -36,7 +36,7 @@
             <div class="loader-book-page"></div>
         </div>
     </div>
-    <!-- preloader end --><main class="main"><!-- public teacher profile -->
+    <!-- preloader end --><main class="main"><!-- student teacher profile -->
         <div class="teacher-public-area py-120">
             <div class="container">
 
@@ -53,11 +53,11 @@
                             <span class="td-rating">★★★★★ <strong>4.9</strong></span>
                             <span><i class="far fa-users"></i> 25 Students</span>
                             <span><i class="far fa-chalkboard"></i> 12 Classes</span>
-                            <span><i class="far fa-location-dot"></i> Nashville, Tennessee</span>
+                            <span><i class="far fa-briefcase"></i> 10+ Years</span>
                         </div>
                         <div class="tp-hero-actions">
-                            <a href="#book-lesson" class="theme-btn"><i class="far fa-calendar-check"></i> Book A Lesson</a>
-                            <a href="teacher-login.html" class="theme-btn theme-btn-outline"><i class="far fa-envelope"></i> Send Message</a>
+                            <a href="booking.html" class="theme-btn"><i class="far fa-calendar-check"></i> Book A Lesson</a>
+                            <a href="student-login.html" class="theme-btn theme-btn-outline"><i class="far fa-envelope"></i> Send Message</a>
                         </div>
                     </div>
                 </section>
@@ -69,11 +69,11 @@
                         <section class="td-card">
                             <div class="td-card-head">
                                 <div>
-                                    <h3>About John Smith</h3>
+                                    <h3>About Your Instructor</h3>
                                 </div>
                             </div>
                             <p class="tp-about-text">
-                                Experienced gospel music instructor helping students develop piano skills, worship leadership, and musical confidence through personalized lessons.
+                                John is an experienced gospel music teacher helping students develop piano skills, worship techniques, and musical confidence through personalized online lessons.
                             </p>
                             <div class="tp-info-grid">
                                 <div class="tp-info-card">
@@ -85,24 +85,10 @@
                                     <strong>Gospel Piano &amp; Worship Music</strong>
                                 </div>
                                 <div class="tp-info-card">
-                                    <span class="tp-info-label">Languages</span>
-                                    <strong>English</strong>
+                                    <span class="tp-info-label">Lesson Format</span>
+                                    <strong>Online Live Lessons</strong>
                                 </div>
                             </div>
-                        </section>
-
-                        <!-- intro video -->
-                        <section class="td-card">
-                            <div class="td-card-head">
-                                <div>
-                                    <h3>Meet Your Instructor</h3>
-                                    <p>Watch a short introduction to John’s teaching style and worship approach.</p>
-                                </div>
-                            </div>
-                            <button type="button" class="tp-video-card" id="tp-video-trigger" aria-label="Play intro video">
-                                <img src="assets/img/video/01.jpg" alt="Instructor intro video thumbnail">
-                                <span class="tp-video-play"><i class="fas fa-play"></i></span>
-                            </button>
                         </section>
 
                         <!-- skills -->
@@ -118,15 +104,29 @@
                                 <span class="tp-skill-badge">Chord Progressions</span>
                                 <span class="tp-skill-badge">Music Theory</span>
                                 <span class="tp-skill-badge">Improvisation</span>
-                                <span class="tp-skill-badge">Beginner Lessons</span>
+                                <span class="tp-skill-badge">Beginner Training</span>
                             </div>
+                        </section>
+
+                        <!-- intro video -->
+                        <section class="td-card">
+                            <div class="td-card-head">
+                                <div>
+                                    <h3>Meet Your Teacher</h3>
+                                    <p>Watch a short introduction to John’s teaching style and worship approach.</p>
+                                </div>
+                            </div>
+                            <button type="button" class="tp-video-card" id="stp-video-trigger" aria-label="Play intro video">
+                                <img src="assets/img/video/01.jpg" alt="Instructor intro video thumbnail">
+                                <span class="tp-video-play"><i class="fas fa-play"></i></span>
+                            </button>
                         </section>
 
                         <!-- classes -->
                         <section class="td-card">
                             <div class="td-card-head">
                                 <div>
-                                    <h3>Available Classes</h3>
+                                    <h3>Classes Offered</h3>
                                     <p>Choose a lesson that matches your skill level and worship goals.</p>
                                 </div>
                             </div>
@@ -187,11 +187,53 @@
                             </div>
                         </section>
 
+                        <!-- schedule -->
+                        <section class="td-card">
+                            <div class="td-card-head">
+                                <div>
+                                    <h3>Available Time Slots</h3>
+                                    <p>Preview upcoming openings and book a preferred time.</p>
+                                </div>
+                            </div>
+                            <div class="stp-schedule-list" role="list">
+                                <article class="stp-schedule-item" role="listitem">
+                                    <div class="stp-schedule-info">
+                                        <strong>Monday</strong>
+                                        <span><i class="far fa-clock"></i> 10:00 AM - 11:00 AM</span>
+                                    </div>
+                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn stp-book-slot"
+                                        data-date="Monday, March 16, 2026" data-time="10:00 AM">
+                                        Book This Time
+                                    </button>
+                                </article>
+                                <article class="stp-schedule-item" role="listitem">
+                                    <div class="stp-schedule-info">
+                                        <strong>Wednesday</strong>
+                                        <span><i class="far fa-clock"></i> 02:00 PM - 03:00 PM</span>
+                                    </div>
+                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn stp-book-slot"
+                                        data-date="Wednesday, March 18, 2026" data-time="02:00 PM">
+                                        Book This Time
+                                    </button>
+                                </article>
+                                <article class="stp-schedule-item" role="listitem">
+                                    <div class="stp-schedule-info">
+                                        <strong>Friday</strong>
+                                        <span><i class="far fa-clock"></i> 04:00 PM - 05:00 PM</span>
+                                    </div>
+                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn stp-book-slot"
+                                        data-date="Friday, March 20, 2026" data-time="04:00 PM">
+                                        Book This Time
+                                    </button>
+                                </article>
+                            </div>
+                        </section>
+
                         <!-- reviews -->
                         <section class="td-card">
                             <div class="td-card-head">
                                 <div>
-                                    <h3>Student Reviews</h3>
+                                    <h3>Reviews From Students</h3>
                                     <p>What students say about learning with John.</p>
                                 </div>
                             </div>
@@ -204,7 +246,7 @@
                                             <span class="td-rating">★★★★★</span>
                                         </div>
                                     </div>
-                                    <p>“John helped me improve my worship piano skills with practical lessons.”</p>
+                                    <p>Amazing teacher with practical worship lessons.</p>
                                 </article>
                                 <article class="tp-review-card">
                                     <div class="tp-review-head">
@@ -214,7 +256,7 @@
                                             <span class="td-rating">★★★★★</span>
                                         </div>
                                     </div>
-                                    <p>“Clear teaching, great patience, and strong gospel foundation in every session.”</p>
+                                    <p>Clear teaching, great patience, and strong gospel foundation in every session.</p>
                                 </article>
                                 <article class="tp-review-card">
                                     <div class="tp-review-head">
@@ -224,7 +266,74 @@
                                             <span class="td-rating">★★★★★</span>
                                         </div>
                                     </div>
-                                    <p>“I went from nervous beginner to confidently playing for Sunday service.”</p>
+                                    <p>I went from nervous beginner to confidently playing for Sunday service.</p>
+                                </article>
+                            </div>
+                        </section>
+
+                        <!-- related teachers -->
+                        <section class="td-card">
+                            <div class="td-card-head">
+                                <div>
+                                    <h3>Other Recommended Teachers</h3>
+                                    <p>Explore more gospel music instructors you may like.</p>
+                                </div>
+                                <a href="teachers.html" class="td-link">Browse All</a>
+                            </div>
+                            <div class="stp-related-grid">
+                                <article class="tm-card stp-related-card">
+                                    <div class="tm-card-media">
+                                        <img src="assets/img/team/02.jpg" alt="Emily Davis">
+                                    </div>
+                                    <div class="tm-card-body">
+                                        <h3>Emily Davis</h3>
+                                        <p class="tm-specialty">Vocal Coach</p>
+                                        <div class="tm-card-meta">
+                                            <span class="tm-rating">★★★★★ <strong>5.0</strong></span>
+                                        </div>
+                                        <div class="tm-card-footer">
+                                            <strong class="tm-price">$45 <small>/ Lesson</small></strong>
+                                            <div class="tm-card-actions">
+                                                <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="tm-card stp-related-card">
+                                    <div class="tm-card-media">
+                                        <img src="assets/img/team/03.jpg" alt="Michael Brown">
+                                    </div>
+                                    <div class="tm-card-body">
+                                        <h3>Michael Brown</h3>
+                                        <p class="tm-specialty">Guitar Instructor</p>
+                                        <div class="tm-card-meta">
+                                            <span class="tm-rating">★★★★☆ <strong>4.7</strong></span>
+                                        </div>
+                                        <div class="tm-card-footer">
+                                            <strong class="tm-price">$40 <small>/ Lesson</small></strong>
+                                            <div class="tm-card-actions">
+                                                <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="tm-card stp-related-card">
+                                    <div class="tm-card-media">
+                                        <img src="assets/img/team/04.jpg" alt="David Wilson">
+                                    </div>
+                                    <div class="tm-card-body">
+                                        <h3>David Wilson</h3>
+                                        <p class="tm-specialty">Worship Leader</p>
+                                        <div class="tm-card-meta">
+                                            <span class="tm-rating">★★★★★ <strong>4.8</strong></span>
+                                        </div>
+                                        <div class="tm-card-footer">
+                                            <strong class="tm-price">$55 <small>/ Lesson</small></strong>
+                                            <div class="tm-card-actions">
+                                                <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </article>
                             </div>
                         </section>
@@ -241,19 +350,19 @@
                                 </div>
                             </div>
 
-                            <div class="gospel-alert gospel-alert-success" id="tp-booking-success" hidden>
+                            <div class="gospel-alert gospel-alert-success" id="stp-booking-success" hidden>
                                 <i class="far fa-circle-check"></i>
-                                <span>Booking details ready (demo). Continue to login to complete your request.</span>
+                                <span>Booking details ready (demo). Redirecting to booking…</span>
                             </div>
-                            <div class="gospel-alert gospel-alert-error" id="tp-booking-error" hidden>
+                            <div class="gospel-alert gospel-alert-error" id="stp-booking-error" hidden>
                                 <i class="far fa-circle-exclamation"></i>
-                                <span id="tp-booking-error-text">Please complete all booking fields.</span>
+                                <span id="stp-booking-error-text">Please complete all booking fields.</span>
                             </div>
 
-                            <form action="#" method="post" id="tp-booking-form" novalidate>
+                            <form action="#" method="post" id="stp-booking-form" novalidate>
                                 <div class="form-group">
-                                    <label for="tp-select-class">Select Class</label>
-                                    <select class="form-control form-select" id="tp-select-class" required>
+                                    <label for="stp-select-class">Select Class</label>
+                                    <select class="form-control form-select" id="stp-select-class" required>
                                         <option value="">Choose a class</option>
                                         <option value="Beginner Gospel Piano Worship Lessons" data-price="40" selected>Beginner Gospel Piano Worship Lessons</option>
                                         <option value="Vocal Training For Worship Leaders" data-price="35">Vocal Training For Worship Leaders</option>
@@ -261,8 +370,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="tp-select-date">Select Date</label>
-                                    <select class="form-control form-select" id="tp-select-date" required>
+                                    <label for="stp-select-date">Select Date</label>
+                                    <select class="form-control form-select" id="stp-select-date" required>
                                         <option value="">Choose a date</option>
                                         <option value="Monday, March 16, 2026">Monday, March 16, 2026</option>
                                         <option value="Wednesday, March 18, 2026">Wednesday, March 18, 2026</option>
@@ -270,20 +379,22 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="tp-select-time">Select Time</label>
-                                    <select class="form-control form-select" id="tp-select-time" required>
+                                    <label for="stp-select-time">Select Time</label>
+                                    <select class="form-control form-select" id="stp-select-time" required>
                                         <option value="">Choose a time</option>
-                                        <option value="09:00 AM">09:00 AM</option>
                                         <option value="10:00 AM">10:00 AM</option>
                                         <option value="02:00 PM">02:00 PM</option>
                                         <option value="04:00 PM">04:00 PM</option>
+                                        <option value="09:00 AM">09:00 AM</option>
                                     </select>
                                 </div>
                                 <div class="tp-booking-price">
                                     <span>Price</span>
-                                    <strong id="tp-booking-price">$40</strong>
+                                    <strong id="stp-booking-price">$40</strong>
                                 </div>
-                                <button type="submit" class="theme-btn w-100"><i class="far fa-arrow-right"></i> Continue Booking</button>
+                                <button type="submit" class="theme-btn w-100" id="stp-continue-btn">
+                                    <i class="far fa-arrow-right"></i> Continue Booking
+                                </button>
                             </form>
                         </div>
                     </aside>
@@ -291,48 +402,24 @@
 
             </div>
         </div>
-        <!-- public teacher profile end -->
+        <!-- student teacher profile end -->
 
     </main><!-- video modal -->
-    <div class="modal fade gospel-demo-modal" id="tp-video-modal" tabindex="-1" aria-labelledby="tp-video-title" aria-hidden="true">
+    <div class="modal fade gospel-demo-modal" id="stp-video-modal" tabindex="-1" aria-labelledby="stp-video-title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="tp-video-title">Meet Your Instructor</h5>
+                    <h5 class="modal-title" id="stp-video-title">Meet Your Teacher</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
                     <div class="tp-video-frame">
-                        <video id="tp-video-player" controls playsinline poster="assets/img/video/01.jpg">
+                        <video id="stp-video-player" controls playsinline poster="assets/img/video/01.jpg">
                             <source src="" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <p class="tp-video-demo-note">Frontend demo preview. The instructor intro video will play here after media upload is connected.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- class details modal -->
-    <div class="modal fade gospel-demo-modal" id="tp-class-modal" tabindex="-1" aria-labelledby="tp-class-title" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="tp-class-title">Class Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body booking-modal-body">
-                    <ul class="booking-modal-list">
-                        <li><span>Class</span><strong id="tp-class-name">—</strong></li>
-                        <li><span>Duration</span><strong id="tp-class-duration">—</strong></li>
-                        <li><span>Price</span><strong id="tp-class-price">—</strong></li>
-                    </ul>
-                    <p class="field-note mt-3 mb-0">Frontend demo. Select this class in the booking card to continue.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="theme-btn" id="tp-class-select-btn">Select Class</button>
                 </div>
             </div>
         </div>
@@ -353,26 +440,23 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- public teacher profile interactions -->
+    <!-- student teacher profile interactions -->
     <script>
         (function () {
-            var classSelect = document.getElementById('tp-select-class');
-            var dateSelect = document.getElementById('tp-select-date');
-            var timeSelect = document.getElementById('tp-select-time');
-            var priceEl = document.getElementById('tp-booking-price');
-            var form = document.getElementById('tp-booking-form');
-            var successBox = document.getElementById('tp-booking-success');
-            var errorBox = document.getElementById('tp-booking-error');
-            var errorText = document.getElementById('tp-booking-error-text');
+            var classSelect = document.getElementById('stp-select-class');
+            var dateSelect = document.getElementById('stp-select-date');
+            var timeSelect = document.getElementById('stp-select-time');
+            var priceEl = document.getElementById('stp-booking-price');
+            var form = document.getElementById('stp-booking-form');
+            var continueBtn = document.getElementById('stp-continue-btn');
+            var successBox = document.getElementById('stp-booking-success');
+            var errorBox = document.getElementById('stp-booking-error');
+            var errorText = document.getElementById('stp-booking-error-text');
 
-            var videoTrigger = document.getElementById('tp-video-trigger');
-            var videoModalEl = document.getElementById('tp-video-modal');
-            var videoPlayer = document.getElementById('tp-video-player');
+            var videoTrigger = document.getElementById('stp-video-trigger');
+            var videoModalEl = document.getElementById('stp-video-modal');
+            var videoPlayer = document.getElementById('stp-video-player');
             var videoModal = videoModalEl && window.bootstrap ? new bootstrap.Modal(videoModalEl) : null;
-
-            var classModalEl = document.getElementById('tp-class-modal');
-            var classModal = classModalEl && window.bootstrap ? new bootstrap.Modal(classModalEl) : null;
-            var pendingClassValue = '';
 
             function updatePrice() {
                 if (!classSelect || !priceEl) return;
@@ -381,10 +465,50 @@
                 priceEl.textContent = '$' + price;
             }
 
+            function updateButtonState() {
+                if (!continueBtn) return;
+                var ready = classSelect && classSelect.value && dateSelect && dateSelect.value && timeSelect && timeSelect.value;
+                continueBtn.disabled = !ready;
+            }
+
             if (classSelect) {
-                classSelect.addEventListener('change', updatePrice);
+                classSelect.addEventListener('change', function () {
+                    updatePrice();
+                    updateButtonState();
+                    if (errorBox) errorBox.hidden = true;
+                });
                 updatePrice();
             }
+
+            if (dateSelect) {
+                dateSelect.addEventListener('change', function () {
+                    updateButtonState();
+                    if (errorBox) errorBox.hidden = true;
+                });
+            }
+
+            if (timeSelect) {
+                timeSelect.addEventListener('change', function () {
+                    updateButtonState();
+                    if (errorBox) errorBox.hidden = true;
+                });
+            }
+
+            document.querySelectorAll('.stp-book-slot').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var date = btn.getAttribute('data-date') || '';
+                    var time = btn.getAttribute('data-time') || '';
+                    if (dateSelect && date) dateSelect.value = date;
+                    if (timeSelect && time) timeSelect.value = time;
+                    document.querySelectorAll('.stp-book-slot').forEach(function (el) {
+                        el.classList.remove('is-selected');
+                    });
+                    btn.classList.add('is-selected');
+                    updateButtonState();
+                    var booking = document.getElementById('book-lesson');
+                    if (booking) booking.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
 
             if (form) {
                 form.addEventListener('submit', function (e) {
@@ -399,8 +523,12 @@
                     }
 
                     if (successBox) successBox.hidden = false;
+                    if (continueBtn) {
+                        continueBtn.disabled = true;
+                        continueBtn.innerHTML = '<i class="far fa-check"></i> Continuing…';
+                    }
                     window.setTimeout(function () {
-                        window.location.href = 'teacher-login.html';
+                        window.location.href = 'booking.html';
                     }, 900);
                 });
             }
@@ -418,30 +546,7 @@
                 });
             }
 
-            document.querySelectorAll('.tp-view-class-btn').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    var card = btn.closest('.tp-class-card');
-                    if (!card || !classModal) return;
-                    pendingClassValue = card.getAttribute('data-class') || '';
-                    document.getElementById('tp-class-name').textContent = pendingClassValue;
-                    document.getElementById('tp-class-duration').textContent = card.getAttribute('data-duration') || '—';
-                    document.getElementById('tp-class-price').textContent = '$' + (card.getAttribute('data-price') || '—');
-                    classModal.show();
-                });
-            });
-
-            var selectClassBtn = document.getElementById('tp-class-select-btn');
-            if (selectClassBtn) {
-                selectClassBtn.addEventListener('click', function () {
-                    if (classSelect && pendingClassValue) {
-                        classSelect.value = pendingClassValue;
-                        updatePrice();
-                    }
-                    if (classModal) classModal.hide();
-                    var booking = document.getElementById('book-lesson');
-                    if (booking) booking.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
-            }
+            updateButtonState();
 
             if (window.jQuery && jQuery.fn.owlCarousel) {
                 jQuery('.tp-review-carousel').owlCarousel({

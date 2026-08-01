@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse gospel music teachers on Gospel Music Mastery">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Find Your Teacher - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="public-site-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end --><main class="main"><!-- teachers marketplace -->
+        <div class="teachers-market-area py-120">
+            <div class="container">
+
+                <!-- hero + search -->
+                <section class="tm-hero-card">
+                    <div class="tm-hero-copy">
+                        <h1>Learn From Experienced Gospel Music Instructors</h1>
+                        <p>Connect with skilled teachers who can help you improve your piano, vocals, guitar, and worship music skills.</p>
+                    </div>
+                    <form class="tm-search-form" id="tm-search-form" action="#" method="get" role="search">
+                        <div class="tm-search-field">
+                            <i class="far fa-search" aria-hidden="true"></i>
+                            <input type="search" class="form-control" id="tm-search-input"
+                                placeholder="Search teachers, instruments, or skills..." autocomplete="off">
+                        </div>
+                        <button type="submit" class="theme-btn"><i class="far fa-search"></i> Search</button>
+                    </form>
+                </section>
+
+                <div class="tm-layout">
+                    <button type="button" class="theme-btn theme-btn-outline tm-filter-toggle" id="tm-filter-toggle"
+                        aria-expanded="false" aria-controls="tm-filters">
+                        <i class="far fa-sliders"></i> Filters
+                    </button>
+
+                    <!-- filters -->
+                    <aside class="tm-filters" id="tm-filters" aria-label="Teacher filters">
+                        <div class="tm-filters-head">
+                            <h3>Filters</h3>
+                            <button type="button" class="tm-clear-filters" id="tm-clear-filters">Clear All</button>
+                        </div>
+
+                        <div class="tm-filter-group">
+                            <h4>Instrument</h4>
+                            <div class="tm-check-list">
+                                <label class="tm-check"><input type="checkbox" name="instrument" value="piano" checked> Piano</label>
+                                <label class="tm-check"><input type="checkbox" name="instrument" value="guitar" checked> Guitar</label>
+                                <label class="tm-check"><input type="checkbox" name="instrument" value="vocals" checked> Vocals</label>
+                                <label class="tm-check"><input type="checkbox" name="instrument" value="drums" checked> Drums</label>
+                                <label class="tm-check"><input type="checkbox" name="instrument" value="organ" checked> Organ</label>
+                                <label class="tm-check"><input type="checkbox" name="instrument" value="theory" checked> Music Theory</label>
+                            </div>
+                        </div>
+
+                        <div class="tm-filter-group">
+                            <h4>Skill Level</h4>
+                            <div class="tm-radio-list">
+                                <label class="tm-check"><input type="radio" name="level" value="beginner"> Beginner</label>
+                                <label class="tm-check"><input type="radio" name="level" value="intermediate" checked> Intermediate</label>
+                                <label class="tm-check"><input type="radio" name="level" value="advanced"> Advanced</label>
+                            </div>
+                        </div>
+
+                        <div class="tm-filter-group">
+                            <h4>Price Range</h4>
+                            <div class="tm-price-slider">
+                                <input type="range" id="tm-price-range" min="20" max="100" value="60" step="5"
+                                    aria-label="Maximum price per lesson">
+                                <div class="tm-price-labels">
+                                    <span>$20</span>
+                                    <strong id="tm-price-value">Up to $60</strong>
+                                    <span>$100</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tm-filter-group">
+                            <h4>Rating</h4>
+                            <div class="tm-radio-list">
+                                <label class="tm-check"><input type="radio" name="rating" value="5"> ★★★★★</label>
+                                <label class="tm-check"><input type="radio" name="rating" value="4"> ★★★★☆</label>
+                                <label class="tm-check"><input type="radio" name="rating" value="3" checked> ★★★☆☆</label>
+                            </div>
+                        </div>
+
+                        <div class="tm-filter-group">
+                            <h4>Availability</h4>
+                            <div class="tm-check-list">
+                                <label class="tm-check"><input type="checkbox" name="availability" value="today"> Available Today</label>
+                                <label class="tm-check"><input type="checkbox" name="availability" value="week" checked> Available This Week</label>
+                                <label class="tm-check"><input type="checkbox" name="availability" value="weekend"> Weekend Availability</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="theme-btn w-100" id="tm-apply-filters">
+                            <i class="far fa-filter"></i> Apply Filters
+                        </button>
+                    </aside>
+                    <div class="tm-filters-backdrop" id="tm-filters-backdrop" hidden></div>
+
+                    <!-- listings -->
+                    <div class="tm-listings">
+                        <div class="tm-results-bar">
+                            <p><strong id="tm-results-count">8</strong> teachers found</p>
+                            <div class="tm-sort">
+                                <label for="tm-sort-select">Sort by</label>
+                                <select class="form-control form-select" id="tm-sort-select">
+                                    <option value="recommended" selected>Recommended</option>
+                                    <option value="rating">Highest Rated</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="tm-empty" id="tm-empty" hidden>
+                            <i class="far fa-search"></i>
+                            <h3>No teachers found.</h3>
+                            <p>Try adjusting your filters.</p>
+                            <button type="button" class="theme-btn theme-btn-outline" id="tm-empty-reset">
+                                <i class="far fa-rotate-left"></i> Reset Filters
+                            </button>
+                        </div>
+
+                        <div class="tm-grid" id="tm-grid">
+                            <article class="tm-card" data-name="john smith" data-specialization="gospel piano instructor"
+                                data-instrument="piano" data-level="beginner intermediate" data-price="40" data-rating="5">
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/01.jpg" alt="John Smith">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>John Smith</h3>
+                                    <p class="tm-specialty">Gospel Piano Instructor</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>4.9</strong></span>
+                                        <span><i class="far fa-users"></i> 25 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 10+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$40 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card" data-name="emily davis" data-specialization="vocal coach"
+                                data-instrument="vocals" data-level="beginner intermediate advanced" data-price="45" data-rating="5">
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/02.jpg" alt="Emily Davis">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Emily Davis</h3>
+                                    <p class="tm-specialty">Vocal Coach</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>5.0</strong></span>
+                                        <span><i class="far fa-users"></i> 32 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 8+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$45 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card" data-name="michael brown" data-specialization="guitar instructor"
+                                data-instrument="guitar" data-level="beginner intermediate" data-price="40" data-rating="4">
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/03.jpg" alt="Michael Brown">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Michael Brown</h3>
+                                    <p class="tm-specialty">Guitar Instructor</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★☆ <strong>4.7</strong></span>
+                                        <span><i class="far fa-users"></i> 18 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 7+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$40 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card" data-name="david wilson" data-specialization="worship leader"
+                                data-instrument="vocals piano theory" data-level="intermediate advanced" data-price="55" data-rating="5">
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/04.jpg" alt="David Wilson">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>David Wilson</h3>
+                                    <p class="tm-specialty">Worship Leader</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>4.8</strong></span>
+                                        <span><i class="far fa-users"></i> 40 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 12+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$55 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card" data-name="sophia martinez" data-specialization="drums instructor"
+                                data-instrument="drums" data-level="beginner intermediate" data-price="42" data-rating="4">
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/05.jpg" alt="Sophia Martinez">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Sophia Martinez</h3>
+                                    <p class="tm-specialty">Drums Instructor</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★☆ <strong>4.6</strong></span>
+                                        <span><i class="far fa-users"></i> 14 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 6+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$42 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card" data-name="james lee" data-specialization="hammond organ teacher"
+                                data-instrument="organ" data-level="intermediate advanced" data-price="50" data-rating="5">
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/06.jpg" alt="James Lee">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>James Lee</h3>
+                                    <p class="tm-specialty">Hammond Organ Teacher</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>4.9</strong></span>
+                                        <span><i class="far fa-users"></i> 21 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 15+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$50 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card" data-name="olivia harris" data-specialization="music theory tutor"
+                                data-instrument="theory piano" data-level="beginner intermediate advanced" data-price="38" data-rating="5">
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/07.jpg" alt="Olivia Harris">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Olivia Harris</h3>
+                                    <p class="tm-specialty">Music Theory Tutor</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★★★ <strong>4.8</strong></span>
+                                        <span><i class="far fa-users"></i> 27 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 9+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$38 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="tm-card" data-name="daniel clark" data-specialization="gospel guitar coach"
+                                data-instrument="guitar" data-level="beginner" data-price="35" data-rating="3">
+                                <div class="tm-card-media">
+                                    <img src="assets/img/team/08.jpg" alt="Daniel Clark">
+                                </div>
+                                <div class="tm-card-body">
+                                    <h3>Daniel Clark</h3>
+                                    <p class="tm-specialty">Gospel Guitar Coach</p>
+                                    <div class="tm-card-meta">
+                                        <span class="tm-rating">★★★☆☆ <strong>3.9</strong></span>
+                                        <span><i class="far fa-users"></i> 11 Students</span>
+                                        <span><i class="far fa-briefcase"></i> 4+ Years</span>
+                                    </div>
+                                    <div class="tm-card-footer">
+                                        <strong class="tm-price">$35 <small>/ Lesson</small></strong>
+                                        <div class="tm-card-actions">
+                                            <a href="student-teacher-profile.html" class="theme-btn theme-btn-outline">View Profile</a>
+                                            <a href="booking.html" class="theme-btn">Book Lesson</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <nav aria-label="Teachers pagination" id="tm-pagination">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><i class="far fa-angle-left"></i></a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#" aria-label="Next"><i class="far fa-angle-right"></i></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- teachers marketplace end -->
+
+    </main><!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- teachers marketplace interactions (frontend demo) -->
+    <script>
+        (function () {
+            var layout = document.querySelector('.tm-layout');
+            var filterToggle = document.getElementById('tm-filter-toggle');
+            var filters = document.getElementById('tm-filters');
+            var backdrop = document.getElementById('tm-filters-backdrop');
+            var clearBtn = document.getElementById('tm-clear-filters');
+            var applyBtn = document.getElementById('tm-apply-filters');
+            var emptyReset = document.getElementById('tm-empty-reset');
+            var searchForm = document.getElementById('tm-search-form');
+            var searchInput = document.getElementById('tm-search-input');
+            var priceRange = document.getElementById('tm-price-range');
+            var priceValue = document.getElementById('tm-price-value');
+            var sortSelect = document.getElementById('tm-sort-select');
+            var grid = document.getElementById('tm-grid');
+            var emptyState = document.getElementById('tm-empty');
+            var resultsCount = document.getElementById('tm-results-count');
+            var pagination = document.getElementById('tm-pagination');
+            var cards = grid ? Array.prototype.slice.call(grid.querySelectorAll('.tm-card')) : [];
+
+            function closeFilters() {
+                if (!layout) return;
+                layout.classList.remove('is-filters-open');
+                if (filterToggle) filterToggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+
+            function openFilters() {
+                if (!layout) return;
+                layout.classList.add('is-filters-open');
+                if (filterToggle) filterToggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+
+            if (filterToggle) {
+                filterToggle.addEventListener('click', function () {
+                    if (layout && layout.classList.contains('is-filters-open')) {
+                        closeFilters();
+                    } else {
+                        openFilters();
+                    }
+                });
+            }
+
+            if (backdrop) backdrop.addEventListener('click', closeFilters);
+
+            function updatePriceLabel() {
+                if (priceRange && priceValue) {
+                    priceValue.textContent = 'Up to $' + priceRange.value;
+                }
+            }
+
+            if (priceRange) {
+                priceRange.addEventListener('input', updatePriceLabel);
+                updatePriceLabel();
+            }
+
+            function getCheckedValues(name) {
+                return Array.prototype.map.call(
+                    document.querySelectorAll('input[name="' + name + '"]:checked'),
+                    function (el) { return el.value; }
+                );
+            }
+
+            function getSelectedRadio(name) {
+                var el = document.querySelector('input[name="' + name + '"]:checked');
+                return el ? el.value : '';
+            }
+
+            function applyFilters() {
+                var query = ((searchInput && searchInput.value) || '').trim().toLowerCase();
+                var instruments = getCheckedValues('instrument');
+                var level = getSelectedRadio('level');
+                var ratingMin = parseInt(getSelectedRadio('rating'), 10) || 1;
+                var maxPrice = priceRange ? parseInt(priceRange.value, 10) : 100;
+                var visible = 0;
+
+                cards.forEach(function (card) {
+                    var name = card.getAttribute('data-name') || '';
+                    var specialty = card.getAttribute('data-specialization') || '';
+                    var instrument = (card.getAttribute('data-instrument') || '').split(/\s+/);
+                    var levels = (card.getAttribute('data-level') || '').split(/\s+/);
+                    var price = parseInt(card.getAttribute('data-price'), 10) || 0;
+                    var rating = parseInt(card.getAttribute('data-rating'), 10) || 0;
+
+                    var matchesSearch = !query || name.indexOf(query) !== -1 || specialty.indexOf(query) !== -1 ||
+                        instrument.some(function (item) { return item.indexOf(query) !== -1; });
+                    var matchesInstrument = !instruments.length || instruments.some(function (item) {
+                        return instrument.indexOf(item) !== -1;
+                    });
+                    var matchesLevel = !level || levels.indexOf(level) !== -1;
+                    var matchesPrice = price <= maxPrice;
+                    var matchesRating = rating >= ratingMin;
+
+                    var show = matchesSearch && matchesInstrument && matchesLevel && matchesPrice && matchesRating;
+                    card.hidden = !show;
+                    if (show) visible += 1;
+                });
+
+                if (resultsCount) resultsCount.textContent = String(visible);
+                if (emptyState) emptyState.hidden = visible > 0;
+                if (grid) grid.hidden = visible === 0;
+                if (pagination) pagination.hidden = visible === 0;
+
+                if (window.matchMedia('(max-width: 991px)').matches) {
+                    closeFilters();
+                }
+            }
+
+            function sortCards() {
+                if (!grid || !sortSelect) return;
+                var mode = sortSelect.value;
+                var sorted = cards.slice().sort(function (a, b) {
+                    var pa = parseInt(a.getAttribute('data-price'), 10) || 0;
+                    var pb = parseInt(b.getAttribute('data-price'), 10) || 0;
+                    var ra = parseInt(a.getAttribute('data-rating'), 10) || 0;
+                    var rb = parseInt(b.getAttribute('data-rating'), 10) || 0;
+                    if (mode === 'price-low') return pa - pb;
+                    if (mode === 'price-high') return pb - pa;
+                    if (mode === 'rating') return rb - ra;
+                    return 0;
+                });
+                sorted.forEach(function (card) {
+                    grid.appendChild(card);
+                });
+            }
+
+            function clearFilters() {
+                document.querySelectorAll('input[name="instrument"]').forEach(function (el) { el.checked = true; });
+                document.querySelectorAll('input[name="availability"]').forEach(function (el) {
+                    el.checked = el.value === 'week';
+                });
+                var intermediate = document.querySelector('input[name="level"][value="intermediate"]');
+                if (intermediate) intermediate.checked = true;
+                var threeStar = document.querySelector('input[name="rating"][value="3"]');
+                if (threeStar) threeStar.checked = true;
+                if (priceRange) {
+                    priceRange.value = '60';
+                    updatePriceLabel();
+                }
+                if (searchInput) searchInput.value = '';
+                if (sortSelect) sortSelect.value = 'recommended';
+                applyFilters();
+            }
+
+            if (searchForm) {
+                searchForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    applyFilters();
+                });
+            }
+
+            if (applyBtn) applyBtn.addEventListener('click', applyFilters);
+            if (clearBtn) clearBtn.addEventListener('click', clearFilters);
+            if (emptyReset) emptyReset.addEventListener('click', clearFilters);
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function () {
+                    sortCards();
+                    applyFilters();
+                });
+            }
+
+            if (pagination) {
+                pagination.addEventListener('click', function (e) {
+                    var link = e.target.closest('.page-link');
+                    if (!link) return;
+                    e.preventDefault();
+                    var item = link.parentElement;
+                    if (!item || item.classList.contains('active')) return;
+                    pagination.querySelectorAll('.page-item').forEach(function (li) {
+                        li.classList.remove('active');
+                    });
+                    if (!link.getAttribute('aria-label')) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+
+            applyFilters();
+        })();
+    </script>
+
+</body>
+
+</html>

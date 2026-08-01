@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your Gospel Music Mastery payment history">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>My Payments - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="student-portal-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <main class="main">
+
+        <!-- student payments -->
+        <div class="student-dashboard-area py-120">
+            <div class="container">
+
+                <!-- dashboard profile header -->
+                <div class="sd-profile-header">
+                    <div class="sd-profile-main">
+                        <div class="sd-profile-avatar">
+                            <img src="assets/img/team/02.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="sd-profile-meta">
+                            <h2>Sarah Johnson</h2>
+                            <span class="sd-role">Music Student</span>
+                            <div class="sd-profile-stats">
+                                <span class="sd-stat-item"><i class="far fa-signal"></i> Learning Level: Intermediate</span>
+                                <span class="sd-stat-item"><i class="far fa-music"></i> Gospel Piano</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sd-profile-actions">
+                        <a href="teachers.html" class="theme-btn"><i class="far fa-calendar-plus"></i> Book a Lesson</a>
+                    </div>
+                </div>
+
+                <div class="sd-shell">
+                    <button type="button" class="sd-sidebar-toggle theme-btn theme-btn-outline" id="sd-sidebar-toggle"
+                        aria-expanded="false" aria-controls="sd-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <!-- sidebar -->
+                    <aside class="sd-sidebar" id="sd-sidebar" aria-label="Student navigation">
+                        <nav class="sd-nav">
+                            <ul>
+                                <li><a href="student-dashboard.html" class="sd-nav-link" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+                                <li><a href="student-profile.html" class="sd-nav-link" data-nav="profile"><i class="far fa-user"></i> My Profile</a></li>
+                                <li><a href="student-lessons.html" class="sd-nav-link" data-nav="lessons"><i class="far fa-book-open"></i> My Lessons</a></li>
+                                <li><a href="student-bookings.html" class="sd-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> My Bookings</a></li>
+                                <li><a href="student-favourites.html" class="sd-nav-link" data-nav="favourites"><i class="far fa-heart"></i> Favourite Teachers</a></li>
+                                <li><a href="student-payments.html" class="sd-nav-link active" data-nav="payments"><i class="far fa-credit-card"></i> Payments</a></li>
+                                <li><a href="student-settings.html" class="sd-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="student-login.html" class="sd-nav-link sd-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="sd-sidebar-backdrop" id="sd-sidebar-backdrop" hidden></div>
+
+                    <!-- main content -->
+                    <div class="sd-main">
+
+                        <!-- page header -->
+                        <section class="sd-card sd-welcome-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <span class="login-portal-badge">Payment History</span>
+                                    <h3>My Payments</h3>
+                                    <p>View your lesson payments, transaction history, and billing information.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- summary stats -->
+                        <section class="sd-stats-grid">
+                            <div class="sd-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-dollar-sign"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value">$<span class="counter" data-count="850">0</span></span>
+                                    <span class="sd-stat-title">Total Spent</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-circle-check"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value counter" data-count="12">0</span>
+                                    <span class="sd-stat-title">Completed Payments</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-clock"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value counter" data-count="2">0</span>
+                                    <span class="sd-stat-title">Pending Payments</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-rotate-left"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value counter" data-count="1">0</span>
+                                    <span class="sd-stat-title">Refunds</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- payment method -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Saved Payment Method</h3>
+                                    <p>Your payment information is securely processed through our payment provider.</p>
+                                </div>
+                                <span class="sb-badge is-confirmed">Connected</span>
+                            </div>
+                            <div class="sp-method-row">
+                                <div class="sp-method-icon"><i class="fab fa-stripe-s"></i></div>
+                                <div class="sp-method-info">
+                                    <strong>Stripe</strong>
+                                    <span>Card ending in 4242</span>
+                                    <span class="sp-card-mask">**** **** **** 4242</span>
+                                </div>
+                                <button type="button" class="theme-btn theme-btn-outline" id="sp-manage-method">
+                                    <i class="far fa-credit-card"></i> Manage Payment Method
+                                </button>
+                            </div>
+                            <p class="sp-secure-note">
+                                <i class="far fa-shield-check"></i>
+                                Frontend demo only — no real payment gateway or Stripe connection.
+                            </p>
+                        </section>
+
+                        <!-- transaction history -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Transaction History</h3>
+                                    <p>Review recent lesson payments and invoices.</p>
+                                </div>
+                            </div>
+
+                            <div class="sl-tabs sp-tabs" role="tablist" aria-label="Payment status filters">
+                                <button type="button" class="sl-tab is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+                                <button type="button" class="sl-tab" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+                                <button type="button" class="sl-tab" data-filter="pending" role="tab" aria-selected="false">Pending</button>
+                                <button type="button" class="sl-tab" data-filter="failed" role="tab" aria-selected="false">Failed</button>
+                            </div>
+
+                            <div class="sl-empty" id="sp-empty" hidden>
+                                <i class="far fa-receipt"></i>
+                                <h3>No payment history available yet.</h3>
+                                <p>Your lesson payments and invoices will appear here.</p>
+                                <a href="teachers.html" class="theme-btn"><i class="far fa-calendar-plus"></i> Book a Lesson</a>
+                            </div>
+
+                            <div class="table-responsive td-table-wrap" id="sp-table-wrap">
+                                <table class="table td-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Teacher</th>
+                                            <th>Lesson</th>
+                                            <th>Amount</th>
+                                            <th>Payment Method</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr class="sp-row" data-status="completed"
+                                            data-id="TXN-20260320-001"
+                                            data-date="March 20, 2026"
+                                            data-student="Sarah Johnson"
+                                            data-teacher="John Smith"
+                                            data-lesson="Gospel Piano Lesson"
+                                            data-amount="$40"
+                                            data-method="Stripe">
+                                            <td data-label="Date">March 20, 2026</td>
+                                            <td data-label="Teacher">John Smith</td>
+                                            <td data-label="Lesson">Gospel Piano Lesson</td>
+                                            <td data-label="Amount"><strong>$40</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="sb-badge is-confirmed">Completed</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-view-receipt">View Receipt</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-download-invoice">Download Invoice</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="sp-row" data-status="pending"
+                                            data-id="TXN-20260325-002"
+                                            data-date="March 25, 2026"
+                                            data-student="Sarah Johnson"
+                                            data-teacher="Emily Davis"
+                                            data-lesson="Vocal Training"
+                                            data-amount="$50"
+                                            data-method="Stripe">
+                                            <td data-label="Date">March 25, 2026</td>
+                                            <td data-label="Teacher">Emily Davis</td>
+                                            <td data-label="Lesson">Vocal Training</td>
+                                            <td data-label="Amount"><strong>$50</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="sb-badge is-pending">Pending</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-view-receipt">View Receipt</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-download-invoice">Download Invoice</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="sp-row" data-status="completed"
+                                            data-id="TXN-20260310-003"
+                                            data-date="March 10, 2026"
+                                            data-student="Sarah Johnson"
+                                            data-teacher="Michael Brown"
+                                            data-lesson="Guitar Basics"
+                                            data-amount="$40"
+                                            data-method="Stripe">
+                                            <td data-label="Date">March 10, 2026</td>
+                                            <td data-label="Teacher">Michael Brown</td>
+                                            <td data-label="Lesson">Guitar Basics</td>
+                                            <td data-label="Amount"><strong>$40</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="sb-badge is-confirmed">Completed</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-view-receipt">View Receipt</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-download-invoice">Download Invoice</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="sp-row" data-status="completed"
+                                            data-id="TXN-20260305-004"
+                                            data-date="March 5, 2026"
+                                            data-student="Sarah Johnson"
+                                            data-teacher="John Smith"
+                                            data-lesson="Beginner Gospel Piano"
+                                            data-amount="$40"
+                                            data-method="Stripe">
+                                            <td data-label="Date">March 5, 2026</td>
+                                            <td data-label="Teacher">John Smith</td>
+                                            <td data-label="Lesson">Beginner Gospel Piano</td>
+                                            <td data-label="Amount"><strong>$40</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="sb-badge is-confirmed">Completed</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-view-receipt">View Receipt</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-download-invoice">Download Invoice</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="sp-row" data-status="failed"
+                                            data-id="TXN-20260228-005"
+                                            data-date="February 28, 2026"
+                                            data-student="Sarah Johnson"
+                                            data-teacher="James Lee"
+                                            data-lesson="Hammond Organ Intro"
+                                            data-amount="$50"
+                                            data-method="Stripe">
+                                            <td data-label="Date">February 28, 2026</td>
+                                            <td data-label="Teacher">James Lee</td>
+                                            <td data-label="Lesson">Hammond Organ Intro</td>
+                                            <td data-label="Amount"><strong>$50</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="sb-badge is-cancelled">Failed</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-view-receipt">View Receipt</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-download-invoice">Download Invoice</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="sp-row" data-status="pending"
+                                            data-id="TXN-20260402-006"
+                                            data-date="April 2, 2026"
+                                            data-student="Sarah Johnson"
+                                            data-teacher="Olivia Harris"
+                                            data-lesson="Music Theory"
+                                            data-amount="$38"
+                                            data-method="Stripe">
+                                            <td data-label="Date">April 2, 2026</td>
+                                            <td data-label="Teacher">Olivia Harris</td>
+                                            <td data-label="Lesson">Music Theory</td>
+                                            <td data-label="Amount"><strong>$38</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="sb-badge is-pending">Pending</span></td>
+                                            <td data-label="Action">
+                                                <div class="sb-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-view-receipt">View Receipt</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline sd-action-btn sp-download-invoice">Download Invoice</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- billing information -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Billing Information</h3>
+                                    <p>Used for invoices and payment receipts (frontend demo).</p>
+                                </div>
+                            </div>
+
+                            <div class="gospel-alert gospel-alert-success" id="sp-billing-success" hidden>
+                                <i class="far fa-circle-check"></i>
+                                <span>Billing information updated successfully (demo).</span>
+                            </div>
+                            <div class="gospel-alert gospel-alert-error" id="sp-billing-error" hidden>
+                                <i class="far fa-circle-exclamation"></i>
+                                <span id="sp-billing-error-text">Please complete all required fields.</span>
+                            </div>
+
+                            <form action="#" method="post" id="sp-billing-form" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sp-full-name">Full Name</label>
+                                            <input type="text" class="form-control" id="sp-full-name" name="full_name" value="Sarah Johnson">
+                                            <span class="field-feedback" data-for="sp-full-name"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sp-email">Email</label>
+                                            <input type="email" class="form-control" id="sp-email" name="email" value="sarah@example.com">
+                                            <span class="field-feedback" data-for="sp-email"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sp-country">Country</label>
+                                            <select class="form-control form-select" id="sp-country" name="country">
+                                                <option value="">Select country</option>
+                                                <option value="United States" selected>United States</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <span class="field-feedback" data-for="sp-country"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sp-address">Address</label>
+                                            <input type="text" class="form-control" id="sp-address" name="address" value="25 Milford Road">
+                                            <span class="field-feedback" data-for="sp-address"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-md-0">
+                                            <label for="sp-city">City</label>
+                                            <input type="text" class="form-control" id="sp-city" name="city" value="Nashville">
+                                            <span class="field-feedback" data-for="sp-city"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-0">
+                                            <label for="sp-zip">ZIP Code</label>
+                                            <input type="text" class="form-control" id="sp-zip" name="zip" value="37201">
+                                            <span class="field-feedback" data-for="sp-zip"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sd-card-actions sd-profile-form-actions mt-3">
+                                    <button type="submit" class="theme-btn"><i class="far fa-check"></i> Update Billing</button>
+                                </div>
+                            </form>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- student payments end -->
+
+    </main><!-- receipt modal -->
+    <div class="modal fade gospel-demo-modal" id="sp-receipt-modal" tabindex="-1" aria-labelledby="sp-receipt-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="sp-receipt-print">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sp-receipt-title">Payment Receipt</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="booking-modal-list">
+                        <li><span>Transaction ID</span><strong id="sp-modal-id">—</strong></li>
+                        <li><span>Date</span><strong id="sp-modal-date">—</strong></li>
+                        <li><span>Student Name</span><strong id="sp-modal-student">—</strong></li>
+                        <li><span>Teacher Name</span><strong id="sp-modal-teacher">—</strong></li>
+                        <li><span>Lesson Name</span><strong id="sp-modal-lesson">—</strong></li>
+                        <li><span>Amount</span><strong id="sp-modal-amount">—</strong></li>
+                        <li><span>Payment Method</span><strong id="sp-modal-method">—</strong></li>
+                        <li><span>Payment Status</span><strong id="sp-modal-status">—</strong></li>
+                    </ul>
+                    <p class="sp-secure-note mb-0">
+                        <i class="far fa-info-circle"></i>
+                        Demo receipt only. No real payment was processed.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="theme-btn" id="sp-print-receipt">
+                        <i class="far fa-print"></i> Print Receipt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gospel-alert gospel-alert-success sl-toast" id="sp-toast" hidden>
+        <i class="far fa-circle-check"></i>
+        <span id="sp-toast-text">Action completed (demo).</span>
+    </div>
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- student payments interactions -->
+    <script>
+        (function () {
+            var shell = document.querySelector('.sd-shell');
+            var toggle = document.getElementById('sd-sidebar-toggle');
+            var sidebar = document.getElementById('sd-sidebar');
+            var backdrop = document.getElementById('sd-sidebar-backdrop');
+            var navLinks = sidebar ? sidebar.querySelectorAll('.sd-nav-link') : [];
+
+            function closeSidebar() {
+                if (!shell) return;
+                shell.classList.remove('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+
+            function openSidebar() {
+                if (!shell) return;
+                shell.classList.add('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+
+            if (toggle && shell) {
+                toggle.addEventListener('click', function () {
+                    if (shell.classList.contains('is-sidebar-open')) closeSidebar();
+                    else openSidebar();
+                });
+            }
+            if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+            var currentPage = window.location.pathname.split('/').pop() || 'student-payments.html';
+            navLinks.forEach(function (link) {
+                link.classList.toggle('active', link.getAttribute('href') === currentPage);
+                link.addEventListener('click', function () {
+                    if (window.matchMedia('(max-width: 991px)').matches) closeSidebar();
+                });
+            });
+
+            document.querySelectorAll('.sd-stat-card .counter').forEach(function (el) {
+                var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+                var duration = 900;
+                var start = null;
+                function step(timestamp) {
+                    if (!start) start = timestamp;
+                    var progress = Math.min((timestamp - start) / duration, 1);
+                    el.textContent = Math.floor(progress * target);
+                    if (progress < 1) window.requestAnimationFrame(step);
+                    else el.textContent = target;
+                }
+                window.requestAnimationFrame(step);
+            });
+
+            var toast = document.getElementById('sp-toast');
+            var toastText = document.getElementById('sp-toast-text');
+            function showToast(message) {
+                if (!toast) return;
+                if (toastText) toastText.textContent = message;
+                toast.hidden = false;
+                window.setTimeout(function () { toast.hidden = true; }, 2200);
+            }
+
+            var manageBtn = document.getElementById('sp-manage-method');
+            if (manageBtn) {
+                manageBtn.addEventListener('click', function () {
+                    showToast('Payment method management is a frontend demo only.');
+                });
+            }
+
+            var tabs = document.querySelectorAll('.sp-tabs .sl-tab');
+            var rows = document.querySelectorAll('.sp-row');
+            var emptyState = document.getElementById('sp-empty');
+            var tableWrap = document.getElementById('sp-table-wrap');
+
+            function applyFilter(filter) {
+                var visible = 0;
+                rows.forEach(function (row) {
+                    var status = row.getAttribute('data-status') || '';
+                    var show = filter === 'all' || status === filter;
+                    row.hidden = !show;
+                    if (show) visible += 1;
+                });
+                if (emptyState) emptyState.hidden = visible > 0;
+                if (tableWrap) tableWrap.hidden = visible === 0;
+            }
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) {
+                        t.classList.remove('is-active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('is-active');
+                    tab.setAttribute('aria-selected', 'true');
+                    applyFilter(tab.getAttribute('data-filter') || 'all');
+                });
+            });
+
+            var modalEl = document.getElementById('sp-receipt-modal');
+            var modal = modalEl && window.bootstrap ? new bootstrap.Modal(modalEl) : null;
+
+            function fillReceipt(row) {
+                var status = row.getAttribute('data-status') || '';
+                var statusLabel = status.charAt(0).toUpperCase() + status.slice(1);
+                var map = {
+                    'sp-modal-id': row.getAttribute('data-id'),
+                    'sp-modal-date': row.getAttribute('data-date'),
+                    'sp-modal-student': row.getAttribute('data-student'),
+                    'sp-modal-teacher': row.getAttribute('data-teacher'),
+                    'sp-modal-lesson': row.getAttribute('data-lesson'),
+                    'sp-modal-amount': row.getAttribute('data-amount'),
+                    'sp-modal-method': row.getAttribute('data-method'),
+                    'sp-modal-status': statusLabel
+                };
+                Object.keys(map).forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el) el.textContent = map[id] || '—';
+                });
+            }
+
+            document.querySelectorAll('.sp-view-receipt').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var row = btn.closest('.sp-row');
+                    if (!row) return;
+                    fillReceipt(row);
+                    if (modal) modal.show();
+                });
+            });
+
+            document.querySelectorAll('.sp-download-invoice').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var row = btn.closest('.sp-row');
+                    var id = row ? row.getAttribute('data-id') : 'invoice';
+                    showToast('Invoice download demo for ' + id + '.');
+                });
+            });
+
+            var printBtn = document.getElementById('sp-print-receipt');
+            if (printBtn) {
+                printBtn.addEventListener('click', function () {
+                    window.print();
+                });
+            }
+
+            var billingForm = document.getElementById('sp-billing-form');
+            var billingSuccess = document.getElementById('sp-billing-success');
+            var billingError = document.getElementById('sp-billing-error');
+            var billingErrorText = document.getElementById('sp-billing-error-text');
+
+            function setFeedback(key, message, isInvalid) {
+                var feedback = document.querySelector('.field-feedback[data-for="' + key + '"]');
+                if (!feedback) return;
+                feedback.textContent = message || '';
+                feedback.classList.toggle('is-invalid-feedback', !!isInvalid);
+            }
+
+            if (billingForm) {
+                billingForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    if (billingSuccess) billingSuccess.hidden = true;
+                    if (billingError) billingError.hidden = true;
+                    billingForm.querySelectorAll('.is-invalid').forEach(function (el) { el.classList.remove('is-invalid'); });
+                    billingForm.querySelectorAll('.field-feedback').forEach(function (el) {
+                        el.textContent = '';
+                        el.classList.remove('is-invalid-feedback');
+                    });
+
+                    var fields = [
+                        { id: 'sp-full-name', key: 'sp-full-name', msg: 'Full name is required.' },
+                        { id: 'sp-email', key: 'sp-email', msg: 'Email is required.' },
+                        { id: 'sp-country', key: 'sp-country', msg: 'Country is required.' },
+                        { id: 'sp-address', key: 'sp-address', msg: 'Address is required.' },
+                        { id: 'sp-city', key: 'sp-city', msg: 'City is required.' },
+                        { id: 'sp-zip', key: 'sp-zip', msg: 'ZIP code is required.' }
+                    ];
+
+                    var valid = true;
+                    var firstError = '';
+                    fields.forEach(function (field) {
+                        var input = document.getElementById(field.id);
+                        if (!input || !(input.value || '').trim()) {
+                            if (input) input.classList.add('is-invalid');
+                            setFeedback(field.key, field.msg, true);
+                            valid = false;
+                            firstError = firstError || field.msg;
+                        }
+                    });
+
+                    var email = document.getElementById('sp-email');
+                    if (email && (email.value || '').trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+                        email.classList.add('is-invalid');
+                        setFeedback('sp-email', 'Please enter a valid email address.', true);
+                        valid = false;
+                        firstError = firstError || 'Please enter a valid email address.';
+                    }
+
+                    if (!valid) {
+                        if (billingErrorText) billingErrorText.textContent = firstError;
+                        if (billingError) billingError.hidden = false;
+                        return;
+                    }
+
+                    if (billingSuccess) {
+                        billingSuccess.hidden = false;
+                        billingSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+            }
+
+            applyFilter('all');
+        })();
+    </script>
+
+</body>
+
+</html>

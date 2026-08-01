@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student registration for Gospel Music Mastery">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Student Registration - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="public-site-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end --><main class="main"><!-- student registration area -->
+        <div class="login-area py-120">
+            <div class="container">
+                <div class="col-lg-7 col-md-9 mx-auto">
+                    <div class="login-form student-login-form teacher-register-form">
+                        <div class="login-header">
+                            <span class="login-portal-badge">Student Portal</span>
+                            <h2>Create Your Student Account</h2>
+                            <p class="login-desc">Register to book gospel music lessons, connect with teachers, and track your learning progress.</p>
+                        </div>
+
+                        <div class="gospel-alert gospel-alert-error" id="register-error" hidden>
+                            <i class="far fa-circle-exclamation"></i>
+                            <span id="register-error-text">Please fill in all required fields correctly.</span>
+                        </div>
+                        <div class="gospel-alert gospel-alert-success" id="register-success" hidden>
+                            <i class="far fa-circle-check"></i>
+                            <span>Registration successful (demo). Redirecting to the enrollment agreement…</span>
+                        </div>
+
+                        <form action="#" method="post" id="student-register-form" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" class="form-control" id="first-name" name="first_name"
+                                            placeholder="Enter first name" autocomplete="given-name">
+                                        <span class="field-feedback" data-for="first-name"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" class="form-control" id="last-name" name="last_name"
+                                            placeholder="Enter last name" autocomplete="family-name">
+                                        <span class="field-feedback" data-for="last-name"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-username">Username</label>
+                                <input type="text" class="form-control" id="reg-username" name="username"
+                                    placeholder="Choose a username" autocomplete="username">
+                                <span class="field-feedback" data-for="reg-username"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-email">Email Address</label>
+                                <input type="email" class="form-control" id="reg-email" name="email"
+                                    placeholder="Enter email address" autocomplete="email">
+                                <span class="field-feedback" data-for="reg-email"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="reg-password">Password</label>
+                                        <div class="password-field">
+                                            <input type="password" class="form-control" id="reg-password" name="password"
+                                                placeholder="Create password" autocomplete="new-password">
+                                            <button type="button" class="password-toggle" data-target="reg-password"
+                                                aria-label="Show password" title="Show password">
+                                                <i class="far fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <span class="field-feedback" data-for="reg-password"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="reg-confirm-password">Confirm Password</label>
+                                        <div class="password-field">
+                                            <input type="password" class="form-control" id="reg-confirm-password"
+                                                name="confirm_password" placeholder="Confirm password"
+                                                autocomplete="new-password">
+                                            <button type="button" class="password-toggle"
+                                                data-target="reg-confirm-password" aria-label="Show password"
+                                                title="Show password">
+                                                <i class="far fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <span class="field-feedback" data-for="reg-confirm-password"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="agreement-area">
+                                <div class="form-check form-group">
+                                    <input class="form-check-input" type="checkbox" value="1" id="agree-agreement"
+                                        name="agree_agreement">
+                                    <label class="form-check-label" for="agree-agreement">
+                                        I have read and agree to the Student Enrollment Agreement.
+                                    </label>
+                                    <span class="field-feedback" data-for="agree-agreement"></span>
+                                </div>
+                                <a href="student-agreement.html" class="theme-btn theme-btn-outline">
+                                    <i class="far fa-file-signature"></i> Read Enrollment Agreement
+                                </a>
+                            </div>
+
+                            <div class="d-flex align-items-center">
+                                <button type="submit" class="theme-btn">
+                                    <i class="far fa-user-plus"></i> Register as Student
+                                </button>
+                            </div>
+                        </form>
+                        <div class="login-footer">
+                            <p>Already have an account? <a href="student-login.html">Sign In</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- student registration area end -->
+
+    </main><!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- student registration interactions -->
+    <script>
+        (function () {
+            var form = document.getElementById('student-register-form');
+            if (!form) return;
+
+            var errorBox = document.getElementById('register-error');
+            var errorText = document.getElementById('register-error-text');
+            var successBox = document.getElementById('register-success');
+
+            document.querySelectorAll('.password-toggle').forEach(function (toggle) {
+                toggle.addEventListener('click', function () {
+                    var input = document.getElementById(toggle.getAttribute('data-target'));
+                    var icon = toggle.querySelector('i');
+                    if (!input || !icon) return;
+                    var isHidden = input.type === 'password';
+                    input.type = isHidden ? 'text' : 'password';
+                    icon.classList.toggle('fa-eye', !isHidden);
+                    icon.classList.toggle('fa-eye-slash', isHidden);
+                    toggle.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
+                    toggle.setAttribute('title', isHidden ? 'Hide password' : 'Show password');
+                });
+            });
+
+            function setFieldState(id, message, isValid) {
+                var field = document.getElementById(id);
+                var feedback = document.querySelector('.field-feedback[data-for="' + id + '"]');
+                if (!field) return;
+                field.classList.remove('is-valid', 'is-invalid');
+                field.classList.add(isValid ? 'is-valid' : 'is-invalid');
+                if (feedback) {
+                    feedback.textContent = message || '';
+                    feedback.classList.toggle('is-invalid-feedback', !isValid);
+                    feedback.classList.toggle('is-valid-feedback', isValid && !message);
+                }
+            }
+
+            function clearStates() {
+                form.querySelectorAll('.form-control, .form-check-input').forEach(function (el) {
+                    el.classList.remove('is-valid', 'is-invalid');
+                });
+                form.querySelectorAll('.field-feedback').forEach(function (el) {
+                    el.textContent = '';
+                    el.classList.remove('is-invalid-feedback', 'is-valid-feedback');
+                });
+                errorBox.hidden = true;
+                successBox.hidden = true;
+            }
+
+            function isEmail(value) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                clearStates();
+
+                var firstName = document.getElementById('first-name').value.trim();
+                var lastName = document.getElementById('last-name').value.trim();
+                var username = document.getElementById('reg-username').value.trim();
+                var email = document.getElementById('reg-email').value.trim();
+                var password = document.getElementById('reg-password').value;
+                var confirmPassword = document.getElementById('reg-confirm-password').value;
+                var agree = document.getElementById('agree-agreement').checked;
+                var valid = true;
+                var firstError = '';
+
+                if (!firstName) {
+                    setFieldState('first-name', 'First name is required.', false);
+                    valid = false;
+                    firstError = firstError || 'Please enter your first name.';
+                } else {
+                    setFieldState('first-name', '', true);
+                }
+
+                if (!lastName) {
+                    setFieldState('last-name', 'Last name is required.', false);
+                    valid = false;
+                    firstError = firstError || 'Please enter your last name.';
+                } else {
+                    setFieldState('last-name', '', true);
+                }
+
+                if (!username || username.length < 3) {
+                    setFieldState('reg-username', 'Username must be at least 3 characters.', false);
+                    valid = false;
+                    firstError = firstError || 'Please choose a valid username.';
+                } else {
+                    setFieldState('reg-username', '', true);
+                }
+
+                if (!email || !isEmail(email)) {
+                    setFieldState('reg-email', 'Enter a valid email address.', false);
+                    valid = false;
+                    firstError = firstError || 'Please enter a valid email address.';
+                } else {
+                    setFieldState('reg-email', '', true);
+                }
+
+                if (!password || password.length < 6) {
+                    setFieldState('reg-password', 'Password must be at least 6 characters.', false);
+                    valid = false;
+                    firstError = firstError || 'Please create a password with at least 6 characters.';
+                } else {
+                    setFieldState('reg-password', '', true);
+                }
+
+                if (!confirmPassword || confirmPassword !== password) {
+                    setFieldState('reg-confirm-password', 'Passwords do not match.', false);
+                    valid = false;
+                    firstError = firstError || 'Password and confirm password must match.';
+                } else if (password.length >= 6) {
+                    setFieldState('reg-confirm-password', '', true);
+                }
+
+                var agreeInput = document.getElementById('agree-agreement');
+                var agreeFeedback = document.querySelector('.field-feedback[data-for="agree-agreement"]');
+                if (!agree) {
+                    agreeInput.classList.add('is-invalid');
+                    if (agreeFeedback) {
+                        agreeFeedback.textContent = 'You must agree to the Student Enrollment Agreement.';
+                        agreeFeedback.classList.add('is-invalid-feedback');
+                    }
+                    valid = false;
+                    firstError = firstError || 'Please agree to the Student Enrollment Agreement.';
+                } else {
+                    agreeInput.classList.add('is-valid');
+                }
+
+                if (!valid) {
+                    errorText.textContent = firstError;
+                    errorBox.hidden = false;
+                    return;
+                }
+
+                successBox.hidden = false;
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                window.setTimeout(function () {
+                    window.location.href = 'student-agreement.html';
+                }, 1200);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your Gospel Music Mastery lessons">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>My Lessons - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="student-portal-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <main class="main">
+
+        <!-- student lessons -->
+        <div class="student-dashboard-area py-120">
+            <div class="container">
+
+                <!-- dashboard profile header -->
+                <div class="sd-profile-header">
+                    <div class="sd-profile-main">
+                        <div class="sd-profile-avatar">
+                            <img src="assets/img/team/02.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="sd-profile-meta">
+                            <h2>Sarah Johnson</h2>
+                            <span class="sd-role">Music Student</span>
+                            <div class="sd-profile-stats">
+                                <span class="sd-stat-item"><i class="far fa-signal"></i> Learning Level: Intermediate</span>
+                                <span class="sd-stat-item"><i class="far fa-music"></i> Gospel Piano</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sd-profile-actions">
+                        <a href="teachers.html" class="theme-btn"><i class="far fa-search"></i> Find New Teachers</a>
+                    </div>
+                </div>
+
+                <div class="sd-shell">
+                    <button type="button" class="sd-sidebar-toggle theme-btn theme-btn-outline" id="sd-sidebar-toggle"
+                        aria-expanded="false" aria-controls="sd-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <!-- sidebar -->
+                    <aside class="sd-sidebar" id="sd-sidebar" aria-label="Student navigation">
+                        <nav class="sd-nav">
+                            <ul>
+                                <li><a href="student-dashboard.html" class="sd-nav-link" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+                                <li><a href="student-profile.html" class="sd-nav-link" data-nav="profile"><i class="far fa-user"></i> My Profile</a></li>
+                                <li><a href="student-lessons.html" class="sd-nav-link active" data-nav="lessons"><i class="far fa-book-open"></i> My Lessons</a></li>
+                                <li><a href="student-bookings.html" class="sd-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> My Bookings</a></li>
+                                <li><a href="student-favourites.html" class="sd-nav-link" data-nav="favourites"><i class="far fa-heart"></i> Favourite Teachers</a></li>
+                                <li><a href="student-payments.html" class="sd-nav-link" data-nav="payments"><i class="far fa-credit-card"></i> Payments</a></li>
+                                <li><a href="student-settings.html" class="sd-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="student-login.html" class="sd-nav-link sd-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="sd-sidebar-backdrop" id="sd-sidebar-backdrop" hidden></div>
+
+                    <!-- main content -->
+                    <div class="sd-main">
+
+                        <!-- page header -->
+                        <section class="sd-card sd-welcome-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <span class="login-portal-badge">My Learning</span>
+                                    <h3>My Lessons</h3>
+                                    <p>View your upcoming lessons, active courses, and completed learning sessions.</p>
+                                </div>
+                                <a href="teachers.html" class="theme-btn"><i class="far fa-plus"></i> Book New Lesson</a>
+                            </div>
+                        </section>
+
+                        <!-- next lesson highlight -->
+                        <section class="sd-card sl-next-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Next Lesson</h3>
+                                    <p>Your soonest scheduled session.</p>
+                                </div>
+                                <span class="sd-badge is-scheduled">Upcoming</span>
+                            </div>
+                            <div class="sl-next-body">
+                                <div class="sl-next-teacher">
+                                    <img src="assets/img/team/01.jpg" alt="John Smith">
+                                    <div>
+                                        <h4>John Smith</h4>
+                                        <p>Gospel Piano Basics</p>
+                                    </div>
+                                </div>
+                                <div class="sl-next-meta">
+                                    <span><i class="far fa-calendar"></i> Monday, March 20</span>
+                                    <span><i class="far fa-clock"></i> 10:00 AM</span>
+                                    <span><i class="far fa-hourglass"></i> 60 Minutes</span>
+                                </div>
+                                <div class="sl-next-actions">
+                                    <button type="button" class="theme-btn" id="sl-join-next">
+                                        <i class="far fa-video"></i> Join Lesson
+                                    </button>
+                                    <button type="button" class="theme-btn theme-btn-outline sl-open-details"
+                                        data-teacher="John Smith"
+                                        data-class="Gospel Piano Basics"
+                                        data-category="Gospel Piano"
+                                        data-date="Monday, March 20, 2026"
+                                        data-time="10:00 AM"
+                                        data-duration="60 Minutes"
+                                        data-status="Upcoming"
+                                        data-notes="Bring your practice hymn sheet and warm up for 5 minutes before class."
+                                        data-link="https://meet.example.com/gospel-piano-demo">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- tabs + lessons -->
+                        <section class="sd-card">
+                            <div class="sl-tabs" role="tablist" aria-label="Lesson status filters">
+                                <button type="button" class="sl-tab is-active" data-filter="all" role="tab" aria-selected="true">All Lessons</button>
+                                <button type="button" class="sl-tab" data-filter="upcoming" role="tab" aria-selected="false">Upcoming</button>
+                                <button type="button" class="sl-tab" data-filter="active" role="tab" aria-selected="false">Active</button>
+                                <button type="button" class="sl-tab" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+                            </div>
+
+                            <div class="sl-empty" id="sl-empty" hidden>
+                                <i class="far fa-book-open"></i>
+                                <h3>No lessons found yet.</h3>
+                                <p>Start learning with one of our expert gospel music teachers.</p>
+                                <a href="teachers.html" class="theme-btn"><i class="far fa-users"></i> Browse Teachers</a>
+                            </div>
+
+                            <div class="sl-grid" id="sl-grid">
+
+                                <article class="sl-lesson-card" data-status="upcoming"
+                                    data-teacher="John Smith"
+                                    data-class="Beginner Gospel Piano Worship Lessons"
+                                    data-category="Gospel Piano"
+                                    data-date="March 20, 2026"
+                                    data-time="10:00 AM"
+                                    data-duration="60 Minutes"
+                                    data-notes="Focus on worship chord progressions and left-hand patterns."
+                                    data-link="https://meet.example.com/gospel-piano-demo">
+                                    <div class="sl-lesson-top">
+                                        <div class="sl-lesson-teacher">
+                                            <img src="assets/img/team/01.jpg" alt="John Smith">
+                                            <div>
+                                                <h4>John Smith</h4>
+                                                <span class="sl-category">Gospel Piano</span>
+                                            </div>
+                                        </div>
+                                        <span class="sd-badge is-scheduled">Upcoming</span>
+                                    </div>
+                                    <h5>Beginner Gospel Piano Worship Lessons</h5>
+                                    <ul class="sl-meta">
+                                        <li><i class="far fa-calendar"></i> March 20, 2026</li>
+                                        <li><i class="far fa-clock"></i> 10:00 AM</li>
+                                        <li><i class="far fa-hourglass"></i> 60 Minutes</li>
+                                    </ul>
+                                    <div class="sl-actions">
+                                        <button type="button" class="theme-btn theme-btn-outline sd-action-btn sl-open-details">View Details</button>
+                                        <button type="button" class="theme-btn theme-btn-outline sd-action-btn sl-cancel-btn">Cancel Lesson</button>
+                                    </div>
+                                </article>
+
+                                <article class="sl-lesson-card" data-status="upcoming"
+                                    data-teacher="Emily Carter"
+                                    data-class="Worship Vocal Training"
+                                    data-category="Vocal Training"
+                                    data-date="March 22, 2026"
+                                    data-time="02:00 PM"
+                                    data-duration="45 Minutes"
+                                    data-notes="Prepare one Sunday song for run-through."
+                                    data-link="https://meet.example.com/vocal-demo">
+                                    <div class="sl-lesson-top">
+                                        <div class="sl-lesson-teacher">
+                                            <img src="assets/img/team/03.jpg" alt="Emily Carter">
+                                            <div>
+                                                <h4>Emily Carter</h4>
+                                                <span class="sl-category">Vocal Training</span>
+                                            </div>
+                                        </div>
+                                        <span class="sd-badge is-scheduled">Upcoming</span>
+                                    </div>
+                                    <h5>Worship Vocal Training</h5>
+                                    <ul class="sl-meta">
+                                        <li><i class="far fa-calendar"></i> March 22, 2026</li>
+                                        <li><i class="far fa-clock"></i> 02:00 PM</li>
+                                        <li><i class="far fa-hourglass"></i> 45 Minutes</li>
+                                    </ul>
+                                    <div class="sl-actions">
+                                        <button type="button" class="theme-btn theme-btn-outline sd-action-btn sl-open-details">View Details</button>
+                                        <button type="button" class="theme-btn theme-btn-outline sd-action-btn sl-cancel-btn">Cancel Lesson</button>
+                                    </div>
+                                </article>
+
+                                <article class="sl-lesson-card" data-status="active"
+                                    data-teacher="Michael Brown"
+                                    data-class="Hammond Organ Essentials"
+                                    data-category="Hammond Organ"
+                                    data-date="March 18, 2026"
+                                    data-time="11:00 AM"
+                                    data-duration="60 Minutes"
+                                    data-notes="Live session in progress — join when ready."
+                                    data-link="https://meet.example.com/organ-live">
+                                    <div class="sl-lesson-top">
+                                        <div class="sl-lesson-teacher">
+                                            <img src="assets/img/team/04.jpg" alt="Michael Brown">
+                                            <div>
+                                                <h4>Michael Brown</h4>
+                                                <span class="sl-category">Hammond Organ</span>
+                                            </div>
+                                        </div>
+                                        <span class="sd-badge is-confirmed">Active</span>
+                                    </div>
+                                    <h5>Hammond Organ Essentials</h5>
+                                    <ul class="sl-meta">
+                                        <li><i class="far fa-calendar"></i> March 18, 2026</li>
+                                        <li><i class="far fa-clock"></i> 11:00 AM</li>
+                                        <li><i class="far fa-hourglass"></i> 60 Minutes</li>
+                                    </ul>
+                                    <div class="sl-actions">
+                                        <button type="button" class="theme-btn sd-action-btn sl-join-btn">Join Lesson</button>
+                                        <a href="student-login.html" class="theme-btn theme-btn-outline sd-action-btn">Message Teacher</a>
+                                    </div>
+                                </article>
+
+                                <article class="sl-lesson-card" data-status="active"
+                                    data-teacher="David Lee"
+                                    data-class="Music Theory Fundamentals"
+                                    data-category="Music Theory"
+                                    data-date="March 19, 2026"
+                                    data-time="04:00 PM"
+                                    data-duration="90 Minutes"
+                                    data-notes="Continue harmonic analysis worksheet from last week."
+                                    data-link="https://meet.example.com/theory-live">
+                                    <div class="sl-lesson-top">
+                                        <div class="sl-lesson-teacher">
+                                            <img src="assets/img/team/05.jpg" alt="David Lee">
+                                            <div>
+                                                <h4>David Lee</h4>
+                                                <span class="sl-category">Music Theory</span>
+                                            </div>
+                                        </div>
+                                        <span class="sd-badge is-confirmed">Active</span>
+                                    </div>
+                                    <h5>Music Theory Fundamentals</h5>
+                                    <ul class="sl-meta">
+                                        <li><i class="far fa-calendar"></i> March 19, 2026</li>
+                                        <li><i class="far fa-clock"></i> 04:00 PM</li>
+                                        <li><i class="far fa-hourglass"></i> 90 Minutes</li>
+                                    </ul>
+                                    <div class="sl-actions">
+                                        <button type="button" class="theme-btn sd-action-btn sl-join-btn">Join Lesson</button>
+                                        <a href="student-login.html" class="theme-btn theme-btn-outline sd-action-btn">Message Teacher</a>
+                                    </div>
+                                </article>
+
+                                <article class="sl-lesson-card" data-status="completed"
+                                    data-teacher="John Smith"
+                                    data-class="Beginner Gospel Piano Worship Lessons"
+                                    data-category="Gospel Piano"
+                                    data-date="March 10, 2026"
+                                    data-time="10:00 AM"
+                                    data-duration="60 Minutes"
+                                    data-notes="Completed — review recording for chord transitions."
+                                    data-link="#">
+                                    <div class="sl-lesson-top">
+                                        <div class="sl-lesson-teacher">
+                                            <img src="assets/img/team/01.jpg" alt="John Smith">
+                                            <div>
+                                                <h4>John Smith</h4>
+                                                <span class="sl-category">Gospel Piano</span>
+                                            </div>
+                                        </div>
+                                        <span class="sd-badge is-pending">Completed</span>
+                                    </div>
+                                    <h5>Beginner Gospel Piano Worship Lessons</h5>
+                                    <ul class="sl-meta">
+                                        <li><i class="far fa-calendar"></i> March 10, 2026</li>
+                                        <li><i class="far fa-clock"></i> 10:00 AM</li>
+                                        <li><i class="far fa-hourglass"></i> 60 Minutes</li>
+                                    </ul>
+                                    <div class="sl-actions">
+                                        <button type="button" class="theme-btn theme-btn-outline sd-action-btn sl-review-btn">Leave Review</button>
+                                        <button type="button" class="theme-btn theme-btn-outline sd-action-btn sl-certificate-btn">View Certificate</button>
+                                    </div>
+                                </article>
+
+                                <article class="sl-lesson-card" data-status="completed"
+                                    data-teacher="Emily Carter"
+                                    data-class="Worship Vocal Training"
+                                    data-category="Vocal Training"
+                                    data-date="March 5, 2026"
+                                    data-time="02:00 PM"
+                                    data-duration="45 Minutes"
+                                    data-notes="Completed — practice breath support exercises daily."
+                                    data-link="#">
+                                    <div class="sl-lesson-top">
+                                        <div class="sl-lesson-teacher">
+                                            <img src="assets/img/team/03.jpg" alt="Emily Carter">
+                                            <div>
+                                                <h4>Emily Carter</h4>
+                                                <span class="sl-category">Vocal Training</span>
+                                            </div>
+                                        </div>
+                                        <span class="sd-badge is-pending">Completed</span>
+                                    </div>
+                                    <h5>Worship Vocal Training</h5>
+                                    <ul class="sl-meta">
+                                        <li><i class="far fa-calendar"></i> March 5, 2026</li>
+                                        <li><i class="far fa-clock"></i> 02:00 PM</li>
+                                        <li><i class="far fa-hourglass"></i> 45 Minutes</li>
+                                    </ul>
+                                    <div class="sl-actions">
+                                        <button type="button" class="theme-btn theme-btn-outline sd-action-btn sl-review-btn">Leave Review</button>
+                                        <button type="button" class="theme-btn theme-btn-outline sd-action-btn sl-certificate-btn">View Certificate</button>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- student lessons end -->
+
+    </main><!-- lesson details modal -->
+    <div class="modal fade gospel-demo-modal" id="sl-details-modal" tabindex="-1" aria-labelledby="sl-details-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sl-details-title">Lesson Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="booking-modal-list">
+                        <li><span>Teacher</span><strong id="sl-modal-teacher">—</strong></li>
+                        <li><span>Class</span><strong id="sl-modal-class">—</strong></li>
+                        <li><span>Category</span><strong id="sl-modal-category">—</strong></li>
+                        <li><span>Date</span><strong id="sl-modal-date">—</strong></li>
+                        <li><span>Time</span><strong id="sl-modal-time">—</strong></li>
+                        <li><span>Duration</span><strong id="sl-modal-duration">—</strong></li>
+                        <li><span>Status</span><strong id="sl-modal-status">—</strong></li>
+                    </ul>
+                    <div class="sl-modal-notes">
+                        <h6>Notes</h6>
+                        <p id="sl-modal-notes">—</p>
+                    </div>
+                    <div class="sl-modal-link">
+                        <h6>Meeting Link</h6>
+                        <a href="#" id="sl-modal-link" target="_blank" rel="noopener">Meeting link placeholder</a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
+                    <a href="#" class="theme-btn" id="sl-modal-join" target="_blank" rel="noopener">
+                        <i class="far fa-video"></i> Join Lesson
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- demo alert toast area -->
+    <div class="gospel-alert gospel-alert-success sl-toast" id="sl-toast" hidden>
+        <i class="far fa-circle-check"></i>
+        <span id="sl-toast-text">Action completed (demo).</span>
+    </div>
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- student lessons interactions -->
+    <script>
+        (function () {
+            var shell = document.querySelector('.sd-shell');
+            var toggle = document.getElementById('sd-sidebar-toggle');
+            var sidebar = document.getElementById('sd-sidebar');
+            var backdrop = document.getElementById('sd-sidebar-backdrop');
+            var navLinks = sidebar ? sidebar.querySelectorAll('.sd-nav-link') : [];
+
+            function closeSidebar() {
+                if (!shell) return;
+                shell.classList.remove('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+
+            function openSidebar() {
+                if (!shell) return;
+                shell.classList.add('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+
+            if (toggle && shell) {
+                toggle.addEventListener('click', function () {
+                    if (shell.classList.contains('is-sidebar-open')) closeSidebar();
+                    else openSidebar();
+                });
+            }
+            if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+            var currentPage = window.location.pathname.split('/').pop() || 'student-lessons.html';
+            navLinks.forEach(function (link) {
+                link.classList.toggle('active', link.getAttribute('href') === currentPage);
+                link.addEventListener('click', function () {
+                    if (window.matchMedia('(max-width: 991px)').matches) closeSidebar();
+                });
+            });
+
+            var tabs = document.querySelectorAll('.sl-tab');
+            var cards = document.querySelectorAll('.sl-lesson-card');
+            var emptyState = document.getElementById('sl-empty');
+            var grid = document.getElementById('sl-grid');
+            var toast = document.getElementById('sl-toast');
+            var toastText = document.getElementById('sl-toast-text');
+
+            function showToast(message) {
+                if (!toast) return;
+                if (toastText) toastText.textContent = message;
+                toast.hidden = false;
+                window.setTimeout(function () {
+                    toast.hidden = true;
+                }, 2200);
+            }
+
+            function applyFilter(filter) {
+                var visible = 0;
+                cards.forEach(function (card) {
+                    var status = card.getAttribute('data-status') || '';
+                    var show = filter === 'all' || status === filter;
+                    card.hidden = !show;
+                    if (show) visible += 1;
+                });
+                if (emptyState) emptyState.hidden = visible > 0;
+                if (grid) grid.hidden = visible === 0;
+            }
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) {
+                        t.classList.remove('is-active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('is-active');
+                    tab.setAttribute('aria-selected', 'true');
+                    applyFilter(tab.getAttribute('data-filter') || 'all');
+                });
+            });
+
+            var modalEl = document.getElementById('sl-details-modal');
+            var modal = modalEl && window.bootstrap ? new bootstrap.Modal(modalEl) : null;
+
+            function fillModal(data) {
+                var map = {
+                    'sl-modal-teacher': data.teacher,
+                    'sl-modal-class': data.className,
+                    'sl-modal-category': data.category,
+                    'sl-modal-date': data.date,
+                    'sl-modal-time': data.time,
+                    'sl-modal-duration': data.duration,
+                    'sl-modal-status': data.status,
+                    'sl-modal-notes': data.notes
+                };
+                Object.keys(map).forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el) el.textContent = map[id] || '—';
+                });
+                var link = document.getElementById('sl-modal-link');
+                var join = document.getElementById('sl-modal-join');
+                var href = data.link && data.link !== '#' ? data.link : '#';
+                if (link) {
+                    link.href = href;
+                    link.textContent = href === '#' ? 'Meeting link placeholder' : href;
+                }
+                if (join) {
+                    join.href = href;
+                    join.style.display = data.status === 'Completed' ? 'none' : '';
+                }
+            }
+
+            function readDataFrom(el) {
+                var card = el.closest('.sl-lesson-card') || el;
+                return {
+                    teacher: card.getAttribute('data-teacher') || '—',
+                    className: card.getAttribute('data-class') || '—',
+                    category: card.getAttribute('data-category') || '—',
+                    date: card.getAttribute('data-date') || '—',
+                    time: card.getAttribute('data-time') || '—',
+                    duration: card.getAttribute('data-duration') || '—',
+                    status: (card.getAttribute('data-status') || '').replace(/^./, function (c) { return c.toUpperCase(); }),
+                    notes: card.getAttribute('data-notes') || 'No notes for this lesson.',
+                    link: card.getAttribute('data-link') || '#'
+                };
+            }
+
+            document.querySelectorAll('.sl-open-details').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    fillModal(readDataFrom(btn));
+                    if (modal) modal.show();
+                });
+            });
+
+            document.querySelectorAll('.sl-cancel-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var card = btn.closest('.sl-lesson-card');
+                    if (!card) return;
+                    btn.disabled = true;
+                    btn.textContent = 'Cancelled';
+                    card.classList.add('is-cancelled');
+                    showToast('Lesson cancelled (demo only).');
+                });
+            });
+
+            document.querySelectorAll('.sl-join-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var card = btn.closest('.sl-lesson-card');
+                    var link = card ? card.getAttribute('data-link') : '#';
+                    showToast('Opening meeting link (demo)...');
+                    if (link && link !== '#') window.open(link, '_blank', 'noopener');
+                });
+            });
+
+            var joinNext = document.getElementById('sl-join-next');
+            if (joinNext) {
+                joinNext.addEventListener('click', function () {
+                    showToast('Joining next lesson (demo)...');
+                });
+            }
+
+            document.querySelectorAll('.sl-review-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    btn.textContent = 'Review Submitted';
+                    btn.disabled = true;
+                    showToast('Thanks for your review (demo).');
+                });
+            });
+
+            document.querySelectorAll('.sl-certificate-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    showToast('Certificate preview coming soon (demo).');
+                });
+            });
+
+            applyFilter('all');
+        })();
+    </script>
+
+</body>
+
+</html>

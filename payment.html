@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your Gospel Music Mastery lesson payment (demo checkout)">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Complete Payment - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="public-site-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end --><main class="main"><!-- payment checkout -->
+        <div class="payment-page-area py-120">
+            <div class="container">
+
+                <!-- progress stepper -->
+                <ol class="bk-stepper" aria-label="Payment progress">
+                    <li class="bk-step is-complete" data-step="1">
+                        <span class="bk-step-num">1</span>
+                        <span class="bk-step-label">Select Lesson</span>
+                    </li>
+                    <li class="bk-step is-complete" data-step="2">
+                        <span class="bk-step-num">2</span>
+                        <span class="bk-step-label">Schedule</span>
+                    </li>
+                    <li class="bk-step is-active" data-step="3">
+                        <span class="bk-step-num">3</span>
+                        <span class="bk-step-label">Payment</span>
+                    </li>
+                </ol>
+
+                <div class="gospel-alert gospel-alert-warning" id="pay-demo-note">
+                    <i class="far fa-triangle-exclamation"></i>
+                    <span>Demo payment interface only. Real payment processing will be connected during backend development.</span>
+                </div>
+
+                <div class="gospel-alert gospel-alert-error" id="pay-error" hidden>
+                    <i class="far fa-circle-exclamation"></i>
+                    <span id="pay-error-text">Please complete the required billing fields.</span>
+                </div>
+
+                <form action="#" method="post" id="pay-checkout-form" novalidate autocomplete="off">
+                    <div class="pay-layout">
+
+                        <!-- left: order info -->
+                        <div class="pay-main-col">
+
+                            <section class="td-card pay-card">
+                                <div class="td-card-head">
+                                    <div>
+                                        <h3>Lesson Summary</h3>
+                                        <p>Review your selected lesson before confirming payment.</p>
+                                    </div>
+                                </div>
+
+                                <div class="pay-teacher-row">
+                                    <img src="assets/img/team/01.jpg" alt="John Smith" class="pay-teacher-avatar">
+                                    <div>
+                                        <h4>John Smith</h4>
+                                        <span class="pay-teacher-role">Gospel Piano Instructor</span>
+                                        <a href="student-teacher-profile.html" class="td-link">View Profile</a>
+                                    </div>
+                                </div>
+
+                                <ul class="pay-summary-list">
+                                    <li>
+                                        <span>Class</span>
+                                        <strong>Beginner Gospel Piano Worship Lessons</strong>
+                                    </li>
+                                    <li>
+                                        <span>Category</span>
+                                        <strong>Gospel Piano</strong>
+                                    </li>
+                                    <li>
+                                        <span>Duration</span>
+                                        <strong>60 Minutes</strong>
+                                    </li>
+                                    <li>
+                                        <span>Date</span>
+                                        <strong id="pay-order-date">Monday, March 16, 2026</strong>
+                                    </li>
+                                    <li>
+                                        <span>Time</span>
+                                        <strong id="pay-order-time">10:00 AM</strong>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section class="td-card pay-card">
+                                <div class="td-card-head">
+                                    <div>
+                                        <h3>Price Breakdown</h3>
+                                    </div>
+                                </div>
+                                <ul class="pay-price-list">
+                                    <li>
+                                        <span>Lesson Price</span>
+                                        <strong>$40</strong>
+                                    </li>
+                                    <li>
+                                        <span>Service Fee</span>
+                                        <strong>$0</strong>
+                                    </li>
+                                    <li class="pay-price-total">
+                                        <span>Total</span>
+                                        <strong>$40</strong>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section class="td-card pay-card">
+                                <div class="td-card-head">
+                                    <div>
+                                        <h3>Billing Information</h3>
+                                        <p>Used for your booking confirmation email (demo only).</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="pay-full-name">Full Name</label>
+                                            <input type="text" class="form-control" id="pay-full-name" name="full_name"
+                                                value="Sarah Johnson" autocomplete="name">
+                                            <span class="field-feedback" data-for="pay-full-name"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="pay-email">Email Address</label>
+                                            <input type="email" class="form-control" id="pay-email" name="email"
+                                                value="sarah@example.com" autocomplete="email">
+                                            <span class="field-feedback" data-for="pay-email"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="pay-country">Country</label>
+                                            <select class="form-control form-select" id="pay-country" name="country">
+                                                <option value="">Select country</option>
+                                                <option value="United States" selected>United States</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <span class="field-feedback" data-for="pay-country"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="pay-address">Address</label>
+                                            <input type="text" class="form-control" id="pay-address" name="address"
+                                                value="25 Milford Road" autocomplete="street-address">
+                                            <span class="field-feedback" data-for="pay-address"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-md-0">
+                                            <label for="pay-city">City</label>
+                                            <input type="text" class="form-control" id="pay-city" name="city"
+                                                value="Nashville" autocomplete="address-level2">
+                                            <span class="field-feedback" data-for="pay-city"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mb-0">
+                                            <label for="pay-zip">ZIP Code</label>
+                                            <input type="text" class="form-control" id="pay-zip" name="zip"
+                                                value="37201" autocomplete="postal-code">
+                                            <span class="field-feedback" data-for="pay-zip"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+
+                        <!-- right: payment method -->
+                        <aside class="pay-side-col">
+                            <div class="td-card pay-card pay-method-card">
+                                <div class="td-card-head">
+                                    <div>
+                                        <h3>Payment Method</h3>
+                                        <p>Choose how you want to pay (frontend demo).</p>
+                                    </div>
+                                </div>
+
+                                <div class="pay-method-list" role="radiogroup" aria-label="Payment method">
+                                    <label class="pay-method-option is-selected">
+                                        <input type="radio" name="payment_method" value="card" checked>
+                                        <span class="pay-method-icon"><i class="far fa-credit-card"></i></span>
+                                        <span class="pay-method-text">
+                                            <strong>Credit / Debit Card</strong>
+                                            <small>Demo card fields only</small>
+                                        </span>
+                                    </label>
+                                    <label class="pay-method-option">
+                                        <input type="radio" name="payment_method" value="paypal">
+                                        <span class="pay-method-icon"><i class="fab fa-paypal"></i></span>
+                                        <span class="pay-method-text">
+                                            <strong>PayPal</strong>
+                                            <small>Continue with PayPal (demo)</small>
+                                        </span>
+                                    </label>
+                                    <label class="pay-method-option">
+                                        <input type="radio" name="payment_method" value="stripe">
+                                        <span class="pay-method-icon"><i class="fab fa-stripe-s"></i></span>
+                                        <span class="pay-method-text">
+                                            <strong>Stripe Checkout</strong>
+                                            <small>Hosted checkout placeholder</small>
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="pay-card-fields" id="pay-card-fields">
+                                    <div class="form-group">
+                                        <label for="pay-card-number">Card Number</label>
+                                        <input type="text" class="form-control" id="pay-card-number" name="card_number"
+                                            inputmode="numeric" maxlength="19" placeholder="XXXX XXXX XXXX XXXX"
+                                            autocomplete="off" data-demo="true">
+                                        <span class="field-feedback" data-for="pay-card-number"></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group mb-0">
+                                                <label for="pay-card-expiry">MM / YY</label>
+                                                <input type="text" class="form-control" id="pay-card-expiry" name="card_expiry"
+                                                    inputmode="numeric" maxlength="5" placeholder="MM/YY"
+                                                    autocomplete="off" data-demo="true">
+                                                <span class="field-feedback" data-for="pay-card-expiry"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group mb-0">
+                                                <label for="pay-card-cvc">CVC</label>
+                                                <input type="text" class="form-control" id="pay-card-cvc" name="card_cvc"
+                                                    inputmode="numeric" maxlength="4" placeholder="CVC"
+                                                    autocomplete="off" data-demo="true">
+                                                <span class="field-feedback" data-for="pay-card-cvc"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="pay-field-note">
+                                        <i class="far fa-shield-check"></i>
+                                        Demo payment interface only. Do not enter real card details.
+                                    </p>
+                                </div>
+
+                                <div class="pay-alt-message" id="pay-alt-message" hidden>
+                                    <p>This payment option is a frontend placeholder. No real charge will be made.</p>
+                                </div>
+
+                                <div class="pay-order-total">
+                                    <span>Order Total</span>
+                                    <strong>$40</strong>
+                                </div>
+
+                                <button type="submit" class="theme-btn w-100" id="pay-confirm-btn">
+                                    <i class="far fa-lock"></i> Confirm &amp; Pay
+                                </button>
+                                <a href="booking.html" class="bk-back-link">
+                                    <i class="far fa-arrow-left"></i> Back to Booking
+                                </a>
+                            </div>
+
+                            <div class="pay-trust-card">
+                                <div class="pay-trust-item"><i class="far fa-shield-check"></i> Secure Payment</div>
+                                <div class="pay-trust-item"><i class="far fa-user-check"></i> Trusted Instructors</div>
+                                <div class="pay-trust-item"><i class="far fa-laptop"></i> Safe Online Learning</div>
+                            </div>
+                        </aside>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- payment checkout end -->
+
+    </main><!-- booking confirmed modal -->
+    <div class="modal fade gospel-demo-modal" id="pay-success-modal" tabindex="-1" aria-labelledby="pay-success-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pay-success-title">Booking Confirmed</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pay-success-body">
+                    <div class="pay-success-icon"><i class="far fa-circle-check"></i></div>
+                    <p>Your lesson has been scheduled successfully. You will receive confirmation details shortly.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <a href="student-dashboard.html" class="theme-btn">
+                        <i class="far fa-grid-2"></i> Go To Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- payment checkout interactions (frontend demo only) -->
+    <script>
+        (function () {
+            var form = document.getElementById('pay-checkout-form');
+            var methodOptions = document.querySelectorAll('.pay-method-option');
+            var methodInputs = document.querySelectorAll('input[name="payment_method"]');
+            var cardFields = document.getElementById('pay-card-fields');
+            var altMessage = document.getElementById('pay-alt-message');
+            var confirmBtn = document.getElementById('pay-confirm-btn');
+            var errorBox = document.getElementById('pay-error');
+            var errorText = document.getElementById('pay-error-text');
+            var modalEl = document.getElementById('pay-success-modal');
+            var successModal = modalEl && window.bootstrap ? new bootstrap.Modal(modalEl) : null;
+
+            var cardNumber = document.getElementById('pay-card-number');
+            var cardExpiry = document.getElementById('pay-card-expiry');
+            var cardCvc = document.getElementById('pay-card-cvc');
+
+            function getSelectedMethod() {
+                var checked = document.querySelector('input[name="payment_method"]:checked');
+                return checked ? checked.value : 'card';
+            }
+
+            function updateMethodUI() {
+                var method = getSelectedMethod();
+                methodOptions.forEach(function (option) {
+                    var input = option.querySelector('input[type="radio"]');
+                    option.classList.toggle('is-selected', !!(input && input.checked));
+                });
+                if (cardFields) cardFields.hidden = method !== 'card';
+                if (altMessage) altMessage.hidden = method === 'card';
+            }
+
+            methodInputs.forEach(function (input) {
+                input.addEventListener('change', updateMethodUI);
+            });
+
+            /* Demo formatting only — never send these values */
+            if (cardNumber) {
+                cardNumber.addEventListener('input', function () {
+                    var digits = cardNumber.value.replace(/\D/g, '').slice(0, 16);
+                    cardNumber.value = digits.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+                });
+            }
+
+            if (cardExpiry) {
+                cardExpiry.addEventListener('input', function () {
+                    var digits = cardExpiry.value.replace(/\D/g, '').slice(0, 4);
+                    if (digits.length > 2) {
+                        cardExpiry.value = digits.slice(0, 2) + '/' + digits.slice(2);
+                    } else {
+                        cardExpiry.value = digits;
+                    }
+                });
+            }
+
+            if (cardCvc) {
+                cardCvc.addEventListener('input', function () {
+                    cardCvc.value = cardCvc.value.replace(/\D/g, '').slice(0, 4);
+                });
+            }
+
+            function setFeedback(key, message, isInvalid) {
+                var feedback = document.querySelector('.field-feedback[data-for="' + key + '"]');
+                if (!feedback) return;
+                feedback.textContent = message || '';
+                feedback.classList.toggle('is-invalid-feedback', !!isInvalid);
+            }
+
+            function clearValidation() {
+                form.querySelectorAll('.is-invalid').forEach(function (el) {
+                    el.classList.remove('is-invalid');
+                });
+                form.querySelectorAll('.field-feedback').forEach(function (el) {
+                    el.textContent = '';
+                    el.classList.remove('is-invalid-feedback');
+                });
+                if (errorBox) errorBox.hidden = true;
+            }
+
+            function requireField(input, key, message) {
+                var value = (input.value || '').trim();
+                if (!value) {
+                    input.classList.add('is-invalid');
+                    setFeedback(key, message, true);
+                    return false;
+                }
+                return true;
+            }
+
+            function isValidEmail(value) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            }
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    clearValidation();
+
+                    var valid = true;
+                    var firstError = '';
+                    var fullName = document.getElementById('pay-full-name');
+                    var email = document.getElementById('pay-email');
+                    var country = document.getElementById('pay-country');
+                    var address = document.getElementById('pay-address');
+                    var city = document.getElementById('pay-city');
+                    var zip = document.getElementById('pay-zip');
+                    var method = getSelectedMethod();
+
+                    if (!requireField(fullName, 'pay-full-name', 'Full name is required.')) {
+                        valid = false;
+                        firstError = firstError || 'Please enter your full name.';
+                    }
+
+                    if (!requireField(email, 'pay-email', 'Email address is required.')) {
+                        valid = false;
+                        firstError = firstError || 'Please enter your email address.';
+                    } else if (!isValidEmail(email.value.trim())) {
+                        email.classList.add('is-invalid');
+                        setFeedback('pay-email', 'Please enter a valid email address.', true);
+                        valid = false;
+                        firstError = firstError || 'Please enter a valid email address.';
+                    }
+
+                    if (!(country.value || '').trim()) {
+                        country.classList.add('is-invalid');
+                        setFeedback('pay-country', 'Please select your country.', true);
+                        valid = false;
+                        firstError = firstError || 'Please select your country.';
+                    }
+
+                    if (!requireField(address, 'pay-address', 'Address is required.')) {
+                        valid = false;
+                        firstError = firstError || 'Please enter your address.';
+                    }
+                    if (!requireField(city, 'pay-city', 'City is required.')) {
+                        valid = false;
+                        firstError = firstError || 'Please enter your city.';
+                    }
+                    if (!requireField(zip, 'pay-zip', 'ZIP code is required.')) {
+                        valid = false;
+                        firstError = firstError || 'Please enter your ZIP code.';
+                    }
+
+                    if (method === 'card') {
+                        if (!requireField(cardNumber, 'pay-card-number', 'Enter a demo card number.')) {
+                            valid = false;
+                            firstError = firstError || 'Please complete the demo card fields.';
+                        } else if (cardNumber.value.replace(/\s/g, '').length < 12) {
+                            cardNumber.classList.add('is-invalid');
+                            setFeedback('pay-card-number', 'Enter a complete demo card number.', true);
+                            valid = false;
+                            firstError = firstError || 'Please complete the demo card fields.';
+                        }
+
+                        if (!requireField(cardExpiry, 'pay-card-expiry', 'Enter MM/YY.')) {
+                            valid = false;
+                            firstError = firstError || 'Please complete the demo card fields.';
+                        }
+
+                        if (!requireField(cardCvc, 'pay-card-cvc', 'Enter CVC.')) {
+                            valid = false;
+                            firstError = firstError || 'Please complete the demo card fields.';
+                        }
+                    }
+
+                    if (!valid) {
+                        if (errorText) errorText.textContent = firstError;
+                        if (errorBox) {
+                            errorBox.hidden = false;
+                            errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                        return;
+                    }
+
+                    if (confirmBtn) {
+                        confirmBtn.disabled = true;
+                        confirmBtn.innerHTML = '<i class="far fa-spinner fa-spin"></i> Processing…';
+                    }
+
+                    window.setTimeout(function () {
+                        if (confirmBtn) {
+                            confirmBtn.disabled = false;
+                            confirmBtn.innerHTML = '<i class="far fa-lock"></i> Confirm &amp; Pay';
+                        }
+                        if (successModal) {
+                            successModal.show();
+                        } else {
+                            window.location.href = 'student-dashboard.html';
+                        }
+                    }, 900);
+                });
+            }
+
+            updateMethodUI();
+        })();
+    </script>
+
+</body>
+
+</html>
