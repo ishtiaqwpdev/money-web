@@ -90,74 +90,203 @@
                     <!-- main content -->
                     <div class="td-main">
 
-                        <!-- earnings summary -->
-                        <section class="td-stats-grid">
+                        <div class="gospel-alert gospel-alert-error" id="withdrawal-error" hidden>
+                            <i class="far fa-circle-exclamation"></i>
+                            <span id="withdrawal-error-text">Please enter a valid withdrawal amount.</span>
+                        </div>
+                        <div class="gospel-alert gospel-alert-success" id="withdrawal-success" hidden>
+                            <i class="far fa-circle-check"></i>
+                            <span>Withdrawal request submitted successfully (demo). No real payment was processed.</span>
+                        </div>
+
+                        <!-- page header -->
+                        <section class="td-card">
+                            <div class="td-card-head">
+                                <div>
+                                    <span class="login-portal-badge">Earnings &amp; Payouts</span>
+                                    <h3>Manage Your Withdrawals</h3>
+                                    <p>Track your lesson earnings and request payments securely from your instructor account.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- summary cards -->
+                        <section class="td-stats-grid bookings-summary-grid">
                             <div class="td-stat-card">
-                                <div class="td-stat-icon"><i class="far fa-dollar-sign"></i></div>
+                                <div class="td-stat-icon"><i class="far fa-chart-line"></i></div>
                                 <div class="td-stat-body">
-                                    <span class="td-stat-value">$1,250</span>
+                                    <span class="td-stat-value">$5,250</span>
                                     <span class="td-stat-title">Total Earnings</span>
                                 </div>
                             </div>
                             <div class="td-stat-card">
                                 <div class="td-stat-icon"><i class="far fa-wallet"></i></div>
                                 <div class="td-stat-body">
-                                    <span class="td-stat-value">$320</span>
+                                    <span class="td-stat-value" id="available-balance-display">$1,250</span>
                                     <span class="td-stat-title">Available Balance</span>
+                                </div>
+                            </div>
+                            <div class="td-stat-card">
+                                <div class="td-stat-icon"><i class="far fa-money-bill-transfer"></i></div>
+                                <div class="td-stat-body">
+                                    <span class="td-stat-value">$4,000</span>
+                                    <span class="td-stat-title">Total Withdrawals</span>
                                 </div>
                             </div>
                             <div class="td-stat-card">
                                 <div class="td-stat-icon"><i class="far fa-clock"></i></div>
                                 <div class="td-stat-body">
-                                    <span class="td-stat-value">$150</span>
-                                    <span class="td-stat-title">Pending Payout</span>
+                                    <span class="td-stat-value">$500</span>
+                                    <span class="td-stat-title">Pending Requests</span>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- withdrawal history -->
+                        <div class="withdrawal-layout">
+                            <!-- payment account -->
+                            <section class="td-card withdrawal-equal-card">
+                                <div class="td-card-head">
+                                    <div>
+                                        <h3>Payment Method</h3>
+                                        <p>Connect and manage where your lesson payouts are sent.</p>
+                                    </div>
+                                </div>
+                                <div class="payment-method-box">
+                                    <div class="payment-method-row">
+                                        <div class="payment-method-icon"><i class="fab fa-stripe"></i></div>
+                                        <div class="payment-method-info">
+                                            <strong>Stripe Account</strong>
+                                            <span>Connected</span>
+                                        </div>
+                                        <span class="td-badge is-confirmed">Active</span>
+                                    </div>
+                                    <a href="teacher-onboarding-payment.html" class="theme-btn theme-btn-outline">
+                                        <i class="far fa-gear"></i> Manage Payment Account
+                                    </a>
+                                    <p class="field-note payment-secure-note">
+                                        Your payment information is securely managed through Stripe.
+                                    </p>
+                                </div>
+                            </section>
+
+                            <!-- request withdrawal -->
+                            <section class="td-card withdrawal-equal-card">
+                                <div class="td-card-head">
+                                    <div>
+                                        <h3>Request Withdrawal</h3>
+                                        <p>Transfer available earnings to your connected Stripe account.</p>
+                                    </div>
+                                </div>
+                                <form action="#" method="post" id="withdrawal-request-form" novalidate>
+                                    <div class="form-group">
+                                        <label for="withdrawal-amount">Amount</label>
+                                        <div class="price-input-wrap">
+                                            <span class="price-prefix">$</span>
+                                            <input type="number" class="form-control" id="withdrawal-amount" name="amount"
+                                                min="50" step="0.01" placeholder="0.00" inputmode="decimal">
+                                        </div>
+                                        <p class="field-note">Minimum withdrawal amount: $50</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="withdrawal-method">Payment Method</label>
+                                        <select class="form-control form-select" id="withdrawal-method" name="payment_method">
+                                            <option value="Stripe" selected>Stripe</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="theme-btn" id="request-withdrawal-btn">
+                                        <i class="far fa-paper-plane"></i> Request Withdrawal
+                                    </button>
+                                </form>
+                            </section>
+                        </div>
+
+                        <!-- transaction history -->
                         <section class="td-card">
                             <div class="td-card-head">
                                 <div>
                                     <h3>Withdrawal History</h3>
-                                    <p>Your recent payout requests and their status.</p>
+                                    <p>Review past and pending payout requests.</p>
                                 </div>
                             </div>
-                            <div class="table-responsive td-table-wrap">
-                                <table class="table td-table">
+
+                            <div class="booking-tabs" role="tablist" aria-label="Withdrawal status filters">
+                                <button type="button" class="booking-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+                                <button type="button" class="booking-tab" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+                                <button type="button" class="booking-tab" data-filter="pending" role="tab" aria-selected="false">Pending</button>
+                                <button type="button" class="booking-tab" data-filter="failed" role="tab" aria-selected="false">Failed</button>
+                            </div>
+
+                            <div class="table-responsive" id="withdrawal-table-wrap">
+                                <table class="table td-table" id="withdrawal-table">
                                     <thead>
                                         <tr>
                                             <th>Date</th>
                                             <th>Amount</th>
-                                            <th>Method</th>
+                                            <th>Payment Method</th>
                                             <th>Status</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td data-label="Date">June 12, 2026</td>
-                                            <td data-label="Amount">$400.00</td>
-                                            <td data-label="Method">Stripe</td>
-                                            <td data-label="Status"><span class="td-badge is-published">Paid</span></td>
+                                    <tbody id="withdrawal-tbody">
+                                        <tr data-status="completed">
+                                            <td data-label="Date">March 10, 2026</td>
+                                            <td data-label="Amount"><strong>$250</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="td-badge is-confirmed">Completed</span></td>
+                                            <td data-label="Action">
+                                                <button type="button" class="theme-btn theme-btn-outline td-action-btn withdrawal-view-btn"
+                                                    data-date="March 10, 2026"
+                                                    data-amount="$250"
+                                                    data-method="Stripe"
+                                                    data-status="Completed">View</button>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td data-label="Date">May 28, 2026</td>
-                                            <td data-label="Amount">$380.00</td>
-                                            <td data-label="Method">Stripe</td>
-                                            <td data-label="Status"><span class="td-badge is-published">Paid</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td data-label="Date">July 20, 2026</td>
-                                            <td data-label="Amount">$150.00</td>
-                                            <td data-label="Method">Stripe</td>
+                                        <tr data-status="pending">
+                                            <td data-label="Date">March 20, 2026</td>
+                                            <td data-label="Amount"><strong>$500</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
                                             <td data-label="Status"><span class="td-badge is-pending">Pending</span></td>
+                                            <td data-label="Action">
+                                                <button type="button" class="theme-btn theme-btn-outline td-action-btn withdrawal-view-btn"
+                                                    data-date="March 20, 2026"
+                                                    data-amount="$500"
+                                                    data-method="Stripe"
+                                                    data-status="Pending">View</button>
+                                            </td>
+                                        </tr>
+                                        <tr data-status="completed">
+                                            <td data-label="Date">February 28, 2026</td>
+                                            <td data-label="Amount"><strong>$750</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="td-badge is-confirmed">Completed</span></td>
+                                            <td data-label="Action">
+                                                <button type="button" class="theme-btn theme-btn-outline td-action-btn withdrawal-view-btn"
+                                                    data-date="February 28, 2026"
+                                                    data-amount="$750"
+                                                    data-method="Stripe"
+                                                    data-status="Completed">View</button>
+                                            </td>
+                                        </tr>
+                                        <tr data-status="failed">
+                                            <td data-label="Date">February 12, 2026</td>
+                                            <td data-label="Amount"><strong>$100</strong></td>
+                                            <td data-label="Payment Method">Stripe</td>
+                                            <td data-label="Status"><span class="td-badge is-cancelled">Failed</span></td>
+                                            <td data-label="Action">
+                                                <button type="button" class="theme-btn theme-btn-outline td-action-btn withdrawal-view-btn"
+                                                    data-date="February 12, 2026"
+                                                    data-amount="$100"
+                                                    data-method="Stripe"
+                                                    data-status="Failed">View</button>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="td-card-actions">
-                                <a href="teacher-dashboard.html" class="theme-btn theme-btn-outline"><i class="far fa-arrow-left"></i> Dashboard</a>
-                            </div>
+
+                            <p class="td-empty-state" id="withdrawal-empty" hidden>
+                                No withdrawal history available yet.
+                            </p>
                         </section>
 
                     </div>
@@ -167,6 +296,30 @@
         <!-- teacher dashboard end -->
 
     </main>
+
+    <!-- withdrawal details modal -->
+    <div class="modal fade gospel-demo-modal" id="withdrawal-details-modal" tabindex="-1" aria-labelledby="withdrawal-details-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="withdrawal-details-title">Withdrawal Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body booking-modal-body">
+                    <ul class="booking-modal-list">
+                        <li><span>Date</span><strong id="modal-wd-date">—</strong></li>
+                        <li><span>Amount</span><strong id="modal-wd-amount">—</strong></li>
+                        <li><span>Payment Method</span><strong id="modal-wd-method">—</strong></li>
+                        <li><span>Status</span><strong id="modal-wd-status">—</strong></li>
+                    </ul>
+                    <p class="field-note mt-3 mb-0">Frontend demo only. Stripe payout details will appear here after backend integration.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- js -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -182,14 +335,13 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- teacher dashboard interactions -->
+    <!-- teacher withdrawals interactions -->
     <script>
         (function () {
             var shell = document.querySelector('.td-shell');
             if (!shell) return;
 
             var toggle = document.getElementById('td-sidebar-toggle');
-            var sidebar = document.getElementById('td-sidebar');
             var backdrop = document.getElementById('td-sidebar-backdrop');
 
             function closeSidebar() {
@@ -217,6 +369,140 @@
             if (backdrop) {
                 backdrop.addEventListener('click', closeSidebar);
             }
+        })();
+
+        (function () {
+            var form = document.getElementById('withdrawal-request-form');
+            var amountInput = document.getElementById('withdrawal-amount');
+            var methodSelect = document.getElementById('withdrawal-method');
+            var errorBox = document.getElementById('withdrawal-error');
+            var errorText = document.getElementById('withdrawal-error-text');
+            var successBox = document.getElementById('withdrawal-success');
+            var tbody = document.getElementById('withdrawal-tbody');
+            var emptyState = document.getElementById('withdrawal-empty');
+            var tableWrap = document.getElementById('withdrawal-table-wrap');
+            var tabs = document.querySelectorAll('.td-main .booking-tab');
+            var currentFilter = 'all';
+            var availableBalance = 1250;
+            var detailsModalEl = document.getElementById('withdrawal-details-modal');
+            var detailsModal = detailsModalEl && window.bootstrap ? new bootstrap.Modal(detailsModalEl) : null;
+
+            function formatMoney(value) {
+                return '$' + value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+            }
+
+            function applyFilter() {
+                if (!tbody) return;
+                var rows = tbody.querySelectorAll('tr');
+                var visible = 0;
+                rows.forEach(function (row) {
+                    var status = row.getAttribute('data-status');
+                    var show = currentFilter === 'all' || status === currentFilter;
+                    row.hidden = !show;
+                    if (show) visible += 1;
+                });
+                if (emptyState) emptyState.hidden = visible > 0;
+                if (tableWrap) tableWrap.hidden = visible === 0;
+            }
+
+            function todayLabel() {
+                return new Date().toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+                    currentFilter = tab.getAttribute('data-filter') || 'all';
+                    applyFilter();
+                });
+            });
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    if (errorBox) errorBox.hidden = true;
+                    if (successBox) successBox.hidden = true;
+
+                    var raw = amountInput ? amountInput.value.trim() : '';
+                    var amount = parseFloat(raw);
+                    var method = methodSelect ? methodSelect.value : 'Stripe';
+
+                    if (!raw || isNaN(amount)) {
+                        if (errorText) errorText.textContent = 'Please enter a valid withdrawal amount.';
+                        if (errorBox) errorBox.hidden = false;
+                        return;
+                    }
+
+                    if (amount < 50) {
+                        if (errorText) errorText.textContent = 'Minimum withdrawal amount is $50.';
+                        if (errorBox) errorBox.hidden = false;
+                        return;
+                    }
+
+                    if (amount > availableBalance) {
+                        if (errorText) errorText.textContent = 'Amount cannot exceed your available balance of ' + formatMoney(availableBalance) + '.';
+                        if (errorBox) errorBox.hidden = false;
+                        return;
+                    }
+
+                    if (!method) {
+                        if (errorText) errorText.textContent = 'Please select a payment method.';
+                        if (errorBox) errorBox.hidden = false;
+                        return;
+                    }
+
+                    var amountLabel = formatMoney(amount);
+                    var dateLabel = todayLabel();
+
+                    if (tbody) {
+                        var row = document.createElement('tr');
+                        row.setAttribute('data-status', 'pending');
+                        row.innerHTML =
+                            '<td data-label="Date">' + dateLabel + '</td>' +
+                            '<td data-label="Amount"><strong>' + amountLabel + '</strong></td>' +
+                            '<td data-label="Payment Method">' + method + '</td>' +
+                            '<td data-label="Status"><span class="td-badge is-pending">Pending</span></td>' +
+                            '<td data-label="Action">' +
+                            '<button type="button" class="theme-btn theme-btn-outline td-action-btn withdrawal-view-btn"' +
+                            ' data-date="' + dateLabel + '"' +
+                            ' data-amount="' + amountLabel + '"' +
+                            ' data-method="' + method + '"' +
+                            ' data-status="Pending">View</button>' +
+                            '</td>';
+                        tbody.insertBefore(row, tbody.firstChild);
+                    }
+
+                    if (amountInput) amountInput.value = '';
+                    if (successBox) {
+                        successBox.hidden = false;
+                        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    applyFilter();
+                });
+            }
+
+            if (tbody) {
+                tbody.addEventListener('click', function (e) {
+                    var btn = e.target.closest('.withdrawal-view-btn');
+                    if (!btn || !detailsModal) return;
+                    document.getElementById('modal-wd-date').textContent = btn.getAttribute('data-date') || '—';
+                    document.getElementById('modal-wd-amount').textContent = btn.getAttribute('data-amount') || '—';
+                    document.getElementById('modal-wd-method').textContent = btn.getAttribute('data-method') || '—';
+                    document.getElementById('modal-wd-status').textContent = btn.getAttribute('data-status') || '—';
+                    detailsModal.show();
+                });
+            }
+
+            applyFilter();
         })();
     </script>
 
