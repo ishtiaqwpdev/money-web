@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage Gospel Music Mastery bookings from the admin panel">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Manage Bookings - Admin - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="admin-portal-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <main class="main">
+
+        <!-- admin bookings -->
+        <div class="admin-dashboard-area py-120">
+            <div class="container">
+
+                <!-- admin top header -->
+                <header class="sd-profile-header ad-topbar">
+                    <div class="sd-profile-main ad-topbar-main">
+                        <div class="sd-profile-avatar ad-topbar-avatar">
+                            <img src="assets/img/team/01.jpg" alt="Administrator">
+                        </div>
+                        <div class="sd-profile-meta">
+                            <h2>Administrator</h2>
+                            <span class="sd-role">Platform Admin</span>
+                            <div class="sd-profile-stats">
+                                <span class="sd-stat-item"><i class="far fa-shield-check"></i> Full Access</span>
+                                <span class="sd-stat-item"><i class="far fa-clock"></i> Last login: Today, 09:12 AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ad-topbar-actions">
+                        <div class="dropdown ad-icon-dropdown">
+                            <button class="ad-icon-btn" type="button" id="ad-notifications" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Notifications">
+                                <i class="far fa-bell"></i>
+                                <span class="ad-icon-badge">4</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-notifications">
+                                <h6 class="ad-dropdown-title">Notifications</h6>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><i class="far fa-user-plus"></i> <span><strong>John Smith</strong> applied as a teacher</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-classes.html"><i class="far fa-chalkboard"></i> <span>New class submitted for review</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-payments.html"><i class="far fa-credit-card"></i> <span>Payment of <strong>$40</strong> received</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><i class="far fa-triangle-exclamation"></i> <span>15 approvals are pending</span></a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown ad-icon-dropdown">
+                            <button class="ad-icon-btn" type="button" id="ad-messages" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Messages">
+                                <i class="far fa-envelope"></i>
+                                <span class="ad-icon-badge">2</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-messages">
+                                <h6 class="ad-dropdown-title">Messages</h6>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-payments.html"><img src="assets/img/team/02.jpg" alt="Sarah Johnson"><span><strong>Sarah Johnson</strong> asked about refunds</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><img src="assets/img/team/03.jpg" alt="Emily Davis"><span><strong>Emily Davis</strong> sent payout details</span></a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown ad-profile-dropdown">
+                            <button class="ad-profile-btn" type="button" id="ad-profile-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/img/team/01.jpg" alt="Administrator">
+                                <span class="ad-profile-btn-text">
+                                    <strong>Administrator</strong>
+                                    <small>Platform Admin</small>
+                                </span>
+                                <i class="far fa-angle-down"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-profile-menu">
+                                <a class="dropdown-item ad-dropdown-item" href="admin-settings.html"><i class="far fa-user"></i> <span>My Profile</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-settings.html"><i class="far fa-gear"></i> <span>Settings</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item ad-dropdown-item is-logout" href="admin-login.html"><i class="far fa-right-from-bracket"></i> <span>Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="sd-shell ad-shell">
+                    <button type="button" class="sd-sidebar-toggle theme-btn theme-btn-outline" id="sd-sidebar-toggle"
+                        aria-expanded="false" aria-controls="sd-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <aside class="sd-sidebar ad-sidebar" id="sd-sidebar" aria-label="Admin navigation">
+                        <nav class="sd-nav ad-nav">
+                            <ul>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+                                <li class="ad-nav-group is-open" id="ad-users-group">
+                                    <button type="button" class="sd-nav-link ad-nav-parent" id="ad-users-toggle"
+                                        aria-expanded="true" aria-controls="ad-users-submenu">
+                                        <i class="far fa-users"></i> Users
+                                        <i class="far fa-angle-down ad-nav-caret"></i>
+                                    </button>
+                                    <ul class="ad-submenu" id="ad-users-submenu">
+                                        <li><a href="admin-teachers.html" class="sd-nav-link ad-sub-link" data-nav="teachers"><i class="far fa-chalkboard-user"></i> Teachers</a></li>
+                                        <li><a href="admin-students.html" class="sd-nav-link ad-sub-link" data-nav="students"><i class="far fa-graduation-cap"></i> Students</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="admin-classes.html" class="sd-nav-link" data-nav="classes"><i class="far fa-chalkboard"></i> Classes</a></li>
+                                <li><a href="admin-bookings.html" class="sd-nav-link active" data-nav="bookings"><i class="far fa-calendar-check"></i> Bookings</a></li>
+                                <li><a href="admin-payments.html" class="sd-nav-link" data-nav="payments"><i class="far fa-credit-card"></i> Payments</a></li>
+                                <li><a href="admin-programs.html" class="sd-nav-link" data-nav="programs"><i class="far fa-music"></i> Music Programs</a></li>
+                                <li><a href="admin-blog.html" class="sd-nav-link" data-nav="blogs"><i class="far fa-newspaper"></i> Blogs</a></li>
+                                <li><a href="admin-settings.html" class="sd-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="admin-login.html" class="sd-nav-link sd-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="sd-sidebar-backdrop" id="sd-sidebar-backdrop" hidden></div>
+
+                    <div class="sd-main ad-main">
+
+                        <section class="sd-card sd-welcome-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <span class="login-portal-badge">Booking Management</span>
+                                    <h3>Manage Bookings</h3>
+                                    <p>Monitor student lesson bookings, teacher schedules, payment status, and lesson progress.</p>
+                                </div>
+                                <a href="admin-dashboard.html" class="theme-btn theme-btn-outline"><i class="far fa-grid-2"></i> Dashboard</a>
+                            </div>
+                        </section>
+
+                        <!-- stats -->
+                        <section class="sd-stats-grid ab-stats-grid">
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-calendar-check"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="540">0</span>
+                                    <span class="sd-stat-title">Total Bookings</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-calendar-days"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="120">0</span>
+                                    <span class="sd-stat-title">Upcoming Lessons</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-circle-check"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="350">0</span>
+                                    <span class="sd-stat-title">Completed Lessons</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-circle-xmark"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="40">0</span>
+                                    <span class="sd-stat-title">Cancelled</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card is-pending">
+                                <div class="sd-stat-icon"><i class="far fa-clock"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="30">0</span>
+                                    <span class="sd-stat-title">Pending</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- analytics charts -->
+                        <div class="gmm-chart-grid">
+                            <section class="sd-card ad-chart-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Booking Analytics</h3>
+                                        <p>Lesson bookings created each month.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap">
+                                    <canvas id="gmm-ab-analytics" aria-label="Booking analytics line chart"></canvas>
+                                </div>
+                            </section>
+                            <section class="sd-card ad-chart-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Booking Status</h3>
+                                        <p>Distribution of booking statuses.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap is-doughnut">
+                                    <canvas id="gmm-ab-status" aria-label="Booking status doughnut chart"></canvas>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="ab-content-grid">
+
+                            <!-- bookings table -->
+                            <section class="sd-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>All Bookings</h3>
+                                        <p>Search and manage student lesson bookings.</p>
+                                    </div>
+                                    <span class="sf-count-pill" id="ab-result-count"><i class="far fa-calendar-check"></i> <strong>8</strong> Shown</span>
+                                </div>
+
+                                <form class="at-filter-bar" id="ab-filter-form" action="#" method="get">
+                                    <div class="at-search-field">
+                                        <i class="far fa-search" aria-hidden="true"></i>
+                                        <input type="search" class="form-control" id="ab-search"
+                                            placeholder="Search by student, teacher, or class..." autocomplete="off">
+                                    </div>
+                                    <div class="at-filter-selects">
+                                        <div class="form-group mb-0">
+                                            <label for="ab-status" class="visually-hidden">Booking Status</label>
+                                            <select class="form-control form-select" id="ab-status">
+                                                <option value="all">All Booking Status</option>
+                                                <option value="pending">Pending</option>
+                                                <option value="confirmed">Confirmed</option>
+                                                <option value="completed">Completed</option>
+                                                <option value="cancelled">Cancelled</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <label for="ab-payment" class="visually-hidden">Payment Status</label>
+                                            <select class="form-control form-select" id="ab-payment">
+                                                <option value="all">All Payment Status</option>
+                                                <option value="paid">Paid</option>
+                                                <option value="pending">Pending</option>
+                                                <option value="refunded">Refunded</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <label for="ab-date" class="visually-hidden">Date</label>
+                                            <select class="form-control form-select" id="ab-date">
+                                                <option value="all">All Dates</option>
+                                                <option value="today">Today</option>
+                                                <option value="week">This Week</option>
+                                                <option value="month">This Month</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="theme-btn"><i class="far fa-filter"></i> Filter</button>
+                                    </div>
+                                </form>
+
+                                <div class="table-responsive td-table-wrap" id="ab-table-wrap">
+                                    <table class="table td-table sb-table at-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Student</th>
+                                                <th>Teacher</th>
+                                                <th>Class</th>
+                                                <th>Date</th>
+                                                <th>Time</th>
+                                                <th>Payment</th>
+                                                <th>Booking Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="ab-table-body">
+
+                                            <tr class="ab-row"
+                                                data-id="BK-1042"
+                                                data-student="Sarah Johnson"
+                                                data-teacher="John Smith"
+                                                data-class="Beginner Gospel Piano"
+                                                data-date="March 20, 2026"
+                                                data-time="10:00 AM"
+                                                data-duration="60 Minutes"
+                                                data-amount="$40"
+                                                data-payment="paid"
+                                                data-status="confirmed"
+                                                data-period="month"
+                                                data-notes="Confirmed booking for worship piano fundamentals."
+                                                data-student-img="assets/img/team/02.jpg"
+                                                data-teacher-img="assets/img/team/01.jpg"
+                                                data-phone="+1 555 123456"
+                                                data-email="sarah@email.com">
+                                                <td data-label="Student">
+                                                    <div class="sb-teacher-cell">
+                                                        <img src="assets/img/team/02.jpg" alt="Sarah Johnson">
+                                                        <strong>Sarah Johnson</strong>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Teacher">John Smith</td>
+                                                <td data-label="Class">Beginner Gospel Piano</td>
+                                                <td data-label="Date">March 20, 2026</td>
+                                                <td data-label="Time">10:00 AM</td>
+                                                <td data-label="Payment"><span class="sb-badge is-confirmed ab-payment">Paid</span></td>
+                                                <td data-label="Booking Status"><span class="sb-badge is-confirmed ab-status">Confirmed</span></td>
+                                                <td data-label="Action">
+                                                    <div class="dropdown at-action-dropdown">
+                                                        <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                            <i class="far fa-ellipsis-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-view-btn"><i class="far fa-eye"></i> <span>View Booking</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-student-btn"><i class="far fa-graduation-cap"></i> <span>View Student</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-teacher-btn"><i class="far fa-chalkboard-user"></i> <span>View Teacher</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-complete-btn"><i class="far fa-circle-check"></i> <span>Mark Completed</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-cancel-btn"><i class="far fa-circle-xmark"></i> <span>Cancel Booking</span></button></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-refund-btn"><i class="far fa-rotate-left"></i> <span>Refund Payment</span></button></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="ab-row"
+                                                data-id="BK-1048"
+                                                data-student="David Wilson"
+                                                data-teacher="Emily Davis"
+                                                data-class="Vocal Training"
+                                                data-date="March 25, 2026"
+                                                data-time="02:00 PM"
+                                                data-duration="45 Minutes"
+                                                data-amount="$50"
+                                                data-payment="pending"
+                                                data-status="pending"
+                                                data-period="week"
+                                                data-notes="Awaiting payment confirmation before lesson start."
+                                                data-student-img="assets/img/team/05.jpg"
+                                                data-teacher-img="assets/img/team/03.jpg"
+                                                data-phone="+1 555 456789"
+                                                data-email="david@email.com">
+                                                <td data-label="Student">
+                                                    <div class="sb-teacher-cell">
+                                                        <img src="assets/img/team/05.jpg" alt="David Wilson">
+                                                        <strong>David Wilson</strong>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Teacher">Emily Davis</td>
+                                                <td data-label="Class">Vocal Training</td>
+                                                <td data-label="Date">March 25, 2026</td>
+                                                <td data-label="Time">02:00 PM</td>
+                                                <td data-label="Payment"><span class="sb-badge is-pending ab-payment">Pending</span></td>
+                                                <td data-label="Booking Status"><span class="sb-badge is-pending ab-status">Pending</span></td>
+                                                <td data-label="Action">
+                                                    <div class="dropdown at-action-dropdown">
+                                                        <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                            <i class="far fa-ellipsis-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-view-btn"><i class="far fa-eye"></i> <span>View Booking</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-student-btn"><i class="far fa-graduation-cap"></i> <span>View Student</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-teacher-btn"><i class="far fa-chalkboard-user"></i> <span>View Teacher</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-complete-btn"><i class="far fa-circle-check"></i> <span>Mark Completed</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-cancel-btn"><i class="far fa-circle-xmark"></i> <span>Cancel Booking</span></button></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-refund-btn"><i class="far fa-rotate-left"></i> <span>Refund Payment</span></button></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="ab-row"
+                                                data-id="BK-1031"
+                                                data-student="Olivia Martin"
+                                                data-teacher="John Smith"
+                                                data-class="Advanced Worship Piano"
+                                                data-date="March 18, 2026"
+                                                data-time="11:00 AM"
+                                                data-duration="60 Minutes"
+                                                data-amount="$55"
+                                                data-payment="paid"
+                                                data-status="completed"
+                                                data-period="week"
+                                                data-notes="Lesson completed successfully. Student requested follow-up."
+                                                data-student-img="assets/img/team/07.jpg"
+                                                data-teacher-img="assets/img/team/01.jpg"
+                                                data-phone="+1 555 444555"
+                                                data-email="olivia@email.com">
+                                                <td data-label="Student">
+                                                    <div class="sb-teacher-cell">
+                                                        <img src="assets/img/team/07.jpg" alt="Olivia Martin">
+                                                        <strong>Olivia Martin</strong>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Teacher">John Smith</td>
+                                                <td data-label="Class">Advanced Worship Piano</td>
+                                                <td data-label="Date">March 18, 2026</td>
+                                                <td data-label="Time">11:00 AM</td>
+                                                <td data-label="Payment"><span class="sb-badge is-confirmed ab-payment">Paid</span></td>
+                                                <td data-label="Booking Status"><span class="sb-badge is-completed ab-status">Completed</span></td>
+                                                <td data-label="Action">
+                                                    <div class="dropdown at-action-dropdown">
+                                                        <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                            <i class="far fa-ellipsis-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-view-btn"><i class="far fa-eye"></i> <span>View Booking</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-student-btn"><i class="far fa-graduation-cap"></i> <span>View Student</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-teacher-btn"><i class="far fa-chalkboard-user"></i> <span>View Teacher</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-complete-btn"><i class="far fa-circle-check"></i> <span>Mark Completed</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-cancel-btn"><i class="far fa-circle-xmark"></i> <span>Cancel Booking</span></button></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-refund-btn"><i class="far fa-rotate-left"></i> <span>Refund Payment</span></button></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="ab-row"
+                                                data-id="BK-1020"
+                                                data-student="Michael Brown"
+                                                data-teacher="David Wilson"
+                                                data-class="Gospel Drum Grooves"
+                                                data-date="March 10, 2026"
+                                                data-time="04:00 PM"
+                                                data-duration="55 Minutes"
+                                                data-amount="$45"
+                                                data-payment="refunded"
+                                                data-status="cancelled"
+                                                data-period="month"
+                                                data-notes="Cancelled by student. Refund processed."
+                                                data-student-img="assets/img/team/04.jpg"
+                                                data-teacher-img="assets/img/team/05.jpg"
+                                                data-phone="+1 555 987654"
+                                                data-email="michael@email.com">
+                                                <td data-label="Student">
+                                                    <div class="sb-teacher-cell">
+                                                        <img src="assets/img/team/04.jpg" alt="Michael Brown">
+                                                        <strong>Michael Brown</strong>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Teacher">David Wilson</td>
+                                                <td data-label="Class">Gospel Drum Grooves</td>
+                                                <td data-label="Date">March 10, 2026</td>
+                                                <td data-label="Time">04:00 PM</td>
+                                                <td data-label="Payment"><span class="sb-badge is-inactive ab-payment">Refunded</span></td>
+                                                <td data-label="Booking Status"><span class="sb-badge is-cancelled ab-status">Cancelled</span></td>
+                                                <td data-label="Action">
+                                                    <div class="dropdown at-action-dropdown">
+                                                        <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                            <i class="far fa-ellipsis-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-view-btn"><i class="far fa-eye"></i> <span>View Booking</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-student-btn"><i class="far fa-graduation-cap"></i> <span>View Student</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-teacher-btn"><i class="far fa-chalkboard-user"></i> <span>View Teacher</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-complete-btn"><i class="far fa-circle-check"></i> <span>Mark Completed</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-cancel-btn"><i class="far fa-circle-xmark"></i> <span>Cancel Booking</span></button></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-refund-btn"><i class="far fa-rotate-left"></i> <span>Refund Payment</span></button></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="ab-row"
+                                                data-id="BK-1055"
+                                                data-student="James Carter"
+                                                data-teacher="Michael Brown"
+                                                data-class="Church Guitar Basics"
+                                                data-date="March 22, 2026"
+                                                data-time="09:00 AM"
+                                                data-duration="50 Minutes"
+                                                data-amount="$35"
+                                                data-payment="paid"
+                                                data-status="confirmed"
+                                                data-period="today"
+                                                data-notes="First guitar lesson — beginner level."
+                                                data-student-img="assets/img/team/06.jpg"
+                                                data-teacher-img="assets/img/team/04.jpg"
+                                                data-phone="+1 555 666777"
+                                                data-email="james.c@email.com">
+                                                <td data-label="Student">
+                                                    <div class="sb-teacher-cell">
+                                                        <img src="assets/img/team/06.jpg" alt="James Carter">
+                                                        <strong>James Carter</strong>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Teacher">Michael Brown</td>
+                                                <td data-label="Class">Church Guitar Basics</td>
+                                                <td data-label="Date">March 22, 2026</td>
+                                                <td data-label="Time">09:00 AM</td>
+                                                <td data-label="Payment"><span class="sb-badge is-confirmed ab-payment">Paid</span></td>
+                                                <td data-label="Booking Status"><span class="sb-badge is-confirmed ab-status">Confirmed</span></td>
+                                                <td data-label="Action">
+                                                    <div class="dropdown at-action-dropdown">
+                                                        <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                            <i class="far fa-ellipsis-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-view-btn"><i class="far fa-eye"></i> <span>View Booking</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-student-btn"><i class="far fa-graduation-cap"></i> <span>View Student</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-teacher-btn"><i class="far fa-chalkboard-user"></i> <span>View Teacher</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-complete-btn"><i class="far fa-circle-check"></i> <span>Mark Completed</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-cancel-btn"><i class="far fa-circle-xmark"></i> <span>Cancel Booking</span></button></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-refund-btn"><i class="far fa-rotate-left"></i> <span>Refund Payment</span></button></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="ab-row"
+                                                data-id="BK-1050"
+                                                data-student="Daniel Brooks"
+                                                data-teacher="Daniel Brooks"
+                                                data-class="Music Theory Fundamentals"
+                                                data-date="March 21, 2026"
+                                                data-time="03:30 PM"
+                                                data-duration="40 Minutes"
+                                                data-amount="$30"
+                                                data-payment="paid"
+                                                data-status="confirmed"
+                                                data-period="week"
+                                                data-notes="Theory focus on chord progressions."
+                                                data-student-img="assets/img/team/08.jpg"
+                                                data-teacher-img="assets/img/team/08.jpg"
+                                                data-phone="+1 555 888999"
+                                                data-email="daniel.b@email.com">
+                                                <td data-label="Student">
+                                                    <div class="sb-teacher-cell">
+                                                        <img src="assets/img/team/08.jpg" alt="Daniel Brooks">
+                                                        <strong>Daniel Brooks</strong>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Teacher">Daniel Brooks</td>
+                                                <td data-label="Class">Music Theory Fundamentals</td>
+                                                <td data-label="Date">March 21, 2026</td>
+                                                <td data-label="Time">03:30 PM</td>
+                                                <td data-label="Payment"><span class="sb-badge is-confirmed ab-payment">Paid</span></td>
+                                                <td data-label="Booking Status"><span class="sb-badge is-confirmed ab-status">Confirmed</span></td>
+                                                <td data-label="Action">
+                                                    <div class="dropdown at-action-dropdown">
+                                                        <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                            <i class="far fa-ellipsis-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-view-btn"><i class="far fa-eye"></i> <span>View Booking</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-student-btn"><i class="far fa-graduation-cap"></i> <span>View Student</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-teacher-btn"><i class="far fa-chalkboard-user"></i> <span>View Teacher</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-complete-btn"><i class="far fa-circle-check"></i> <span>Mark Completed</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-cancel-btn"><i class="far fa-circle-xmark"></i> <span>Cancel Booking</span></button></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-refund-btn"><i class="far fa-rotate-left"></i> <span>Refund Payment</span></button></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="ab-row"
+                                                data-id="BK-1040"
+                                                data-student="Emily Carter"
+                                                data-teacher="Olivia Martin"
+                                                data-class="Choir Harmony Coaching"
+                                                data-date="March 15, 2026"
+                                                data-time="01:00 PM"
+                                                data-duration="50 Minutes"
+                                                data-amount="$48"
+                                                data-payment="paid"
+                                                data-status="completed"
+                                                data-period="month"
+                                                data-notes="Harmony stacking session completed."
+                                                data-student-img="assets/img/team/03.jpg"
+                                                data-teacher-img="assets/img/team/07.jpg"
+                                                data-phone="+1 555 222333"
+                                                data-email="emily.c@email.com">
+                                                <td data-label="Student">
+                                                    <div class="sb-teacher-cell">
+                                                        <img src="assets/img/team/03.jpg" alt="Emily Carter">
+                                                        <strong>Emily Carter</strong>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Teacher">Olivia Martin</td>
+                                                <td data-label="Class">Choir Harmony Coaching</td>
+                                                <td data-label="Date">March 15, 2026</td>
+                                                <td data-label="Time">01:00 PM</td>
+                                                <td data-label="Payment"><span class="sb-badge is-confirmed ab-payment">Paid</span></td>
+                                                <td data-label="Booking Status"><span class="sb-badge is-completed ab-status">Completed</span></td>
+                                                <td data-label="Action">
+                                                    <div class="dropdown at-action-dropdown">
+                                                        <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                            <i class="far fa-ellipsis-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-view-btn"><i class="far fa-eye"></i> <span>View Booking</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-student-btn"><i class="far fa-graduation-cap"></i> <span>View Student</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-teacher-btn"><i class="far fa-chalkboard-user"></i> <span>View Teacher</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-complete-btn"><i class="far fa-circle-check"></i> <span>Mark Completed</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-cancel-btn"><i class="far fa-circle-xmark"></i> <span>Cancel Booking</span></button></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-refund-btn"><i class="far fa-rotate-left"></i> <span>Refund Payment</span></button></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="ab-row"
+                                                data-id="BK-1058"
+                                                data-student="Hannah Lee"
+                                                data-teacher="John Smith"
+                                                data-class="Beginner Gospel Piano"
+                                                data-date="March 28, 2026"
+                                                data-time="05:00 PM"
+                                                data-duration="60 Minutes"
+                                                data-amount="$40"
+                                                data-payment="pending"
+                                                data-status="pending"
+                                                data-period="month"
+                                                data-notes="New student booking — payment not yet received."
+                                                data-student-img="assets/img/team/02.jpg"
+                                                data-teacher-img="assets/img/team/01.jpg"
+                                                data-phone="+1 555 101112"
+                                                data-email="hannah@email.com">
+                                                <td data-label="Student">
+                                                    <div class="sb-teacher-cell">
+                                                        <img src="assets/img/team/02.jpg" alt="Hannah Lee">
+                                                        <strong>Hannah Lee</strong>
+                                                    </div>
+                                                </td>
+                                                <td data-label="Teacher">John Smith</td>
+                                                <td data-label="Class">Beginner Gospel Piano</td>
+                                                <td data-label="Date">March 28, 2026</td>
+                                                <td data-label="Time">05:00 PM</td>
+                                                <td data-label="Payment"><span class="sb-badge is-pending ab-payment">Pending</span></td>
+                                                <td data-label="Booking Status"><span class="sb-badge is-pending ab-status">Pending</span></td>
+                                                <td data-label="Action">
+                                                    <div class="dropdown at-action-dropdown">
+                                                        <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                            <i class="far fa-ellipsis-vertical"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-view-btn"><i class="far fa-eye"></i> <span>View Booking</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-student-btn"><i class="far fa-graduation-cap"></i> <span>View Student</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-teacher-btn"><i class="far fa-chalkboard-user"></i> <span>View Teacher</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-complete-btn"><i class="far fa-circle-check"></i> <span>Mark Completed</span></button></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-cancel-btn"><i class="far fa-circle-xmark"></i> <span>Cancel Booking</span></button></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><button type="button" class="dropdown-item ad-dropdown-item ab-refund-btn"><i class="far fa-rotate-left"></i> <span>Refund Payment</span></button></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="sl-empty" id="ab-empty" hidden>
+                                    <i class="far fa-calendar-xmark"></i>
+                                    <h3>No bookings available.</h3>
+                                    <p>Try adjusting your search or filter options.</p>
+                                </div>
+
+                                <nav class="at-pagination" id="ab-pagination" aria-label="Bookings pagination">
+                                    <ul class="pagination justify-content-center mb-0">
+                                        <li class="page-item disabled" id="ab-page-prev">
+                                            <a class="page-link" href="#" data-page="prev" aria-label="Previous"><i class="far fa-angle-left"></i> Previous</a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                        <li class="page-item" id="ab-page-next">
+                                            <a class="page-link" href="#" data-page="next" aria-label="Next">Next <i class="far fa-angle-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </section>
+
+                            <!-- side column -->
+                            <aside class="ab-side-col">
+                                <section class="sd-card ab-calendar-card">
+                                    <div class="sd-card-head">
+                                        <div>
+                                            <h3>Booking Calendar</h3>
+                                            <p>March 2026 scheduled lessons.</p>
+                                        </div>
+                                    </div>
+                                    <div class="ab-calendar" id="ab-calendar" role="group" aria-label="Booking calendar demo">
+                                        <div class="ab-cal-weekdays">
+                                            <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                                        </div>
+                                        <div class="ab-cal-days" id="ab-cal-days">
+                                            <!-- filled by JS -->
+                                        </div>
+                                    </div>
+                                    <ul class="ab-cal-legend">
+                                        <li><span class="ab-dot is-confirmed"></span> Confirmed</li>
+                                        <li><span class="ab-dot is-pending"></span> Pending</li>
+                                        <li><span class="ab-dot is-selected"></span> Selected</li>
+                                    </ul>
+                                    <div class="ab-cal-selected" id="ab-cal-selected">
+                                        <strong>Select a date</strong>
+                                        <p>Click a highlighted day to preview scheduled lessons.</p>
+                                    </div>
+                                </section>
+
+                                <section class="sd-card">
+                                    <div class="sd-card-head">
+                                        <div>
+                                            <h3>Recent Booking Activity</h3>
+                                            <p>Latest booking events.</p>
+                                        </div>
+                                    </div>
+                                    <ul class="ad-timeline ab-activity-timeline">
+                                        <li class="ad-timeline-item is-class">
+                                            <span class="ad-timeline-icon"><i class="far fa-calendar-plus"></i></span>
+                                            <div class="ad-timeline-body">
+                                                <h4>New booking created</h4>
+                                                <p>Sarah Johnson booked Beginner Gospel Piano.</p>
+                                            </div>
+                                            <span class="ad-timeline-time">12 min ago</span>
+                                        </li>
+                                        <li class="ad-timeline-item is-payment">
+                                            <span class="ad-timeline-icon"><i class="far fa-credit-card"></i></span>
+                                            <div class="ad-timeline-body">
+                                                <h4>Payment received</h4>
+                                                <p>$40 paid for booking BK-1042.</p>
+                                            </div>
+                                            <span class="ad-timeline-time">45 min ago</span>
+                                        </li>
+                                        <li class="ad-timeline-item is-teacher">
+                                            <span class="ad-timeline-icon"><i class="far fa-circle-check"></i></span>
+                                            <div class="ad-timeline-body">
+                                                <h4>Lesson completed</h4>
+                                                <p>Olivia Martin finished Advanced Worship Piano.</p>
+                                            </div>
+                                            <span class="ad-timeline-time">2 hours ago</span>
+                                        </li>
+                                        <li class="ad-timeline-item is-student">
+                                            <span class="ad-timeline-icon"><i class="far fa-circle-xmark"></i></span>
+                                            <div class="ad-timeline-body">
+                                                <h4>Booking cancelled</h4>
+                                                <p>Michael Brown cancelled Gospel Drum Grooves.</p>
+                                            </div>
+                                            <span class="ad-timeline-time">Yesterday</span>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </aside>
+                        </div>
+
+                        <footer class="ad-footer">
+                            <p>&copy; <span id="date"></span> Gospel Music Mastery — Admin Panel. All rights reserved.</p>
+                            <ul>
+                                <li><a href="admin-settings.html">Settings</a></li>
+                                <li><a href="admin-dashboard.html">Support</a></li>
+                                <li><a href="admin-dashboard.html">Privacy</a></li>
+                            </ul>
+                        </footer>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- admin bookings end -->
+
+    </main>
+
+
+    <!-- booking detail modal -->
+    <div class="modal fade gospel-demo-modal" id="ab-booking-modal" tabindex="-1" aria-labelledby="ab-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ab-modal-title">Booking Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body at-modal-body">
+                    <div class="ab-modal-parties">
+                        <div class="ab-modal-party">
+                            <img src="assets/img/team/02.jpg" alt="Student" id="ab-modal-student-img">
+                            <div>
+                                <small>Student</small>
+                                <strong id="ab-modal-student">Sarah Johnson</strong>
+                                <span id="ab-modal-email">sarah@email.com</span>
+                            </div>
+                        </div>
+                        <div class="ab-modal-party">
+                            <img src="assets/img/team/01.jpg" alt="Teacher" id="ab-modal-teacher-img">
+                            <div>
+                                <small>Teacher</small>
+                                <strong id="ab-modal-teacher">John Smith</strong>
+                                <span id="ab-modal-phone">+1 555 123456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="booking-modal-list at-modal-list">
+                        <li><span>Booking ID</span><strong id="ab-modal-id">BK-1042</strong></li>
+                        <li><span>Class Details</span><strong id="ab-modal-class">Beginner Gospel Piano</strong></li>
+                        <li><span>Date</span><strong id="ab-modal-date">March 20, 2026</strong></li>
+                        <li><span>Time</span><strong id="ab-modal-time">10:00 AM</strong></li>
+                        <li><span>Duration</span><strong id="ab-modal-duration">60 Minutes</strong></li>
+                        <li><span>Payment Amount</span><strong id="ab-modal-amount">$40</strong></li>
+                        <li><span>Payment Status</span><strong id="ab-modal-payment-wrap"><span class="sb-badge is-confirmed" id="ab-modal-payment">Paid</span></strong></li>
+                        <li><span>Booking Status</span><strong id="ab-modal-status-wrap"><span class="sb-badge is-confirmed" id="ab-modal-status">Confirmed</span></strong></li>
+                    </ul>
+                    <div class="at-modal-bio">
+                        <h5>Notes</h5>
+                        <p id="ab-modal-notes">Booking notes will appear here.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" id="ab-modal-cancel">
+                        <i class="far fa-circle-xmark"></i> Cancel Booking
+                    </button>
+                    <button type="button" class="theme-btn theme-btn-outline" id="ab-modal-confirm">
+                        <i class="far fa-check"></i> Confirm Booking
+                    </button>
+                    <button type="button" class="theme-btn" id="ab-modal-complete">
+                        <i class="far fa-circle-check"></i> Mark Complete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gospel-alert gospel-alert-success sl-toast" id="ab-toast" hidden>
+        <i class="far fa-circle-check"></i>
+        <span id="ab-toast-text">Action completed (demo).</span>
+    </div>
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chart.umd.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
+
+    <script>
+        (function () {
+            var shell = document.querySelector('.ad-shell');
+            if (!shell) return;
+
+            /* sidebar */
+            var toggle = document.getElementById('sd-sidebar-toggle');
+            var sidebar = document.getElementById('sd-sidebar');
+            var backdrop = document.getElementById('sd-sidebar-backdrop');
+            function closeSidebar() {
+                shell.classList.remove('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+            function openSidebar() {
+                shell.classList.add('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    if (shell.classList.contains('is-sidebar-open')) closeSidebar();
+                    else openSidebar();
+                });
+            }
+            if (backdrop) backdrop.addEventListener('click', closeSidebar);
+            if (sidebar) {
+                sidebar.querySelectorAll('a.sd-nav-link').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        if (window.matchMedia('(max-width: 991px)').matches) closeSidebar();
+                    });
+                });
+            }
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeSidebar();
+            });
+
+            var usersToggle = document.getElementById('ad-users-toggle');
+            var usersGroup = document.getElementById('ad-users-group');
+            if (usersToggle && usersGroup) {
+                usersToggle.addEventListener('click', function () {
+                    var isOpen = usersGroup.classList.toggle('is-open');
+                    usersToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+
+            /* counters */
+            document.querySelectorAll('.ad-counter').forEach(function (el) {
+                var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+                var start = null;
+                function step(ts) {
+                    if (start === null) start = ts;
+                    var p = Math.min((ts - start) / 1000, 1);
+                    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US');
+                    if (p < 1) window.requestAnimationFrame(step);
+                }
+                window.requestAnimationFrame(step);
+            });
+
+            /* toast */
+            var toast = document.getElementById('ab-toast');
+            var toastText = document.getElementById('ab-toast-text');
+            var toastTimer = null;
+            function showToast(message, isError) {
+                if (!toast) return;
+                if (toastText) toastText.textContent = message;
+                toast.classList.toggle('gospel-alert-error', !!isError);
+                toast.classList.toggle('gospel-alert-success', !isError);
+                var icon = toast.querySelector('i');
+                if (icon) icon.className = isError ? 'far fa-circle-exclamation' : 'far fa-circle-check';
+                toast.hidden = false;
+                window.clearTimeout(toastTimer);
+                toastTimer = window.setTimeout(function () { toast.hidden = true; }, 3000);
+            }
+
+            var BOOKING_STATUS = {
+                pending: { label: 'Pending', className: 'is-pending' },
+                confirmed: { label: 'Confirmed', className: 'is-confirmed' },
+                completed: { label: 'Completed', className: 'is-completed' },
+                cancelled: { label: 'Cancelled', className: 'is-cancelled' }
+            };
+            var PAYMENT_STATUS = {
+                paid: { label: 'Paid', className: 'is-confirmed' },
+                pending: { label: 'Pending', className: 'is-pending' },
+                refunded: { label: 'Refunded', className: 'is-inactive' }
+            };
+
+            function setBookingStatus(row, status) {
+                var meta = BOOKING_STATUS[status];
+                if (!meta) return;
+                row.setAttribute('data-status', status);
+                var badge = row.querySelector('.ab-status');
+                if (badge) {
+                    badge.className = 'sb-badge ab-status ' + meta.className;
+                    badge.textContent = meta.label;
+                }
+            }
+
+            function setPaymentStatus(row, payment) {
+                var meta = PAYMENT_STATUS[payment];
+                if (!meta) return;
+                row.setAttribute('data-payment', payment);
+                var badge = row.querySelector('.ab-payment');
+                if (badge) {
+                    badge.className = 'sb-badge ab-payment ' + meta.className;
+                    badge.textContent = meta.label;
+                }
+            }
+
+            /* filters */
+            var searchInput = document.getElementById('ab-search');
+            var statusSelect = document.getElementById('ab-status');
+            var paymentSelect = document.getElementById('ab-payment');
+            var dateSelect = document.getElementById('ab-date');
+            var filterForm = document.getElementById('ab-filter-form');
+            var rows = Array.prototype.slice.call(document.querySelectorAll('.ab-row'));
+            var emptyState = document.getElementById('ab-empty');
+            var tableWrap = document.getElementById('ab-table-wrap');
+            var pagination = document.getElementById('ab-pagination');
+            var resultCount = document.getElementById('ab-result-count');
+            var currentPage = 1;
+            var perPage = 5;
+
+            function matchesFilters(row) {
+                var q = (searchInput.value || '').trim().toLowerCase();
+                var status = statusSelect.value;
+                var payment = paymentSelect.value;
+                var date = dateSelect.value;
+                var student = (row.getAttribute('data-student') || '').toLowerCase();
+                var teacher = (row.getAttribute('data-teacher') || '').toLowerCase();
+                var cls = (row.getAttribute('data-class') || '').toLowerCase();
+                var searchOk = !q || student.indexOf(q) !== -1 || teacher.indexOf(q) !== -1 || cls.indexOf(q) !== -1;
+                var statusOk = status === 'all' || row.getAttribute('data-status') === status;
+                var paymentOk = payment === 'all' || row.getAttribute('data-payment') === payment;
+                var period = row.getAttribute('data-period') || '';
+                var dateOk = date === 'all' || period === date || (date === 'week' && (period === 'week' || period === 'today')) || (date === 'month' && (period === 'month' || period === 'week' || period === 'today'));
+                return searchOk && statusOk && paymentOk && dateOk && !row.classList.contains('is-deleted');
+            }
+
+            function getVisibleRows() { return rows.filter(matchesFilters); }
+
+            function updatePaginationUI(totalPages) {
+                if (!pagination) return;
+                var prev = document.getElementById('ab-page-prev');
+                var next = document.getElementById('ab-page-next');
+                if (prev) prev.classList.toggle('disabled', currentPage <= 1);
+                if (next) next.classList.toggle('disabled', currentPage >= totalPages || totalPages === 0);
+                pagination.querySelectorAll('.page-link[data-page]').forEach(function (link) {
+                    var page = link.getAttribute('data-page');
+                    if (page === 'prev' || page === 'next') return;
+                    var li = link.parentElement;
+                    if (li) li.classList.toggle('active', String(currentPage) === page);
+                });
+            }
+
+            function applyFilters(resetPage) {
+                if (resetPage) currentPage = 1;
+                var visible = getVisibleRows();
+                var totalPages = Math.max(1, Math.ceil(visible.length / perPage));
+                if (currentPage > totalPages) currentPage = totalPages;
+                rows.forEach(function (row) { row.hidden = true; });
+                var start = (currentPage - 1) * perPage;
+                visible.slice(start, start + perPage).forEach(function (row) { row.hidden = false; });
+                var hasResults = visible.length > 0;
+                if (emptyState) emptyState.hidden = hasResults;
+                if (tableWrap) tableWrap.hidden = !hasResults;
+                if (pagination) pagination.hidden = !hasResults;
+                if (resultCount) {
+                    resultCount.innerHTML = '<i class="far fa-calendar-check"></i> <strong>' + visible.length + '</strong> Shown';
+                }
+                updatePaginationUI(totalPages);
+            }
+
+            if (filterForm) {
+                filterForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    applyFilters(true);
+                });
+            }
+            if (searchInput) searchInput.addEventListener('input', function () { applyFilters(true); });
+            if (statusSelect) statusSelect.addEventListener('change', function () { applyFilters(true); });
+            if (paymentSelect) paymentSelect.addEventListener('change', function () { applyFilters(true); });
+            if (dateSelect) dateSelect.addEventListener('change', function () { applyFilters(true); });
+
+            if (pagination) {
+                pagination.addEventListener('click', function (e) {
+                    var link = e.target.closest('.page-link');
+                    if (!link) return;
+                    e.preventDefault();
+                    var page = link.getAttribute('data-page');
+                    var totalPages = Math.max(1, Math.ceil(getVisibleRows().length / perPage));
+                    if (page === 'prev') currentPage = Math.max(1, currentPage - 1);
+                    else if (page === 'next') currentPage = Math.min(totalPages, currentPage + 1);
+                    else currentPage = parseInt(page, 10) || 1;
+                    applyFilters(false);
+                });
+            }
+
+            /* calendar demo */
+            var calDays = document.getElementById('ab-cal-days');
+            var calSelected = document.getElementById('ab-cal-selected');
+            var CAL_EVENTS = {
+                10: [{ title: 'Gospel Drum Grooves', status: 'cancelled' }],
+                15: [{ title: 'Choir Harmony Coaching', status: 'completed' }],
+                18: [{ title: 'Advanced Worship Piano', status: 'completed' }],
+                20: [{ title: 'Beginner Gospel Piano', status: 'confirmed' }],
+                21: [{ title: 'Music Theory Fundamentals', status: 'confirmed' }],
+                22: [{ title: 'Church Guitar Basics', status: 'confirmed' }],
+                25: [{ title: 'Vocal Training', status: 'pending' }],
+                28: [{ title: 'Beginner Gospel Piano', status: 'pending' }]
+            };
+
+            function buildCalendar() {
+                if (!calDays) return;
+                var html = '';
+                var startBlank = 0; /* March 2026 starts Sunday */
+                for (var i = 0; i < startBlank; i++) html += '<button type="button" class="ab-cal-day is-empty" disabled></button>';
+                for (var d = 1; d <= 31; d++) {
+                    var events = CAL_EVENTS[d];
+                    var cls = 'ab-cal-day';
+                    if (events) {
+                        cls += ' has-event is-' + events[0].status;
+                    }
+                    html += '<button type="button" class="' + cls + '" data-day="' + d + '">' + d + '</button>';
+                }
+                calDays.innerHTML = html;
+
+                calDays.querySelectorAll('.ab-cal-day.has-event').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        calDays.querySelectorAll('.ab-cal-day').forEach(function (b) { b.classList.remove('is-selected'); });
+                        btn.classList.add('is-selected');
+                        var day = btn.getAttribute('data-day');
+                        var events = CAL_EVENTS[day] || [];
+                        if (calSelected) {
+                            calSelected.innerHTML = '<strong>March ' + day + ', 2026</strong>' +
+                                events.map(function (ev) {
+                                    return '<p>' + ev.title + ' <span class="sb-badge is-' +
+                                        (ev.status === 'confirmed' ? 'confirmed' : ev.status === 'pending' ? 'pending' : ev.status === 'completed' ? 'completed' : 'cancelled') +
+                                        '">' + ev.status.charAt(0).toUpperCase() + ev.status.slice(1) + '</span></p>';
+                                }).join('');
+                        }
+                    });
+                });
+            }
+            buildCalendar();
+
+            /* modal */
+            var modalEl = document.getElementById('ab-booking-modal');
+            var modal = modalEl && window.bootstrap ? new bootstrap.Modal(modalEl) : null;
+            var activeRow = null;
+
+            function fillModal(row) {
+                activeRow = row;
+                var set = function (id, value) {
+                    var el = document.getElementById(id);
+                    if (el) el.textContent = value || '';
+                };
+                var setImg = function (id, src, alt) {
+                    var el = document.getElementById(id);
+                    if (el) { el.src = src || ''; el.alt = alt || ''; }
+                };
+                setImg('ab-modal-student-img', row.getAttribute('data-student-img'), row.getAttribute('data-student'));
+                setImg('ab-modal-teacher-img', row.getAttribute('data-teacher-img'), row.getAttribute('data-teacher'));
+                set('ab-modal-student', row.getAttribute('data-student'));
+                set('ab-modal-teacher', row.getAttribute('data-teacher'));
+                set('ab-modal-email', row.getAttribute('data-email'));
+                set('ab-modal-phone', row.getAttribute('data-phone'));
+                set('ab-modal-id', row.getAttribute('data-id'));
+                set('ab-modal-class', row.getAttribute('data-class'));
+                set('ab-modal-date', row.getAttribute('data-date'));
+                set('ab-modal-time', row.getAttribute('data-time'));
+                set('ab-modal-duration', row.getAttribute('data-duration'));
+                set('ab-modal-amount', row.getAttribute('data-amount'));
+                set('ab-modal-notes', row.getAttribute('data-notes'));
+
+                var pay = PAYMENT_STATUS[row.getAttribute('data-payment')];
+                var payBadge = document.getElementById('ab-modal-payment');
+                if (payBadge && pay) {
+                    payBadge.className = 'sb-badge ' + pay.className;
+                    payBadge.textContent = pay.label;
+                }
+                var st = BOOKING_STATUS[row.getAttribute('data-status')];
+                var stBadge = document.getElementById('ab-modal-status');
+                if (stBadge && st) {
+                    stBadge.className = 'sb-badge ' + st.className;
+                    stBadge.textContent = st.label;
+                }
+            }
+
+            function openModal(row) {
+                fillModal(row);
+                if (modal) modal.show();
+            }
+
+            rows.forEach(function (row) {
+                var id = row.getAttribute('data-id') || 'Booking';
+                var viewBtn = row.querySelector('.ab-view-btn');
+                var studentBtn = row.querySelector('.ab-student-btn');
+                var teacherBtn = row.querySelector('.ab-teacher-btn');
+                var completeBtn = row.querySelector('.ab-complete-btn');
+                var cancelBtn = row.querySelector('.ab-cancel-btn');
+                var refundBtn = row.querySelector('.ab-refund-btn');
+
+                if (viewBtn) viewBtn.addEventListener('click', function () { openModal(row); });
+                if (studentBtn) studentBtn.addEventListener('click', function () {
+                    showToast('Opening student profile is a frontend demo only.');
+                });
+                if (teacherBtn) teacherBtn.addEventListener('click', function () {
+                    showToast('Opening teacher profile is a frontend demo only.');
+                });
+                if (completeBtn) {
+                    completeBtn.addEventListener('click', function () {
+                        setBookingStatus(row, 'completed');
+                        showToast(id + ' marked completed (demo).');
+                        applyFilters(false);
+                    });
+                }
+                if (cancelBtn) {
+                    cancelBtn.addEventListener('click', function () {
+                        setBookingStatus(row, 'cancelled');
+                        showToast(id + ' cancelled (demo).', true);
+                        applyFilters(false);
+                    });
+                }
+                if (refundBtn) {
+                    refundBtn.addEventListener('click', function () {
+                        setPaymentStatus(row, 'refunded');
+                        showToast(id + ' payment refunded (demo).', true);
+                        applyFilters(false);
+                    });
+                }
+            });
+
+            var modalConfirm = document.getElementById('ab-modal-confirm');
+            var modalCancel = document.getElementById('ab-modal-cancel');
+            var modalComplete = document.getElementById('ab-modal-complete');
+            if (modalConfirm) {
+                modalConfirm.addEventListener('click', function () {
+                    if (!activeRow) return;
+                    setBookingStatus(activeRow, 'confirmed');
+                    fillModal(activeRow);
+                    showToast((activeRow.getAttribute('data-id') || 'Booking') + ' confirmed (demo).');
+                    applyFilters(false);
+                    if (modal) modal.hide();
+                });
+            }
+            if (modalCancel) {
+                modalCancel.addEventListener('click', function () {
+                    if (!activeRow) return;
+                    setBookingStatus(activeRow, 'cancelled');
+                    fillModal(activeRow);
+                    showToast((activeRow.getAttribute('data-id') || 'Booking') + ' cancelled (demo).', true);
+                    applyFilters(false);
+                    if (modal) modal.hide();
+                });
+            }
+            if (modalComplete) {
+                modalComplete.addEventListener('click', function () {
+                    if (!activeRow) return;
+                    setBookingStatus(activeRow, 'completed');
+                    fillModal(activeRow);
+                    showToast((activeRow.getAttribute('data-id') || 'Booking') + ' marked complete (demo).');
+                    applyFilters(false);
+                    if (modal) modal.hide();
+                });
+            }
+
+            var dateEl = document.getElementById('date');
+            if (dateEl) dateEl.textContent = new Date().getFullYear();
+
+            applyFilters(true);
+        })();
+    </script>
+
+</body>
+
+</html>

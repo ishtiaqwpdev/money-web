@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage Gospel Music Mastery blog posts from the admin panel">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Manage Blogs - Admin - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="admin-portal-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <main class="main">
+
+        <!-- admin blog -->
+        <div class="admin-dashboard-area py-120">
+            <div class="container">
+
+                <!-- admin top header -->
+                <header class="sd-profile-header ad-topbar">
+                    <div class="sd-profile-main ad-topbar-main">
+                        <div class="sd-profile-avatar ad-topbar-avatar">
+                            <img src="assets/img/team/01.jpg" alt="Administrator">
+                        </div>
+                        <div class="sd-profile-meta">
+                            <h2>Administrator</h2>
+                            <span class="sd-role">Platform Admin</span>
+                            <div class="sd-profile-stats">
+                                <span class="sd-stat-item"><i class="far fa-shield-check"></i> Full Access</span>
+                                <span class="sd-stat-item"><i class="far fa-clock"></i> Last login: Today, 09:12 AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ad-topbar-actions">
+                        <div class="dropdown ad-icon-dropdown">
+                            <button class="ad-icon-btn" type="button" id="ad-notifications" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Notifications">
+                                <i class="far fa-bell"></i>
+                                <span class="ad-icon-badge">4</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-notifications">
+                                <h6 class="ad-dropdown-title">Notifications</h6>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><i class="far fa-user-plus"></i> <span><strong>John Smith</strong> applied as a teacher</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-classes.html"><i class="far fa-chalkboard"></i> <span>New class submitted for review</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-payments.html"><i class="far fa-credit-card"></i> <span>Payment of <strong>$40</strong> received</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><i class="far fa-triangle-exclamation"></i> <span>15 approvals are pending</span></a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown ad-icon-dropdown">
+                            <button class="ad-icon-btn" type="button" id="ad-messages" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Messages">
+                                <i class="far fa-envelope"></i>
+                                <span class="ad-icon-badge">2</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-messages">
+                                <h6 class="ad-dropdown-title">Messages</h6>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-payments.html"><img src="assets/img/team/02.jpg" alt="Sarah Johnson"><span><strong>Sarah Johnson</strong> asked about refunds</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><img src="assets/img/team/03.jpg" alt="Emily Davis"><span><strong>Emily Davis</strong> sent payout details</span></a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown ad-profile-dropdown">
+                            <button class="ad-profile-btn" type="button" id="ad-profile-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/img/team/01.jpg" alt="Administrator">
+                                <span class="ad-profile-btn-text">
+                                    <strong>Administrator</strong>
+                                    <small>Platform Admin</small>
+                                </span>
+                                <i class="far fa-angle-down"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-profile-menu">
+                                <a class="dropdown-item ad-dropdown-item" href="admin-settings.html"><i class="far fa-user"></i> <span>My Profile</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-settings.html"><i class="far fa-gear"></i> <span>Settings</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item ad-dropdown-item is-logout" href="admin-login.html"><i class="far fa-right-from-bracket"></i> <span>Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="sd-shell ad-shell">
+                    <button type="button" class="sd-sidebar-toggle theme-btn theme-btn-outline" id="sd-sidebar-toggle"
+                        aria-expanded="false" aria-controls="sd-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <aside class="sd-sidebar ad-sidebar" id="sd-sidebar" aria-label="Admin navigation">
+                        <nav class="sd-nav ad-nav">
+                            <ul>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+                                <li class="ad-nav-group is-open" id="ad-users-group">
+                                    <button type="button" class="sd-nav-link ad-nav-parent" id="ad-users-toggle"
+                                        aria-expanded="true" aria-controls="ad-users-submenu">
+                                        <i class="far fa-users"></i> Users
+                                        <i class="far fa-angle-down ad-nav-caret"></i>
+                                    </button>
+                                    <ul class="ad-submenu" id="ad-users-submenu">
+                                        <li><a href="admin-teachers.html" class="sd-nav-link ad-sub-link" data-nav="teachers"><i class="far fa-chalkboard-user"></i> Teachers</a></li>
+                                        <li><a href="admin-students.html" class="sd-nav-link ad-sub-link" data-nav="students"><i class="far fa-graduation-cap"></i> Students</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="admin-classes.html" class="sd-nav-link" data-nav="classes"><i class="far fa-chalkboard"></i> Classes</a></li>
+                                <li><a href="admin-bookings.html" class="sd-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> Bookings</a></li>
+                                <li><a href="admin-payments.html" class="sd-nav-link" data-nav="payments"><i class="far fa-credit-card"></i> Payments</a></li>
+                                <li><a href="admin-programs.html" class="sd-nav-link" data-nav="programs"><i class="far fa-music"></i> Music Programs</a></li>
+                                <li><a href="admin-blog.html" class="sd-nav-link active" data-nav="blogs"><i class="far fa-newspaper"></i> Blogs</a></li>
+                                <li><a href="admin-settings.html" class="sd-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="admin-login.html" class="sd-nav-link sd-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="sd-sidebar-backdrop" id="sd-sidebar-backdrop" hidden></div>
+
+                    <div class="sd-main ad-main">
+
+                        <section class="sd-card sd-welcome-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <span class="login-portal-badge">Content Management</span>
+                                    <h3>Manage Blogs</h3>
+                                    <p>Create educational articles, manage blog posts, and publish music learning content.</p>
+                                </div>
+                                <button type="button" class="theme-btn" id="abl-add-btn">
+                                    <i class="far fa-plus"></i> Create New Blog
+                                </button>
+                            </div>
+                        </section>
+
+                        <!-- stats -->
+                        <section class="sd-stats-grid ad-stats-grid at-stats-grid">
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-newspaper"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="120">0</span>
+                                    <span class="sd-stat-title">Total Posts</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-circle-check"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="90">0</span>
+                                    <span class="sd-stat-title">Published</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-file-pen"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="20">0</span>
+                                    <span class="sd-stat-title">Drafts</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card is-pending">
+                                <div class="sd-stat-icon"><i class="far fa-clock"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="10">0</span>
+                                    <span class="sd-stat-title">Pending Review</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- analytics charts -->
+                        <div class="gmm-chart-grid">
+                            <section class="sd-card ad-chart-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Views Growth</h3>
+                                        <p>Monthly article views across the blog.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap">
+                                    <canvas id="gmm-abl-views" aria-label="Blog views growth line chart"></canvas>
+                                </div>
+                            </section>
+                            <section class="sd-card ad-chart-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Category Distribution</h3>
+                                        <p>Blog posts by content category.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap is-doughnut">
+                                    <canvas id="gmm-abl-category" aria-label="Blog category doughnut chart"></canvas>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- blog table -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>All Blog Posts</h3>
+                                    <p>Search, filter, and manage website articles.</p>
+                                </div>
+                                <span class="sf-count-pill" id="abl-result-count"><i class="far fa-newspaper"></i> <strong>8</strong> Shown</span>
+                            </div>
+
+                            <form class="at-filter-bar" id="abl-filter-form" action="#" method="get">
+                                <div class="at-search-field">
+                                    <i class="far fa-search" aria-hidden="true"></i>
+                                    <input type="search" class="form-control" id="abl-search"
+                                        placeholder="Search blog posts..." autocomplete="off">
+                                </div>
+                                <div class="at-filter-selects">
+                                    <div class="form-group mb-0">
+                                        <label for="abl-category" class="visually-hidden">Category</label>
+                                        <select class="form-control form-select" id="abl-category">
+                                            <option value="all">All Categories</option>
+                                            <option value="education">Music Education</option>
+                                            <option value="piano">Piano</option>
+                                            <option value="vocals">Vocals</option>
+                                            <option value="worship">Worship</option>
+                                            <option value="tips">Teacher Tips</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <label for="abl-status" class="visually-hidden">Status</label>
+                                        <select class="form-control form-select" id="abl-status">
+                                            <option value="all">All Status</option>
+                                            <option value="published">Published</option>
+                                            <option value="draft">Draft</option>
+                                            <option value="pending">Pending</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="theme-btn"><i class="far fa-filter"></i> Filter</button>
+                                </div>
+                            </form>
+
+                            <div class="table-responsive td-table-wrap" id="abl-table-wrap">
+                                <table class="table td-table sb-table at-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Featured Image</th>
+                                            <th>Title</th>
+                                            <th>Author</th>
+                                            <th>Category</th>
+                                            <th>Status</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="abl-table-body">
+
+                                        <tr class="abl-row"
+                                            data-id="BLG-01"
+                                            data-title="How To Improve Gospel Piano Skills"
+                                            data-author="Admin"
+                                            data-category="piano"
+                                            data-category-label="Piano"
+                                            data-status="published"
+                                            data-date="March 20, 2026"
+                                            data-short="Practical tips to strengthen gospel piano technique and worship flow."
+                                            data-content="Gospel piano improves through consistent practice of chord inversions, left-hand patterns, and worship-song transitions. Start each session with scales, then practice common progressions in several keys. Focus on dynamics and listening carefully to the vocalist so your accompaniment supports the message."
+                                            data-image="assets/img/blog/01.jpg"
+                                            data-featured="true">
+                                            <td data-label="Featured Image">
+                                                <img class="abl-thumb" src="assets/img/blog/01.jpg" alt="How To Improve Gospel Piano Skills">
+                                            </td>
+                                            <td data-label="Title"><strong class="abl-title-text">How To Improve Gospel Piano Skills</strong></td>
+                                            <td data-label="Author">Admin</td>
+                                            <td data-label="Category"><span class="abl-cat-label">Piano</span></td>
+                                            <td data-label="Status"><span class="sb-badge is-confirmed abl-status">Published</span></td>
+                                            <td data-label="Date">March 20, 2026</td>
+                                            <td data-label="Action">
+                                                <div class="dropdown at-action-dropdown">
+                                                    <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                        <i class="far fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="abl-row"
+                                            data-id="BLG-02"
+                                            data-title="Best Worship Vocal Techniques"
+                                            data-author="Admin"
+                                            data-category="vocals"
+                                            data-category-label="Vocals"
+                                            data-status="draft"
+                                            data-date="March 25, 2026"
+                                            data-short="Essential vocal techniques for clearer worship leading and healthier singing."
+                                            data-content="Strong worship vocals come from breath support, relaxed jaw posture, and intentional phrasing. Warm up gently, avoid straining for high notes, and use microphone technique to preserve tone. Practice harmony stacking with your team so blends stay consistent during live services."
+                                            data-image="assets/img/blog/02.jpg"
+                                            data-featured="true">
+                                            <td data-label="Featured Image">
+                                                <img class="abl-thumb" src="assets/img/blog/02.jpg" alt="Best Worship Vocal Techniques">
+                                            </td>
+                                            <td data-label="Title"><strong class="abl-title-text">Best Worship Vocal Techniques</strong></td>
+                                            <td data-label="Author">Admin</td>
+                                            <td data-label="Category"><span class="abl-cat-label">Vocals</span></td>
+                                            <td data-label="Status"><span class="sb-badge is-inactive abl-status">Draft</span></td>
+                                            <td data-label="Date">March 25, 2026</td>
+                                            <td data-label="Action">
+                                                <div class="dropdown at-action-dropdown">
+                                                    <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                        <i class="far fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="abl-row"
+                                            data-id="BLG-03"
+                                            data-title="Building a Strong Worship Team Culture"
+                                            data-author="Admin"
+                                            data-category="worship"
+                                            data-category-label="Worship"
+                                            data-status="published"
+                                            data-date="March 18, 2026"
+                                            data-short="How healthy rehearsal habits shape better Sunday worship."
+                                            data-content="A strong worship team culture prioritizes preparation, humility, and musical excellence. Clear setlists, punctual rehearsals, and honest feedback help musicians grow together. Celebrate progress, pray as a team, and keep the focus on serving the congregation."
+                                            data-image="assets/img/blog/03.jpg"
+                                            data-featured="true">
+                                            <td data-label="Featured Image">
+                                                <img class="abl-thumb" src="assets/img/blog/03.jpg" alt="Building a Strong Worship Team Culture">
+                                            </td>
+                                            <td data-label="Title"><strong class="abl-title-text">Building a Strong Worship Team Culture</strong></td>
+                                            <td data-label="Author">Admin</td>
+                                            <td data-label="Category"><span class="abl-cat-label">Worship</span></td>
+                                            <td data-label="Status"><span class="sb-badge is-confirmed abl-status">Published</span></td>
+                                            <td data-label="Date">March 18, 2026</td>
+                                            <td data-label="Action">
+                                                <div class="dropdown at-action-dropdown">
+                                                    <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                        <i class="far fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="abl-row"
+                                            data-id="BLG-04"
+                                            data-title="5 Ways Music Education Builds Confidence"
+                                            data-author="Emily Davis"
+                                            data-category="education"
+                                            data-category-label="Music Education"
+                                            data-status="published"
+                                            data-date="March 15, 2026"
+                                            data-short="Why structured music learning helps students grow beyond the instrument."
+                                            data-content="Music education builds confidence by giving students measurable progress, creative expression, and performance opportunities. Regular lessons create discipline, while group classes develop collaboration. Celebrate small wins so learners stay motivated through challenging passages."
+                                            data-image="assets/img/blog/bs-1.jpg"
+                                            data-featured="false">
+                                            <td data-label="Featured Image">
+                                                <img class="abl-thumb" src="assets/img/blog/bs-1.jpg" alt="5 Ways Music Education Builds Confidence">
+                                            </td>
+                                            <td data-label="Title"><strong class="abl-title-text">5 Ways Music Education Builds Confidence</strong></td>
+                                            <td data-label="Author">Emily Davis</td>
+                                            <td data-label="Category"><span class="abl-cat-label">Music Education</span></td>
+                                            <td data-label="Status"><span class="sb-badge is-confirmed abl-status">Published</span></td>
+                                            <td data-label="Date">March 15, 2026</td>
+                                            <td data-label="Action">
+                                                <div class="dropdown at-action-dropdown">
+                                                    <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                        <i class="far fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="abl-row"
+                                            data-id="BLG-05"
+                                            data-title="Teacher Tips for Online Music Lessons"
+                                            data-author="John Smith"
+                                            data-category="tips"
+                                            data-category-label="Teacher Tips"
+                                            data-status="pending"
+                                            data-date="March 22, 2026"
+                                            data-short="Practical guidance for clearer, more engaging virtual lesson sessions."
+                                            data-content="Online lessons succeed with stable audio, clear camera framing, and structured agendas. Share materials before class, keep instructions short, and leave space for student questions. Record short demos when helpful so students can review between sessions."
+                                            data-image="assets/img/blog/bs-2.jpg"
+                                            data-featured="false">
+                                            <td data-label="Featured Image">
+                                                <img class="abl-thumb" src="assets/img/blog/bs-2.jpg" alt="Teacher Tips for Online Music Lessons">
+                                            </td>
+                                            <td data-label="Title"><strong class="abl-title-text">Teacher Tips for Online Music Lessons</strong></td>
+                                            <td data-label="Author">John Smith</td>
+                                            <td data-label="Category"><span class="abl-cat-label">Teacher Tips</span></td>
+                                            <td data-label="Status"><span class="sb-badge is-pending abl-status">Pending</span></td>
+                                            <td data-label="Date">March 22, 2026</td>
+                                            <td data-label="Action">
+                                                <div class="dropdown at-action-dropdown">
+                                                    <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                        <i class="far fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="abl-row"
+                                            data-id="BLG-06"
+                                            data-title="Choosing the Right Piano Practice Routine"
+                                            data-author="Admin"
+                                            data-category="piano"
+                                            data-category-label="Piano"
+                                            data-status="draft"
+                                            data-date="March 12, 2026"
+                                            data-short="A simple weekly practice plan for busy gospel musicians."
+                                            data-content="A balanced piano routine includes warm-ups, repertoire, ear training, and worship song application. Keep sessions focused and track what improved. Short daily practice often beats long inconsistent sessions."
+                                            data-image="assets/img/blog/bs-3.jpg"
+                                            data-featured="false">
+                                            <td data-label="Featured Image">
+                                                <img class="abl-thumb" src="assets/img/blog/bs-3.jpg" alt="Choosing the Right Piano Practice Routine">
+                                            </td>
+                                            <td data-label="Title"><strong class="abl-title-text">Choosing the Right Piano Practice Routine</strong></td>
+                                            <td data-label="Author">Admin</td>
+                                            <td data-label="Category"><span class="abl-cat-label">Piano</span></td>
+                                            <td data-label="Status"><span class="sb-badge is-inactive abl-status">Draft</span></td>
+                                            <td data-label="Date">March 12, 2026</td>
+                                            <td data-label="Action">
+                                                <div class="dropdown at-action-dropdown">
+                                                    <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                        <i class="far fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="abl-row"
+                                            data-id="BLG-07"
+                                            data-title="How Harmony Shapes Gospel Choir Sound"
+                                            data-author="Olivia Martin"
+                                            data-category="vocals"
+                                            data-category-label="Vocals"
+                                            data-status="published"
+                                            data-date="March 10, 2026"
+                                            data-short="Understanding section blend and chord voicing in choir arrangements."
+                                            data-content="Gospel choir sound thrives on balanced sections, clear vowels, and intentional chord voicing. Directors should train ears for tuning and encourage singers to listen across parts. Small adjustments in dynamics can transform a good arrangement into a powerful moment."
+                                            data-image="assets/img/blog/01.jpg"
+                                            data-featured="false">
+                                            <td data-label="Featured Image">
+                                                <img class="abl-thumb" src="assets/img/blog/01.jpg" alt="How Harmony Shapes Gospel Choir Sound">
+                                            </td>
+                                            <td data-label="Title"><strong class="abl-title-text">How Harmony Shapes Gospel Choir Sound</strong></td>
+                                            <td data-label="Author">Olivia Martin</td>
+                                            <td data-label="Category"><span class="abl-cat-label">Vocals</span></td>
+                                            <td data-label="Status"><span class="sb-badge is-confirmed abl-status">Published</span></td>
+                                            <td data-label="Date">March 10, 2026</td>
+                                            <td data-label="Action">
+                                                <div class="dropdown at-action-dropdown">
+                                                    <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                        <i class="far fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="abl-row"
+                                            data-id="BLG-08"
+                                            data-title="Planning Seasonal Worship Setlists"
+                                            data-author="Admin"
+                                            data-category="worship"
+                                            data-category-label="Worship"
+                                            data-status="pending"
+                                            data-date="March 8, 2026"
+                                            data-short="A simple framework for Advent, Easter, and regular Sunday planning."
+                                            data-content="Seasonal setlists should connect Scripture themes with singable keys and thoughtful song order. Map energy across the service, protect transitions, and leave room for congregational response. Review what worked after each season and refine next year."
+                                            data-image="assets/img/blog/02.jpg"
+                                            data-featured="false">
+                                            <td data-label="Featured Image">
+                                                <img class="abl-thumb" src="assets/img/blog/02.jpg" alt="Planning Seasonal Worship Setlists">
+                                            </td>
+                                            <td data-label="Title"><strong class="abl-title-text">Planning Seasonal Worship Setlists</strong></td>
+                                            <td data-label="Author">Admin</td>
+                                            <td data-label="Category"><span class="abl-cat-label">Worship</span></td>
+                                            <td data-label="Status"><span class="sb-badge is-pending abl-status">Pending</span></td>
+                                            <td data-label="Date">March 8, 2026</td>
+                                            <td data-label="Action">
+                                                <div class="dropdown at-action-dropdown">
+                                                    <button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions">
+                                                        <i class="far fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="sl-empty" id="abl-empty" hidden>
+                                <i class="far fa-newspaper"></i>
+                                <h3>No blog posts available.</h3>
+                                <p>Try adjusting your search or filter options, or create a new blog post.</p>
+                            </div>
+
+                            <nav class="at-pagination" id="abl-pagination" aria-label="Blog pagination">
+                                <ul class="pagination justify-content-center mb-0">
+                                    <li class="page-item disabled" id="abl-page-prev">
+                                        <a class="page-link" href="#" data-page="prev" aria-label="Previous"><i class="far fa-angle-left"></i> Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                    <li class="page-item" id="abl-page-next">
+                                        <a class="page-link" href="#" data-page="next" aria-label="Next">Next <i class="far fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </section>
+
+                        <!-- featured articles -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Featured Articles</h3>
+                                    <p>Highlighted blog posts shown on the public site.</p>
+                                </div>
+                            </div>
+                            <div class="abl-featured-grid" id="abl-featured-grid">
+                                <!-- filled by JS -->
+                            </div>
+                            <div class="sl-empty" id="abl-featured-empty" hidden>
+                                <i class="far fa-star"></i>
+                                <h3>No featured articles.</h3>
+                                <p>Mark published posts as featured from the blog list.</p>
+                            </div>
+                        </section>
+
+                        <footer class="ad-footer">
+                            <p>&copy; <span id="date"></span> Gospel Music Mastery — Admin Panel. All rights reserved.</p>
+                            <ul>
+                                <li><a href="admin-settings.html">Settings</a></li>
+                                <li><a href="admin-dashboard.html">Support</a></li>
+                                <li><a href="admin-dashboard.html">Privacy</a></li>
+                            </ul>
+                        </footer>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- admin blog end -->
+
+    </main>
+
+
+    <!-- create / edit modal -->
+    <div class="modal fade gospel-demo-modal" id="abl-form-modal" tabindex="-1" aria-labelledby="abl-form-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="abl-form-title">Create New Blog</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="abl-blog-form" action="#" method="post">
+                    <div class="modal-body at-modal-body">
+                        <input type="hidden" id="abl-form-id" value="">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="abl-form-image">Featured Image Upload</label>
+                                    <input type="file" class="form-control" id="abl-form-image" accept="image/*">
+                                    <small class="form-text text-muted">Frontend demo only — image is not uploaded.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="abl-form-title-input">Blog Title</label>
+                                    <input type="text" class="form-control" id="abl-form-title-input" placeholder="Enter blog title" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="abl-form-category">Category</label>
+                                    <select class="form-control form-select" id="abl-form-category" required>
+                                        <option value="education">Music Education</option>
+                                        <option value="piano">Piano</option>
+                                        <option value="vocals">Vocals</option>
+                                        <option value="worship">Worship</option>
+                                        <option value="tips">Teacher Tips</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="abl-form-author">Author Name</label>
+                                    <input type="text" class="form-control" id="abl-form-author" placeholder="Admin" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="abl-form-short">Short Description</label>
+                                    <textarea class="form-control" id="abl-form-short" rows="2"
+                                        placeholder="Brief summary for listings..." required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="abl-form-content">Full Content Editor Area</label>
+                                    <textarea class="form-control abl-editor" id="abl-form-content" rows="8"
+                                        placeholder="Write the full article content here..." required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-0">
+                                    <label for="abl-form-status">Status</label>
+                                    <select class="form-control form-select" id="abl-form-status" required>
+                                        <option value="draft">Draft</option>
+                                        <option value="published">Published</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="theme-btn"><i class="far fa-floppy-disk"></i> Save Blog</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- preview modal -->
+    <div class="modal fade gospel-demo-modal" id="abl-preview-modal" tabindex="-1" aria-labelledby="abl-preview-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="abl-preview-title">Blog Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body at-modal-body">
+                    <div class="abl-preview-hero">
+                        <img src="assets/img/blog/01.jpg" alt="Blog" id="abl-preview-image">
+                    </div>
+                    <div class="abl-preview-meta">
+                        <span class="apr-category" id="abl-preview-category">Piano</span>
+                        <span class="sb-badge is-confirmed" id="abl-preview-status">Published</span>
+                    </div>
+                    <h4 id="abl-preview-heading">How To Improve Gospel Piano Skills</h4>
+                    <ul class="abl-preview-info">
+                        <li><i class="far fa-user"></i> <span id="abl-preview-author">Admin</span></li>
+                        <li><i class="far fa-calendar"></i> <span id="abl-preview-date">March 20, 2026</span></li>
+                    </ul>
+                    <p class="abl-preview-short" id="abl-preview-short">Short description</p>
+                    <div class="abl-preview-content" id="abl-preview-content">
+                        Content preview
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="theme-btn" id="abl-open-full-preview">
+                        <i class="far fa-arrow-up-right-from-square"></i> Open Full Preview
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- delete confirm -->
+    <div class="modal fade gospel-demo-modal" id="abl-delete-modal" tabindex="-1" aria-labelledby="abl-delete-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="abl-delete-title">Delete Blog Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">Are you sure you want to delete <strong id="abl-delete-name">this blog post</strong>? This is a frontend demo only.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="theme-btn" id="abl-delete-confirm"><i class="far fa-trash"></i> Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gospel-alert gospel-alert-success sl-toast" id="abl-toast" hidden>
+        <i class="far fa-circle-check"></i>
+        <span id="abl-toast-text">Action completed (demo).</span>
+    </div>
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chart.umd.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
+
+    <script>
+        (function () {
+            var shell = document.querySelector('.ad-shell');
+            if (!shell) return;
+
+            /* sidebar */
+            var toggle = document.getElementById('sd-sidebar-toggle');
+            var sidebar = document.getElementById('sd-sidebar');
+            var backdrop = document.getElementById('sd-sidebar-backdrop');
+            function closeSidebar() {
+                shell.classList.remove('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+            function openSidebar() {
+                shell.classList.add('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    if (shell.classList.contains('is-sidebar-open')) closeSidebar();
+                    else openSidebar();
+                });
+            }
+            if (backdrop) backdrop.addEventListener('click', closeSidebar);
+            if (sidebar) {
+                sidebar.querySelectorAll('a.sd-nav-link').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        if (window.matchMedia('(max-width: 991px)').matches) closeSidebar();
+                    });
+                });
+            }
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeSidebar();
+            });
+
+            var usersToggle = document.getElementById('ad-users-toggle');
+            var usersGroup = document.getElementById('ad-users-group');
+            if (usersToggle && usersGroup) {
+                usersToggle.addEventListener('click', function () {
+                    var isOpen = usersGroup.classList.toggle('is-open');
+                    usersToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+
+            document.querySelectorAll('.ad-counter').forEach(function (el) {
+                var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+                var start = null;
+                function step(ts) {
+                    if (start === null) start = ts;
+                    var p = Math.min((ts - start) / 1000, 1);
+                    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US');
+                    if (p < 1) window.requestAnimationFrame(step);
+                }
+                window.requestAnimationFrame(step);
+            });
+
+            var toast = document.getElementById('abl-toast');
+            var toastText = document.getElementById('abl-toast-text');
+            var toastTimer = null;
+            function showToast(message, isError) {
+                if (!toast) return;
+                if (toastText) toastText.textContent = message;
+                toast.classList.toggle('gospel-alert-error', !!isError);
+                toast.classList.toggle('gospel-alert-success', !isError);
+                var icon = toast.querySelector('i');
+                if (icon) icon.className = isError ? 'far fa-circle-exclamation' : 'far fa-circle-check';
+                toast.hidden = false;
+                window.clearTimeout(toastTimer);
+                toastTimer = window.setTimeout(function () { toast.hidden = true; }, 3000);
+            }
+
+            var STATUS_META = {
+                published: { label: 'Published', className: 'is-confirmed' },
+                draft: { label: 'Draft', className: 'is-inactive' },
+                pending: { label: 'Pending', className: 'is-pending' }
+            };
+
+            var CATEGORY_LABELS = {
+                education: 'Music Education',
+                piano: 'Piano',
+                vocals: 'Vocals',
+                worship: 'Worship',
+                tips: 'Teacher Tips'
+            };
+
+            var searchInput = document.getElementById('abl-search');
+            var categorySelect = document.getElementById('abl-category');
+            var statusSelect = document.getElementById('abl-status');
+            var filterForm = document.getElementById('abl-filter-form');
+            var tableBody = document.getElementById('abl-table-body');
+            var emptyState = document.getElementById('abl-empty');
+            var tableWrap = document.getElementById('abl-table-wrap');
+            var pagination = document.getElementById('abl-pagination');
+            var resultCount = document.getElementById('abl-result-count');
+            var featuredGrid = document.getElementById('abl-featured-grid');
+            var featuredEmpty = document.getElementById('abl-featured-empty');
+            var currentPage = 1;
+            var perPage = 5;
+            var activeRow = null;
+            var deleteTarget = null;
+
+            function getRows() {
+                return Array.prototype.slice.call(document.querySelectorAll('.abl-row'));
+            }
+
+            function setStatus(row, status) {
+                var meta = STATUS_META[status];
+                if (!meta) return;
+                row.setAttribute('data-status', status);
+                var badge = row.querySelector('.abl-status');
+                if (badge) {
+                    badge.className = 'sb-badge abl-status ' + meta.className;
+                    badge.textContent = meta.label;
+                }
+            }
+
+            function matchesFilters(row) {
+                if (row.classList.contains('is-deleted')) return false;
+                var q = (searchInput.value || '').trim().toLowerCase();
+                var category = categorySelect.value;
+                var status = statusSelect.value;
+                var title = (row.getAttribute('data-title') || '').toLowerCase();
+                var author = (row.getAttribute('data-author') || '').toLowerCase();
+                var searchOk = !q || title.indexOf(q) !== -1 || author.indexOf(q) !== -1;
+                var categoryOk = category === 'all' || row.getAttribute('data-category') === category;
+                var statusOk = status === 'all' || row.getAttribute('data-status') === status;
+                return searchOk && categoryOk && statusOk;
+            }
+
+            function getVisibleRows() { return getRows().filter(matchesFilters); }
+
+            function updatePaginationUI(totalPages) {
+                if (!pagination) return;
+                var prev = document.getElementById('abl-page-prev');
+                var next = document.getElementById('abl-page-next');
+                if (prev) prev.classList.toggle('disabled', currentPage <= 1);
+                if (next) next.classList.toggle('disabled', currentPage >= totalPages || totalPages === 0);
+                pagination.querySelectorAll('.page-link[data-page]').forEach(function (link) {
+                    var page = link.getAttribute('data-page');
+                    if (page === 'prev' || page === 'next') return;
+                    var li = link.parentElement;
+                    if (li) li.classList.toggle('active', String(currentPage) === page);
+                });
+            }
+
+            function applyFilters(resetPage) {
+                if (resetPage) currentPage = 1;
+                var visible = getVisibleRows();
+                var totalPages = Math.max(1, Math.ceil(visible.length / perPage));
+                if (currentPage > totalPages) currentPage = totalPages;
+                getRows().forEach(function (row) { row.hidden = true; });
+                var start = (currentPage - 1) * perPage;
+                visible.slice(start, start + perPage).forEach(function (row) { row.hidden = false; });
+                var hasResults = visible.length > 0;
+                if (emptyState) emptyState.hidden = hasResults;
+                if (tableWrap) tableWrap.hidden = !hasResults;
+                if (pagination) pagination.hidden = !hasResults;
+                if (resultCount) {
+                    resultCount.innerHTML = '<i class="far fa-newspaper"></i> <strong>' + visible.length + '</strong> Shown';
+                }
+                updatePaginationUI(totalPages);
+                renderFeatured();
+            }
+
+            function renderFeatured() {
+                if (!featuredGrid) return;
+                var featured = getRows().filter(function (row) {
+                    return !row.classList.contains('is-deleted') &&
+                        row.getAttribute('data-featured') === 'true' &&
+                        row.getAttribute('data-status') === 'published';
+                }).slice(0, 3);
+
+                featuredGrid.innerHTML = featured.map(function (row) {
+                    return '<article class="abl-featured-card">' +
+                        '<img src="' + (row.getAttribute('data-image') || '') + '" alt="' +
+                        (row.getAttribute('data-title') || '').replace(/"/g, '&quot;') + '">' +
+                        '<div class="abl-featured-body">' +
+                        '<span class="apr-category">' + (row.getAttribute('data-category-label') || '') + '</span>' +
+                        '<h4>' + (row.getAttribute('data-title') || '') + '</h4>' +
+                        '<p>' + (row.getAttribute('data-short') || '') + '</p>' +
+                        '<div class="abl-featured-meta">' +
+                        '<span><i class="far fa-user"></i> ' + (row.getAttribute('data-author') || '') + '</span>' +
+                        '<span><i class="far fa-calendar"></i> ' + (row.getAttribute('data-date') || '') + '</span>' +
+                        '</div></div></article>';
+                }).join('');
+
+                if (featuredEmpty) featuredEmpty.hidden = featured.length > 0;
+                if (featuredGrid) featuredGrid.hidden = featured.length === 0;
+            }
+
+            if (filterForm) {
+                filterForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    applyFilters(true);
+                });
+            }
+            if (searchInput) searchInput.addEventListener('input', function () { applyFilters(true); });
+            if (categorySelect) categorySelect.addEventListener('change', function () { applyFilters(true); });
+            if (statusSelect) statusSelect.addEventListener('change', function () { applyFilters(true); });
+
+            if (pagination) {
+                pagination.addEventListener('click', function (e) {
+                    var link = e.target.closest('.page-link');
+                    if (!link) return;
+                    e.preventDefault();
+                    var page = link.getAttribute('data-page');
+                    var totalPages = Math.max(1, Math.ceil(getVisibleRows().length / perPage));
+                    if (page === 'prev') currentPage = Math.max(1, currentPage - 1);
+                    else if (page === 'next') currentPage = Math.min(totalPages, currentPage + 1);
+                    else currentPage = parseInt(page, 10) || 1;
+                    applyFilters(false);
+                });
+            }
+
+            var formModalEl = document.getElementById('abl-form-modal');
+            var previewModalEl = document.getElementById('abl-preview-modal');
+            var deleteModalEl = document.getElementById('abl-delete-modal');
+            var formModal = formModalEl && window.bootstrap ? new bootstrap.Modal(formModalEl) : null;
+            var previewModal = previewModalEl && window.bootstrap ? new bootstrap.Modal(previewModalEl) : null;
+            var deleteModal = deleteModalEl && window.bootstrap ? new bootstrap.Modal(deleteModalEl) : null;
+
+            function resetForm() {
+                document.getElementById('abl-form-id').value = '';
+                document.getElementById('abl-form-title-input').value = '';
+                document.getElementById('abl-form-category').value = 'piano';
+                document.getElementById('abl-form-author').value = 'Admin';
+                document.getElementById('abl-form-short').value = '';
+                document.getElementById('abl-form-content').value = '';
+                document.getElementById('abl-form-status').value = 'draft';
+                document.getElementById('abl-form-image').value = '';
+                document.getElementById('abl-form-title').textContent = 'Create New Blog';
+            }
+
+            function fillForm(row) {
+                document.getElementById('abl-form-id').value = row.getAttribute('data-id') || '';
+                document.getElementById('abl-form-title-input').value = row.getAttribute('data-title') || '';
+                document.getElementById('abl-form-category').value = row.getAttribute('data-category') || 'piano';
+                document.getElementById('abl-form-author').value = row.getAttribute('data-author') || 'Admin';
+                document.getElementById('abl-form-short').value = row.getAttribute('data-short') || '';
+                document.getElementById('abl-form-content').value = row.getAttribute('data-content') || '';
+                var st = row.getAttribute('data-status') || 'draft';
+                if (st === 'pending') st = 'draft';
+                document.getElementById('abl-form-status').value = st;
+                document.getElementById('abl-form-title').textContent = 'Edit Blog';
+            }
+
+            function openPreview(row) {
+                activeRow = row;
+                var set = function (id, value) {
+                    var el = document.getElementById(id);
+                    if (el) el.textContent = value || '';
+                };
+                var img = document.getElementById('abl-preview-image');
+                if (img) {
+                    img.src = row.getAttribute('data-image') || '';
+                    img.alt = row.getAttribute('data-title') || '';
+                }
+                set('abl-preview-heading', row.getAttribute('data-title'));
+                set('abl-preview-category', row.getAttribute('data-category-label'));
+                set('abl-preview-author', row.getAttribute('data-author'));
+                set('abl-preview-date', row.getAttribute('data-date'));
+                set('abl-preview-short', row.getAttribute('data-short'));
+                set('abl-preview-content', row.getAttribute('data-content'));
+                var st = STATUS_META[row.getAttribute('data-status')];
+                var badge = document.getElementById('abl-preview-status');
+                if (badge && st) {
+                    badge.className = 'sb-badge ' + st.className;
+                    badge.textContent = st.label;
+                }
+                if (previewModal) previewModal.show();
+            }
+
+            function escapeHtml(str) {
+                return String(str || '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+            }
+
+            function bindRow(row) {
+                var viewBtn = row.querySelector('.abl-view-btn');
+                var editBtn = row.querySelector('.abl-edit-btn');
+                var publishBtn = row.querySelector('.abl-publish-btn');
+                var draftBtn = row.querySelector('.abl-draft-btn');
+                var deleteBtn = row.querySelector('.abl-delete-btn');
+
+                if (viewBtn) viewBtn.addEventListener('click', function () { openPreview(row); });
+                if (editBtn) {
+                    editBtn.addEventListener('click', function () {
+                        activeRow = row;
+                        fillForm(row);
+                        if (formModal) formModal.show();
+                    });
+                }
+                if (publishBtn) {
+                    publishBtn.addEventListener('click', function () {
+                        setStatus(row, 'published');
+                        showToast((row.getAttribute('data-title') || 'Post') + ' published (demo).');
+                        applyFilters(false);
+                    });
+                }
+                if (draftBtn) {
+                    draftBtn.addEventListener('click', function () {
+                        setStatus(row, 'draft');
+                        showToast((row.getAttribute('data-title') || 'Post') + ' moved to draft (demo).');
+                        applyFilters(false);
+                    });
+                }
+                if (deleteBtn) {
+                    deleteBtn.addEventListener('click', function () {
+                        deleteTarget = row;
+                        var nameEl = document.getElementById('abl-delete-name');
+                        if (nameEl) nameEl.textContent = row.getAttribute('data-title') || 'this blog post';
+                        if (deleteModal) deleteModal.show();
+                    });
+                }
+            }
+
+            getRows().forEach(bindRow);
+
+            var addBtn = document.getElementById('abl-add-btn');
+            if (addBtn) {
+                addBtn.addEventListener('click', function () {
+                    activeRow = null;
+                    resetForm();
+                    if (formModal) formModal.show();
+                });
+            }
+
+            var blogForm = document.getElementById('abl-blog-form');
+            if (blogForm) {
+                blogForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var title = document.getElementById('abl-form-title-input').value.trim();
+                    var category = document.getElementById('abl-form-category').value;
+                    var author = document.getElementById('abl-form-author').value.trim();
+                    var shortDesc = document.getElementById('abl-form-short').value.trim();
+                    var content = document.getElementById('abl-form-content').value.trim();
+                    var status = document.getElementById('abl-form-status').value;
+                    var formId = document.getElementById('abl-form-id').value;
+                    var categoryLabel = CATEGORY_LABELS[category] || category;
+                    var meta = STATUS_META[status];
+                    var today = 'March 22, 2026';
+
+                    if (formId && activeRow) {
+                        activeRow.setAttribute('data-title', title);
+                        activeRow.setAttribute('data-author', author);
+                        activeRow.setAttribute('data-category', category);
+                        activeRow.setAttribute('data-category-label', categoryLabel);
+                        activeRow.setAttribute('data-short', shortDesc);
+                        activeRow.setAttribute('data-content', content);
+                        setStatus(activeRow, status);
+                        var titleEl = activeRow.querySelector('.abl-title-text');
+                        var catEl = activeRow.querySelector('.abl-cat-label');
+                        var authorCell = activeRow.children[2];
+                        if (titleEl) titleEl.textContent = title;
+                        if (catEl) catEl.textContent = categoryLabel;
+                        if (authorCell) authorCell.textContent = author;
+                        showToast('Blog post updated (demo).');
+                    } else {
+                        var newId = 'BLG-' + String(getRows().length + 1).padStart(2, '0');
+                        var html =
+                            '<tr class="abl-row" data-id="' + newId + '" data-title="' + escapeHtml(title) +
+                            '" data-author="' + escapeHtml(author) + '" data-category="' + category +
+                            '" data-category-label="' + escapeHtml(categoryLabel) + '" data-status="' + status +
+                            '" data-date="' + today + '" data-short="' + escapeHtml(shortDesc) +
+                            '" data-content="' + escapeHtml(content) +
+                            '" data-image="assets/img/blog/01.jpg" data-featured="false">' +
+                            '<td data-label="Featured Image"><img class="abl-thumb" src="assets/img/blog/01.jpg" alt="' + escapeHtml(title) + '"></td>' +
+                            '<td data-label="Title"><strong class="abl-title-text">' + escapeHtml(title) + '</strong></td>' +
+                            '<td data-label="Author">' + escapeHtml(author) + '</td>' +
+                            '<td data-label="Category"><span class="abl-cat-label">' + escapeHtml(categoryLabel) + '</span></td>' +
+                            '<td data-label="Status"><span class="sb-badge abl-status ' + meta.className + '">' + meta.label + '</span></td>' +
+                            '<td data-label="Date">' + today + '</td>' +
+                            '<td data-label="Action"><div class="dropdown at-action-dropdown">' +
+                            '<button class="at-action-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions"><i class="far fa-ellipsis-vertical"></i></button>' +
+                            '<ul class="dropdown-menu dropdown-menu-end ad-dropdown at-action-menu">' +
+                            '<li><button type="button" class="dropdown-item ad-dropdown-item abl-view-btn"><i class="far fa-eye"></i> <span>View Blog</span></button></li>' +
+                            '<li><button type="button" class="dropdown-item ad-dropdown-item abl-edit-btn"><i class="far fa-pen"></i> <span>Edit</span></button></li>' +
+                            '<li><button type="button" class="dropdown-item ad-dropdown-item abl-publish-btn"><i class="far fa-upload"></i> <span>Publish</span></button></li>' +
+                            '<li><button type="button" class="dropdown-item ad-dropdown-item abl-draft-btn"><i class="far fa-file"></i> <span>Move To Draft</span></button></li>' +
+                            '<li><hr class="dropdown-divider"></li>' +
+                            '<li><button type="button" class="dropdown-item ad-dropdown-item abl-delete-btn"><i class="far fa-trash"></i> <span>Delete</span></button></li>' +
+                            '</ul></div></td></tr>';
+                        if (tableBody) {
+                            tableBody.insertAdjacentHTML('afterbegin', html);
+                            var newRow = tableBody.querySelector('.abl-row[data-id="' + newId + '"]');
+                            if (newRow) bindRow(newRow);
+                        }
+                        showToast('Blog post saved (demo).');
+                    }
+                    if (formModal) formModal.hide();
+                    applyFilters(true);
+                });
+            }
+
+            var deleteConfirm = document.getElementById('abl-delete-confirm');
+            if (deleteConfirm) {
+                deleteConfirm.addEventListener('click', function () {
+                    if (!deleteTarget) return;
+                    var title = deleteTarget.getAttribute('data-title') || 'Blog post';
+                    deleteTarget.classList.add('is-deleted');
+                    deleteTarget.hidden = true;
+                    if (deleteModal) deleteModal.hide();
+                    showToast(title + ' deleted (demo).', true);
+                    deleteTarget = null;
+                    applyFilters(false);
+                });
+            }
+
+            var openFull = document.getElementById('abl-open-full-preview');
+            if (openFull) {
+                openFull.addEventListener('click', function () {
+                    showToast('Full public preview is a frontend demo only.');
+                });
+            }
+
+            var dateEl = document.getElementById('date');
+            if (dateEl) dateEl.textContent = new Date().getFullYear();
+
+            applyFilters(true);
+        })();
+    </script>
+
+</body>
+
+</html>

@@ -7298,3 +7298,1533 @@ body {
     align-items: flex-start;
   }
 }
+
+/* ==========================================================
+   Admin teachers page — at-*
+   ========================================================== */
+.at-stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sb-badge.is-suspended {
+  background: rgba(31, 41, 55, 0.12);
+  color: #1f2937;
+}
+
+.at-filter-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+}
+
+.at-search-field {
+  position: relative;
+}
+
+.at-search-field i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gospel-body);
+  pointer-events: none;
+}
+
+.at-search-field .form-control {
+  padding-left: 42px;
+  background: var(--color-white);
+}
+
+.at-filter-selects {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.at-filter-selects .form-select,
+.at-filter-selects .form-control {
+  min-width: 160px;
+  background: var(--color-white);
+  margin: 0;
+}
+
+.at-filter-selects .theme-btn {
+  margin: 0;
+  width: auto;
+  padding: 10px 22px;
+  font-size: 13px;
+}
+
+.at-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gospel-orange);
+  display: block;
+}
+
+.at-table tbody td {
+  vertical-align: middle;
+}
+
+.at-action-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid var(--gospel-border);
+  background: var(--gospel-bg-light);
+  color: var(--gospel-heading);
+  transition: var(--transition2);
+}
+
+.at-action-btn:hover,
+.at-action-btn:focus,
+.at-action-btn[aria-expanded="true"] {
+  border-color: var(--gospel-orange);
+  color: var(--gospel-orange);
+  background: var(--gospel-orange-soft);
+}
+
+.at-action-menu {
+  min-width: 200px;
+  padding: 8px;
+}
+
+.at-action-menu .dropdown-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.at-pagination {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--gospel-border);
+}
+
+.at-pagination .page-link {
+  color: var(--gospel-heading);
+  border-color: var(--gospel-border);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+.at-pagination .page-item.active .page-link,
+.at-pagination .page-link:hover {
+  background: var(--gospel-orange);
+  border-color: var(--gospel-orange);
+  color: var(--color-white);
+}
+
+.at-pagination .page-item.disabled .page-link {
+  color: var(--gospel-body);
+  background: var(--gospel-bg-light);
+  pointer-events: none;
+}
+
+.at-modal-body {
+  text-align: left !important;
+}
+
+.at-modal-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gospel-border);
+  text-align: left;
+}
+
+.at-modal-hero img {
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gospel-orange);
+}
+
+.at-modal-hero h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.at-modal-hero p {
+  margin: 0 0 8px;
+  color: var(--gospel-body);
+}
+
+.at-modal-hero .td-rating {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.at-modal-list {
+  margin-bottom: 16px;
+}
+
+.at-modal-bio h5 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.at-modal-bio p {
+  margin: 0;
+  color: var(--gospel-body);
+  line-height: 1.65;
+  text-align: left;
+}
+
+#at-teacher-modal .modal-footer {
+  justify-content: flex-end;
+}
+
+@media (max-width: 1199px) {
+  .at-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .at-filter-bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .at-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .at-filter-selects {
+    width: 100%;
+  }
+
+  .at-filter-selects .form-select,
+  .at-filter-selects .form-control,
+  .at-filter-selects .theme-btn {
+    width: 100%;
+  }
+
+  .at-modal-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .at-modal-hero .td-rating {
+    display: block;
+    margin: 0 0 8px;
+  }
+
+  #at-teacher-modal .modal-footer .theme-btn,
+  #at-teacher-modal .modal-footer .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   Admin students page — as-*
+   ========================================================== */
+.sb-badge.is-inactive {
+  background: rgba(100, 116, 139, 0.14);
+  color: #475569;
+}
+
+.as-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.as-content-grid > .sd-card {
+  margin-bottom: 0;
+}
+
+.as-activity-card {
+  position: sticky;
+  top: 24px;
+}
+
+.as-activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.as-activity-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  transition: var(--transition2);
+}
+
+.as-activity-list li:hover {
+  border-color: var(--gospel-orange-line);
+}
+
+.as-activity-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gospel-orange-soft);
+  color: var(--gospel-orange);
+}
+
+.as-activity-list strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gospel-heading);
+  margin-bottom: 2px;
+}
+
+.as-activity-list small {
+  font-size: 12px;
+  color: var(--gospel-body);
+}
+
+.as-modal-activity {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--gospel-border);
+  text-align: left;
+}
+
+.as-modal-activity h5 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.as-modal-activity ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.as-modal-activity li {
+  position: relative;
+  padding: 8px 12px 8px 28px;
+  background: var(--gospel-bg-light);
+  border-radius: 8px;
+  color: var(--gospel-body);
+  font-size: 14px;
+}
+
+.as-modal-activity li::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gospel-orange);
+}
+
+#as-student-modal .modal-footer {
+  justify-content: flex-end;
+}
+
+@media (max-width: 1199px) {
+  .as-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .as-activity-card {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  #as-student-modal .modal-footer .theme-btn,
+  #as-student-modal .modal-footer .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   Admin classes page — ac-*
+   ========================================================== */
+.ac-thumb {
+  width: 64px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--gospel-border);
+  display: block;
+}
+
+.ac-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ac-featured-card {
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--gospel-bg-light);
+  transition: var(--transition2);
+}
+
+.ac-featured-card:hover {
+  border-color: var(--gospel-orange-line);
+  transform: translateY(-2px);
+}
+
+.ac-featured-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.ac-featured-body {
+  padding: 14px;
+}
+
+.ac-featured-body h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--gospel-heading);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.ac-featured-body p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--gospel-body);
+}
+
+.ac-feature-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gospel-heading);
+}
+
+.ac-feature-toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--gospel-orange);
+}
+
+.ac-modal-hero {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gospel-border);
+  text-align: left;
+}
+
+.ac-modal-hero img {
+  width: 120px;
+  height: 90px;
+  min-width: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--gospel-border);
+}
+
+.ac-modal-hero h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.ac-modal-hero p {
+  margin: 0 0 8px;
+  color: var(--gospel-body);
+}
+
+.ac-modal-hero .td-rating {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#ac-class-modal .modal-footer {
+  justify-content: flex-end;
+}
+
+@media (max-width: 991px) {
+  .ac-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .ac-featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ac-modal-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ac-modal-hero .td-rating {
+    display: block;
+    margin: 0 0 8px;
+  }
+
+  #ac-class-modal .modal-footer .theme-btn,
+  #ac-class-modal .modal-footer .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   Admin bookings page — ab-*
+   ========================================================== */
+.ab-stats-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.ab-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.ab-content-grid > .sd-card {
+  margin-bottom: 0;
+}
+
+.ab-side-col {
+  display: grid;
+  gap: 24px;
+}
+
+.ab-side-col > .sd-card {
+  margin-bottom: 0;
+}
+
+.ab-calendar-card {
+  position: sticky;
+  top: 24px;
+}
+
+.ab-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.ab-cal-weekdays span {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gospel-body);
+  text-transform: uppercase;
+}
+
+.ab-cal-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.ab-cal-day {
+  aspect-ratio: 1;
+  border: 1px solid var(--gospel-border);
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--gospel-heading);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition2);
+  padding: 0;
+}
+
+.ab-cal-day:hover:not(:disabled) {
+  border-color: var(--gospel-orange-line);
+  color: var(--gospel-orange);
+}
+
+.ab-cal-day.is-empty {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ab-cal-day.has-event {
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.ab-cal-day.has-event.is-confirmed {
+  background: rgba(34, 197, 94, 0.14);
+  color: #15803d;
+}
+
+.ab-cal-day.has-event.is-pending {
+  background: var(--gospel-orange-soft);
+  color: var(--gospel-orange-text);
+}
+
+.ab-cal-day.has-event.is-completed {
+  background: rgba(15, 23, 42, 0.1);
+  color: #0f172a;
+}
+
+.ab-cal-day.has-event.is-cancelled {
+  background: rgba(192, 57, 43, 0.12);
+  color: #c0392b;
+}
+
+.ab-cal-day.is-selected {
+  outline: 2px solid var(--gospel-orange);
+  outline-offset: 1px;
+}
+
+.ab-cal-legend {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ab-cal-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--gospel-body);
+}
+
+.ab-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ab-dot.is-confirmed {
+  background: #22c55e;
+}
+
+.ab-dot.is-pending {
+  background: var(--gospel-orange);
+}
+
+.ab-dot.is-selected {
+  background: #0f172a;
+}
+
+.ab-cal-selected {
+  margin-top: 14px;
+  padding: 12px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 10px;
+}
+
+.ab-cal-selected strong {
+  display: block;
+  color: var(--gospel-heading);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.ab-cal-selected p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--gospel-body);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.ab-activity-timeline {
+  margin-top: 4px;
+}
+
+.ab-modal-parties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.ab-modal-party {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+}
+
+.ab-modal-party img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--gospel-border);
+}
+
+.ab-modal-party small {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gospel-body);
+  margin-bottom: 2px;
+}
+
+.ab-modal-party strong {
+  display: block;
+  color: var(--gospel-heading);
+  font-size: 15px;
+}
+
+.ab-modal-party span {
+  display: block;
+  font-size: 12px;
+  color: var(--gospel-body);
+}
+
+#ab-booking-modal .modal-footer {
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1199px) {
+  .ab-stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .ab-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-calendar-card {
+    position: static;
+  }
+
+  .ab-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .ab-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-modal-parties {
+    grid-template-columns: 1fr;
+  }
+
+  #ab-booking-modal .modal-footer .theme-btn,
+  #ab-booking-modal .modal-footer .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   Admin payments page — ap-*
+   ========================================================== */
+.sb-badge.is-failed {
+  background: rgba(192, 57, 43, 0.12);
+  color: #c0392b;
+}
+
+.ap-export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.ap-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr);
+  gap: 24px;
+  margin-bottom: 24px;
+  align-items: start;
+}
+
+.ap-top-grid > .sd-card,
+.ap-earnings-col > .sd-card {
+  margin-bottom: 0;
+}
+
+.ap-earnings-col {
+  display: grid;
+  gap: 24px;
+}
+
+.ap-earn-card .sd-card-head {
+  align-items: flex-start;
+}
+
+.ap-earn-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  font-size: 16px;
+}
+
+.ap-earn-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.ap-earn-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+}
+
+.ap-earn-list span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+.ap-earn-list strong {
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gospel-heading);
+}
+
+.ap-earn-list strong.is-pending {
+  color: var(--gospel-orange);
+}
+
+.ap-modal-user {
+  grid-template-columns: 1fr;
+}
+
+.ap-refund-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.ap-refund-actions .theme-btn,
+.ap-refund-actions .theme-btn-outline {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.ap-refund-done {
+  font-size: 13px;
+  font-weight: 700;
+  color: #15803d;
+}
+
+.ap-refund-done.is-rejected {
+  color: #c0392b;
+}
+
+#ap-txn-modal .modal-footer {
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 991px) {
+  .ap-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-export-actions {
+    width: 100%;
+  }
+
+  .ap-export-actions .theme-btn,
+  .ap-export-actions .theme-btn-outline {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .ap-refund-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ap-refund-actions .theme-btn,
+  .ap-refund-actions .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  #ap-txn-modal .modal-footer .theme-btn,
+  #ap-txn-modal .modal-footer .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   Admin programs page — apr-*
+   ========================================================== */
+.apr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.apr-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition2);
+}
+
+.apr-card:hover {
+  border-color: var(--gospel-orange-line);
+  transform: translateY(-3px);
+}
+
+.apr-card-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.apr-card-media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.apr-card:hover .apr-card-media img {
+  transform: scale(1.04);
+}
+
+.apr-card-media .apr-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.apr-card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.apr-category {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gospel-orange);
+  margin-bottom: 6px;
+}
+
+.apr-card-body h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--gospel-heading);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.apr-card-body > p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: var(--gospel-body);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.apr-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+.apr-card-meta i {
+  color: var(--gospel-orange);
+  margin-right: 4px;
+}
+
+.apr-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.apr-card-actions .theme-btn,
+.apr-card-actions .theme-btn-outline {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.apr-featured-list {
+  display: grid;
+  gap: 12px;
+}
+
+.apr-featured-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  transition: var(--transition2);
+}
+
+.apr-featured-item:hover {
+  border-color: var(--gospel-orange-line);
+}
+
+.apr-featured-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.apr-featured-info img {
+  width: 56px;
+  height: 42px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--gospel-border);
+}
+
+.apr-featured-info strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gospel-heading);
+  margin-bottom: 2px;
+}
+
+.apr-featured-info small {
+  font-size: 12px;
+  color: var(--gospel-body);
+}
+
+.apr-detail-hero img {
+  width: 120px;
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--gospel-border);
+}
+
+.apr-detail-hero h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--gospel-heading);
+  margin-bottom: 6px;
+}
+
+.apr-detail-hero p {
+  margin: 0 0 10px;
+  color: var(--gospel-body);
+}
+
+@media (max-width: 991px) {
+  .apr-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .apr-card-actions {
+    flex-direction: column;
+  }
+
+  .apr-card-actions .theme-btn,
+  .apr-card-actions .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .apr-featured-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .apr-detail-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   Admin blog page — abl-*
+   ========================================================== */
+.abl-thumb {
+  width: 72px;
+  height: 52px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--gospel-border);
+  display: block;
+}
+
+.abl-editor {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.abl-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.abl-featured-card {
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--gospel-bg-light);
+  transition: var(--transition2);
+}
+
+.abl-featured-card:hover {
+  border-color: var(--gospel-orange-line);
+  transform: translateY(-2px);
+}
+
+.abl-featured-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.abl-featured-body {
+  padding: 14px;
+}
+
+.abl-featured-body h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--gospel-heading);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.abl-featured-body > p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--gospel-body);
+  line-height: 1.5;
+}
+
+.abl-featured-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+.abl-featured-meta i {
+  color: var(--gospel-orange);
+  margin-right: 4px;
+}
+
+.abl-preview-hero {
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gospel-border);
+}
+
+.abl-preview-hero img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.abl-preview-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.abl-preview-meta .apr-category {
+  margin-bottom: 0;
+}
+
+#abl-preview-heading {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--gospel-heading);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.abl-preview-info {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+.abl-preview-info i {
+  color: var(--gospel-orange);
+  margin-right: 4px;
+}
+
+.abl-preview-short {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gospel-heading);
+  margin-bottom: 12px;
+}
+
+.abl-preview-content {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gospel-body);
+  padding-top: 12px;
+  border-top: 1px solid var(--gospel-border);
+}
+
+@media (max-width: 991px) {
+  .abl-featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .abl-featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .abl-preview-hero img {
+    height: 180px;
+  }
+}
+
+/* ==========================================================
+   Dashboard Chart.js widgets — gmm-chart-*
+   ========================================================== */
+.gmm-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.gmm-chart-grid.is-triple {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gmm-chart-grid > .sd-card,
+.gmm-chart-grid > .td-card,
+.gmm-chart-card {
+  margin-bottom: 0;
+}
+
+.gmm-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: var(--color-white);
+  border-radius: 12px;
+}
+
+.gmm-chart-wrap.is-doughnut {
+  height: 260px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.gmm-chart-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 1199px) {
+  .gmm-chart-grid.is-triple {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .gmm-chart-grid,
+  .gmm-chart-grid.is-triple {
+    grid-template-columns: 1fr;
+  }
+
+  .gmm-chart-wrap {
+    height: 250px;
+  }
+}
+
+/* ==========================================================
+   Admin settings page — aset-*
+   ========================================================== */
+.gospel-alert-info {
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid var(--gospel-border);
+  color: var(--gospel-heading);
+}
+
+.gospel-alert-info i {
+  color: var(--gospel-orange);
+}
+
+.aset-tabs {
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.aset-section-title {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--gospel-heading);
+  margin: 8px 0 16px;
+}
+
+.aset-file-preview {
+  width: 100%;
+  max-width: 220px;
+  height: 72px;
+  margin-bottom: 12px;
+  border: 1px solid var(--gospel-border);
+  border-radius: 10px;
+  background: var(--gospel-bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.aset-file-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.aset-file-preview.is-favicon {
+  width: 72px;
+  height: 72px;
+  padding: 12px;
+}
+
+.aset-upload-row .photo-upload-label {
+  margin: 0;
+}
+
+.aset-provider-row {
+  align-items: center;
+}
+
+.aset-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin: 0;
+}
+
+.aset-info-box span {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.aset-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.aset-btn-row .theme-btn,
+.aset-btn-row .theme-btn-outline {
+  margin: 0;
+}
+
+.aset-danger-card {
+  border-color: rgba(192, 57, 43, 0.25);
+}
+
+.aset-system-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.aset-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+}
+
+.aset-action-row strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gospel-heading);
+  margin-bottom: 2px;
+}
+
+.aset-action-row small {
+  display: block;
+  font-size: 13px;
+  color: var(--gospel-body);
+}
+
+.aset-action-row .theme-btn,
+.aset-action-row .theme-btn-outline {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.aset-action-row.is-danger {
+  border-color: rgba(192, 57, 43, 0.3);
+  background: rgba(192, 57, 43, 0.05);
+}
+
+.aset-inline-toggle {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  gap: 0;
+}
+
+.aset-danger-btn {
+  background: #c0392b !important;
+  border-color: #c0392b !important;
+}
+
+.aset-danger-btn:hover {
+  background: #a93226 !important;
+  border-color: #a93226 !important;
+}
+
+#aset-payment-form .input-group-text {
+  background: var(--gospel-bg-light);
+  border-color: var(--gospel-border);
+  color: var(--gospel-heading);
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .aset-action-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aset-action-row .theme-btn,
+  .aset-action-row .theme-btn-outline,
+  .aset-btn-row .theme-btn,
+  .aset-btn-row .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}

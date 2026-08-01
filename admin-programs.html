@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage Gospel Music Mastery music programs from the admin panel">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Manage Music Programs - Admin - Gospel Music Mastery</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+
+</head>
+
+<body class="admin-portal-page">
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+    <main class="main">
+
+        <!-- admin programs -->
+        <div class="admin-dashboard-area py-120">
+            <div class="container">
+
+                <!-- admin top header -->
+                <header class="sd-profile-header ad-topbar">
+                    <div class="sd-profile-main ad-topbar-main">
+                        <div class="sd-profile-avatar ad-topbar-avatar">
+                            <img src="assets/img/team/01.jpg" alt="Administrator">
+                        </div>
+                        <div class="sd-profile-meta">
+                            <h2>Administrator</h2>
+                            <span class="sd-role">Platform Admin</span>
+                            <div class="sd-profile-stats">
+                                <span class="sd-stat-item"><i class="far fa-shield-check"></i> Full Access</span>
+                                <span class="sd-stat-item"><i class="far fa-clock"></i> Last login: Today, 09:12 AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ad-topbar-actions">
+                        <div class="dropdown ad-icon-dropdown">
+                            <button class="ad-icon-btn" type="button" id="ad-notifications" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Notifications">
+                                <i class="far fa-bell"></i>
+                                <span class="ad-icon-badge">4</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-notifications">
+                                <h6 class="ad-dropdown-title">Notifications</h6>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><i class="far fa-user-plus"></i> <span><strong>John Smith</strong> applied as a teacher</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-classes.html"><i class="far fa-chalkboard"></i> <span>New class submitted for review</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-payments.html"><i class="far fa-credit-card"></i> <span>Payment of <strong>$40</strong> received</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><i class="far fa-triangle-exclamation"></i> <span>15 approvals are pending</span></a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown ad-icon-dropdown">
+                            <button class="ad-icon-btn" type="button" id="ad-messages" data-bs-toggle="dropdown"
+                                aria-expanded="false" aria-label="Messages">
+                                <i class="far fa-envelope"></i>
+                                <span class="ad-icon-badge">2</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-messages">
+                                <h6 class="ad-dropdown-title">Messages</h6>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-payments.html"><img src="assets/img/team/02.jpg" alt="Sarah Johnson"><span><strong>Sarah Johnson</strong> asked about refunds</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-teachers.html"><img src="assets/img/team/03.jpg" alt="Emily Davis"><span><strong>Emily Davis</strong> sent payout details</span></a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown ad-profile-dropdown">
+                            <button class="ad-profile-btn" type="button" id="ad-profile-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/img/team/01.jpg" alt="Administrator">
+                                <span class="ad-profile-btn-text">
+                                    <strong>Administrator</strong>
+                                    <small>Platform Admin</small>
+                                </span>
+                                <i class="far fa-angle-down"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end ad-dropdown" aria-labelledby="ad-profile-menu">
+                                <a class="dropdown-item ad-dropdown-item" href="admin-settings.html"><i class="far fa-user"></i> <span>My Profile</span></a>
+                                <a class="dropdown-item ad-dropdown-item" href="admin-settings.html"><i class="far fa-gear"></i> <span>Settings</span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item ad-dropdown-item is-logout" href="admin-login.html"><i class="far fa-right-from-bracket"></i> <span>Logout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="sd-shell ad-shell">
+                    <button type="button" class="sd-sidebar-toggle theme-btn theme-btn-outline" id="sd-sidebar-toggle"
+                        aria-expanded="false" aria-controls="sd-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <aside class="sd-sidebar ad-sidebar" id="sd-sidebar" aria-label="Admin navigation">
+                        <nav class="sd-nav ad-nav">
+                            <ul>
+                                <li><a href="admin-dashboard.html" class="sd-nav-link" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+                                <li class="ad-nav-group is-open" id="ad-users-group">
+                                    <button type="button" class="sd-nav-link ad-nav-parent" id="ad-users-toggle"
+                                        aria-expanded="true" aria-controls="ad-users-submenu">
+                                        <i class="far fa-users"></i> Users
+                                        <i class="far fa-angle-down ad-nav-caret"></i>
+                                    </button>
+                                    <ul class="ad-submenu" id="ad-users-submenu">
+                                        <li><a href="admin-teachers.html" class="sd-nav-link ad-sub-link" data-nav="teachers"><i class="far fa-chalkboard-user"></i> Teachers</a></li>
+                                        <li><a href="admin-students.html" class="sd-nav-link ad-sub-link" data-nav="students"><i class="far fa-graduation-cap"></i> Students</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="admin-classes.html" class="sd-nav-link" data-nav="classes"><i class="far fa-chalkboard"></i> Classes</a></li>
+                                <li><a href="admin-bookings.html" class="sd-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> Bookings</a></li>
+                                <li><a href="admin-payments.html" class="sd-nav-link" data-nav="payments"><i class="far fa-credit-card"></i> Payments</a></li>
+                                <li><a href="admin-programs.html" class="sd-nav-link active" data-nav="programs"><i class="far fa-music"></i> Music Programs</a></li>
+                                <li><a href="admin-blog.html" class="sd-nav-link" data-nav="blogs"><i class="far fa-newspaper"></i> Blogs</a></li>
+                                <li><a href="admin-settings.html" class="sd-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="admin-login.html" class="sd-nav-link sd-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="sd-sidebar-backdrop" id="sd-sidebar-backdrop" hidden></div>
+
+                    <div class="sd-main ad-main">
+
+                        <section class="sd-card sd-welcome-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <span class="login-portal-badge">Content Management</span>
+                                    <h3>Manage Music Programs</h3>
+                                    <p>Create, update, and manage music programs available for students and teachers.</p>
+                                </div>
+                                <button type="button" class="theme-btn" id="apr-add-btn">
+                                    <i class="far fa-plus"></i> Add New Program
+                                </button>
+                            </div>
+                        </section>
+
+                        <!-- summary cards -->
+                        <section class="sd-stats-grid ad-stats-grid at-stats-grid">
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-music"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="8" data-format="number">0</span>
+                                    <span class="sd-stat-title">Total Programs</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-circle-check"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="6" data-format="number">0</span>
+                                    <span class="sd-stat-title">Active Programs</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card is-pending">
+                                <div class="sd-stat-icon"><i class="far fa-file-pen"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="2" data-format="number">0</span>
+                                    <span class="sd-stat-title">Draft Programs</span>
+                                </div>
+                            </div>
+                            <div class="sd-stat-card ad-stat-card">
+                                <div class="sd-stat-icon"><i class="far fa-users"></i></div>
+                                <div class="sd-stat-body">
+                                    <span class="sd-stat-value ad-counter" data-count="1250" data-format="number">0</span>
+                                    <span class="sd-stat-title">Total Enrollments</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- analytics charts -->
+                        <div class="gmm-chart-grid">
+                            <section class="sd-card ad-chart-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Program Enrollment Chart</h3>
+                                        <p>Student enrollments by program category.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap">
+                                    <canvas id="gmm-apr-enrollment" aria-label="Program enrollment bar chart"></canvas>
+                                </div>
+                            </section>
+                            <section class="sd-card ad-chart-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Program Category</h3>
+                                        <p>Programs offered by category.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap is-doughnut">
+                                    <canvas id="gmm-apr-category" aria-label="Program category doughnut chart"></canvas>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- programs list -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>All Programs</h3>
+                                    <p>Search and manage learning programs offered on the platform.</p>
+                                </div>
+                                <span class="sf-count-pill" id="apr-result-count"><i class="far fa-music"></i> <strong>8</strong> Shown</span>
+                            </div>
+
+                            <form class="at-filter-bar" id="apr-filter-form" action="#" method="get">
+                                <div class="at-search-field">
+                                    <i class="far fa-search" aria-hidden="true"></i>
+                                    <input type="search" class="form-control" id="apr-search"
+                                        placeholder="Search programs..." autocomplete="off">
+                                </div>
+                                <div class="at-filter-selects">
+                                    <div class="form-group mb-0">
+                                        <label for="apr-category" class="visually-hidden">Category</label>
+                                        <select class="form-control form-select" id="apr-category">
+                                            <option value="all">All Categories</option>
+                                            <option value="piano">Piano</option>
+                                            <option value="vocals">Vocals</option>
+                                            <option value="guitar">Guitar</option>
+                                            <option value="drums">Drums</option>
+                                            <option value="theory">Theory</option>
+                                            <option value="worship">Worship</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <label for="apr-status" class="visually-hidden">Status</label>
+                                        <select class="form-control form-select" id="apr-status">
+                                            <option value="all">All Status</option>
+                                            <option value="active">Active</option>
+                                            <option value="draft">Draft</option>
+                                            <option value="inactive">Inactive</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="theme-btn"><i class="far fa-filter"></i> Filter</button>
+                                </div>
+                            </form>
+
+                            <div class="apr-grid" id="apr-grid">
+
+                                <article class="apr-card"
+                                    data-id="PRG-01"
+                                    data-name="Gospel Piano Mastery"
+                                    data-category="piano"
+                                    data-category-label="Piano"
+                                    data-description="Learn gospel piano fundamentals and worship techniques."
+                                    data-duration="12 Weeks"
+                                    data-difficulty="Beginner"
+                                    data-enrolled="250"
+                                    data-status="active"
+                                    data-featured="true"
+                                    data-image="assets/img/course/01.jpg">
+                                    <div class="apr-card-media">
+                                        <img src="assets/img/course/01.jpg" alt="Gospel Piano Mastery">
+                                        <span class="sb-badge is-confirmed apr-status">Active</span>
+                                    </div>
+                                    <div class="apr-card-body">
+                                        <span class="apr-category">Piano</span>
+                                        <h4>Gospel Piano Mastery</h4>
+                                        <p>Learn gospel piano fundamentals and worship techniques.</p>
+                                        <div class="apr-card-meta">
+                                            <span><i class="far fa-users"></i> 250 Enrolled</span>
+                                            <span><i class="far fa-clock"></i> 12 Weeks</span>
+                                        </div>
+                                        <div class="apr-card-actions">
+                                            <button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="apr-card"
+                                    data-id="PRG-02"
+                                    data-name="Worship Vocal Training"
+                                    data-category="vocals"
+                                    data-category-label="Vocals"
+                                    data-description="Develop vocal control, harmony, and worship leading skills."
+                                    data-duration="10 Weeks"
+                                    data-difficulty="Intermediate"
+                                    data-enrolled="320"
+                                    data-status="active"
+                                    data-featured="true"
+                                    data-image="assets/img/course/02.jpg">
+                                    <div class="apr-card-media">
+                                        <img src="assets/img/course/02.jpg" alt="Worship Vocal Training">
+                                        <span class="sb-badge is-confirmed apr-status">Active</span>
+                                    </div>
+                                    <div class="apr-card-body">
+                                        <span class="apr-category">Vocals</span>
+                                        <h4>Worship Vocal Training</h4>
+                                        <p>Develop vocal control, harmony, and worship leading skills.</p>
+                                        <div class="apr-card-meta">
+                                            <span><i class="far fa-users"></i> 320 Enrolled</span>
+                                            <span><i class="far fa-clock"></i> 10 Weeks</span>
+                                        </div>
+                                        <div class="apr-card-actions">
+                                            <button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="apr-card"
+                                    data-id="PRG-03"
+                                    data-name="Church Guitar Basics"
+                                    data-category="guitar"
+                                    data-category-label="Guitar"
+                                    data-description="Master chord progressions and rhythm for church worship teams."
+                                    data-duration="8 Weeks"
+                                    data-difficulty="Beginner"
+                                    data-enrolled="180"
+                                    data-status="active"
+                                    data-featured="true"
+                                    data-image="assets/img/course/03.jpg">
+                                    <div class="apr-card-media">
+                                        <img src="assets/img/course/03.jpg" alt="Church Guitar Basics">
+                                        <span class="sb-badge is-confirmed apr-status">Active</span>
+                                    </div>
+                                    <div class="apr-card-body">
+                                        <span class="apr-category">Guitar</span>
+                                        <h4>Church Guitar Basics</h4>
+                                        <p>Master chord progressions and rhythm for church worship teams.</p>
+                                        <div class="apr-card-meta">
+                                            <span><i class="far fa-users"></i> 180 Enrolled</span>
+                                            <span><i class="far fa-clock"></i> 8 Weeks</span>
+                                        </div>
+                                        <div class="apr-card-actions">
+                                            <button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="apr-card"
+                                    data-id="PRG-04"
+                                    data-name="Music Theory Fundamentals"
+                                    data-category="theory"
+                                    data-category-label="Theory"
+                                    data-description="Build a strong foundation in scales, chords, and gospel harmony."
+                                    data-duration="6 Weeks"
+                                    data-difficulty="Beginner"
+                                    data-enrolled="210"
+                                    data-status="active"
+                                    data-featured="false"
+                                    data-image="assets/img/course/05.jpg">
+                                    <div class="apr-card-media">
+                                        <img src="assets/img/course/05.jpg" alt="Music Theory Fundamentals">
+                                        <span class="sb-badge is-confirmed apr-status">Active</span>
+                                    </div>
+                                    <div class="apr-card-body">
+                                        <span class="apr-category">Theory</span>
+                                        <h4>Music Theory Fundamentals</h4>
+                                        <p>Build a strong foundation in scales, chords, and gospel harmony.</p>
+                                        <div class="apr-card-meta">
+                                            <span><i class="far fa-users"></i> 210 Enrolled</span>
+                                            <span><i class="far fa-clock"></i> 6 Weeks</span>
+                                        </div>
+                                        <div class="apr-card-actions">
+                                            <button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="apr-card"
+                                    data-id="PRG-05"
+                                    data-name="Gospel Drum Grooves"
+                                    data-category="drums"
+                                    data-category-label="Drums"
+                                    data-description="Learn church-ready drum grooves and pocket timing."
+                                    data-duration="9 Weeks"
+                                    data-difficulty="Intermediate"
+                                    data-enrolled="145"
+                                    data-status="active"
+                                    data-featured="false"
+                                    data-image="assets/img/course/04.jpg">
+                                    <div class="apr-card-media">
+                                        <img src="assets/img/course/04.jpg" alt="Gospel Drum Grooves">
+                                        <span class="sb-badge is-confirmed apr-status">Active</span>
+                                    </div>
+                                    <div class="apr-card-body">
+                                        <span class="apr-category">Drums</span>
+                                        <h4>Gospel Drum Grooves</h4>
+                                        <p>Learn church-ready drum grooves and pocket timing.</p>
+                                        <div class="apr-card-meta">
+                                            <span><i class="far fa-users"></i> 145 Enrolled</span>
+                                            <span><i class="far fa-clock"></i> 9 Weeks</span>
+                                        </div>
+                                        <div class="apr-card-actions">
+                                            <button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="apr-card"
+                                    data-id="PRG-06"
+                                    data-name="Worship Band Leadership"
+                                    data-category="worship"
+                                    data-category-label="Worship"
+                                    data-description="Lead rehearsals, setlists, and live worship teams with confidence."
+                                    data-duration="14 Weeks"
+                                    data-difficulty="Advanced"
+                                    data-enrolled="95"
+                                    data-status="active"
+                                    data-featured="false"
+                                    data-image="assets/img/course/06.jpg">
+                                    <div class="apr-card-media">
+                                        <img src="assets/img/course/06.jpg" alt="Worship Band Leadership">
+                                        <span class="sb-badge is-confirmed apr-status">Active</span>
+                                    </div>
+                                    <div class="apr-card-body">
+                                        <span class="apr-category">Worship</span>
+                                        <h4>Worship Band Leadership</h4>
+                                        <p>Lead rehearsals, setlists, and live worship teams with confidence.</p>
+                                        <div class="apr-card-meta">
+                                            <span><i class="far fa-users"></i> 95 Enrolled</span>
+                                            <span><i class="far fa-clock"></i> 14 Weeks</span>
+                                        </div>
+                                        <div class="apr-card-actions">
+                                            <button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="apr-card"
+                                    data-id="PRG-07"
+                                    data-name="Advanced Worship Piano"
+                                    data-category="piano"
+                                    data-category-label="Piano"
+                                    data-description="Advanced voicings, fills, and spontaneous worship playing."
+                                    data-duration="11 Weeks"
+                                    data-difficulty="Advanced"
+                                    data-enrolled="0"
+                                    data-status="draft"
+                                    data-featured="false"
+                                    data-image="assets/img/course/01.jpg">
+                                    <div class="apr-card-media">
+                                        <img src="assets/img/course/01.jpg" alt="Advanced Worship Piano">
+                                        <span class="sb-badge is-pending apr-status">Draft</span>
+                                    </div>
+                                    <div class="apr-card-body">
+                                        <span class="apr-category">Piano</span>
+                                        <h4>Advanced Worship Piano</h4>
+                                        <p>Advanced voicings, fills, and spontaneous worship playing.</p>
+                                        <div class="apr-card-meta">
+                                            <span><i class="far fa-users"></i> 0 Enrolled</span>
+                                            <span><i class="far fa-clock"></i> 11 Weeks</span>
+                                        </div>
+                                        <div class="apr-card-actions">
+                                            <button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="apr-card"
+                                    data-id="PRG-08"
+                                    data-name="Choir Harmony Coaching"
+                                    data-category="vocals"
+                                    data-category-label="Vocals"
+                                    data-description="Stack gospel harmonies and coach choir section blending."
+                                    data-duration="7 Weeks"
+                                    data-difficulty="Intermediate"
+                                    data-enrolled="50"
+                                    data-status="draft"
+                                    data-featured="false"
+                                    data-image="assets/img/course/02.jpg">
+                                    <div class="apr-card-media">
+                                        <img src="assets/img/course/02.jpg" alt="Choir Harmony Coaching">
+                                        <span class="sb-badge is-pending apr-status">Draft</span>
+                                    </div>
+                                    <div class="apr-card-body">
+                                        <span class="apr-category">Vocals</span>
+                                        <h4>Choir Harmony Coaching</h4>
+                                        <p>Stack gospel harmonies and coach choir section blending.</p>
+                                        <div class="apr-card-meta">
+                                            <span><i class="far fa-users"></i> 50 Enrolled</span>
+                                            <span><i class="far fa-clock"></i> 7 Weeks</span>
+                                        </div>
+                                        <div class="apr-card-actions">
+                                            <button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>
+                                            <button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                            </div>
+
+                            <div class="sl-empty" id="apr-empty" hidden>
+                                <i class="far fa-music"></i>
+                                <h3>No programs available.</h3>
+                                <p>Try adjusting your search or filter options, or add a new program.</p>
+                            </div>
+                        </section>
+
+                        <!-- featured programs -->
+                        <section class="sd-card">
+                            <div class="sd-card-head">
+                                <div>
+                                    <h3>Featured Programs</h3>
+                                    <p>Toggle which programs appear as featured on the platform.</p>
+                                </div>
+                            </div>
+                            <div class="apr-featured-list" id="apr-featured-list">
+                                <!-- filled by JS from program cards -->
+                            </div>
+                            <div class="sl-empty" id="apr-featured-empty" hidden>
+                                <i class="far fa-star"></i>
+                                <h3>No featured programs.</h3>
+                                <p>Use the toggles below each program listing to feature content.</p>
+                            </div>
+                        </section>
+
+                        <footer class="ad-footer">
+                            <p>&copy; <span id="date"></span> Gospel Music Mastery — Admin Panel. All rights reserved.</p>
+                            <ul>
+                                <li><a href="admin-settings.html">Settings</a></li>
+                                <li><a href="admin-dashboard.html">Support</a></li>
+                                <li><a href="admin-dashboard.html">Privacy</a></li>
+                            </ul>
+                        </footer>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- admin programs end -->
+
+    </main>
+
+
+    <!-- add / edit program modal -->
+    <div class="modal fade gospel-demo-modal" id="apr-form-modal" tabindex="-1" aria-labelledby="apr-form-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apr-form-title">Add New Program</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="apr-program-form" action="#" method="post">
+                    <div class="modal-body at-modal-body">
+                        <input type="hidden" id="apr-form-id" value="">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="apr-form-image">Program Image Upload</label>
+                                    <input type="file" class="form-control" id="apr-form-image" accept="image/*">
+                                    <small class="form-text text-muted">Frontend demo only — image is not uploaded.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="apr-form-name">Program Name</label>
+                                    <input type="text" class="form-control" id="apr-form-name" placeholder="e.g. Gospel Piano Mastery" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="apr-form-category">Category</label>
+                                    <select class="form-control form-select" id="apr-form-category" required>
+                                        <option value="piano">Piano</option>
+                                        <option value="vocals">Vocals</option>
+                                        <option value="guitar">Guitar</option>
+                                        <option value="drums">Drums</option>
+                                        <option value="theory">Theory</option>
+                                        <option value="worship">Worship</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="apr-form-description">Description</label>
+                                    <textarea class="form-control" id="apr-form-description" rows="3"
+                                        placeholder="Describe the program..." required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="apr-form-duration">Duration</label>
+                                    <input type="text" class="form-control" id="apr-form-duration" placeholder="e.g. 12 Weeks" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="apr-form-difficulty">Difficulty</label>
+                                    <select class="form-control form-select" id="apr-form-difficulty" required>
+                                        <option value="Beginner">Beginner</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advanced">Advanced</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="apr-form-status">Status</label>
+                                    <select class="form-control form-select" id="apr-form-status" required>
+                                        <option value="active">Active</option>
+                                        <option value="draft">Draft</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="theme-btn"><i class="far fa-floppy-disk"></i> Save Program</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- program detail modal -->
+    <div class="modal fade gospel-demo-modal" id="apr-detail-modal" tabindex="-1" aria-labelledby="apr-detail-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apr-detail-title">Program Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body at-modal-body">
+                    <div class="ac-modal-hero apr-detail-hero">
+                        <img src="assets/img/course/01.jpg" alt="Program" id="apr-detail-image">
+                        <div>
+                            <span class="apr-category" id="apr-detail-category">Piano</span>
+                            <h4 id="apr-detail-name">Gospel Piano Mastery</h4>
+                            <p id="apr-detail-description">Learn gospel piano fundamentals and worship techniques.</p>
+                            <span class="sb-badge is-confirmed" id="apr-detail-status">Active</span>
+                        </div>
+                    </div>
+                    <ul class="booking-modal-list at-modal-list">
+                        <li><span>Duration</span><strong id="apr-detail-duration">12 Weeks</strong></li>
+                        <li><span>Difficulty</span><strong id="apr-detail-difficulty">Beginner</strong></li>
+                        <li><span>Enrolled Students</span><strong id="apr-detail-enrolled">250</strong></li>
+                        <li><span>Program ID</span><strong id="apr-detail-id">PRG-01</strong></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="theme-btn" id="apr-detail-edit-btn"><i class="far fa-pen"></i> Edit Program</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- delete confirm modal -->
+    <div class="modal fade gospel-demo-modal" id="apr-delete-modal" tabindex="-1" aria-labelledby="apr-delete-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apr-delete-title">Delete Program</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">Are you sure you want to delete <strong id="apr-delete-name">this program</strong>? This is a frontend demo only.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="theme-btn" id="apr-delete-confirm"><i class="far fa-trash"></i> Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gospel-alert gospel-alert-success sl-toast" id="apr-toast" hidden>
+        <i class="far fa-circle-check"></i>
+        <span id="apr-toast-text">Action completed (demo).</span>
+    </div>
+
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chart.umd.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
+
+    <script>
+        (function () {
+            var shell = document.querySelector('.ad-shell');
+            if (!shell) return;
+
+            /* sidebar */
+            var toggle = document.getElementById('sd-sidebar-toggle');
+            var sidebar = document.getElementById('sd-sidebar');
+            var backdrop = document.getElementById('sd-sidebar-backdrop');
+            function closeSidebar() {
+                shell.classList.remove('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+            function openSidebar() {
+                shell.classList.add('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    if (shell.classList.contains('is-sidebar-open')) closeSidebar();
+                    else openSidebar();
+                });
+            }
+            if (backdrop) backdrop.addEventListener('click', closeSidebar);
+            if (sidebar) {
+                sidebar.querySelectorAll('a.sd-nav-link').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        if (window.matchMedia('(max-width: 991px)').matches) closeSidebar();
+                    });
+                });
+            }
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeSidebar();
+            });
+
+            var usersToggle = document.getElementById('ad-users-toggle');
+            var usersGroup = document.getElementById('ad-users-group');
+            if (usersToggle && usersGroup) {
+                usersToggle.addEventListener('click', function () {
+                    var isOpen = usersGroup.classList.toggle('is-open');
+                    usersToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+
+            /* counters */
+            document.querySelectorAll('.ad-counter').forEach(function (el) {
+                var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+                var start = null;
+                function step(ts) {
+                    if (start === null) start = ts;
+                    var p = Math.min((ts - start) / 1000, 1);
+                    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US');
+                    if (p < 1) window.requestAnimationFrame(step);
+                }
+                window.requestAnimationFrame(step);
+            });
+
+            /* toast */
+            var toast = document.getElementById('apr-toast');
+            var toastText = document.getElementById('apr-toast-text');
+            var toastTimer = null;
+            function showToast(message, isError) {
+                if (!toast) return;
+                if (toastText) toastText.textContent = message;
+                toast.classList.toggle('gospel-alert-error', !!isError);
+                toast.classList.toggle('gospel-alert-success', !isError);
+                var icon = toast.querySelector('i');
+                if (icon) icon.className = isError ? 'far fa-circle-exclamation' : 'far fa-circle-check';
+                toast.hidden = false;
+                window.clearTimeout(toastTimer);
+                toastTimer = window.setTimeout(function () { toast.hidden = true; }, 3000);
+            }
+
+            var STATUS_META = {
+                active: { label: 'Active', className: 'is-confirmed' },
+                draft: { label: 'Draft', className: 'is-pending' },
+                inactive: { label: 'Inactive', className: 'is-inactive' }
+            };
+
+            var CATEGORY_LABELS = {
+                piano: 'Piano', vocals: 'Vocals', guitar: 'Guitar',
+                drums: 'Drums', theory: 'Theory', worship: 'Worship'
+            };
+
+            var searchInput = document.getElementById('apr-search');
+            var categorySelect = document.getElementById('apr-category');
+            var statusSelect = document.getElementById('apr-status');
+            var filterForm = document.getElementById('apr-filter-form');
+            var grid = document.getElementById('apr-grid');
+            var emptyState = document.getElementById('apr-empty');
+            var resultCount = document.getElementById('apr-result-count');
+            var featuredList = document.getElementById('apr-featured-list');
+            var featuredEmpty = document.getElementById('apr-featured-empty');
+
+            function getCards() {
+                return Array.prototype.slice.call(document.querySelectorAll('.apr-card'));
+            }
+
+            function matchesFilters(card) {
+                if (card.classList.contains('is-deleted')) return false;
+                var q = (searchInput.value || '').trim().toLowerCase();
+                var category = categorySelect.value;
+                var status = statusSelect.value;
+                var name = (card.getAttribute('data-name') || '').toLowerCase();
+                var desc = (card.getAttribute('data-description') || '').toLowerCase();
+                var searchOk = !q || name.indexOf(q) !== -1 || desc.indexOf(q) !== -1;
+                var categoryOk = category === 'all' || card.getAttribute('data-category') === category;
+                var statusOk = status === 'all' || card.getAttribute('data-status') === status;
+                return searchOk && categoryOk && statusOk;
+            }
+
+            function applyFilters() {
+                var cards = getCards();
+                var visible = 0;
+                cards.forEach(function (card) {
+                    var show = matchesFilters(card);
+                    card.hidden = !show;
+                    if (show) visible += 1;
+                });
+                if (emptyState) emptyState.hidden = visible > 0;
+                if (grid) grid.hidden = visible === 0;
+                if (resultCount) {
+                    resultCount.innerHTML = '<i class="far fa-music"></i> <strong>' + visible + '</strong> Shown';
+                }
+                renderFeatured();
+            }
+
+            function renderFeatured() {
+                if (!featuredList) return;
+                var cards = getCards().filter(function (c) {
+                    return !c.classList.contains('is-deleted');
+                });
+                featuredList.innerHTML = cards.map(function (card) {
+                    var id = card.getAttribute('data-id');
+                    var name = card.getAttribute('data-name');
+                    var image = card.getAttribute('data-image');
+                    var category = card.getAttribute('data-category-label');
+                    var featured = card.getAttribute('data-featured') === 'true';
+                    return '<div class="apr-featured-item" data-id="' + id + '">' +
+                        '<div class="apr-featured-info">' +
+                        '<img src="' + image + '" alt="' + name.replace(/"/g, '&quot;') + '">' +
+                        '<div><strong>' + name + '</strong><small>' + category + '</small></div>' +
+                        '</div>' +
+                        '<label class="ac-feature-toggle">' +
+                        '<input type="checkbox" class="apr-feature-toggle" data-id="' + id + '"' +
+                        (featured ? ' checked' : '') + '>' +
+                        '<span>' + (featured ? 'Featured' : 'Not Featured') + '</span>' +
+                        '</label></div>';
+                }).join('');
+
+                var anyFeatured = cards.some(function (c) { return c.getAttribute('data-featured') === 'true'; });
+                if (featuredEmpty) featuredEmpty.hidden = cards.length > 0;
+                if (!cards.length && featuredEmpty) featuredEmpty.hidden = false;
+
+                featuredList.querySelectorAll('.apr-feature-toggle').forEach(function (input) {
+                    input.addEventListener('change', function () {
+                        var id = input.getAttribute('data-id');
+                        var card = document.querySelector('.apr-card[data-id="' + id + '"]');
+                        if (!card) return;
+                        card.setAttribute('data-featured', input.checked ? 'true' : 'false');
+                        var label = input.parentElement.querySelector('span');
+                        if (label) label.textContent = input.checked ? 'Featured' : 'Not Featured';
+                        showToast((card.getAttribute('data-name') || 'Program') +
+                            (input.checked ? ' marked featured (demo).' : ' unmarked featured (demo).'));
+                    });
+                });
+            }
+
+            if (filterForm) {
+                filterForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    applyFilters();
+                });
+            }
+            if (searchInput) searchInput.addEventListener('input', applyFilters);
+            if (categorySelect) categorySelect.addEventListener('change', applyFilters);
+            if (statusSelect) statusSelect.addEventListener('change', applyFilters);
+
+            /* modals */
+            var formModalEl = document.getElementById('apr-form-modal');
+            var detailModalEl = document.getElementById('apr-detail-modal');
+            var deleteModalEl = document.getElementById('apr-delete-modal');
+            var formModal = formModalEl && window.bootstrap ? new bootstrap.Modal(formModalEl) : null;
+            var detailModal = detailModalEl && window.bootstrap ? new bootstrap.Modal(detailModalEl) : null;
+            var deleteModal = deleteModalEl && window.bootstrap ? new bootstrap.Modal(deleteModalEl) : null;
+            var activeCard = null;
+            var deleteTarget = null;
+
+            function resetForm() {
+                document.getElementById('apr-form-id').value = '';
+                document.getElementById('apr-form-name').value = '';
+                document.getElementById('apr-form-category').value = 'piano';
+                document.getElementById('apr-form-description').value = '';
+                document.getElementById('apr-form-duration').value = '';
+                document.getElementById('apr-form-difficulty').value = 'Beginner';
+                document.getElementById('apr-form-status').value = 'active';
+                document.getElementById('apr-form-image').value = '';
+                document.getElementById('apr-form-title').textContent = 'Add New Program';
+            }
+
+            function fillForm(card) {
+                document.getElementById('apr-form-id').value = card.getAttribute('data-id') || '';
+                document.getElementById('apr-form-name').value = card.getAttribute('data-name') || '';
+                document.getElementById('apr-form-category').value = card.getAttribute('data-category') || 'piano';
+                document.getElementById('apr-form-description').value = card.getAttribute('data-description') || '';
+                document.getElementById('apr-form-duration').value = card.getAttribute('data-duration') || '';
+                document.getElementById('apr-form-difficulty').value = card.getAttribute('data-difficulty') || 'Beginner';
+                var st = card.getAttribute('data-status') || 'active';
+                if (st === 'inactive') st = 'draft';
+                document.getElementById('apr-form-status').value = st;
+                document.getElementById('apr-form-title').textContent = 'Edit Program';
+            }
+
+            function openDetail(card) {
+                activeCard = card;
+                var set = function (id, value) {
+                    var el = document.getElementById(id);
+                    if (el) el.textContent = value || '';
+                };
+                var img = document.getElementById('apr-detail-image');
+                if (img) {
+                    img.src = card.getAttribute('data-image') || '';
+                    img.alt = card.getAttribute('data-name') || '';
+                }
+                set('apr-detail-name', card.getAttribute('data-name'));
+                set('apr-detail-category', card.getAttribute('data-category-label'));
+                set('apr-detail-description', card.getAttribute('data-description'));
+                set('apr-detail-duration', card.getAttribute('data-duration'));
+                set('apr-detail-difficulty', card.getAttribute('data-difficulty'));
+                set('apr-detail-enrolled', (card.getAttribute('data-enrolled') || '0') + ' Enrolled');
+                set('apr-detail-id', card.getAttribute('data-id'));
+                var st = STATUS_META[card.getAttribute('data-status')];
+                var badge = document.getElementById('apr-detail-status');
+                if (badge && st) {
+                    badge.className = 'sb-badge ' + st.className;
+                    badge.textContent = st.label;
+                }
+                if (detailModal) detailModal.show();
+            }
+
+            function bindCard(card) {
+                var viewBtn = card.querySelector('.apr-view-btn');
+                var editBtn = card.querySelector('.apr-edit-btn');
+                var deleteBtn = card.querySelector('.apr-delete-btn');
+                if (viewBtn) viewBtn.addEventListener('click', function () { openDetail(card); });
+                if (editBtn) {
+                    editBtn.addEventListener('click', function () {
+                        activeCard = card;
+                        fillForm(card);
+                        if (formModal) formModal.show();
+                    });
+                }
+                if (deleteBtn) {
+                    deleteBtn.addEventListener('click', function () {
+                        deleteTarget = card;
+                        var nameEl = document.getElementById('apr-delete-name');
+                        if (nameEl) nameEl.textContent = card.getAttribute('data-name') || 'this program';
+                        if (deleteModal) deleteModal.show();
+                    });
+                }
+            }
+
+            getCards().forEach(bindCard);
+
+            var addBtn = document.getElementById('apr-add-btn');
+            if (addBtn) {
+                addBtn.addEventListener('click', function () {
+                    activeCard = null;
+                    resetForm();
+                    if (formModal) formModal.show();
+                });
+            }
+
+            var detailEditBtn = document.getElementById('apr-detail-edit-btn');
+            if (detailEditBtn) {
+                detailEditBtn.addEventListener('click', function () {
+                    if (!activeCard) return;
+                    if (detailModal) detailModal.hide();
+                    fillForm(activeCard);
+                    if (formModal) formModal.show();
+                });
+            }
+
+            var programForm = document.getElementById('apr-program-form');
+            if (programForm) {
+                programForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var name = document.getElementById('apr-form-name').value.trim();
+                    var category = document.getElementById('apr-form-category').value;
+                    var description = document.getElementById('apr-form-description').value.trim();
+                    var duration = document.getElementById('apr-form-duration').value.trim();
+                    var difficulty = document.getElementById('apr-form-difficulty').value;
+                    var status = document.getElementById('apr-form-status').value;
+                    var formId = document.getElementById('apr-form-id').value;
+                    var meta = STATUS_META[status];
+                    var categoryLabel = CATEGORY_LABELS[category] || category;
+
+                    if (formId && activeCard) {
+                        activeCard.setAttribute('data-name', name);
+                        activeCard.setAttribute('data-category', category);
+                        activeCard.setAttribute('data-category-label', categoryLabel);
+                        activeCard.setAttribute('data-description', description);
+                        activeCard.setAttribute('data-duration', duration);
+                        activeCard.setAttribute('data-difficulty', difficulty);
+                        activeCard.setAttribute('data-status', status);
+                        var title = activeCard.querySelector('h4');
+                        var desc = activeCard.querySelector('.apr-card-body > p');
+                        var cat = activeCard.querySelector('.apr-category');
+                        var badge = activeCard.querySelector('.apr-status');
+                        var metaSpans = activeCard.querySelectorAll('.apr-card-meta span');
+                        if (title) title.textContent = name;
+                        if (desc) desc.textContent = description;
+                        if (cat) cat.textContent = categoryLabel;
+                        if (badge && meta) {
+                            badge.className = 'sb-badge apr-status ' + meta.className;
+                            badge.textContent = meta.label;
+                        }
+                        if (metaSpans[1]) metaSpans[1].innerHTML = '<i class="far fa-clock"></i> ' + duration;
+                        showToast('Program updated (demo).');
+                    } else {
+                        var newId = 'PRG-' + String(getCards().length + 1).padStart(2, '0');
+                        var html =
+                            '<article class="apr-card" data-id="' + newId + '" data-name="' + name.replace(/"/g, '&quot;') +
+                            '" data-category="' + category + '" data-category-label="' + categoryLabel +
+                            '" data-description="' + description.replace(/"/g, '&quot;') +
+                            '" data-duration="' + duration.replace(/"/g, '&quot;') +
+                            '" data-difficulty="' + difficulty + '" data-enrolled="0" data-status="' + status +
+                            '" data-featured="false" data-image="assets/img/course/01.jpg">' +
+                            '<div class="apr-card-media">' +
+                            '<img src="assets/img/course/01.jpg" alt="' + name.replace(/"/g, '&quot;') + '">' +
+                            '<span class="sb-badge apr-status ' + meta.className + '">' + meta.label + '</span></div>' +
+                            '<div class="apr-card-body">' +
+                            '<span class="apr-category">' + categoryLabel + '</span>' +
+                            '<h4>' + name + '</h4><p>' + description + '</p>' +
+                            '<div class="apr-card-meta">' +
+                            '<span><i class="far fa-users"></i> 0 Enrolled</span>' +
+                            '<span><i class="far fa-clock"></i> ' + duration + '</span></div>' +
+                            '<div class="apr-card-actions">' +
+                            '<button type="button" class="theme-btn theme-btn-outline apr-view-btn"><i class="far fa-eye"></i> View</button>' +
+                            '<button type="button" class="theme-btn theme-btn-outline apr-edit-btn"><i class="far fa-pen"></i> Edit</button>' +
+                            '<button type="button" class="theme-btn theme-btn-outline apr-delete-btn"><i class="far fa-trash"></i> Delete</button>' +
+                            '</div></div></article>';
+                        if (grid) {
+                            grid.insertAdjacentHTML('afterbegin', html);
+                            var newCard = grid.querySelector('.apr-card[data-id="' + newId + '"]');
+                            if (newCard) bindCard(newCard);
+                        }
+                        showToast('Program saved (demo).');
+                    }
+                    if (formModal) formModal.hide();
+                    applyFilters();
+                });
+            }
+
+            var deleteConfirm = document.getElementById('apr-delete-confirm');
+            if (deleteConfirm) {
+                deleteConfirm.addEventListener('click', function () {
+                    if (!deleteTarget) return;
+                    var name = deleteTarget.getAttribute('data-name') || 'Program';
+                    deleteTarget.classList.add('is-deleted');
+                    deleteTarget.hidden = true;
+                    if (deleteModal) deleteModal.hide();
+                    showToast(name + ' deleted (demo).', true);
+                    deleteTarget = null;
+                    applyFilters();
+                });
+            }
+
+            var dateEl = document.getElementById('date');
+            if (dateEl) dateEl.textContent = new Date().getFullYear();
+
+            applyFilters();
+        })();
+    </script>
+
+</body>
+
+</html>

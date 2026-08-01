@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teacher login for Gospel Music Mastery">
+    <meta name="description" content="Admin login for Gospel Music Mastery">
     <meta name="keywords" content="">
 
     <!-- title -->
-    <title>Teacher Login - Gospel Music Mastery</title>
+    <title>Admin Login - Gospel Music Mastery</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
@@ -26,7 +26,7 @@
 
 </head>
 
-<body>
+<body class="public-site-page">
 
     <!-- preloader -->
     <div class="preloader">
@@ -38,28 +38,34 @@
     </div>
     <!-- preloader end -->
 
-<main class="main">
+    <main class="main">
 
-<!-- teacher login area -->
+        <!-- admin login area -->
         <div class="login-area py-120">
             <div class="container">
                 <div class="col-md-5 mx-auto">
                     <div class="login-form">
                         <div class="login-header">
-                            <span class="login-portal-badge">Teacher Portal</span>
-                            <h2>Welcome Back</h2>
-                            <p class="login-desc">Sign in to manage your profile, classes, availability, bookings, and earnings.</p>
+                            <span class="login-portal-badge">Admin Portal</span>
+                            <h2>Administrator Sign In</h2>
+                            <p class="login-desc">Sign in to manage users, classes, bookings, payments, and platform settings.</p>
                         </div>
-                        <form action="#" method="post" id="teacher-login-form" novalidate>
+
+                        <div class="gospel-alert gospel-alert-error" id="admin-login-error" hidden>
+                            <i class="far fa-circle-exclamation"></i>
+                            <span id="admin-login-error-text">Please enter your email and password.</span>
+                        </div>
+
+                        <form action="#" method="post" id="admin-login-form" novalidate>
                             <div class="form-group">
-                                <label for="teacher-username">Username or Email</label>
-                                <input type="text" class="form-control" id="teacher-username" name="username"
-                                    placeholder="Enter username or email" autocomplete="username">
+                                <label for="admin-username">Email Address or Username</label>
+                                <input type="text" class="form-control" id="admin-username" name="username"
+                                    placeholder="Enter email or username" autocomplete="username">
                             </div>
                             <div class="form-group">
-                                <label for="teacher-password">Password</label>
+                                <label for="admin-password">Password</label>
                                 <div class="password-field">
-                                    <input type="password" class="form-control" id="teacher-password" name="password"
+                                    <input type="password" class="form-control" id="admin-password" name="password"
                                         placeholder="Enter your password" autocomplete="current-password">
                                     <button type="button" class="password-toggle" id="password-toggle"
                                         aria-label="Show password" title="Show password">
@@ -69,30 +75,30 @@
                             </div>
                             <div class="d-flex justify-content-between mb-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="keep-signed-in">
-                                    <label class="form-check-label" for="keep-signed-in">
-                                        Keep me signed in
+                                    <input class="form-check-input" type="checkbox" value="1" id="admin-remember">
+                                    <label class="form-check-label" for="admin-remember">
+                                        Remember Me
                                     </label>
                                 </div>
-                                <a href="forgot-password.html" class="forgot-pass">Forgot Password?</a>
+                                <a href="forgot-password.html?from=admin" class="forgot-pass">Forgot Password?</a>
                             </div>
                             <div class="d-flex align-items-center">
-                                <button type="submit" class="theme-btn"><i class="far fa-sign-in"></i> Sign In</button>
+                                <button type="submit" class="theme-btn w-100"><i class="far fa-sign-in"></i> Sign In</button>
                             </div>
                         </form>
+
                         <div class="login-footer">
-                            <p>New to Gospel Music Mastery? <a href="teacher-register.html">Register as a Teacher</a></p>
-                            <p>Student or admin? <a href="login.html">Choose another portal</a></p>
+                            <p>Looking for another portal? <a href="login.html">Choose login type</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- teacher login area end -->
+        <!-- admin login area end -->
 
     </main>
 
-<!-- js -->
+    <!-- js -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/modernizr.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -106,12 +112,15 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- password visibility toggle + demo login redirect -->
     <script>
         (function () {
             var toggle = document.getElementById('password-toggle');
-            var input = document.getElementById('teacher-password');
+            var input = document.getElementById('admin-password');
             var icon = document.getElementById('password-toggle-icon');
+            var form = document.getElementById('admin-login-form');
+            var errorBox = document.getElementById('admin-login-error');
+            var errorText = document.getElementById('admin-login-error-text');
+
             if (toggle && input && icon) {
                 toggle.addEventListener('click', function () {
                     var isHidden = input.type === 'password';
@@ -123,11 +132,33 @@
                 });
             }
 
-            var form = document.getElementById('teacher-login-form');
             if (form) {
                 form.addEventListener('submit', function (e) {
                     e.preventDefault();
-                    window.location.href = 'teacher-dashboard.html';
+                    var username = (document.getElementById('admin-username').value || '').trim();
+                    var password = (input && input.value || '').trim();
+
+                    if (!username || !password) {
+                        if (errorText) errorText.textContent = 'Please enter your email and password.';
+                        if (errorBox) {
+                            errorBox.classList.remove('gospel-alert-success');
+                            errorBox.classList.add('gospel-alert-error');
+                            errorBox.hidden = false;
+                        }
+                        return;
+                    }
+
+                    if (errorBox) {
+                        errorBox.classList.remove('gospel-alert-error');
+                        errorBox.classList.add('gospel-alert-success');
+                        var iconEl = errorBox.querySelector('i');
+                        if (iconEl) iconEl.className = 'far fa-circle-check';
+                        errorBox.hidden = false;
+                        if (errorText) errorText.textContent = 'Signed in successfully (demo). Redirecting…';
+                    }
+                    window.setTimeout(function () {
+                        window.location.href = 'admin-dashboard.html';
+                    }, 900);
                 });
             }
         })();

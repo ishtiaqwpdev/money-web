@@ -159,6 +159,43 @@
                             </div>
                         </section>
 
+                        <!-- analytics charts -->
+                        <div class="gmm-chart-grid is-triple">
+                            <section class="sd-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Learning Progress</h3>
+                                        <p>Your monthly learning activity.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap">
+                                    <canvas id="gmm-student-learning" aria-label="Learning progress line chart"></canvas>
+                                </div>
+                            </section>
+                            <section class="sd-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Lesson Status</h3>
+                                        <p>Completed, upcoming, and remaining lessons.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap is-doughnut">
+                                    <canvas id="gmm-student-lesson-status" aria-label="Lesson status doughnut chart"></canvas>
+                                </div>
+                            </section>
+                            <section class="sd-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Practice Hours</h3>
+                                        <p>Weekly practice hours this week.</p>
+                                    </div>
+                                </div>
+                                <div class="gmm-chart-wrap">
+                                    <canvas id="gmm-student-practice" aria-label="Practice hours bar chart"></canvas>
+                                </div>
+                            </section>
+                        </div>
+
                         <!-- upcoming lessons -->
                         <section class="sd-card">
                             <div class="sd-card-head">
@@ -353,6 +390,8 @@
     <script src="assets/js/counter-up.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/chart.umd.min.js"></script>
+    <script src="assets/js/dashboard-charts.js"></script>
 
     <!-- student dashboard interactions -->
     <script>
