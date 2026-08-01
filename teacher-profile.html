@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teacher login for Gospel Music Mastery">
+    <meta name="description" content="View and manage your instructor profile for Gospel Music Mastery">
     <meta name="keywords" content="">
 
     <!-- title -->
-    <title>Teacher Login - Gospel Music Mastery</title>
+    <title>My Profile - Gospel Music Mastery</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo/favicon.png">
@@ -139,64 +139,98 @@
         <!-- breadcrumb -->
         <div class="site-breadcrumb gospel-inner-breadcrumb">
             <div class="container">
-                <h2 class="breadcrumb-title">Teacher Login</h2>
+                <h2 class="breadcrumb-title">My Profile</h2>
                 <ul class="breadcrumb-menu">
                     <li><a href="../index.html">Home</a></li>
-                    <li class="active">Teacher Login</li>
+                    <li class="active">My Profile</li>
                 </ul>
             </div>
         </div>
         <!-- breadcrumb end -->
 
 
-        <!-- teacher login area -->
-        <div class="login-area py-120">
+        <!-- teacher dashboard -->
+        <div class="teacher-dashboard-area py-120">
             <div class="container">
-                <div class="col-md-5 mx-auto">
-                    <div class="login-form">
-                        <div class="login-header">
-                            <span class="login-portal-badge">Teacher Portal</span>
-                            <h2>Welcome Back</h2>
-                            <p class="login-desc">Sign in to manage your profile, classes, availability, bookings, and earnings.</p>
+
+                <!-- dashboard profile header -->
+                <div class="td-profile-header">
+                    <div class="td-profile-main">
+                        <div class="td-profile-avatar">
+                            <img src="../assets/img/team/01.jpg" alt="John Smith">
                         </div>
-                        <form action="#" method="post" id="teacher-login-form" novalidate>
-                            <div class="form-group">
-                                <label for="teacher-username">Username or Email</label>
-                                <input type="text" class="form-control" id="teacher-username" name="username"
-                                    placeholder="Enter username or email" autocomplete="username">
+                        <div class="td-profile-meta">
+                            <h2>John Smith</h2>
+                            <span class="td-role">Gospel Music Instructor</span>
+                            <div class="td-profile-stats">
+                                <span class="td-stat-item"><i class="fas fa-star"></i> 4.9</span>
+                                <span class="td-stat-item"><i class="far fa-users"></i> 25 Students</span>
+                                <span class="td-stat-item"><i class="far fa-books"></i> 12 Classes</span>
                             </div>
-                            <div class="form-group">
-                                <label for="teacher-password">Password</label>
-                                <div class="password-field">
-                                    <input type="password" class="form-control" id="teacher-password" name="password"
-                                        placeholder="Enter your password" autocomplete="current-password">
-                                    <button type="button" class="password-toggle" id="password-toggle"
-                                        aria-label="Show password" title="Show password">
-                                        <i class="far fa-eye" id="password-toggle-icon"></i>
-                                    </button>
+                        </div>
+                    </div>
+                    <div class="td-profile-actions">
+                        <a href="teacher-onboarding-class.html" class="theme-btn"><i class="far fa-plus"></i> Create New Class</a>
+                    </div>
+                </div>
+
+                <div class="td-shell">
+                    <button type="button" class="td-sidebar-toggle theme-btn theme-btn-outline" id="td-sidebar-toggle" aria-expanded="false" aria-controls="td-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <!-- sidebar -->
+                    <aside class="td-sidebar" id="td-sidebar" aria-label="Instructor navigation">
+                        <nav class="td-nav">
+                            <ul>
+                                <li><a href="teacher-dashboard.html" class="td-nav-link" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+                                <li><a href="teacher-profile.html" class="td-nav-link active" data-nav="profile"><i class="far fa-user"></i> My Profile</a></li>
+                                <li><a href="teacher-availability.html" class="td-nav-link" data-nav="availability"><i class="far fa-calendar-days"></i> Availability</a></li>
+                                <li><a href="teacher-bookings.html" class="td-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> My Bookings</a></li>
+                                <li><a href="teacher-classes.html" class="td-nav-link" data-nav="classes"><i class="far fa-chalkboard"></i> My Classes</a></li>
+                                <li><a href="teacher-withdrawals.html" class="td-nav-link" data-nav="withdrawals"><i class="far fa-wallet"></i> Withdrawals</a></li>
+                                <li><a href="teacher-settings.html" class="td-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="teacher-login.html" class="td-nav-link td-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="td-sidebar-backdrop" id="td-sidebar-backdrop" hidden></div>
+
+                    <!-- main content -->
+                    <div class="td-main">
+
+                        <!-- profile summary -->
+                        <section class="td-card">
+                            <div class="td-card-head">
+                                <div>
+                                    <h3>Profile Summary</h3>
+                                    <p>Your public instructor details as students see them.</p>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-between mb-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="keep-signed-in">
-                                    <label class="form-check-label" for="keep-signed-in">
-                                        Keep me signed in
-                                    </label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Full Name:</strong> John Smith</p>
+                                    <p><strong>Role:</strong> Gospel Music Instructor</p>
+                                    <p><strong>Email:</strong> john.smith@example.com</p>
                                 </div>
-                                <a href="forgot-password.html" class="forgot-pass">Forgot Password?</a>
+                                <div class="col-md-6">
+                                    <p><strong>Phone:</strong> +1 (555) 012-3456</p>
+                                    <p><strong>Timezone:</strong> Eastern Time</p>
+                                    <p><strong>Skill:</strong> Gospel Piano Instructor, Vocal Coach</p>
+                                </div>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="theme-btn"><i class="far fa-sign-in"></i> Sign In</button>
+                            <p><strong>Biography:</strong> Passionate gospel musician with over 10 years of experience teaching piano, vocal training, and worship leadership to students of all skill levels.</p>
+                            <div class="td-card-actions">
+                                <a href="teacher-onboarding-profile.html" class="theme-btn"><i class="far fa-user-pen"></i> Edit Profile</a>
+                                <a href="teacher-dashboard.html" class="theme-btn theme-btn-outline"><i class="far fa-arrow-left"></i> Back to Dashboard</a>
                             </div>
-                        </form>
-                        <div class="login-footer">
-                            <p>New to Gospel Music Mastery? <a href="teacher-register.html">Register as a Teacher</a></p>
-                        </div>
+                        </section>
+
                     </div>
                 </div>
             </div>
         </div>
-        <!-- teacher login area end -->
+        <!-- teacher dashboard end -->
 
     </main>
 
@@ -318,29 +352,40 @@
     <script src="../assets/js/wow.min.js"></script>
     <script src="../assets/js/main.js"></script>
 
-    <!-- password visibility toggle + demo login redirect -->
+    <!-- teacher dashboard interactions -->
     <script>
         (function () {
-            var toggle = document.getElementById('password-toggle');
-            var input = document.getElementById('teacher-password');
-            var icon = document.getElementById('password-toggle-icon');
-            if (toggle && input && icon) {
+            var shell = document.querySelector('.td-shell');
+            if (!shell) return;
+
+            var toggle = document.getElementById('td-sidebar-toggle');
+            var sidebar = document.getElementById('td-sidebar');
+            var backdrop = document.getElementById('td-sidebar-backdrop');
+
+            function closeSidebar() {
+                shell.classList.remove('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                if (backdrop) backdrop.hidden = true;
+            }
+
+            function openSidebar() {
+                shell.classList.add('is-sidebar-open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                if (backdrop) backdrop.hidden = false;
+            }
+
+            if (toggle) {
                 toggle.addEventListener('click', function () {
-                    var isHidden = input.type === 'password';
-                    input.type = isHidden ? 'text' : 'password';
-                    icon.classList.toggle('fa-eye', !isHidden);
-                    icon.classList.toggle('fa-eye-slash', isHidden);
-                    toggle.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
-                    toggle.setAttribute('title', isHidden ? 'Hide password' : 'Show password');
+                    if (shell.classList.contains('is-sidebar-open')) {
+                        closeSidebar();
+                    } else {
+                        openSidebar();
+                    }
                 });
             }
 
-            var form = document.getElementById('teacher-login-form');
-            if (form) {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    window.location.href = 'teacher-dashboard.html';
-                });
+            if (backdrop) {
+                backdrop.addEventListener('click', closeSidebar);
             }
         })();
     </script>

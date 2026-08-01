@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teacher login for Gospel Music Mastery">
+    <meta name="description" content="Upload your instructor introduction video for Gospel Music Mastery">
     <meta name="keywords" content="">
 
     <!-- title -->
-    <title>Teacher Login - Gospel Music Mastery</title>
+    <title>Upload Intro Video - Gospel Music Mastery</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo/favicon.png">
@@ -139,64 +139,92 @@
         <!-- breadcrumb -->
         <div class="site-breadcrumb gospel-inner-breadcrumb">
             <div class="container">
-                <h2 class="breadcrumb-title">Teacher Login</h2>
+                <h2 class="breadcrumb-title">Upload Intro Video</h2>
                 <ul class="breadcrumb-menu">
                     <li><a href="../index.html">Home</a></li>
-                    <li class="active">Teacher Login</li>
+                    <li><a href="teacher-register.html">Teacher Registration</a></li>
+                    <li class="active">Intro Video</li>
                 </ul>
             </div>
         </div>
         <!-- breadcrumb end -->
 
 
-        <!-- teacher login area -->
+        <!-- teacher onboarding video -->
         <div class="login-area py-120">
             <div class="container">
-                <div class="col-md-5 mx-auto">
-                    <div class="login-form">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="login-form teacher-onboarding-form">
                         <div class="login-header">
-                            <span class="login-portal-badge">Teacher Portal</span>
-                            <h2>Welcome Back</h2>
-                            <p class="login-desc">Sign in to manage your profile, classes, availability, bookings, and earnings.</p>
+                            <span class="login-portal-badge">Instructor Onboarding</span>
+                            <h2>Upload Your Intro Video</h2>
+                            <p class="login-desc">Record or upload a short introduction so students can get to know your teaching style.</p>
                         </div>
-                        <form action="#" method="post" id="teacher-login-form" novalidate>
-                            <div class="form-group">
-                                <label for="teacher-username">Username or Email</label>
-                                <input type="text" class="form-control" id="teacher-username" name="username"
-                                    placeholder="Enter username or email" autocomplete="username">
-                            </div>
-                            <div class="form-group">
-                                <label for="teacher-password">Password</label>
-                                <div class="password-field">
-                                    <input type="password" class="form-control" id="teacher-password" name="password"
-                                        placeholder="Enter your password" autocomplete="current-password">
-                                    <button type="button" class="password-toggle" id="password-toggle"
-                                        aria-label="Show password" title="Show password">
-                                        <i class="far fa-eye" id="password-toggle-icon"></i>
+
+                        <nav class="onboarding-stepper" aria-label="Onboarding progress">
+                            <ol class="onboarding-steps">
+                                <li class="onboarding-step completed"><span class="step-num"><i class="far fa-check"></i></span><span class="step-label">Profile</span></li>
+                                <li class="onboarding-step active"><span class="step-num">2</span><span class="step-label">Intro Video</span></li>
+                                <li class="onboarding-step"><span class="step-num">3</span><span class="step-label">Payments</span></li>
+                                <li class="onboarding-step"><span class="step-num">4</span><span class="step-label">Create Class</span></li>
+                                <li class="onboarding-step"><span class="step-num">5</span><span class="step-label">Availability</span></li>
+                            </ol>
+                        </nav>
+
+                        <div class="gospel-alert gospel-alert-error" id="video-error" hidden>
+                            <i class="far fa-circle-exclamation"></i>
+                            <span id="video-error-text">Please upload an intro video or add a video link.</span>
+                        </div>
+                        <div class="gospel-alert gospel-alert-success" id="video-success" hidden>
+                            <i class="far fa-circle-check"></i>
+                            <span>Intro video saved successfully. Continuing to payments…</span>
+                        </div>
+
+                        <form action="#" method="post" id="teacher-video-form" novalidate>
+                            <div class="class-image-panel">
+                                <h5>Intro Video</h5>
+                                <div class="class-image-preview" id="video-preview-wrap">
+                                    <video id="video-preview" hidden controls></video>
+                                    <span class="class-image-placeholder" id="video-placeholder">
+                                        <i class="far fa-circle-play"></i>
+                                        <span>Upload your intro video</span>
+                                    </span>
+                                </div>
+                                <p class="photo-hint">Accepted formats: MP4, MOV. Maximum size: 50MB.</p>
+                                <p class="photo-hint">Recommended length: 30–90 seconds.</p>
+                                <div class="photo-buttons">
+                                    <label class="theme-btn theme-btn-outline photo-upload-label" for="intro-video">
+                                        <i class="far fa-upload"></i> Upload Video
+                                    </label>
+                                    <input type="file" id="intro-video" name="intro_video" accept=".mp4,.mov,video/mp4,video/quicktime" hidden>
+                                    <button type="button" class="theme-btn theme-btn-outline" id="remove-video">
+                                        <i class="far fa-trash-alt"></i> Remove Video
                                     </button>
                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-between mb-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="keep-signed-in">
-                                    <label class="form-check-label" for="keep-signed-in">
-                                        Keep me signed in
-                                    </label>
+                                <span class="field-feedback" data-for="intro-video"></span>
+
+                                <div class="form-group mt-3 mb-0">
+                                    <label for="video-url">Or Add a YouTube / Vimeo Link</label>
+                                    <input type="url" class="form-control" id="video-url" name="video_url"
+                                        placeholder="https://www.youtube.com/watch?v=... or https://vimeo.com/...">
+                                    <span class="field-feedback" data-for="video-url"></span>
                                 </div>
-                                <a href="forgot-password.html" class="forgot-pass">Forgot Password?</a>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="theme-btn"><i class="far fa-sign-in"></i> Sign In</button>
+
+                            <div class="onboarding-actions">
+                                <a href="teacher-onboarding-profile.html" class="theme-btn theme-btn-outline">
+                                    <i class="far fa-arrow-left"></i> Back to Profile
+                                </a>
+                                <button type="submit" class="theme-btn">
+                                    <i class="far fa-arrow-right"></i> Save &amp; Continue to Payments
+                                </button>
                             </div>
                         </form>
-                        <div class="login-footer">
-                            <p>New to Gospel Music Mastery? <a href="teacher-register.html">Register as a Teacher</a></p>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- teacher login area end -->
+        <!-- teacher onboarding video end -->
 
     </main>
 
@@ -318,30 +346,115 @@
     <script src="../assets/js/wow.min.js"></script>
     <script src="../assets/js/main.js"></script>
 
-    <!-- password visibility toggle + demo login redirect -->
+    <!-- video onboarding demo interactions -->
     <script>
         (function () {
-            var toggle = document.getElementById('password-toggle');
-            var input = document.getElementById('teacher-password');
-            var icon = document.getElementById('password-toggle-icon');
-            if (toggle && input && icon) {
-                toggle.addEventListener('click', function () {
-                    var isHidden = input.type === 'password';
-                    input.type = isHidden ? 'text' : 'password';
-                    icon.classList.toggle('fa-eye', !isHidden);
-                    icon.classList.toggle('fa-eye-slash', isHidden);
-                    toggle.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
-                    toggle.setAttribute('title', isHidden ? 'Hide password' : 'Show password');
-                });
+            var form = document.getElementById('teacher-video-form');
+            if (!form) return;
+
+            var videoInput = document.getElementById('intro-video');
+            var videoPreview = document.getElementById('video-preview');
+            var videoPlaceholder = document.getElementById('video-placeholder');
+            var removeVideoBtn = document.getElementById('remove-video');
+            var videoUrlInput = document.getElementById('video-url');
+            var errorBox = document.getElementById('video-error');
+            var errorText = document.getElementById('video-error-text');
+            var successBox = document.getElementById('video-success');
+            var maxVideoBytes = 50 * 1024 * 1024;
+            var uploadedVideoUrl = null;
+
+            function setFeedback(id, message, isInvalid) {
+                var feedback = document.querySelector('.field-feedback[data-for="' + id + '"]');
+                if (!feedback) return;
+                feedback.textContent = message || '';
+                feedback.classList.toggle('is-invalid-feedback', !!isInvalid);
             }
 
-            var form = document.getElementById('teacher-login-form');
-            if (form) {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    window.location.href = 'teacher-dashboard.html';
-                });
+            function clearStates() {
+                setFeedback('intro-video', '', false);
+                setFeedback('video-url', '', false);
+                videoUrlInput.classList.remove('is-valid', 'is-invalid');
+                errorBox.hidden = true;
+                successBox.hidden = true;
             }
+
+            function resetVideo() {
+                if (uploadedVideoUrl) {
+                    URL.revokeObjectURL(uploadedVideoUrl);
+                    uploadedVideoUrl = null;
+                }
+                videoInput.value = '';
+                videoPreview.removeAttribute('src');
+                videoPreview.hidden = true;
+                videoPlaceholder.hidden = false;
+                setFeedback('intro-video', '', false);
+            }
+
+            videoInput.addEventListener('change', function () {
+                setFeedback('intro-video', '', false);
+                var file = videoInput.files && videoInput.files[0];
+                if (!file) return;
+
+                var validType = /video\/(mp4|quicktime)/.test(file.type) || /\.(mp4|mov)$/i.test(file.name);
+                if (!validType) {
+                    resetVideo();
+                    setFeedback('intro-video', 'Please upload an MP4 or MOV video.', true);
+                    return;
+                }
+
+                if (file.size > maxVideoBytes) {
+                    resetVideo();
+                    setFeedback('intro-video', 'Video must be 50MB or smaller.', true);
+                    return;
+                }
+
+                if (uploadedVideoUrl) {
+                    URL.revokeObjectURL(uploadedVideoUrl);
+                }
+                uploadedVideoUrl = URL.createObjectURL(file);
+                videoPreview.src = uploadedVideoUrl;
+                videoPreview.hidden = false;
+                videoPlaceholder.hidden = true;
+            });
+
+            removeVideoBtn.addEventListener('click', function () {
+                resetVideo();
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                clearStates();
+
+                var hasFile = !!(videoInput.files && videoInput.files[0]);
+                var urlValue = videoUrlInput.value.trim();
+                var hasUrl = urlValue.length > 0;
+
+                if (hasUrl) {
+                    var isValidUrl = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be|vimeo\.com)\/.+/i.test(urlValue);
+                    if (!isValidUrl) {
+                        videoUrlInput.classList.add('is-invalid');
+                        setFeedback('video-url', 'Please enter a valid YouTube or Vimeo link.', true);
+                        errorText.textContent = 'Please enter a valid YouTube or Vimeo link.';
+                        errorBox.hidden = false;
+                        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        return;
+                    }
+                    videoUrlInput.classList.add('is-valid');
+                }
+
+                if (!hasFile && !hasUrl) {
+                    errorText.textContent = 'Please upload an intro video or add a video link.';
+                    errorBox.hidden = false;
+                    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+
+                successBox.hidden = false;
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                window.setTimeout(function () {
+                    window.location.href = 'teacher-onboarding-payment.html';
+                }, 1200);
+            });
         })();
     </script>
 
