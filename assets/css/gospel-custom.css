@@ -1558,10 +1558,6 @@
   color: var(--theme-color);
 }
 
-.td-nav-link.active {
-  border-left: 3px solid var(--theme-color2);
-}
-
 .td-nav-logout {
   margin-top: 10px;
   color: #c0392b;
