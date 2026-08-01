@@ -186,8 +186,17 @@
 }
 
 .teacher-register-form .agreement-area .theme-btn-outline {
-  width: 100%;
+  width: auto;
+  padding: 10px 22px;
   text-align: center;
+}
+
+/* Keep register CTAs at dashboard button width instead of full-bleed */
+.teacher-register-form .theme-btn,
+.teacher-register-form .theme-btn-outline {
+  width: auto;
+  padding: 10px 22px;
+  font-size: 13px;
 }
 
 /* Demo alert banners */
@@ -387,6 +396,11 @@
 
   .teacher-register-form .agreement-area {
     padding: 16px;
+  }
+
+  .teacher-register-form .theme-btn,
+  .teacher-register-form .theme-btn-outline {
+    width: 100%;
   }
 
   .agreement-meta {
@@ -3385,4 +3399,88 @@ body {
     width: 100%;
     text-align: center;
   }
+}
+
+/* Student login — social + validation extras */
+.student-login-form .field-feedback {
+  display: block;
+  font-size: 13px;
+  margin-top: 6px;
+  min-height: 0;
+}
+
+.student-login-form .field-feedback.is-invalid-feedback {
+  color: #c0392b;
+}
+
+.student-login-form .form-control.is-invalid {
+  border-color: #c0392b;
+}
+
+.student-login-form .form-control.is-invalid:focus {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 0.2rem rgba(192, 57, 43, 0.15);
+}
+
+.student-login-form .login-footer {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.login-or-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 22px 0 18px;
+  color: var(--gospel-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.login-or-divider::before,
+.login-or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--gospel-border);
+}
+
+.student-social-login {
+  display: grid;
+  gap: 10px;
+}
+
+.student-social-btn {
+  width: 100%;
+  text-align: center;
+  border-color: var(--gospel-border) !important;
+  color: var(--gospel-heading) !important;
+  background: var(--color-white);
+  box-shadow: none;
+  padding: 11px 18px;
+  font-weight: 700;
+  transition: var(--transition2);
+}
+
+.student-social-btn i {
+  margin-right: 8px;
+  color: var(--gospel-orange);
+}
+
+.student-social-btn:hover,
+.student-social-btn:focus {
+  border-color: var(--gospel-orange) !important;
+  color: var(--color-white) !important;
+  background: var(--gospel-orange);
+}
+
+.student-social-btn:hover i,
+.student-social-btn:focus i {
+  color: var(--color-white);
+}
+
+.student-social-btn::before {
+  background: var(--gospel-orange);
 }
