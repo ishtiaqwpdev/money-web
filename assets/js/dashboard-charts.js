@@ -33,11 +33,46 @@
   ];
   var WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
+  var REDUCE_MOTION = window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    : false;
+
   Chart.defaults.font.family = "'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif";
   Chart.defaults.font.size = 12;
   Chart.defaults.color = COLORS.tick;
-  Chart.defaults.animation.duration = 900;
+  Chart.defaults.animation.duration = REDUCE_MOTION ? 0 : 900;
   Chart.defaults.animation.easing = 'easeOutQuart';
+
+  /* Draws the line left-to-right instead of fading the whole path in.
+     Chart.js reads unknown keys on `animation` as per-property configs. */
+  function progressiveLineAnimation(pointCount) {
+    if (REDUCE_MOTION) return { duration: 0 };
+
+    var step = 900 / Math.max(pointCount, 1);
+
+    function previousY(ctx) {
+      if (ctx.index === 0) {
+        return ctx.chart.scales.y ? ctx.chart.scales.y.getPixelForValue(0) : 0;
+      }
+      var points = ctx.chart.getDatasetMeta(ctx.datasetIndex).data;
+      return points[ctx.index - 1].getProps(['y'], true).y;
+    }
+
+    function stagger(flag) {
+      return function (ctx) {
+        if (ctx.type !== 'data' || ctx[flag]) return 0;
+        ctx[flag] = true;
+        return ctx.index * step;
+      };
+    }
+
+    return {
+      duration: step,
+      easing: 'linear',
+      x: { type: 'number', easing: 'linear', duration: step, from: NaN, delay: stagger('xStarted') },
+      y: { type: 'number', easing: 'linear', duration: step, from: previousY, delay: stagger('yStarted') }
+    };
+  }
 
   /* Soft bloom around line strokes, tinted with each series colour. */
   Chart.register({
@@ -113,6 +148,12 @@
       ctx.restore();
     }
   });
+
+  /* Bars grow from the baseline one after another. */
+  function barDelay(ctx) {
+    if (REDUCE_MOTION || ctx.type !== 'data' || ctx.mode !== 'default') return 0;
+    return ctx.dataIndex * 45 + ctx.datasetIndex * 90;
+  }
 
   var chartInstances = {};
 
@@ -245,6 +286,7 @@
     return {
       responsive: true,
       maintainAspectRatio: false,
+      animation: progressiveLineAnimation(settings.points || 12),
       layout: { padding: { top: 10, right: 8, bottom: 0, left: 0 } },
       interaction: { mode: 'index', intersect: false },
       hover: { mode: 'index', intersect: false },
@@ -293,7 +335,7 @@
           pointHoverBorderColor: COLORS.orange
         }]
       },
-      options: lineAreaDefaults({ money: !!money, legend: false })
+      options: lineAreaDefaults({ money: !!money, legend: false, points: labels.length })
     });
   }
 
@@ -316,7 +358,7 @@
     return createChart(id, {
       type: 'line',
       data: { labels: labels, datasets: mapped },
-      options: lineAreaDefaults({ money: !!money, legend: !single })
+      options: lineAreaDefaults({ money: !!money, legend: !single, points: labels.length })
     });
   }
 
@@ -341,6 +383,7 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: { duration: REDUCE_MOTION ? 0 : 900, easing: 'easeOutQuart', delay: barDelay },
         layout: { padding: { top: 10, right: 8, bottom: 0, left: 0 } },
         interaction: { mode: 'index', intersect: false },
         plugins: {
@@ -370,6 +413,7 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: { animateRotate: true, animateScale: true, duration: REDUCE_MOTION ? 0 : 1000, easing: 'easeOutQuart' },
         cutout: '72%',
         layout: { padding: 6 },
         plugins: {
@@ -649,9 +693,30 @@
       ['gmm-abl-category', initBlogCategoryChart]
     ];
 
-    map.forEach(function (item) {
-      if (getCanvas(item[0])) item[1]();
-    });
+    var pending = map.filter(function (item) { return getCanvas(item[0]); });
+    if (!pending.length) return;
+
+    /* Build each chart as it scrolls in: the entry animation is actually
+       seen, and off-screen canvases cost nothing on first paint. */
+    if (!('IntersectionObserver' in window)) {
+      pending.forEach(function (item) { item[1](); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          observer.unobserve(entry.target);
+
+          var match = pending.filter(function (item) { return item[0] === entry.target.id; })[0];
+          if (match) match[1]();
+        });
+      },
+      { rootMargin: '120px 0px', threshold: 0.01 }
+    );
+
+    pending.forEach(function (item) { observer.observe(getCanvas(item[0])); });
   }
 
   if (document.readyState === 'loading') {
