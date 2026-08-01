@@ -70,15 +70,18 @@
 }
 
 /* Password field with show/hide toggle */
-.login-form .password-field {
+.login-form .password-field,
+.settings-password-form .password-field {
   position: relative;
 }
 
-.login-form .password-field .form-control {
+.login-form .password-field .form-control,
+.settings-password-form .password-field .form-control {
   padding-right: 48px;
 }
 
-.login-form .password-toggle {
+.login-form .password-toggle,
+.settings-password-form .password-toggle {
   position: absolute;
   right: 14px;
   top: 50%;
@@ -94,12 +97,15 @@
 }
 
 .login-form .password-toggle:hover,
-.login-form .password-toggle:focus {
+.login-form .password-toggle:focus,
+.settings-password-form .password-toggle:hover,
+.settings-password-form .password-toggle:focus {
   color: var(--theme-color2);
   outline: none;
 }
 
-.login-form .password-toggle:focus-visible {
+.login-form .password-toggle:focus-visible,
+.settings-password-form .password-toggle:focus-visible {
   color: var(--theme-color);
 }
 
@@ -2733,5 +2739,454 @@ body {
 @media (max-width: 991px) {
   .withdrawal-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Teacher account settings */
+.settings-tabs {
+  margin-bottom: 18px;
+}
+
+.settings-panel[hidden] {
+  display: none !important;
+}
+
+.settings-cover-block {
+  margin-bottom: 22px;
+}
+
+.settings-upload-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--gospel-heading);
+}
+
+.settings-cover-preview {
+  position: relative;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gospel-border);
+  background: var(--gospel-bg-light);
+}
+
+.settings-cover-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.settings-cover-actions {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+}
+
+.settings-cover-actions .theme-btn-outline,
+.photo-buttons .theme-btn-outline {
+  margin: 0;
+  cursor: pointer;
+}
+
+.settings-avatar-block {
+  background: var(--color-white);
+}
+
+.settings-withdraw-list {
+  margin-bottom: 8px;
+}
+
+.settings-password-form .theme-btn,
+.settings-panel .theme-btn {
+  margin-top: 4px;
+}
+
+@media (max-width: 767px) {
+  .settings-cover-preview {
+    height: 140px;
+  }
+
+  .settings-cover-actions {
+    left: 14px;
+    right: 14px;
+  }
+
+  .settings-cover-actions .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Public teacher profile (student-facing) */
+.public-site-page .teacher-public-area.py-120 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.tp-hero-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 28px;
+  margin-bottom: 28px;
+  background: var(--color-white);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+}
+
+.tp-hero-media {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid var(--gospel-orange);
+}
+
+.tp-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tp-hero-content h1 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 42px;
+  margin: 10px 0 6px;
+}
+
+.tp-hero-role {
+  color: var(--gospel-body);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.tp-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-bottom: 22px;
+  color: var(--gospel-body);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tp-hero-meta i {
+  color: var(--gospel-orange);
+  margin-right: 4px;
+}
+
+.tp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tp-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.tp-about-text {
+  color: var(--gospel-body);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.tp-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.tp-info-card {
+  padding: 16px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+}
+
+.tp-info-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--gospel-body);
+}
+
+.tp-info-card strong {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 16px;
+}
+
+.tp-video-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+}
+
+.tp-video-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.92;
+}
+
+.tp-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: var(--gospel-orange);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: var(--box-shadow2);
+}
+
+.tp-video-card:hover .tp-video-play {
+  background: var(--gospel-black);
+}
+
+.tp-video-frame {
+  background: #111;
+}
+
+.tp-video-frame video {
+  width: 100%;
+  display: block;
+  background: #000;
+  min-height: 280px;
+}
+
+.tp-video-demo-note {
+  margin: 0;
+  padding: 14px 18px;
+  color: #ddd;
+  font-size: 14px;
+  background: #1a1a1a;
+}
+
+.tp-skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tp-skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 50px;
+  background: var(--gospel-orange-soft);
+  color: var(--gospel-orange-text);
+  border: 1px solid var(--gospel-orange-line);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.tp-class-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tp-class-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.tp-class-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--gospel-bg-light);
+}
+
+.tp-class-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tp-class-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px;
+}
+
+.tp-class-body h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 10px;
+  min-height: 48px;
+}
+
+.tp-review-card {
+  padding: 18px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  height: 100%;
+}
+
+.tp-review-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tp-review-head img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gospel-orange);
+}
+
+.tp-review-head h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.tp-review-card p {
+  margin: 0;
+  color: var(--gospel-body);
+  line-height: 1.6;
+}
+
+.tp-booking-card {
+  position: sticky;
+  top: 110px;
+  margin-bottom: 0;
+}
+
+.tp-booking-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0 16px;
+  padding: 12px 14px;
+  background: var(--gospel-bg-light);
+  border: 1px solid var(--gospel-border);
+  border-radius: 10px;
+}
+
+.tp-booking-price span {
+  font-weight: 600;
+  color: var(--gospel-body);
+}
+
+.tp-booking-price strong {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-orange);
+  font-size: 24px;
+}
+
+.tp-booking-card .theme-btn.w-100 {
+  width: 100%;
+  text-align: center;
+}
+
+.tp-review-carousel .owl-dots {
+  margin-top: 14px;
+  text-align: center;
+}
+
+@media (max-width: 1199px) {
+  .tp-layout {
+    grid-template-columns: 1fr 300px;
+  }
+
+  .tp-hero-card {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .tp-hero-content h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 991px) {
+  .tp-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-booking-card {
+    position: static;
+  }
+
+  .tp-class-grid,
+  .tp-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .tp-hero-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .tp-hero-media {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .tp-hero-meta,
+  .tp-hero-actions {
+    justify-content: center;
+  }
+
+  .tp-hero-content h1 {
+    font-size: 30px;
+  }
+
+  .tp-video-card img {
+    height: 220px;
+  }
+
+  .tp-class-body h4 {
+    min-height: 0;
   }
 }
