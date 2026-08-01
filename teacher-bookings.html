@@ -90,44 +90,194 @@
                     <!-- main content -->
                     <div class="td-main">
 
-                        <!-- my bookings -->
+                        <!-- page header -->
                         <section class="td-card">
                             <div class="td-card-head">
                                 <div>
-                                    <h3>My Bookings</h3>
-                                    <p>Upcoming and recent lesson bookings from your students.</p>
+                                    <span class="login-portal-badge">Booking Management</span>
+                                    <h3>Your Lesson Bookings</h3>
+                                    <p>Manage your upcoming lessons, confirm student requests, and keep track of completed sessions.</p>
                                 </div>
                             </div>
-                            <div class="td-booking-list" id="td-booking-list">
-                                <article class="td-booking-card">
-                                    <div class="td-booking-info">
-                                        <h4>Sarah Johnson</h4>
-                                        <p>Gospel Piano Basics</p>
-                                        <span class="td-booking-meta"><i class="far fa-calendar"></i> Monday · 10:00 AM</span>
-                                    </div>
-                                    <span class="td-badge is-published">Confirmed</span>
-                                </article>
-                                <article class="td-booking-card">
-                                    <div class="td-booking-info">
-                                        <h4>Michael Brown</h4>
-                                        <p>Worship Vocal Training</p>
-                                        <span class="td-booking-meta"><i class="far fa-calendar"></i> Wednesday · 02:00 PM</span>
-                                    </div>
-                                    <span class="td-badge is-scheduled">Scheduled</span>
-                                </article>
-                                <article class="td-booking-card">
-                                    <div class="td-booking-info">
-                                        <h4>Emily Davis</h4>
-                                        <p>Beginner Gospel Piano</p>
-                                        <span class="td-booking-meta"><i class="far fa-calendar"></i> Friday · 11:00 AM</span>
-                                    </div>
-                                    <span class="td-badge is-pending">Pending</span>
-                                </article>
+                        </section>
+
+                        <!-- quick summary -->
+                        <section class="td-stats-grid bookings-summary-grid">
+                            <div class="td-stat-card">
+                                <div class="td-stat-icon"><i class="far fa-clock"></i></div>
+                                <div class="td-stat-body">
+                                    <span class="td-stat-value" id="summary-pending">12</span>
+                                    <span class="td-stat-title">Pending Requests</span>
+                                </div>
                             </div>
-                            <p class="td-empty-state" id="td-bookings-empty" hidden>No bookings scheduled yet.</p>
-                            <div class="td-card-actions">
-                                <a href="teacher-dashboard.html" class="theme-btn theme-btn-outline"><i class="far fa-arrow-left"></i> View Teacher Dashboard</a>
+                            <div class="td-stat-card">
+                                <div class="td-stat-icon"><i class="far fa-calendar-check"></i></div>
+                                <div class="td-stat-body">
+                                    <span class="td-stat-value" id="summary-upcoming">8</span>
+                                    <span class="td-stat-title">Upcoming Lessons</span>
+                                </div>
                             </div>
+                            <div class="td-stat-card">
+                                <div class="td-stat-icon"><i class="far fa-circle-check"></i></div>
+                                <div class="td-stat-body">
+                                    <span class="td-stat-value" id="summary-completed">45</span>
+                                    <span class="td-stat-title">Completed Lessons</span>
+                                </div>
+                            </div>
+                            <div class="td-stat-card">
+                                <div class="td-stat-icon"><i class="far fa-users"></i></div>
+                                <div class="td-stat-body">
+                                    <span class="td-stat-value" id="summary-students">25</span>
+                                    <span class="td-stat-title">Total Students</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- bookings table -->
+                        <section class="td-card">
+                            <div class="td-card-head">
+                                <div>
+                                    <h3>Bookings</h3>
+                                    <p>Filter by status and manage each lesson request.</p>
+                                </div>
+                            </div>
+
+                            <div class="booking-tabs" role="tablist" aria-label="Booking status filters">
+                                <button type="button" class="booking-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+                                <button type="button" class="booking-tab" data-filter="pending" role="tab" aria-selected="false">Pending</button>
+                                <button type="button" class="booking-tab" data-filter="confirmed" role="tab" aria-selected="false">Confirmed</button>
+                                <button type="button" class="booking-tab" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+                                <button type="button" class="booking-tab" data-filter="cancelled" role="tab" aria-selected="false">Cancelled</button>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table td-table" id="bookings-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student</th>
+                                            <th>Lesson</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Duration</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bookings-tbody">
+                                        <tr data-status="pending" data-booking-id="1">
+                                            <td data-label="Student"><strong>Sarah Johnson</strong></td>
+                                            <td data-label="Lesson">Beginner Gospel Piano</td>
+                                            <td data-label="Date">March 15, 2026</td>
+                                            <td data-label="Time">10:00 AM</td>
+                                            <td data-label="Duration">60 Minutes</td>
+                                            <td data-label="Status"><span class="td-badge is-pending booking-status">Pending</span></td>
+                                            <td data-label="Action">
+                                                <div class="booking-actions">
+                                                    <button type="button" class="theme-btn td-action-btn booking-confirm-btn">Confirm</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn booking-decline-btn">Decline</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-status="confirmed" data-booking-id="2">
+                                            <td data-label="Student"><strong>Michael Brown</strong></td>
+                                            <td data-label="Lesson">Vocal Training</td>
+                                            <td data-label="Date">March 18, 2026</td>
+                                            <td data-label="Time">02:00 PM</td>
+                                            <td data-label="Duration">45 Minutes</td>
+                                            <td data-label="Status"><span class="td-badge is-confirmed booking-status">Confirmed</span></td>
+                                            <td data-label="Action">
+                                                <div class="booking-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn booking-details-btn"
+                                                        data-student="Michael Brown"
+                                                        data-image="assets/img/team/02.jpg"
+                                                        data-lesson="Vocal Training"
+                                                        data-date="March 18, 2026"
+                                                        data-time="02:00 PM"
+                                                        data-duration="45 Minutes"
+                                                        data-payment="Paid"
+                                                        data-notes="Focus on breath support and worship phrasing.">View Details</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn booking-message-btn">Message Student</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-status="pending" data-booking-id="3">
+                                            <td data-label="Student"><strong>Emily Davis</strong></td>
+                                            <td data-label="Lesson">Beginner Gospel Piano</td>
+                                            <td data-label="Date">March 20, 2026</td>
+                                            <td data-label="Time">11:00 AM</td>
+                                            <td data-label="Duration">60 Minutes</td>
+                                            <td data-label="Status"><span class="td-badge is-pending booking-status">Pending</span></td>
+                                            <td data-label="Action">
+                                                <div class="booking-actions">
+                                                    <button type="button" class="theme-btn td-action-btn booking-confirm-btn">Confirm</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn booking-decline-btn">Decline</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-status="confirmed" data-booking-id="4">
+                                            <td data-label="Student"><strong>David Wilson</strong></td>
+                                            <td data-label="Lesson">Worship Leadership</td>
+                                            <td data-label="Date">March 22, 2026</td>
+                                            <td data-label="Time">04:00 PM</td>
+                                            <td data-label="Duration">90 Minutes</td>
+                                            <td data-label="Status"><span class="td-badge is-confirmed booking-status">Confirmed</span></td>
+                                            <td data-label="Action">
+                                                <div class="booking-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn booking-details-btn"
+                                                        data-student="David Wilson"
+                                                        data-image="assets/img/team/03.jpg"
+                                                        data-lesson="Worship Leadership"
+                                                        data-date="March 22, 2026"
+                                                        data-time="04:00 PM"
+                                                        data-duration="90 Minutes"
+                                                        data-payment="Paid"
+                                                        data-notes="Review Sunday setlist and team cues.">View Details</button>
+                                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn booking-message-btn">Message Student</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-status="completed" data-booking-id="5">
+                                            <td data-label="Student"><strong>Jessica Lee</strong></td>
+                                            <td data-label="Lesson">Gospel Piano Basics</td>
+                                            <td data-label="Date">March 5, 2026</td>
+                                            <td data-label="Time">01:00 PM</td>
+                                            <td data-label="Duration">60 Minutes</td>
+                                            <td data-label="Status"><span class="td-badge is-completed booking-status">Completed</span></td>
+                                            <td data-label="Action">
+                                                <div class="booking-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn booking-review-btn">View Review</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr data-status="cancelled" data-booking-id="6">
+                                            <td data-label="Student"><strong>Chris Taylor</strong></td>
+                                            <td data-label="Lesson">Hammond Organ Intro</td>
+                                            <td data-label="Date">March 2, 2026</td>
+                                            <td data-label="Time">03:00 PM</td>
+                                            <td data-label="Duration">45 Minutes</td>
+                                            <td data-label="Status"><span class="td-badge is-cancelled booking-status">Cancelled</span></td>
+                                            <td data-label="Action">
+                                                <div class="booking-actions">
+                                                    <button type="button" class="theme-btn theme-btn-outline td-action-btn booking-details-btn"
+                                                        data-student="Chris Taylor"
+                                                        data-image="assets/img/team/04.jpg"
+                                                        data-lesson="Hammond Organ Intro"
+                                                        data-date="March 2, 2026"
+                                                        data-time="03:00 PM"
+                                                        data-duration="45 Minutes"
+                                                        data-payment="Refunded"
+                                                        data-notes="Student cancelled due to schedule conflict.">View Details</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="td-empty-state" id="bookings-empty" hidden>
+                                No bookings available yet.<br>
+                                Your scheduled lessons will appear here.
+                            </p>
                         </section>
 
                     </div>
@@ -137,6 +287,56 @@
         <!-- teacher dashboard end -->
 
     </main>
+
+    <!-- booking details modal -->
+    <div class="modal fade gospel-demo-modal" id="booking-details-modal" tabindex="-1" aria-labelledby="booking-details-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="booking-details-title">Booking Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body booking-modal-body">
+                    <div class="booking-modal-profile">
+                        <img src="assets/img/team/02.jpg" alt="Student" id="modal-student-image">
+                        <div>
+                            <h4 id="modal-student-name">Student Name</h4>
+                            <p id="modal-lesson-name">Lesson Name</p>
+                        </div>
+                    </div>
+                    <ul class="booking-modal-list">
+                        <li><span>Date</span><strong id="modal-date">—</strong></li>
+                        <li><span>Time</span><strong id="modal-time">—</strong></li>
+                        <li><span>Duration</span><strong id="modal-duration">—</strong></li>
+                        <li><span>Payment Status</span><strong id="modal-payment">—</strong></li>
+                        <li><span>Notes</span><strong id="modal-notes">—</strong></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- review modal -->
+    <div class="modal fade gospel-demo-modal" id="booking-review-modal" tabindex="-1" aria-labelledby="booking-review-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="booking-review-title">Student Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="td-rating mb-2">★★★★★</div>
+                    <p>“Great gospel piano lesson. Clear instruction and very encouraging.”</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="theme-btn theme-btn-outline" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- js -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -152,14 +352,13 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- teacher dashboard interactions -->
+    <!-- teacher bookings interactions -->
     <script>
         (function () {
             var shell = document.querySelector('.td-shell');
             if (!shell) return;
 
             var toggle = document.getElementById('td-sidebar-toggle');
-            var sidebar = document.getElementById('td-sidebar');
             var backdrop = document.getElementById('td-sidebar-backdrop');
 
             function closeSidebar() {
@@ -187,6 +386,149 @@
             if (backdrop) {
                 backdrop.addEventListener('click', closeSidebar);
             }
+        })();
+
+        (function () {
+            var tabs = document.querySelectorAll('.booking-tab');
+            var tbody = document.getElementById('bookings-tbody');
+            var emptyState = document.getElementById('bookings-empty');
+            var tableWrap = document.querySelector('#bookings-table') ? document.querySelector('#bookings-table').closest('.table-responsive') : null;
+            var currentFilter = 'all';
+            var detailsModalEl = document.getElementById('booking-details-modal');
+            var reviewModalEl = document.getElementById('booking-review-modal');
+            var detailsModal = detailsModalEl && window.bootstrap ? new bootstrap.Modal(detailsModalEl) : null;
+            var reviewModal = reviewModalEl && window.bootstrap ? new bootstrap.Modal(reviewModalEl) : null;
+
+            function confirmedActionsHtml(row) {
+                var student = row.querySelector('[data-label="Student"] strong');
+                var lesson = row.querySelector('[data-label="Lesson"]');
+                var date = row.querySelector('[data-label="Date"]');
+                var time = row.querySelector('[data-label="Time"]');
+                var duration = row.querySelector('[data-label="Duration"]');
+                var name = student ? student.textContent : 'Student';
+                return '<div class="booking-actions">' +
+                    '<button type="button" class="theme-btn theme-btn-outline td-action-btn booking-details-btn"' +
+                    ' data-student="' + name + '"' +
+                    ' data-image="assets/img/team/02.jpg"' +
+                    ' data-lesson="' + (lesson ? lesson.textContent : '') + '"' +
+                    ' data-date="' + (date ? date.textContent : '') + '"' +
+                    ' data-time="' + (time ? time.textContent : '') + '"' +
+                    ' data-duration="' + (duration ? duration.textContent : '') + '"' +
+                    ' data-payment="Paid"' +
+                    ' data-notes="Lesson confirmed by instructor.">View Details</button>' +
+                    '<button type="button" class="theme-btn theme-btn-outline td-action-btn booking-message-btn">Message Student</button>' +
+                    '</div>';
+            }
+
+            function cancelledActionsHtml(row) {
+                var student = row.querySelector('[data-label="Student"] strong');
+                var lesson = row.querySelector('[data-label="Lesson"]');
+                var date = row.querySelector('[data-label="Date"]');
+                var time = row.querySelector('[data-label="Time"]');
+                var duration = row.querySelector('[data-label="Duration"]');
+                var name = student ? student.textContent : 'Student';
+                return '<div class="booking-actions">' +
+                    '<button type="button" class="theme-btn theme-btn-outline td-action-btn booking-details-btn"' +
+                    ' data-student="' + name + '"' +
+                    ' data-image="assets/img/team/04.jpg"' +
+                    ' data-lesson="' + (lesson ? lesson.textContent : '') + '"' +
+                    ' data-date="' + (date ? date.textContent : '') + '"' +
+                    ' data-time="' + (time ? time.textContent : '') + '"' +
+                    ' data-duration="' + (duration ? duration.textContent : '') + '"' +
+                    ' data-payment="Refunded"' +
+                    ' data-notes="Booking declined by instructor.">View Details</button>' +
+                    '</div>';
+            }
+
+            function applyFilter() {
+                if (!tbody) return;
+                var rows = tbody.querySelectorAll('tr');
+                var visible = 0;
+                rows.forEach(function (row) {
+                    var status = row.getAttribute('data-status');
+                    var show = currentFilter === 'all' || status === currentFilter;
+                    row.hidden = !show;
+                    if (show) visible += 1;
+                });
+                if (emptyState) emptyState.hidden = visible > 0;
+                if (tableWrap) tableWrap.hidden = visible === 0;
+            }
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+                    currentFilter = tab.getAttribute('data-filter') || 'all';
+                    applyFilter();
+                });
+            });
+
+            if (tbody) {
+                tbody.addEventListener('click', function (e) {
+                    var confirmBtn = e.target.closest('.booking-confirm-btn');
+                    var declineBtn = e.target.closest('.booking-decline-btn');
+                    var detailsBtn = e.target.closest('.booking-details-btn');
+                    var messageBtn = e.target.closest('.booking-message-btn');
+                    var reviewBtn = e.target.closest('.booking-review-btn');
+                    var row = e.target.closest('tr');
+                    if (!row) return;
+
+                    if (confirmBtn) {
+                        row.setAttribute('data-status', 'confirmed');
+                        var statusEl = row.querySelector('.booking-status');
+                        if (statusEl) {
+                            statusEl.className = 'td-badge is-confirmed booking-status';
+                            statusEl.textContent = 'Confirmed';
+                        }
+                        var actionCell = row.querySelector('[data-label="Action"]');
+                        if (actionCell) actionCell.innerHTML = confirmedActionsHtml(row);
+                        applyFilter();
+                        return;
+                    }
+
+                    if (declineBtn) {
+                        row.setAttribute('data-status', 'cancelled');
+                        var cancelStatus = row.querySelector('.booking-status');
+                        if (cancelStatus) {
+                            cancelStatus.className = 'td-badge is-cancelled booking-status';
+                            cancelStatus.textContent = 'Cancelled';
+                        }
+                        var cancelAction = row.querySelector('[data-label="Action"]');
+                        if (cancelAction) cancelAction.innerHTML = cancelledActionsHtml(row);
+                        applyFilter();
+                        return;
+                    }
+
+                    if (detailsBtn && detailsModal) {
+                        document.getElementById('modal-student-name').textContent = detailsBtn.getAttribute('data-student') || 'Student';
+                        document.getElementById('modal-student-image').src = detailsBtn.getAttribute('data-image') || 'assets/img/team/02.jpg';
+                        document.getElementById('modal-student-image').alt = detailsBtn.getAttribute('data-student') || 'Student';
+                        document.getElementById('modal-lesson-name').textContent = detailsBtn.getAttribute('data-lesson') || '';
+                        document.getElementById('modal-date').textContent = detailsBtn.getAttribute('data-date') || '—';
+                        document.getElementById('modal-time').textContent = detailsBtn.getAttribute('data-time') || '—';
+                        document.getElementById('modal-duration').textContent = detailsBtn.getAttribute('data-duration') || '—';
+                        document.getElementById('modal-payment').textContent = detailsBtn.getAttribute('data-payment') || '—';
+                        document.getElementById('modal-notes').textContent = detailsBtn.getAttribute('data-notes') || '—';
+                        detailsModal.show();
+                        return;
+                    }
+
+                    if (messageBtn) {
+                        window.alert('Message Student is a frontend demo. Messaging will be connected later.');
+                        return;
+                    }
+
+                    if (reviewBtn && reviewModal) {
+                        reviewModal.show();
+                    }
+                });
+            }
+
+            applyFilter();
         })();
     </script>
 

@@ -2359,3 +2359,157 @@ body {
     align-items: flex-start;
   }
 }
+
+/* Teacher bookings management */
+.bookings-summary-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.booking-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.booking-tab {
+  border: 1px solid var(--gospel-border);
+  background: var(--color-white);
+  color: var(--gospel-body);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition2);
+}
+
+.booking-tab:hover {
+  border-color: var(--gospel-orange);
+  color: var(--gospel-orange);
+}
+
+.booking-tab.active {
+  background: var(--gospel-orange);
+  border-color: var(--gospel-orange);
+  color: var(--color-white);
+}
+
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.td-badge.is-confirmed {
+  background: rgba(22, 163, 74, 0.12);
+  color: #15803d;
+}
+
+.td-badge.is-completed {
+  background: rgba(6, 43, 92, 0.12);
+  color: #062B5C;
+}
+
+.td-badge.is-cancelled {
+  background: rgba(192, 57, 43, 0.1);
+  color: #c0392b;
+}
+
+.booking-modal-body {
+  text-align: left !important;
+}
+
+.booking-modal-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.booking-modal-profile img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gospel-orange);
+}
+
+.booking-modal-profile h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.booking-modal-profile p {
+  margin: 0;
+  color: var(--gospel-body);
+}
+
+.booking-modal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-modal-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gospel-border);
+  text-align: left;
+}
+
+.booking-modal-list li:last-child {
+  border-bottom: none;
+}
+
+.booking-modal-list span {
+  color: var(--gospel-body);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.booking-modal-list strong {
+  color: var(--gospel-heading);
+  font-weight: 700;
+  text-align: right;
+}
+
+@media (max-width: 1199px) {
+  .bookings-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .bookings-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  .booking-tab {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .booking-actions {
+    width: 100%;
+  }
+
+  .booking-actions .theme-btn,
+  .booking-actions .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
