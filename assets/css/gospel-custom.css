@@ -1524,7 +1524,7 @@
   box-shadow: var(--box-shadow);
   padding: 16px 12px;
   position: sticky;
-  top: 100px;
+  top: 24px;
 }
 
 .td-nav ul {
@@ -2242,6 +2242,17 @@
 
 .onboarding-step.completed:not(:last-child)::after {
   background: var(--gospel-black);
+}
+
+/* App shell — no site header / footer / banner */
+body {
+  background: var(--gospel-bg-light);
+}
+
+.login-area.py-120,
+.teacher-dashboard-area.py-120 {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /* Instructor portal landing page */
