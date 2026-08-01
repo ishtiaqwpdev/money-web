@@ -13,18 +13,16 @@
 
   var COLORS = {
     orange: '#FFA500',
-    orangeSoft: 'rgba(255, 165, 0, 0.22)',
-    orangeFill: 'rgba(255, 165, 0, 0.18)',
-    navy: '#1F2937',
-    navySoft: 'rgba(31, 41, 55, 0.75)',
-    body: '#64748B',
-    border: '#E5E7EB',
-    green: '#22C55E',
-    greenSoft: 'rgba(34, 197, 94, 0.75)',
+    orangeDeep: '#B45309',
+    orangeLight: '#FFCE73',
     blue: '#3B82F6',
-    blueSoft: 'rgba(59, 130, 246, 0.75)',
+    green: '#22C55E',
     red: '#C0392B',
     gray: '#94A3B8',
+    label: '#1F2937',
+    tick: '#64748B',
+    grid: 'rgba(148, 163, 184, 0.20)',
+    surface: '#FFFFFF',
     white: '#FFFFFF'
   };
 
@@ -35,7 +33,111 @@
   ];
   var WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
+  Chart.defaults.font.family = "'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif";
+  Chart.defaults.font.size = 12;
+  Chart.defaults.color = COLORS.tick;
+  Chart.defaults.animation.duration = 900;
+  Chart.defaults.animation.easing = 'easeOutQuart';
+
+  /* Soft bloom around line strokes, tinted with each series colour. */
+  Chart.register({
+    id: 'gmmGlow',
+    beforeDatasetDraw: function (chart, args) {
+      if (chart.config.type !== 'line') return;
+      var stroke = args.meta.dataset && args.meta.dataset.options
+        ? args.meta.dataset.options.borderColor
+        : COLORS.orange;
+
+      chart.ctx.save();
+      chart.ctx.shadowColor = typeof stroke === 'string' ? stroke : COLORS.orange;
+      chart.ctx.shadowBlur = 12;
+    },
+    afterDatasetDraw: function (chart) {
+      if (chart.config.type !== 'line') return;
+      chart.ctx.restore();
+    }
+  });
+
+  /* Vertical dashed guide line following the tooltip on line charts. */
+  Chart.register({
+    id: 'gmmCrosshair',
+    afterDatasetsDraw: function (chart) {
+      if (chart.config.type !== 'line') return;
+      var active = chart.tooltip && chart.tooltip.getActiveElements
+        ? chart.tooltip.getActiveElements()
+        : [];
+      if (!active.length) return;
+
+      var ctx = chart.ctx;
+      var area = chart.chartArea;
+      var x = active[0].element.x;
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.setLineDash([4, 4]);
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(31, 41, 55, 0.28)';
+      ctx.moveTo(x, area.top);
+      ctx.lineTo(x, area.bottom);
+      ctx.stroke();
+      ctx.restore();
+    }
+  });
+
+  /* Total + caption rendered in the doughnut hole. */
+  Chart.register({
+    id: 'gmmDoughnutCenter',
+    afterDatasetsDraw: function (chart, args, opts) {
+      if (chart.config.type !== 'doughnut' || !opts || !opts.label) return;
+
+      var meta = chart.getDatasetMeta(0);
+      if (!meta || !meta.data.length) return;
+
+      var total = chart.data.datasets[0].data.reduce(function (sum, value) {
+        return sum + (Number(value) || 0);
+      }, 0);
+
+      var ctx = chart.ctx;
+      var cx = meta.data[0].x;
+      var cy = meta.data[0].y;
+
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = COLORS.label;
+      ctx.font = "800 26px 'Yantramanav', 'Roboto', sans-serif";
+      ctx.fillText(total.toLocaleString('en-US'), cx, cy - 8);
+      ctx.fillStyle = COLORS.tick;
+      ctx.font = "600 11px 'Roboto', sans-serif";
+      ctx.fillText(String(opts.label).toUpperCase(), cx, cy + 15);
+      ctx.restore();
+    }
+  });
+
   var chartInstances = {};
+
+  function withAlpha(hex, alpha) {
+    var value = hex.replace('#', '');
+    if (value.length === 3) {
+      value = value[0] + value[0] + value[1] + value[1] + value[2] + value[2];
+    }
+    var num = parseInt(value, 16);
+    return 'rgba(' + ((num >> 16) & 255) + ', ' + ((num >> 8) & 255) + ', ' + (num & 255) + ', ' + alpha + ')';
+  }
+
+  /* Scriptable fill: needs chartArea, which is undefined on the first layout pass. */
+  function verticalGradient(hex, topAlpha, bottomAlpha) {
+    return function (context) {
+      var chart = context.chart;
+      var area = chart.chartArea;
+      if (!area) return withAlpha(hex, topAlpha);
+
+      var gradient = chart.ctx.createLinearGradient(0, area.top, 0, area.bottom);
+      gradient.addColorStop(0, withAlpha(hex, topAlpha));
+      gradient.addColorStop(1, withAlpha(hex, bottomAlpha));
+      return gradient;
+    };
+  }
 
   function getCanvas(id) {
     return document.getElementById(id);
@@ -55,62 +157,111 @@
     return '$' + value;
   }
 
-  function sharedTooltip() {
+  function sharedTooltip(isMoney) {
     return {
-      backgroundColor: COLORS.navy,
-      titleColor: COLORS.white,
-      bodyColor: COLORS.white,
+      backgroundColor: COLORS.white,
+      titleColor: COLORS.tick,
+      bodyColor: COLORS.label,
       borderColor: COLORS.orange,
       borderWidth: 1,
-      padding: 10,
-      cornerRadius: 8,
-      displayColors: true
-    };
-  }
-
-  function sharedScales(isMoney) {
-    return {
-      x: {
-        grid: { display: false, drawBorder: false },
-        ticks: { color: COLORS.body, font: { size: 11, weight: '600' } }
-      },
-      y: {
-        beginAtZero: true,
-        grid: { color: 'rgba(229, 231, 235, 0.9)', drawBorder: false },
-        ticks: {
-          color: COLORS.body,
-          font: { size: 11, weight: '600' },
-          callback: isMoney
-            ? function (value) { return moneyTick(value); }
-            : function (value) { return value; }
+      padding: { top: 10, right: 14, bottom: 10, left: 14 },
+      cornerRadius: 10,
+      caretSize: 6,
+      caretPadding: 10,
+      titleFont: { size: 11, weight: '600' },
+      bodyFont: { size: 13, weight: '700' },
+      bodySpacing: 6,
+      displayColors: true,
+      usePointStyle: true,
+      boxWidth: 8,
+      boxHeight: 8,
+      boxPadding: 6,
+      callbacks: {
+        label: function (context) {
+          var value = context.parsed.y !== undefined && context.parsed.y !== null
+            ? context.parsed.y
+            : context.parsed;
+          var formatted = isMoney ? moneyTick(value) : Number(value).toLocaleString('en-US');
+          return ' ' + context.dataset.label + ': ' + formatted;
         }
       }
     };
   }
 
-  function lineAreaDefaults(fill) {
+  function sharedLegend(show) {
+    return {
+      display: !!show,
+      position: 'bottom',
+      align: 'center',
+      labels: {
+        color: COLORS.label,
+        usePointStyle: true,
+        pointStyle: 'circle',
+        boxWidth: 8,
+        boxHeight: 8,
+        padding: 18,
+        font: { size: 12, weight: '600' }
+      }
+    };
+  }
+
+  function upperCaseTick(value) {
+    return String(this.getLabelForValue(value)).toUpperCase();
+  }
+
+  function sharedScales(isMoney) {
+    return {
+      x: {
+        border: { display: false },
+        grid: { color: COLORS.grid, drawTicks: false, lineWidth: 1 },
+        ticks: {
+          color: COLORS.tick,
+          padding: 10,
+          font: { size: 10, weight: '700' },
+          maxRotation: 0,
+          autoSkipPadding: 10,
+          callback: upperCaseTick
+        }
+      },
+      y: {
+        beginAtZero: true,
+        border: { display: false },
+        grid: { color: COLORS.grid, drawTicks: false, lineWidth: 1 },
+        ticks: {
+          color: COLORS.tick,
+          padding: 12,
+          maxTicksLimit: 5,
+          font: { size: 10, weight: '700' },
+          callback: isMoney
+            ? function (value) { return moneyTick(value); }
+            : function (value) { return Number(value).toLocaleString('en-US'); }
+        }
+      }
+    };
+  }
+
+  function lineAreaDefaults(opts) {
+    var settings = opts || {};
     return {
       responsive: true,
       maintainAspectRatio: false,
+      layout: { padding: { top: 10, right: 8, bottom: 0, left: 0 } },
       interaction: { mode: 'index', intersect: false },
+      hover: { mode: 'index', intersect: false },
       plugins: {
-        legend: {
-          display: true,
-          position: 'bottom',
-          labels: {
-            color: COLORS.navy,
-            usePointStyle: true,
-            pointStyle: 'circle',
-            padding: 16,
-            font: { size: 12, weight: '600' }
-          }
-        },
-        tooltip: sharedTooltip()
+        legend: sharedLegend(settings.legend),
+        tooltip: sharedTooltip(!!settings.money)
       },
-      scales: sharedScales(!!fill && fill.money),
+      scales: sharedScales(!!settings.money),
       elements: {
-        line: { tension: 0.4, borderWidth: 3 },
-        point: { radius: 3, hoverRadius: 5, borderWidth: 2, backgroundColor: COLORS.white }
+        line: { tension: 0.4, borderWidth: 3, borderCapStyle: 'round', borderJoinStyle: 'round' },
+        point: {
+          radius: 0,
+          hitRadius: 14,
+          hoverRadius: 6,
+          hoverBorderWidth: 3,
+          backgroundColor: COLORS.surface
+        }
       }
     };
   }
@@ -134,44 +285,54 @@
           label: datasetLabel,
           data: data,
           borderColor: COLORS.orange,
-          backgroundColor: COLORS.orangeFill,
+          backgroundColor: verticalGradient(COLORS.orange, 0.35, 0),
           fill: true,
-          pointBackgroundColor: COLORS.orange,
-          pointBorderColor: COLORS.white
+          pointBackgroundColor: COLORS.surface,
+          pointBorderColor: COLORS.orange,
+          pointHoverBackgroundColor: COLORS.white,
+          pointHoverBorderColor: COLORS.orange
         }]
       },
-      options: lineAreaDefaults({ money: !!money })
+      options: lineAreaDefaults({ money: !!money, legend: false })
     });
   }
 
   function buildLineChart(id, labels, datasets, money) {
+    var single = datasets.length === 1;
     var mapped = datasets.map(function (ds) {
+      var color = ds.color || COLORS.orange;
       return {
         label: ds.label,
         data: ds.data,
-        borderColor: ds.color || COLORS.orange,
-        backgroundColor: ds.color || COLORS.orange,
-        fill: false,
-        pointBackgroundColor: ds.color || COLORS.orange,
-        pointBorderColor: COLORS.white
+        borderColor: color,
+        backgroundColor: single ? verticalGradient(color, 0.32, 0) : withAlpha(color, 0.1),
+        fill: single,
+        pointBackgroundColor: COLORS.surface,
+        pointBorderColor: color,
+        pointHoverBackgroundColor: COLORS.white,
+        pointHoverBorderColor: color
       };
     });
     return createChart(id, {
       type: 'line',
       data: { labels: labels, datasets: mapped },
-      options: lineAreaDefaults({ money: !!money })
+      options: lineAreaDefaults({ money: !!money, legend: !single })
     });
   }
 
   function buildBarChart(id, labels, datasets, money) {
     var mapped = datasets.map(function (ds) {
+      var color = ds.color || COLORS.orange;
       return {
         label: ds.label,
         data: ds.data,
-        backgroundColor: ds.color || COLORS.orange,
-        borderRadius: 8,
+        backgroundColor: verticalGradient(color, 1, 0.45),
+        hoverBackgroundColor: color,
+        borderRadius: { topLeft: 10, topRight: 10, bottomLeft: 0, bottomRight: 0 },
         borderSkipped: false,
-        maxBarThickness: 28
+        maxBarThickness: 26,
+        categoryPercentage: 0.65,
+        barPercentage: 0.85
       };
     });
     return createChart(id, {
@@ -180,26 +341,18 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: { padding: { top: 10, right: 8, bottom: 0, left: 0 } },
+        interaction: { mode: 'index', intersect: false },
         plugins: {
-          legend: {
-            display: datasets.length > 1,
-            position: 'bottom',
-            labels: {
-              color: COLORS.navy,
-              usePointStyle: true,
-              pointStyle: 'circle',
-              padding: 16,
-              font: { size: 12, weight: '600' }
-            }
-          },
-          tooltip: sharedTooltip()
+          legend: sharedLegend(datasets.length > 1),
+          tooltip: sharedTooltip(!!money)
         },
         scales: sharedScales(!!money)
       }
     });
   }
 
-  function buildDoughnutChart(id, labels, data, colors) {
+  function buildDoughnutChart(id, labels, data, colors, centerLabel) {
     return createChart(id, {
       type: 'doughnut',
       data: {
@@ -209,25 +362,57 @@
           backgroundColor: colors,
           borderColor: COLORS.white,
           borderWidth: 3,
-          hoverOffset: 6
+          borderRadius: 8,
+          spacing: 3,
+          hoverOffset: 10
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        cutout: '62%',
+        cutout: '72%',
+        layout: { padding: 6 },
         plugins: {
+          gmmDoughnutCenter: { label: centerLabel || 'Total' },
           legend: {
             position: 'bottom',
+            align: 'center',
             labels: {
-              color: COLORS.navy,
+              color: COLORS.label,
               usePointStyle: true,
               pointStyle: 'circle',
+              boxWidth: 8,
+              boxHeight: 8,
               padding: 14,
               font: { size: 12, weight: '600' }
             }
           },
-          tooltip: sharedTooltip()
+          tooltip: {
+            backgroundColor: COLORS.white,
+            titleColor: COLORS.tick,
+            bodyColor: COLORS.label,
+            borderColor: COLORS.orange,
+            borderWidth: 1,
+            padding: { top: 10, right: 14, bottom: 10, left: 14 },
+            cornerRadius: 10,
+            caretSize: 6,
+            titleFont: { size: 11, weight: '600' },
+            bodyFont: { size: 13, weight: '700' },
+            usePointStyle: true,
+            boxWidth: 8,
+            boxHeight: 8,
+            boxPadding: 6,
+            callbacks: {
+              label: function (context) {
+                var total = context.dataset.data.reduce(function (sum, value) {
+                  return sum + (Number(value) || 0);
+                }, 0);
+                var value = Number(context.parsed) || 0;
+                var share = total ? Math.round((value / total) * 100) : 0;
+                return ' ' + value.toLocaleString('en-US') + ' (' + share + '%)';
+              }
+            }
+          }
         }
       }
     });
@@ -248,7 +433,7 @@
   function initUserGrowthChart() {
     return buildBarChart('gmm-admin-user-growth', MONTHS_SHORT.slice(0, 6), [
       { label: 'Students Growth', data: [80, 110, 140, 180, 210, 250], color: COLORS.orange },
-      { label: 'Teachers Growth', data: [6, 8, 10, 12, 14, 16], color: COLORS.navy }
+      { label: 'Teachers Growth', data: [6, 8, 10, 12, 14, 16], color: COLORS.orangeDeep }
     ]);
   }
 
@@ -257,7 +442,8 @@
       'gmm-admin-platform',
       ['Students', 'Teachers', 'Classes'],
       [1250, 85, 320],
-      [COLORS.orange, COLORS.navy, COLORS.blue]
+      [COLORS.orange, COLORS.orangeDeep, COLORS.orangeLight],
+      'Total Records'
     );
   }
 
@@ -275,7 +461,8 @@
       'gmm-teacher-lessons',
       ['Completed Lessons', 'Upcoming Lessons', 'Cancelled Lessons'],
       [45, 12, 5],
-      [COLORS.green, COLORS.orange, COLORS.red]
+      [COLORS.green, COLORS.orangeDeep, COLORS.red],
+      'Lessons'
     );
   }
 
@@ -298,7 +485,8 @@
       'gmm-student-lesson-status',
       ['Completed', 'Upcoming', 'Remaining'],
       [24, 3, 8],
-      [COLORS.green, COLORS.orange, COLORS.navy]
+      [COLORS.green, COLORS.orangeDeep, COLORS.blue],
+      'Lessons'
     );
   }
 
@@ -321,7 +509,8 @@
       'gmm-at-status',
       ['Approved', 'Pending', 'Rejected', 'Suspended'],
       [52, 18, 8, 7],
-      [COLORS.green, COLORS.orange, COLORS.red, COLORS.gray]
+      [COLORS.green, COLORS.orangeDeep, COLORS.red, COLORS.gray],
+      'Teachers'
     );
   }
 
@@ -338,7 +527,8 @@
       'gmm-as-level',
       ['Beginner', 'Intermediate', 'Advanced'],
       [520, 430, 300],
-      [COLORS.orange, COLORS.navy, COLORS.blue]
+      [COLORS.orange, COLORS.orangeDeep, COLORS.orangeLight],
+      'Students'
     );
   }
 
@@ -355,7 +545,8 @@
       'gmm-ac-category',
       ['Piano', 'Vocals', 'Guitar', 'Drums', 'Theory'],
       [90, 75, 55, 40, 60],
-      [COLORS.orange, COLORS.navy, COLORS.blue, COLORS.green, COLORS.gray]
+      [COLORS.orange, COLORS.orangeDeep, COLORS.orangeLight, COLORS.green, COLORS.blue],
+      'Classes'
     );
   }
 
@@ -372,7 +563,8 @@
       'gmm-ab-status',
       ['Confirmed', 'Pending', 'Completed', 'Cancelled'],
       [120, 30, 350, 40],
-      [COLORS.green, COLORS.orange, COLORS.navy, COLORS.red]
+      [COLORS.green, COLORS.orangeDeep, COLORS.orange, COLORS.red],
+      'Bookings'
     );
   }
 
@@ -391,7 +583,8 @@
       'gmm-ap-status',
       ['Completed', 'Pending', 'Failed', 'Refunded'],
       [680, 90, 35, 45],
-      [COLORS.green, COLORS.orange, COLORS.red, COLORS.gray]
+      [COLORS.green, COLORS.orangeDeep, COLORS.red, COLORS.gray],
+      'Transactions'
     );
   }
 
@@ -406,7 +599,8 @@
       'gmm-apr-category',
       ['Piano', 'Vocals', 'Guitar', 'Drums', 'Theory', 'Worship'],
       [2, 2, 1, 1, 1, 1],
-      [COLORS.orange, COLORS.navy, COLORS.blue, COLORS.green, COLORS.gray, '#F59E0B']
+      [COLORS.orange, COLORS.orangeDeep, COLORS.orangeLight, COLORS.green, COLORS.blue, COLORS.gray],
+      'Programs'
     );
   }
 
@@ -423,7 +617,8 @@
       'gmm-abl-category',
       ['Music Education', 'Piano', 'Vocals', 'Worship', 'Teacher Tips'],
       [28, 24, 22, 26, 20],
-      [COLORS.orange, COLORS.navy, COLORS.blue, COLORS.green, COLORS.gray]
+      [COLORS.orange, COLORS.orangeDeep, COLORS.orangeLight, COLORS.green, COLORS.gray],
+      'Posts'
     );
   }
 
