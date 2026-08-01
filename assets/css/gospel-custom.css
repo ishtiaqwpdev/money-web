@@ -2513,3 +2513,139 @@ body {
     text-align: center;
   }
 }
+
+/* Teacher class management cards */
+.class-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.class-manage-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-white);
+  border: 1px solid var(--gospel-border);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.class-manage-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--gospel-bg-light);
+}
+
+.class-manage-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.class-manage-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.class-manage-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px 18px 18px;
+}
+
+.class-manage-category {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--gospel-orange);
+}
+
+.class-manage-body h4 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  color: var(--gospel-heading);
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  min-height: 48px;
+}
+
+.class-manage-meta {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.class-manage-meta li {
+  color: var(--gospel-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.class-manage-meta li i {
+  width: 16px;
+  margin-right: 6px;
+  color: var(--gospel-orange);
+}
+
+.class-manage-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gospel-border);
+}
+
+.class-menu-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--gospel-border);
+  background: var(--color-white);
+  color: var(--gospel-heading);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition2);
+}
+
+.class-menu-btn:hover,
+.class-menu-btn:focus,
+.class-menu-btn[aria-expanded="true"] {
+  border-color: var(--gospel-orange);
+  color: var(--gospel-orange);
+  outline: none;
+}
+
+.class-manage-card .dropdown-item {
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .class-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .class-manage-body h4 {
+    min-height: 0;
+  }
+}
