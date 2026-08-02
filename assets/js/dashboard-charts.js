@@ -270,8 +270,25 @@
     var canvas = getCanvas(id);
     if (!canvas) return null;
     destroyIfExists(id);
-    chartInstances[id] = new Chart(canvas.getContext('2d'), config);
-    return chartInstances[id];
+
+    config = config || {};
+    config.options = config.options || {};
+    config.options.responsive = config.options.responsive !== false;
+    config.options.maintainAspectRatio = false;
+    config.options.devicePixelRatio = Math.max(window.devicePixelRatio || 1, 1);
+
+    var chart = new Chart(canvas.getContext('2d'), config);
+    chartInstances[id] = chart;
+
+    // Re-measure after layout so DPR / container size stay sharp
+    requestAnimationFrame(function () {
+      if (chartInstances[id]) chartInstances[id].resize();
+    });
+    window.setTimeout(function () {
+      if (chartInstances[id]) chartInstances[id].resize();
+    }, 120);
+
+    return chart;
   }
 
   /* ---------- Shared builders ---------- */

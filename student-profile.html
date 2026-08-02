@@ -28,17 +28,7 @@
 
 <body class="student-portal-page">
 
-    <!-- preloader -->
-    <div class="preloader">
-        <div class="loader-book">
-            <div class="loader-book-page"></div>
-            <div class="loader-book-page"></div>
-            <div class="loader-book-page"></div>
-        </div>
-    </div>
-    <!-- preloader end -->
-
-    <main class="main">
+<main class="main">
 
         <!-- student profile -->
         <div class="student-dashboard-area py-120">
@@ -219,14 +209,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group mb-0">
                                             <label for="timezone">Timezone</label>
-                                            <select class="form-control form-select" id="timezone" name="timezone">
-                                                <option value="UTC">UTC</option>
+                                            <select class="form-control form-select" id="timezone" name="timezone" data-selected="America/New_York">
                                                 <option value="Eastern Time" selected>Eastern Time</option>
-                                                <option value="Central Time">Central Time</option>
-                                                <option value="Mountain Time">Mountain Time</option>
-                                                <option value="Pacific Time">Pacific Time</option>
-                                                <option value="Arizona">Arizona</option>
-                                                <option value="Alaska">Alaska</option>
                                             </select>
                                         </div>
                                     </div>
@@ -383,6 +367,7 @@
     <script src="assets/js/counter-up.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/timezones.js"></script>
 
     <!-- student profile interactions -->
     <script>

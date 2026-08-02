@@ -1,5 +1,11 @@
 /* Gospel Music Mastery — page-specific overrides only */
 
+/* Preloader removed site-wide */
+.preloader,
+.loader-book {
+  display: none !important;
+}
+
 /* ==========================================================
    Gospel Music Mastery brand colors
    Remaps the Eduka theme variables so every component inherits
@@ -54,6 +60,18 @@
   text-transform: uppercase;
   color: var(--theme-color2);
   margin-bottom: 10px;
+}
+
+/* Remove Eduka's left accent/origin bar on all login & agreement cards */
+.login-form::before {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  background: none !important;
+}
+
+.login-form {
+  border-radius: 12px;
 }
 
 .login-form .login-header h2 {
@@ -282,25 +300,63 @@
   border-radius: 12px;
 }
 
-.agreement-meta-item {
-  margin-bottom: 15px;
+.agreement-meta .row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 18px;
+  margin: 0;
 }
 
-.agreement-meta-item .meta-label {
+.agreement-meta .row > [class*="col-"] {
+  flex: 1 1 0;
+  width: auto;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.agreement-meta .row > [class*="col-"]:nth-child(2) {
+  flex: 1.35 1 0;
+}
+
+.agreement-meta-item,
+.agreement-meta .form-group {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.agreement-meta-item .meta-label,
+.agreement-meta .form-group > label {
   display: block;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--theme-color2);
-  margin-bottom: 6px;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  white-space: nowrap;
+  min-height: 16px;
 }
 
 .agreement-meta-item strong {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
   font-family: var(--heading-font);
   color: var(--color-dark);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
+  white-space: nowrap;
+  line-height: 1.35;
+}
+
+.agreement-meta .form-group .form-control {
+  height: 42px;
+  min-height: 42px;
 }
 
 .agreement-scroll {
@@ -423,6 +479,22 @@
     padding: 16px;
   }
 
+  .agreement-meta .row {
+    flex-wrap: wrap;
+  }
+
+  .agreement-meta .row > [class*="col-"] {
+    flex: 1 1 100%;
+  }
+
+  .agreement-meta-item {
+    margin-bottom: 14px;
+  }
+
+  .agreement-meta-item strong {
+    white-space: normal;
+  }
+
   .agreement-scroll {
     max-height: 340px;
     padding: 16px;
@@ -460,9 +532,20 @@
   border-color: var(--theme-color);
 }
 
-.teacher-onboarding-form .form-select {
-  appearance: auto;
+.teacher-onboarding-form .form-select,
+.login-form .form-group .form-control.form-select,
+.time-slot-form .form-control.form-select,
+.main .form-control.form-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 16px 12px;
+  padding-right: 2.75rem;
+  text-overflow: ellipsis;
 }
 
 .teacher-onboarding-form textarea.form-control {
@@ -864,18 +947,32 @@
 
 .price-input-wrap .price-prefix {
   position: absolute;
-  left: 16px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--color-dark);
+  font-size: 15px;
   font-weight: 700;
   font-family: var(--heading-font);
-  z-index: 1;
+  line-height: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
 .price-input-wrap .form-control {
-  padding-left: 34px;
+  padding-left: 42px;
+  padding-right: 14px;
+}
+
+.price-input-wrap input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.price-input-wrap input[type="number"]::-webkit-outer-spin-button,
+.price-input-wrap input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .class-feature-checks {
@@ -1134,6 +1231,11 @@
   margin: 0 0 20px;
 }
 
+.time-slot-form .form-control.form-select {
+  padding-right: 2.75rem;
+  background-position: right 0.85rem center;
+}
+
 .added-slots-block h5 {
   font-family: var(--heading-font);
   color: var(--color-dark);
@@ -1155,7 +1257,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 14px;
   padding: 14px 16px;
   margin-bottom: 10px;
   background: var(--color-white);
@@ -1167,6 +1269,8 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .slot-card-info strong {
@@ -1179,6 +1283,7 @@
   color: var(--gospel-orange);
   font-weight: 700;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .slot-card-info em {
@@ -1198,9 +1303,19 @@
   font-size: 12px;
 }
 
-.slot-remove-btn {
+.slot-remove-btn,
+.login-form .slot-card .theme-btn,
+.login-form .slot-card .theme-btn-outline,
+.slot-card .theme-btn,
+.slot-card .theme-btn-outline {
   margin: 0;
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  width: auto !important;
+  max-width: none;
+  padding: 8px 16px;
+  font-size: 12px;
+  white-space: nowrap;
+  align-self: center;
 }
 
 .repeat-weekly-block {
@@ -1493,9 +1608,17 @@
     align-items: stretch;
   }
 
-  .slot-card .theme-btn-outline {
-    width: 100%;
+  .slot-card-info span {
+    white-space: normal;
+  }
+
+  .slot-card .theme-btn,
+  .slot-card .theme-btn-outline,
+  .login-form .slot-card .theme-btn,
+  .login-form .slot-card .theme-btn-outline {
+    width: 100% !important;
     text-align: center;
+    align-self: stretch;
   }
 
   .repeat-toggle-row {
@@ -1872,8 +1995,11 @@
 
 .td-action-btn {
   margin: 0;
-  padding: 6px 14px;
-  font-size: 13px;
+  padding: 8px 14px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .td-booking-card {
@@ -2286,11 +2412,6 @@
   color: var(--gospel-body);
 }
 
-.main .form-check-input:checked {
-  background-color: var(--gospel-orange);
-  border-color: var(--gospel-orange);
-}
-
 /* --- Links: dark by default, orange on hover --- */
 .login-form a:not(.theme-btn):not(.theme-btn-outline),
 .td-card a:not(.theme-btn):not(.theme-btn-outline):not(.td-quick-card),
@@ -2479,8 +2600,28 @@ body {
 
 .booking-actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
   gap: 8px;
+  min-width: 150px;
+}
+
+.booking-actions .theme-btn,
+.booking-actions .theme-btn-outline,
+.booking-actions .td-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 8px;
 }
 
 .td-badge.is-confirmed {
@@ -2589,6 +2730,7 @@ body {
 
   .booking-actions {
     width: 100%;
+    min-width: 0;
   }
 
   .booking-actions .theme-btn,
@@ -2755,6 +2897,20 @@ body {
   margin-top: auto;
 }
 
+.withdrawal-equal-card form .form-group {
+  margin-bottom: 18px;
+}
+
+.withdrawal-equal-card form .form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.withdrawal-equal-card .theme-btn,
+.withdrawal-equal-card #request-withdrawal-btn {
+  margin: 20px 0 0;
+  align-self: flex-start;
+}
+
 .payment-method-box {
   display: flex;
   flex-direction: column;
@@ -2807,11 +2963,6 @@ body {
 
 .payment-secure-note {
   margin-top: 0;
-}
-
-.withdrawal-equal-card .theme-btn {
-  margin: 0;
-  align-self: flex-start;
 }
 
 @media (max-width: 991px) {
@@ -6156,16 +6307,27 @@ body {
 
 .sb-actions {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   gap: 8px;
+  min-width: 140px;
 }
 
 .sb-actions .theme-btn,
 .sb-actions .theme-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   margin: 0;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  text-align: center;
   white-space: nowrap;
+  border-radius: 8px;
 }
 
 .sb-table tbody td {
@@ -7839,9 +8001,45 @@ body {
 }
 
 .ac-feature-toggle input {
-  width: 16px;
-  height: 16px;
-  accent-color: var(--gospel-orange);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin: 0;
+  border: 2px solid var(--gospel-border);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: var(--transition2);
+}
+
+.ac-feature-toggle input:checked {
+  background-color: var(--gospel-orange);
+  border-color: var(--gospel-orange);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='m3.5 8.5 2.5 2.5 6.5-6.5'/%3e%3c/svg%3e");
+}
+
+.ac-feature-toggle input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.25);
+}
+
+/* Also force white ticks on Bootstrap checkboxes in admin/dashboard */
+.main .form-check-input[type="checkbox"]:checked {
+  background-color: var(--gospel-orange);
+  border-color: var(--gospel-orange);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+
+.main .form-check-input[type="radio"]:checked {
+  background-color: var(--gospel-orange);
+  border-color: var(--gospel-orange);
 }
 
 .ac-modal-hero {
@@ -8191,32 +8389,42 @@ body {
   align-items: center;
 }
 
-.ap-top-grid {
+.ap-earn-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   margin-bottom: 24px;
-  align-items: start;
+}
+
+.ap-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+  align-items: stretch;
 }
 
 .ap-top-grid > .sd-card,
-.ap-earnings-col > .sd-card {
+.ap-earn-grid > .sd-card {
   margin-bottom: 0;
+  height: 100%;
 }
 
-.ap-earnings-col {
-  display: grid;
-  gap: 24px;
+.ap-earn-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .ap-earn-card .sd-card-head {
   align-items: flex-start;
+  margin-bottom: 18px;
 }
 
 .ap-earn-icon {
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
   font-size: 16px;
 }
 
@@ -8225,35 +8433,46 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 12px;
+  gap: 14px;
+  margin-top: auto;
 }
 
 .ap-earn-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 14px 16px;
+  gap: 16px;
+  padding: 16px 18px;
   background: var(--gospel-bg-light);
   border: 1px solid var(--gospel-border);
   border-radius: 12px;
 }
 
 .ap-earn-list span {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--gospel-body);
 }
 
 .ap-earn-list strong {
   font-family: var(--heading-font);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--gospel-heading);
+  white-space: nowrap;
 }
 
 .ap-earn-list strong.is-pending {
   color: var(--gospel-orange);
+}
+
+.ap-top-grid .gmm-chart-wrap {
+  height: 300px;
+}
+
+.ap-top-grid .gmm-chart-wrap.is-doughnut {
+  height: 300px;
+  max-width: 100%;
 }
 
 .ap-modal-user {
@@ -8272,6 +8491,7 @@ body {
   margin: 0;
   padding: 8px 14px;
   font-size: 13px;
+  border-radius: 8px;
 }
 
 .ap-refund-done {
@@ -8291,7 +8511,8 @@ body {
 }
 
 @media (max-width: 991px) {
-  .ap-top-grid {
+  .ap-top-grid,
+  .ap-earn-grid {
     grid-template-columns: 1fr;
   }
 
@@ -8727,14 +8948,16 @@ body {
 }
 
 .gmm-chart-wrap.is-doughnut {
-  height: 290px;
-  max-width: 340px;
+  height: 300px;
+  width: 100%;
+  max-width: 360px;
   margin: 0 auto;
 }
 
+/* Chart.js owns canvas pixel size — forcing CSS size causes retina blur */
 .gmm-chart-wrap canvas {
-  width: 100% !important;
-  height: 100% !important;
+  display: block;
+  max-width: 100%;
 }
 
 @media (max-width: 1199px) {

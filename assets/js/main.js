@@ -187,12 +187,6 @@ Version         : 1.0
     });
 
 
-    // preloader
-    $(window).on('load', function () {
-        $(".preloader").fadeOut("slow");
-    });
-
-
     // fun fact counter
     $('.counter').countTo();
     $('.counter-box').appear(function () {

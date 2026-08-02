@@ -28,17 +28,7 @@
 
 <body class="admin-portal-page">
 
-    <!-- preloader -->
-    <div class="preloader">
-        <div class="loader-book">
-            <div class="loader-book-page"></div>
-            <div class="loader-book-page"></div>
-            <div class="loader-book-page"></div>
-        </div>
-    </div>
-    <!-- preloader end -->
-
-    <main class="main">
+<main class="main">
 
         <!-- admin payments -->
         <div class="admin-dashboard-area py-120">
@@ -133,7 +123,6 @@
                                 <li><a href="admin-bookings.html" class="sd-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> Bookings</a></li>
                                 <li><a href="admin-payments.html" class="sd-nav-link active" data-nav="payments"><i class="far fa-credit-card"></i> Payments</a></li>
                                 <li><a href="admin-programs.html" class="sd-nav-link" data-nav="programs"><i class="far fa-music"></i> Music Programs</a></li>
-                                <li><a href="admin-blog.html" class="sd-nav-link" data-nav="blogs"><i class="far fa-newspaper"></i> Blogs</a></li>
                                 <li><a href="admin-settings.html" class="sd-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
                                 <li><a href="admin-login.html" class="sd-nav-link sd-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
                             </ul>
@@ -207,8 +196,51 @@
                             </div>
                         </section>
 
-                        <!-- chart + earnings -->
-                        <div class="ap-top-grid">
+                        <!-- earnings summary -->
+                        <div class="ap-earn-grid">
+                            <section class="sd-card ap-earn-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Teacher Earnings</h3>
+                                        <p>Paid and pending teacher payouts.</p>
+                                    </div>
+                                    <span class="sd-stat-icon ap-earn-icon"><i class="far fa-chalkboard-user"></i></span>
+                                </div>
+                                <ul class="ap-earn-list">
+                                    <li>
+                                        <span>Total Paid</span>
+                                        <strong>$40,000</strong>
+                                    </li>
+                                    <li>
+                                        <span>Pending</span>
+                                        <strong class="is-pending">$5,000</strong>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <section class="sd-card ap-earn-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Platform Earnings</h3>
+                                        <p>Commission retained by the platform.</p>
+                                    </div>
+                                    <span class="sd-stat-icon ap-earn-icon"><i class="far fa-building-columns"></i></span>
+                                </div>
+                                <ul class="ap-earn-list">
+                                    <li>
+                                        <span>Commission</span>
+                                        <strong>$10,000</strong>
+                                    </li>
+                                    <li>
+                                        <span>Share of Revenue</span>
+                                        <strong>20%</strong>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <!-- charts -->
+                        <div class="ap-top-grid gmm-chart-grid">
                             <section class="sd-card ad-chart-card gmm-chart-card">
                                 <div class="sd-card-head">
                                     <div>
@@ -222,55 +254,17 @@
                                 </div>
                             </section>
 
-                            <div class="ap-earnings-col">
-                                <section class="sd-card ap-earn-card">
-                                    <div class="sd-card-head">
-                                        <div>
-                                            <h3>Teacher Earnings</h3>
-                                            <p>Paid and pending teacher payouts.</p>
-                                        </div>
-                                        <span class="sd-stat-icon ap-earn-icon"><i class="far fa-chalkboard-user"></i></span>
+                            <section class="sd-card ad-chart-card gmm-chart-card">
+                                <div class="sd-card-head">
+                                    <div>
+                                        <h3>Payment Status</h3>
+                                        <p>Completed, pending, failed, and refunded.</p>
                                     </div>
-                                    <ul class="ap-earn-list">
-                                        <li>
-                                            <span>Total Paid</span>
-                                            <strong>$40,000</strong>
-                                        </li>
-                                        <li>
-                                            <span>Pending</span>
-                                            <strong class="is-pending">$5,000</strong>
-                                        </li>
-                                    </ul>
-                                </section>
-
-                                <section class="sd-card ap-earn-card">
-                                    <div class="sd-card-head">
-                                        <div>
-                                            <h3>Platform Earnings</h3>
-                                            <p>Commission retained by the platform.</p>
-                                        </div>
-                                        <span class="sd-stat-icon ap-earn-icon"><i class="far fa-building-columns"></i></span>
-                                    </div>
-                                    <ul class="ap-earn-list">
-                                        <li>
-                                            <span>Commission</span>
-                                            <strong>$10,000</strong>
-                                        </li>
-                                    </ul>
-                                </section>
-
-                                <section class="sd-card ad-chart-card gmm-chart-card">
-                                    <div class="sd-card-head">
-                                        <div>
-                                            <h3>Payment Status</h3>
-                                            <p>Completed, pending, failed, and refunded.</p>
-                                        </div>
-                                    </div>
-                                    <div class="gmm-chart-wrap is-doughnut">
-                                        <canvas id="gmm-ap-status" aria-label="Payment status doughnut chart"></canvas>
-                                    </div>
-                                </section>
-                            </div>
+                                </div>
+                                <div class="gmm-chart-wrap is-doughnut">
+                                    <canvas id="gmm-ap-status" aria-label="Payment status doughnut chart"></canvas>
+                                </div>
+                            </section>
                         </div>
 
                         <!-- transactions -->
