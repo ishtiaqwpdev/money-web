@@ -737,7 +737,20 @@ p.td-empty-state.gmm-empty {
 /* ==========================================================
    GLOBAL BUTTON LOCK (loads last on portal pages)
    Force orange brand — never black/ink fills on buttons.
+   Hover text always white.
    ========================================================== */
+
+/* Eduka ::before wipe hides outline button labels — disable it */
+.theme-btn-outline::before,
+.theme-btn.theme-btn-outline::before,
+a.theme-btn-outline::before,
+button.theme-btn-outline::before {
+  content: none !important;
+  display: none !important;
+  transform: none !important;
+  opacity: 0 !important;
+}
+
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
 a.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger),
 button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) {
@@ -754,6 +767,7 @@ button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) {
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):focus {
   background: var(--gospel-orange-dark) !important;
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   border-color: var(--gospel-orange-dark) !important;
 }
 
@@ -762,30 +776,44 @@ button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) {
 }
 
 .theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
-a.theme-btn-outline:not(.theme-btn-danger),
-button.theme-btn-outline:not(.theme-btn-danger) {
+.theme-btn.theme-btn-outline:not(.theme-btn-danger),
+a.theme-btn.theme-btn-outline:not(.theme-btn-danger),
+button.theme-btn.theme-btn-outline:not(.theme-btn-danger) {
   background: #fff !important;
   color: var(--gospel-orange) !important;
+  -webkit-text-fill-color: var(--gospel-orange) !important;
   border: 2px solid var(--gospel-orange) !important;
 }
 
-.theme-btn-outline:not(.theme-btn-danger)::before {
-  background: var(--gospel-orange) !important;
-}
-
 .theme-btn-outline:not(.theme-btn-danger):hover,
-.theme-btn-outline:not(.theme-btn-danger):focus {
+.theme-btn-outline:not(.theme-btn-danger):focus,
+.theme-btn.theme-btn-outline:not(.theme-btn-danger):hover,
+.theme-btn.theme-btn-outline:not(.theme-btn-danger):focus,
+a.theme-btn.theme-btn-outline:hover,
+button.theme-btn.theme-btn-outline:hover,
+.sb-actions .theme-btn.theme-btn-outline:hover,
+.sb-actions .theme-btn-outline:hover,
+.sl-actions .theme-btn-outline:hover,
+.booking-actions .theme-btn-outline:hover,
+.sd-action-btn:hover,
+.td-action-btn.theme-btn-outline:hover {
   background: var(--gospel-orange) !important;
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   border-color: var(--gospel-orange) !important;
   box-shadow: 0 8px 18px rgba(255, 165, 0, 0.28);
 }
 
-.theme-btn-outline:not(.theme-btn-danger):hover i,
-.theme-btn-outline:not(.theme-btn-danger):focus i {
+.theme-btn-outline:hover i,
+.theme-btn-outline:focus i,
+.theme-btn.theme-btn-outline:hover i,
+.sb-actions .theme-btn-outline:hover i {
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
-.theme-btn-outline:not(.theme-btn-danger):not(:hover):not(:focus) i {
+.theme-btn-outline:not(.theme-btn-danger):not(:hover):not(:focus) i,
+.theme-btn.theme-btn-outline:not(:hover):not(:focus) i {
   color: var(--gospel-orange) !important;
+  -webkit-text-fill-color: var(--gospel-orange) !important;
 }
