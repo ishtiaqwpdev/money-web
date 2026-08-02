@@ -16,7 +16,7 @@
     ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
     : false;
 
-  root.className += ' gmm-anim';
+  root.classList.add('gmm-anim');
 
   /* Elements inside a closed modal never intersect the viewport, so a
      reveal class would leave them invisible when the modal opens. */

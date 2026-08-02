@@ -1,0 +1,274 @@
+/* ==========================================================
+   Gospel Music Mastery — form feedback & validation UI
+   Frontend only. Does not alter layout grids or theme chrome.
+   ========================================================== */
+
+:root {
+  --gmm-valid: #15803d;
+  --gmm-valid-bg: rgba(34, 197, 94, 0.1);
+  --gmm-valid-border: #22c55e;
+  --gmm-invalid: #c0392b;
+  --gmm-invalid-bg: rgba(192, 57, 43, 0.08);
+  --gmm-invalid-border: #c0392b;
+}
+
+/* ---------- Field messages ---------- */
+.field-feedback,
+.gmm-field-error,
+.gmm-field-success {
+  display: block;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 6px;
+  min-height: 0;
+}
+
+.field-feedback:empty,
+.gmm-field-error:empty,
+.gmm-field-success:empty {
+  display: none;
+}
+
+.field-feedback.is-invalid-feedback,
+.gmm-field-error,
+.form-control ~ .invalid-feedback,
+.form-select ~ .invalid-feedback {
+  color: var(--gmm-invalid);
+}
+
+.field-feedback.is-valid-feedback,
+.gmm-field-success {
+  color: var(--gmm-valid);
+}
+
+/* ---------- Input states ---------- */
+.form-control.is-invalid,
+.form-select.is-invalid,
+.form-check-input.is-invalid,
+.gmm-file-wrap.is-invalid,
+.signature-pad-wrap.is-invalid,
+.password-field.is-invalid .form-control {
+  border-color: var(--gmm-invalid-border) !important;
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
+  border-color: var(--gmm-invalid-border) !important;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15) !important;
+}
+
+.form-control.is-valid,
+.form-select.is-valid,
+.form-check-input.is-valid,
+.gmm-file-wrap.is-valid,
+.signature-pad-wrap.is-valid,
+.password-field.is-valid .form-control {
+  border-color: var(--gmm-valid-border) !important;
+}
+
+.form-control.is-valid:focus,
+.form-select.is-valid:focus {
+  border-color: var(--gmm-valid-border) !important;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15) !important;
+}
+
+.form-control:focus:not(.is-invalid):not(.is-valid),
+.form-select:focus:not(.is-invalid):not(.is-valid) {
+  border-color: var(--gospel-orange, #ffa500);
+  box-shadow: 0 0 0 3px var(--gospel-orange-soft, rgba(255, 165, 0, 0.14));
+}
+
+/* ---------- Form-level alerts ---------- */
+.gmm-form-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.gmm-form-alert[hidden] {
+  display: none !important;
+}
+
+.gmm-form-alert.is-error {
+  background: var(--gmm-invalid-bg);
+  color: var(--gmm-invalid);
+  border: 1px solid rgba(192, 57, 43, 0.25);
+}
+
+.gmm-form-alert.is-success {
+  background: var(--gmm-valid-bg);
+  color: var(--gmm-valid);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.gmm-form-alert i {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ---------- Password field + toggle ---------- */
+.password-field {
+  position: relative;
+}
+
+.password-field .form-control {
+  padding-right: 48px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  color: var(--gospel-body, #64748b);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.password-toggle:hover,
+.password-toggle:focus {
+  color: var(--gospel-ink, #1f2937);
+  background: var(--gospel-bg-light, #f5f7fa);
+  outline: none;
+}
+
+/* ---------- Strength meter ---------- */
+.gmm-password-strength {
+  margin-top: 8px;
+}
+
+.gmm-password-strength-bar {
+  display: flex;
+  gap: 4px;
+  height: 4px;
+  margin-bottom: 6px;
+}
+
+.gmm-password-strength-bar span {
+  flex: 1;
+  border-radius: 4px;
+  background: #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.gmm-password-strength[data-level="1"] .gmm-password-strength-bar span:nth-child(1) {
+  background: #c0392b;
+}
+
+.gmm-password-strength[data-level="2"] .gmm-password-strength-bar span:nth-child(-n+2) {
+  background: #d97706;
+}
+
+.gmm-password-strength[data-level="3"] .gmm-password-strength-bar span:nth-child(-n+3) {
+  background: #ca8a04;
+}
+
+.gmm-password-strength[data-level="4"] .gmm-password-strength-bar span {
+  background: #16a34a;
+}
+
+.gmm-password-strength-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gospel-body, #64748b);
+}
+
+.gmm-password-strength[data-level="1"] .gmm-password-strength-label { color: #c0392b; }
+.gmm-password-strength[data-level="2"] .gmm-password-strength-label { color: #d97706; }
+.gmm-password-strength[data-level="3"] .gmm-password-strength-label { color: #a16207; }
+.gmm-password-strength[data-level="4"] .gmm-password-strength-label { color: #15803d; }
+
+.gmm-password-match {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.gmm-password-match.is-match { color: var(--gmm-valid); }
+.gmm-password-match.is-mismatch { color: var(--gmm-invalid); }
+
+/* ---------- File upload preview ---------- */
+.gmm-file-preview {
+  display: none;
+  margin-top: 12px;
+  border: 1px solid var(--gospel-border, #e5e7eb);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 220px;
+  background: var(--gospel-bg-light, #f5f7fa);
+}
+
+.gmm-file-preview.is-visible {
+  display: block;
+}
+
+.gmm-file-preview img,
+.gmm-file-preview video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 160px;
+  object-fit: cover;
+}
+
+.gmm-file-meta {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--gospel-body, #64748b);
+  word-break: break-all;
+}
+
+/* ---------- Button validation states ---------- */
+.theme-btn.is-loading,
+.theme-btn-outline.is-loading {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.theme-btn.is-success,
+.theme-btn-outline.is-success {
+  background: #16a34a !important;
+  border-color: #16a34a !important;
+  color: #fff !important;
+  pointer-events: none;
+}
+
+.theme-btn.is-success::before,
+.theme-btn-outline.is-success::before {
+  background: #15803d !important;
+}
+
+.theme-btn.is-error,
+.theme-btn-outline.is-error {
+  background: #c0392b !important;
+  border-color: #c0392b !important;
+  color: #fff !important;
+}
+
+.theme-btn.is-error::before,
+.theme-btn-outline.is-error::before {
+  background: #a93226 !important;
+}
+
+/* ---------- Demo helpers (payment connect / availability) ---------- */
+.gmm-validate-panel {
+  margin-top: 12px;
+}
+
+.gmm-validate-panel .gmm-form-alert {
+  margin-bottom: 0;
+}
