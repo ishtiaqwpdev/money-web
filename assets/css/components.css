@@ -84,7 +84,7 @@
   box-shadow: 0 8px 18px rgba(255, 165, 0, 0.35);
 }
 
-/* Secondary — white + ink (navy) border/text */
+/* Secondary — white + ink/black border (original action style) */
 .theme-btn-outline {
   background: var(--color-white) !important;
   color: var(--gospel-ink) !important;

@@ -8718,6 +8718,40 @@ body {
   margin: 0;
   padding: 8px 14px;
   font-size: 13px;
+  border-radius: 8px;
+}
+
+/* View / Edit — original black/ink outline */
+.apr-card-actions .apr-view-btn,
+.apr-card-actions .apr-edit-btn {
+  background: var(--color-white) !important;
+  color: var(--gospel-ink, #1F2937) !important;
+  border: 2px solid var(--gospel-ink, #1F2937) !important;
+}
+
+.apr-card-actions .apr-view-btn:hover,
+.apr-card-actions .apr-view-btn:focus,
+.apr-card-actions .apr-edit-btn:hover,
+.apr-card-actions .apr-edit-btn:focus {
+  background: var(--gospel-ink, #1F2937) !important;
+  color: var(--color-white) !important;
+  border-color: var(--gospel-ink, #1F2937) !important;
+}
+
+/* Delete — original danger red */
+.apr-card-actions .apr-delete-btn,
+.apr-card-actions .apr-delete-btn.theme-btn-outline,
+.apr-card-actions .apr-delete-btn.theme-btn-danger {
+  background: #c0392b !important;
+  color: var(--color-white) !important;
+  border: 2px solid #c0392b !important;
+}
+
+.apr-card-actions .apr-delete-btn:hover,
+.apr-card-actions .apr-delete-btn:focus {
+  background: #a93226 !important;
+  border-color: #a93226 !important;
+  color: var(--color-white) !important;
 }
 
 .apr-featured-list {
