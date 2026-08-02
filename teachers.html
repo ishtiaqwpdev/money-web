@@ -359,6 +359,7 @@
     <script src="assets/js/counter-up.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/favourites.js"></script>
 
     <!-- teachers marketplace interactions (frontend demo) -->
     <script>
@@ -539,9 +540,66 @@
                 });
             }
 
+            /* Favourite teachers — heart on each card */
+            var favToast = document.getElementById('tm-fav-toast');
+            var favToastText = document.getElementById('tm-fav-toast-text');
+            var favApi = window.GMMFavourites;
+
+            function showFavToast(message) {
+                if (!favToast) return;
+                if (favToastText) favToastText.textContent = message;
+                favToast.hidden = false;
+                window.clearTimeout(showFavToast._timer);
+                showFavToast._timer = window.setTimeout(function () {
+                    favToast.hidden = true;
+                }, 2200);
+            }
+
+            function syncHeartButton(btn, active, name) {
+                btn.classList.toggle('is-active', !!active);
+                var icon = btn.querySelector('i');
+                if (icon) icon.className = active ? 'fas fa-heart' : 'far fa-heart';
+                btn.setAttribute(
+                    'aria-label',
+                    active ? ('Remove ' + name + ' from favourites') : ('Add ' + name + ' to favourites')
+                );
+                btn.title = active ? 'Remove favourite' : 'Add to favourites';
+            }
+
+            if (favApi && grid) {
+                cards.forEach(function (card) {
+                    if (card.querySelector('.sf-heart-btn')) return;
+                    var titleEl = card.querySelector('h3');
+                    var name = titleEl ? titleEl.textContent.trim() : (card.getAttribute('data-name') || 'Teacher');
+                    var active = favApi.isFav(name);
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'sf-heart-btn' + (active ? ' is-active' : '');
+                    btn.innerHTML = '<i class="' + (active ? 'fas' : 'far') + ' fa-heart"></i>';
+                    syncHeartButton(btn, active, name);
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var nowActive = favApi.toggle(name);
+                        syncHeartButton(btn, nowActive, name);
+                        showFavToast(
+                            nowActive
+                                ? (name + ' added to favourites.')
+                                : (name + ' removed from favourites.')
+                        );
+                    });
+                    card.insertBefore(btn, card.firstChild);
+                });
+            }
+
             applyFilters();
         })();
     </script>
+
+    <div class="gospel-alert gospel-alert-success tm-fav-toast" id="tm-fav-toast" hidden>
+        <i class="far fa-heart"></i>
+        <span id="tm-fav-toast-text">Saved to favourites.</span>
+    </div>
 
 </body>
 

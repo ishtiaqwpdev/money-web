@@ -24,6 +24,9 @@
   --gospel-border: #E5E7EB;
   --gospel-bg-light: #F5F7FA;
 
+  /* Site content width — matches original Eduka container */
+  --gospel-container: 1200px;
+
   /* Eduka theme variables remapped to Gospel branding */
   --theme-color: #E08E00;
   --theme-color2: #FFA500;
@@ -4894,6 +4897,7 @@ body {
 }
 
 .tm-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--color-white);
@@ -4902,6 +4906,24 @@ body {
   box-shadow: var(--box-shadow);
   overflow: hidden;
   transition: var(--transition2);
+}
+
+.tm-card > .sf-heart-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.tm-fav-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1080;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  max-width: min(360px, calc(100vw - 32px));
 }
 
 .tm-card:hover {
@@ -9257,9 +9279,7 @@ body {
 .main,
 .sd-shell,
 .td-shell,
-.ad-shell,
-.container,
-.container-fluid {
+.ad-shell {
   max-width: 100%;
 }
 
@@ -9623,4 +9643,79 @@ iframe {
     white-space: normal;
     text-align: center;
   }
+}
+
+/* ==========================================================
+   Site-wide page width lock (all pages)
+   Restores original Eduka container width on every viewport
+   that previously stretched to full browser width.
+   ========================================================== */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 576px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: var(--gospel-container, 1200px) !important;
+  }
+}
+
+/* Keep page shells aligned to the same content width */
+.login-area > .container,
+.teacher-dashboard-area > .container,
+.student-dashboard-area > .container,
+.admin-dashboard-area > .container,
+.booking-page-area > .container,
+.payment-page-area > .container,
+.teachers-market-area > .container,
+.teacher-public-area > .container,
+.class-detail-area > .container {
+  max-width: var(--gospel-container, 1200px);
 }

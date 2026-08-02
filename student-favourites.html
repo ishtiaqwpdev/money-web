@@ -338,6 +338,7 @@
     <script src="assets/js/counter-up.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/favourites.js"></script>
 
     <!-- student favourites interactions -->
     <script>
@@ -383,6 +384,8 @@
             var countEl = document.getElementById('sf-count');
             var toast = document.getElementById('sf-toast');
             var toastText = document.getElementById('sf-toast-text');
+            var favApi = window.GMMFavourites;
+            var cards = grid ? Array.prototype.slice.call(grid.querySelectorAll('.sf-card')) : [];
 
             function showToast(message) {
                 if (!toast) return;
@@ -398,11 +401,25 @@
                 if (grid) grid.hidden = remaining === 0;
             }
 
+            if (favApi) {
+                var pageNames = cards.map(function (card) {
+                    return card.getAttribute('data-name') || '';
+                });
+                favApi.seedIfEmpty(pageNames);
+
+                cards.forEach(function (card) {
+                    var name = card.getAttribute('data-name') || '';
+                    card.hidden = !favApi.isFav(name);
+                });
+            }
+
             document.querySelectorAll('.sf-heart-btn').forEach(function (btn) {
                 btn.addEventListener('click', function () {
                     var card = btn.closest('.sf-card');
                     if (!card) return;
                     var name = card.getAttribute('data-name') || 'Teacher';
+
+                    if (favApi) favApi.remove(name);
 
                     btn.classList.remove('is-active');
                     btn.classList.add('is-removing');
