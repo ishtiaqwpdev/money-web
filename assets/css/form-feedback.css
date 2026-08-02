@@ -4,9 +4,9 @@
    ========================================================== */
 
 :root {
-  --gmm-valid: #15803d;
-  --gmm-valid-bg: rgba(34, 197, 94, 0.1);
-  --gmm-valid-border: #22c55e;
+  --gmm-valid: var(--gospel-orange-text, #B45309);
+  --gmm-valid-bg: var(--gospel-orange-soft, rgba(255, 165, 0, 0.14));
+  --gmm-valid-border: var(--gospel-orange, #FFA500);
   --gmm-invalid: #c0392b;
   --gmm-invalid-bg: rgba(192, 57, 43, 0.08);
   --gmm-invalid-border: #c0392b;
@@ -62,14 +62,62 @@
 .form-check-input.is-valid,
 .gmm-file-wrap.is-valid,
 .signature-pad-wrap.is-valid,
-.password-field.is-valid .form-control {
+.password-field.is-valid .form-control,
+.was-validated .form-control:valid,
+.was-validated .form-select:valid,
+.was-validated .form-check-input:valid {
   border-color: var(--gmm-valid-border) !important;
 }
 
-.form-control.is-valid:focus,
-.form-select.is-valid:focus {
+/* Remove Bootstrap green checkmark icons inside inputs (keep select arrow) */
+.form-control.is-valid:not(.form-select),
+.was-validated .form-control:valid:not(.form-select),
+.password-field.is-valid .form-control {
+  background-image: none !important;
+  padding-right: 18px !important;
+}
+
+.password-field .form-control.is-valid,
+.password-field.is-valid .form-control,
+.was-validated .password-field .form-control:valid {
+  padding-right: 48px !important;
+}
+
+/* Valid selects: orange border only — keep custom chevron, no checkmark */
+.form-select.is-valid,
+.form-control.form-select.is-valid,
+.was-validated .form-select:valid,
+.was-validated .form-control.form-select:valid {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.85rem center !important;
+  background-size: 16px 12px !important;
+  padding-right: 2.75rem !important;
+}
+
+.form-check-input.is-valid,
+.was-validated .form-check-input:valid {
+  background-color: var(--gmm-valid-border) !important;
   border-color: var(--gmm-valid-border) !important;
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15) !important;
+}
+
+.form-check-input.is-valid:checked,
+.was-validated .form-check-input:valid:checked {
+  background-color: var(--gmm-valid-border) !important;
+  border-color: var(--gmm-valid-border) !important;
+}
+
+.form-check-input.is-valid ~ .form-check-label,
+.was-validated .form-check-input:valid ~ .form-check-label {
+  color: var(--gmm-valid);
+}
+
+.form-control.is-valid:focus,
+.form-select.is-valid:focus,
+.was-validated .form-control:valid:focus,
+.was-validated .form-select:valid:focus {
+  border-color: var(--gmm-valid-border) !important;
+  box-shadow: 0 0 0 3px var(--gospel-orange-soft, rgba(255, 165, 0, 0.14)) !important;
 }
 
 .form-control:focus:not(.is-invalid):not(.is-valid),
@@ -103,7 +151,7 @@
 .gmm-form-alert.is-success {
   background: var(--gmm-valid-bg);
   color: var(--gmm-valid);
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  border: 1px solid var(--gospel-orange-line, rgba(255, 165, 0, 0.45));
 }
 
 .gmm-form-alert i {
@@ -114,6 +162,7 @@
 /* ---------- Password field + toggle ---------- */
 .password-field {
   position: relative;
+  display: block;
 }
 
 .password-field .form-control {
@@ -122,11 +171,11 @@
 
 .password-toggle {
   position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
+  top: 0;
+  right: 8px;
+  bottom: 0;
+  width: 40px;
+  height: auto;
   border: none;
   background: transparent;
   color: var(--gospel-body, #64748b);
@@ -136,13 +185,21 @@
   cursor: pointer;
   border-radius: 8px;
   padding: 0;
+  transform: none;
+  z-index: 3;
+  line-height: 1;
 }
 
 .password-toggle:hover,
 .password-toggle:focus {
   color: var(--gospel-ink, #1f2937);
-  background: var(--gospel-bg-light, #f5f7fa);
+  background: transparent;
   outline: none;
+}
+
+/* Strength meter must sit outside the toggle positioning box */
+.password-field > .gmm-password-strength {
+  margin-top: 8px;
 }
 
 /* ---------- Strength meter ---------- */
@@ -241,15 +298,15 @@
 
 .theme-btn.is-success,
 .theme-btn-outline.is-success {
-  background: #16a34a !important;
-  border-color: #16a34a !important;
+  background: var(--gospel-orange, #FFA500) !important;
+  border-color: var(--gospel-orange, #FFA500) !important;
   color: #fff !important;
   pointer-events: none;
 }
 
 .theme-btn.is-success::before,
 .theme-btn-outline.is-success::before {
-  background: #15803d !important;
+  background: var(--gospel-orange-dark, #E08E00) !important;
 }
 
 .theme-btn.is-error,

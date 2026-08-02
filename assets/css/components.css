@@ -15,8 +15,8 @@
   --gmm-btn-radius: 10px;
   --gmm-btn-pad-x: 22px;
   --gmm-focus: 0 0 0 3px var(--gospel-orange-soft);
-  --gmm-success-bg: rgba(34, 197, 94, 0.12);
-  --gmm-success-fg: #15803d;
+  --gmm-success-bg: var(--gospel-orange-soft, rgba(255, 165, 0, 0.14));
+  --gmm-success-fg: var(--gospel-orange-text, #B45309);
   --gmm-warning-bg: rgba(234, 179, 8, 0.15);
   --gmm-warning-fg: #a16207;
   --gmm-danger-bg: rgba(192, 57, 43, 0.12);

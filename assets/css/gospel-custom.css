@@ -106,17 +106,23 @@
 .login-form .password-toggle,
 .settings-password-form .password-toggle {
   position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: auto;
+  transform: none;
   border: none;
   background: transparent;
   color: var(--body-text-color);
   padding: 0;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: var(--transition2);
-  z-index: 2;
+  z-index: 3;
 }
 
 .login-form .password-toggle:hover,
@@ -4809,10 +4815,38 @@ body {
 }
 
 .tm-check input {
-  accent-color: var(--gospel-orange);
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--gospel-orange);
+}
+
+.tm-check input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1.5px solid var(--gospel-border, #d1d5db);
+  border-radius: 3px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px 10px;
+}
+
+.tm-check input[type="checkbox"]:checked {
+  background-color: var(--gospel-orange);
+  border-color: var(--gospel-orange);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='m3.5 8.5 2.5 2.5 6.5-6.5'/%3e%3c/svg%3e");
+}
+
+.tm-check input[type="checkbox"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--gospel-orange-soft, rgba(255, 165, 0, 0.25));
+}
+
+.tm-check input[type="radio"] {
+  accent-color: var(--gospel-orange);
 }
 
 .tm-price-slider input[type="range"] {

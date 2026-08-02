@@ -719,14 +719,22 @@
   function ensureStrengthMeter(input) {
     if (!input || input.__gmmStrength) return;
     input.__gmmStrength = true;
-    var host = input.closest('.form-group, .mb-3, .password-field') || input.parentNode;
+    /* Never append inside .password-field — that breaks the eye toggle centering */
+    var wrap = input.closest('.password-field');
+    var host = input.closest('.form-group, .mb-3, .mb-4') || (wrap && wrap.parentNode) || input.parentNode;
     var meter = document.createElement('div');
     meter.className = 'gmm-password-strength';
     meter.setAttribute('data-level', '0');
     meter.innerHTML =
       '<div class="gmm-password-strength-bar"><span></span><span></span><span></span><span></span></div>' +
       '<div class="gmm-password-strength-label">Password strength</div>';
-    host.appendChild(meter);
+
+    if (wrap && wrap.parentNode === host) {
+      if (wrap.nextSibling) host.insertBefore(meter, wrap.nextSibling);
+      else host.appendChild(meter);
+    } else {
+      host.appendChild(meter);
+    }
 
     input.addEventListener('input', function () {
       var level = strengthScore(input.value);
