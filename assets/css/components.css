@@ -84,24 +84,24 @@
   box-shadow: 0 8px 18px rgba(255, 165, 0, 0.35);
 }
 
-/* Secondary — white + ink/black border (original action style) */
+/* Secondary — white + orange border, fills orange on hover */
 .theme-btn-outline {
   background: var(--color-white) !important;
-  color: var(--gospel-ink) !important;
-  border: 2px solid var(--gospel-ink) !important;
+  color: var(--gospel-orange) !important;
+  border: 2px solid var(--gospel-orange) !important;
 }
 
 .theme-btn-outline::before {
-  background: var(--gospel-ink) !important;
+  background: var(--gospel-orange) !important;
 }
 
 .theme-btn-outline:hover,
 .theme-btn-outline:focus {
-  background: var(--gospel-ink) !important;
+  background: var(--gospel-orange) !important;
   color: var(--color-white) !important;
-  border-color: var(--gospel-ink) !important;
+  border-color: var(--gospel-orange) !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(31, 41, 55, 0.18);
+  box-shadow: 0 8px 18px rgba(255, 165, 0, 0.28);
 }
 
 /* Danger — delete / reject / suspend */
@@ -732,4 +732,60 @@ p.td-empty-state.gmm-empty {
     white-space: normal;
     text-align: center;
   }
+}
+
+/* ==========================================================
+   GLOBAL BUTTON LOCK (loads last on portal pages)
+   Force orange brand — never black/ink fills on buttons.
+   ========================================================== */
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
+a.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger),
+button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) {
+  background: var(--gospel-orange) !important;
+  color: #fff !important;
+  border-color: var(--gospel-orange) !important;
+}
+
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger)::before {
+  background: var(--gospel-orange-dark) !important;
+}
+
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):hover,
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):focus {
+  background: var(--gospel-orange-dark) !important;
+  color: #fff !important;
+  border-color: var(--gospel-orange-dark) !important;
+}
+
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) i {
+  color: #fff !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
+a.theme-btn-outline:not(.theme-btn-danger),
+button.theme-btn-outline:not(.theme-btn-danger) {
+  background: #fff !important;
+  color: var(--gospel-orange) !important;
+  border: 2px solid var(--gospel-orange) !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger)::before {
+  background: var(--gospel-orange) !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger):hover,
+.theme-btn-outline:not(.theme-btn-danger):focus {
+  background: var(--gospel-orange) !important;
+  color: #fff !important;
+  border-color: var(--gospel-orange) !important;
+  box-shadow: 0 8px 18px rgba(255, 165, 0, 0.28);
+}
+
+.theme-btn-outline:not(.theme-btn-danger):hover i,
+.theme-btn-outline:not(.theme-btn-danger):focus i {
+  color: #fff !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger):not(:hover):not(:focus) i {
+  color: var(--gospel-orange) !important;
 }

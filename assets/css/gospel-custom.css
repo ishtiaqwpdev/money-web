@@ -144,22 +144,22 @@
   margin-left: 0;
 }
 
-/* Outline button — Eduka radius + palette */
+/* Outline button — orange border, orange fill + white text on hover */
 .theme-btn-outline {
   display: inline-block;
-  background: transparent;
-  color: var(--theme-color2);
-  border: 2px solid var(--theme-color2);
+  background: var(--color-white);
+  color: var(--gospel-orange);
+  border: 2px solid var(--gospel-orange);
   box-shadow: none;
 }
 
 .theme-btn-outline::before {
-  background: var(--theme-color2);
+  background: var(--gospel-orange);
 }
 
 .theme-btn-outline:hover {
   color: var(--color-white);
-  border-color: var(--theme-color2);
+  border-color: var(--gospel-orange);
 }
 
 /* Teacher registration card extras */
@@ -2262,12 +2262,22 @@
   color: var(--color-white);
 }
 
+.theme-btn i,
+.theme-btn:hover i,
+.theme-btn:focus i {
+  color: inherit;
+}
+
+.theme-btn:not(.theme-btn-outline) i {
+  color: var(--color-white);
+}
+
 /* --- Buttons: secondary = white fill, orange border, fills orange on hover --- */
 .theme-btn-outline,
 .signature-actions .theme-btn-outline,
 .gospel-demo-modal .modal-footer .theme-btn-outline {
   background: var(--color-white);
-  color: var(--gospel-orange-text);
+  color: var(--gospel-orange);
   border: 2px solid var(--gospel-orange);
 }
 
@@ -2280,6 +2290,11 @@
   background: var(--gospel-orange);
   color: var(--color-white);
   border-color: var(--gospel-orange);
+}
+
+.theme-btn-outline:hover i,
+.theme-btn-outline:focus i {
+  color: var(--color-white);
 }
 
 /* --- Header dropdown: white panel with dark text, orange on hover --- */
@@ -4846,7 +4861,32 @@ body {
 }
 
 .tm-check input[type="radio"] {
-  accent-color: var(--gospel-orange);
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--gospel-border, #d1d5db);
+  border-radius: 50%;
+  background-color: #fff;
+  flex-shrink: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.tm-check input[type="radio"]:checked {
+  border-color: var(--gospel-orange);
+  background-image: radial-gradient(circle, var(--gospel-orange) 0 45%, #fff 46% 100%);
+}
+
+.tm-check input[type="radio"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--gospel-orange-soft, rgba(255, 165, 0, 0.25));
+}
+
+/* Rating stars — brand orange (not black) */
+.tm-filters .tm-stars {
+  color: var(--gospel-orange);
+  letter-spacing: 1px;
 }
 
 .tm-price-slider input[type="range"] {
@@ -8777,21 +8817,21 @@ body {
   border-radius: 8px;
 }
 
-/* View / Edit — original black/ink outline */
+/* View / Edit — orange outline */
 .apr-card-actions .apr-view-btn,
 .apr-card-actions .apr-edit-btn {
   background: var(--color-white) !important;
-  color: var(--gospel-ink, #1F2937) !important;
-  border: 2px solid var(--gospel-ink, #1F2937) !important;
+  color: var(--gospel-orange) !important;
+  border: 2px solid var(--gospel-orange) !important;
 }
 
 .apr-card-actions .apr-view-btn:hover,
 .apr-card-actions .apr-view-btn:focus,
 .apr-card-actions .apr-edit-btn:hover,
 .apr-card-actions .apr-edit-btn:focus {
-  background: var(--gospel-ink, #1F2937) !important;
+  background: var(--gospel-orange) !important;
   color: var(--color-white) !important;
-  border-color: var(--gospel-ink, #1F2937) !important;
+  border-color: var(--gospel-orange) !important;
 }
 
 /* Delete — original danger red */
@@ -9752,4 +9792,68 @@ iframe {
 .teacher-public-area > .container,
 .class-detail-area > .container {
   max-width: var(--gospel-container, 1200px);
+}
+
+/* ==========================================================
+   GLOBAL BUTTON LOCK — orange brand on every page
+   Beats Eduka / older black-ink button overrides site-wide.
+   Danger / delete buttons stay red.
+   ========================================================== */
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
+a.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn),
+button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn),
+.theme-btn2 {
+  background: var(--gospel-orange) !important;
+  color: var(--color-white) !important;
+  border-color: var(--gospel-orange) !important;
+}
+
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn)::before,
+.theme-btn2::before {
+  background: var(--gospel-orange-dark) !important;
+}
+
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn):hover,
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn):focus,
+.theme-btn2:hover,
+.theme-btn2:focus {
+  background: var(--gospel-orange) !important;
+  color: var(--color-white) !important;
+  border-color: var(--gospel-orange) !important;
+}
+
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) i,
+.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):hover i,
+.theme-btn2 i {
+  color: var(--color-white) !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
+a.theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn),
+button.theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn) {
+  background: var(--color-white) !important;
+  color: var(--gospel-orange) !important;
+  border: 2px solid var(--gospel-orange) !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn)::before {
+  background: var(--gospel-orange) !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn):hover,
+.theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn):focus,
+a.theme-btn-outline:not(.theme-btn-danger):hover,
+button.theme-btn-outline:not(.theme-btn-danger):hover {
+  background: var(--gospel-orange) !important;
+  color: var(--color-white) !important;
+  border-color: var(--gospel-orange) !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger):hover i,
+.theme-btn-outline:not(.theme-btn-danger):focus i {
+  color: var(--color-white) !important;
+}
+
+.theme-btn-outline:not(.theme-btn-danger):not(:hover):not(:focus) i {
+  color: var(--gospel-orange) !important;
 }
