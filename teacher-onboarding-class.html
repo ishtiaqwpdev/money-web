@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/gospel-custom.css">
+    <link rel="stylesheet" href="assets/css/gospel-animations.css">
+    <link rel="stylesheet" href="assets/css/form-feedback.css">
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/form-validation.js"></script>
 
 </head>
 
@@ -66,7 +70,7 @@
                                     <div class="class-image-panel">
                                         <h5>Class Image</h5>
                                         <div class="class-image-preview" id="class-image-preview-wrap">
-                                            <img src="" alt="Class image preview" id="class-image-preview" hidden>
+                                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Class image preview" id="class-image-preview" hidden>
                                             <span class="class-image-placeholder" id="class-image-placeholder">
                                                 <i class="far fa-image"></i>
                                                 <span>Upload a class cover image</span>
@@ -270,7 +274,7 @@
 
             function resetImage() {
                 imageInput.value = '';
-                imagePreview.src = '';
+                imagePreview.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
                 imagePreview.hidden = true;
                 imagePlaceholder.hidden = false;
                 setFeedback('class-image', '', false);

@@ -1525,7 +1525,7 @@
 
 @media (max-width: 767px) {
   .onboarding-steps {
-    min-width: 560px;
+    min-width: 480px;
     padding: 14px 10px;
   }
 
@@ -1600,7 +1600,7 @@
   }
 
   .availability-calendar {
-    min-width: 480px;
+    min-width: 420px;
   }
 
   .slot-card {
@@ -3678,6 +3678,10 @@ body {
     width: 100%;
     text-align: center;
   }
+
+  .cd-time-slots {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Student login — social + validation extras */
@@ -4334,7 +4338,7 @@ body {
   }
 
   .sd-teacher-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sd-quick-grid {
@@ -4379,7 +4383,7 @@ body {
   }
 
   .sd-sidebar-backdrop[hidden] {
-    display: none;
+    display: none !important;
   }
 
   .sd-lesson-card {
@@ -4413,7 +4417,8 @@ body {
   }
 
   .sd-stats-grid,
-  .sd-quick-grid {
+  .sd-quick-grid,
+  .sd-teacher-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -5000,12 +5005,6 @@ body {
   background: var(--gospel-orange-dark);
 }
 
-@media (max-width: 1199px) {
-  .tm-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 991px) {
   .tm-hero-copy h1 {
     font-size: 28px;
@@ -5032,6 +5031,7 @@ body {
     overflow-y: auto;
     transform: translateX(-105%);
     transition: transform 0.25s ease;
+    box-shadow: var(--box-shadow2);
   }
 
   .tm-layout.is-filters-open .tm-filters {
@@ -5047,11 +5047,15 @@ body {
   }
 
   .tm-filters-backdrop[hidden] {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (max-width: 767px) {
+  .tm-grid {
+    grid-template-columns: 1fr;
+  }
+
   .tm-hero-card {
     padding: 22px 18px;
   }
@@ -5159,11 +5163,15 @@ body {
 
 @media (max-width: 991px) {
   .stp-related-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 767px) {
+  .stp-related-grid {
+    grid-template-columns: 1fr;
+  }
+
   .stp-schedule-item .theme-btn-outline {
     width: 100%;
     text-align: center;
@@ -6489,13 +6497,11 @@ body {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 767px) {
   .sf-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 767px) {
   .sf-count-pill {
     width: 100%;
     justify-content: center;
@@ -7741,11 +7747,23 @@ body {
   .at-stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .at-filter-selects {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .at-filter-selects .form-group {
+    flex: 1 1 140px;
+    max-width: none;
+  }
 }
 
 @media (max-width: 991px) {
   .at-search-field {
     flex: 1 1 100%;
+    min-width: 0;
   }
 
   .at-filter-selects {
@@ -9145,6 +9163,384 @@ body {
   .aset-btn-row .theme-btn,
   .aset-btn-row .theme-btn-outline {
     width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   Phase 1 — Responsive polish (additive only)
+   Fixes overflow, touch targets, tables, calendars, and
+   mid-width wrapping without changing desktop design.
+   ========================================================== */
+
+/* --- Global containment --- */
+.main,
+.sd-shell,
+.td-shell,
+.ad-shell,
+.container,
+.container-fluid {
+  max-width: 100%;
+}
+
+/* Lock page scroll while a dashboard drawer is open (no JS required) */
+body:has(.sd-shell.is-sidebar-open),
+body:has(.td-shell.is-sidebar-open),
+body:has(.tm-layout.is-filters-open) {
+  overflow: hidden;
+}
+
+.sd-main,
+.td-main,
+.ad-main,
+.sd-content,
+.td-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Keep circular avatars from stretching when max-width kicks in.
+   Do not force aspect-ratio on rectangular thumbs (.ac-thumb / .abl-thumb). */
+.at-avatar,
+.ad-profile-btn img,
+.sb-modal-teacher img,
+.sb-teacher-cell img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.ac-thumb,
+.abl-thumb {
+  object-fit: cover;
+  flex-shrink: 0;
+  max-width: none;
+}
+
+.ad-profile-btn img {
+  width: 36px;
+  height: 36px;
+}
+
+.at-avatar {
+  width: 44px;
+  height: 44px;
+}
+
+/* --- Tables: scroll wrappers + tablet usability --- */
+.td-table-wrap,
+.table-responsive {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.td-table,
+.sb-table,
+.at-table,
+.ad-table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.td-table-wrap .td-table,
+.table-responsive .td-table {
+  min-width: 640px;
+}
+
+@media (max-width: 767px) {
+  /* Card stack replaces horizontal scroll on phones */
+  .td-table-wrap .td-table,
+  .table-responsive .td-table {
+    min-width: 0;
+  }
+
+  .td-table-wrap,
+  .table-responsive {
+    overflow-x: visible;
+  }
+}
+
+/* --- Admin filter tabs / topbar --- */
+.ad-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ad-topbar,
+.ad-topbar-main {
+  max-width: 100%;
+}
+
+.ad-topbar-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* --- Touch-friendly controls --- */
+.sd-sidebar-toggle,
+.td-sidebar-toggle {
+  min-height: 44px;
+  align-items: center;
+}
+
+.at-action-btn,
+.calendar-nav-btn,
+.bk-cal-nav,
+.class-menu-btn,
+.sf-heart-btn {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/* --- Charts --- */
+.gmm-chart-card,
+.gmm-chart-wrap,
+.ad-chart-card {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.gmm-chart-card .chartjs-legend,
+.gmm-chart-card ul {
+  flex-wrap: wrap;
+}
+
+/* --- Forms: prevent input overflow --- */
+.form-control,
+.form-select,
+.input-group {
+  max-width: 100%;
+}
+
+.input-group > .form-control,
+.input-group > .form-select {
+  min-width: 0;
+}
+
+/* --- Card grids: equal height + no overflow --- */
+.tm-grid,
+.apr-grid,
+.sf-grid,
+.sl-grid,
+.class-cards-grid,
+.stp-related-grid,
+.ac-featured-grid,
+.abl-featured-grid {
+  width: 100%;
+}
+
+.tm-card,
+.apr-card,
+.sf-card,
+.sl-lesson-card,
+.class-manage-card,
+.stp-related-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.tm-card-media img,
+.apr-card-media img,
+.tp-class-media img,
+.cd-hero-media img,
+.abl-featured-card > img,
+.ac-featured-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* --- Tablet / mobile breakpoint polish --- */
+@media (max-width: 1199px) {
+  .tm-sort .form-select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .tm-search-field {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .sd-sidebar,
+  .td-sidebar {
+    max-width: 100%;
+    box-shadow: var(--box-shadow2);
+  }
+
+  .sd-sidebar-toggle,
+  .td-sidebar-toggle {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .portal-intro-card .td-card-actions,
+  .sd-card-actions,
+  .td-card-actions {
+    flex-wrap: wrap;
+  }
+
+  .bk-summary-card,
+  .pay-card,
+  .tp-booking-card {
+    max-width: 100%;
+  }
+
+  .modal-dialog {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .onboarding-stepper {
+    margin-left: -4px;
+    margin-right: -4px;
+    padding-bottom: 4px;
+  }
+
+  .login-form .theme-btn,
+  .login-form .theme-btn-outline,
+  .portal-intro-card .theme-btn,
+  .portal-intro-card .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .theme-btn,
+  .theme-btn-outline {
+    max-width: 100%;
+  }
+
+  .gospel-demo-modal .modal-footer .theme-btn,
+  .gospel-demo-modal .modal-footer .theme-btn-outline,
+  .modal-footer .theme-btn,
+  .modal-footer .theme-btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ad-filter-tabs {
+    flex-wrap: nowrap;
+    padding-bottom: 10px;
+  }
+
+  .ad-filter-tabs .theme-btn,
+  .ad-filter-tabs .theme-btn-outline,
+  .ad-filter-tabs button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .bk-cal-day,
+  .ab-cal-day {
+    font-size: 11px;
+    border-radius: 6px;
+  }
+
+  .bk-cal-weekdays span,
+  .ab-cal-weekdays span {
+    font-size: 10px;
+  }
+
+  .ab-cal-legend {
+    flex-wrap: wrap;
+  }
+
+  .gmm-chart-wrap {
+    height: 220px;
+  }
+
+  .gmm-chart-wrap.is-doughnut {
+    height: 240px;
+    max-width: 100%;
+  }
+
+  .sd-stat-card,
+  .td-stat-card,
+  .ad-stat-card {
+    min-width: 0;
+  }
+
+  .sd-stat-value,
+  .td-stat-value {
+    word-break: break-word;
+  }
+
+  .at-pagination .pagination {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575px) {
+  .onboarding-steps {
+    min-width: 420px;
+  }
+
+  .availability-calendar {
+    min-width: 360px;
+  }
+
+  .bk-cal-weekdays,
+  .bk-cal-grid,
+  .ab-cal-weekdays,
+  .ab-cal-days {
+    gap: 3px;
+  }
+
+  .bk-cal-day {
+    font-size: 10px;
+    border-radius: 4px;
+  }
+
+  .teacher-dashboard-area.py-120,
+  .student-dashboard-area.py-120 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .td-card,
+  .sd-card {
+    padding: 14px;
+  }
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Prevent 320px horizontal page scroll from long unbroken strings */
+@media (max-width: 425px) {
+  .sd-main,
+  .td-main,
+  .login-form,
+  .td-card,
+  .sd-card {
+    overflow-wrap: anywhere;
+  }
+
+  .sb-badge,
+  .td-badge,
+  .apr-status,
+  .at-status {
+    white-space: normal;
     text-align: center;
   }
 }

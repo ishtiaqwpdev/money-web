@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/gospel-custom.css">
+    <link rel="stylesheet" href="assets/css/gospel-animations.css">
+    <link rel="stylesheet" href="assets/css/form-feedback.css">
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/form-validation.js"></script>
 
 </head>
 
@@ -63,7 +67,7 @@
                         <form action="#" method="post" id="teacher-profile-form" novalidate>
                             <div class="profile-photo-block">
                                 <div class="profile-photo-preview" id="photo-preview-wrap">
-                                    <img src="" alt="Profile preview" id="photo-preview" hidden>
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Profile preview" id="photo-preview" hidden>
                                     <span class="photo-placeholder" id="photo-placeholder">
                                         <i class="far fa-user"></i>
                                     </span>
@@ -282,7 +286,7 @@
 
             function resetPhoto() {
                 photoInput.value = '';
-                photoPreview.src = '';
+                photoPreview.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
                 photoPreview.hidden = true;
                 photoPlaceholder.hidden = false;
                 setFeedback('profile-photo', '', false);
