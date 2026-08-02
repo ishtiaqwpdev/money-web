@@ -143,6 +143,8 @@
             var maxVideoBytes = 50 * 1024 * 1024;
             var uploadedVideoUrl = null;
 
+            var videoPreviewWrap = document.getElementById('video-preview-wrap');
+
             function setFeedback(id, message, isInvalid) {
                 var feedback = document.querySelector('.field-feedback[data-for="' + id + '"]');
                 if (!feedback) return;
@@ -167,6 +169,7 @@
                 videoPreview.removeAttribute('src');
                 videoPreview.hidden = true;
                 videoPlaceholder.hidden = false;
+                if (videoPreviewWrap) videoPreviewWrap.classList.remove('has-video');
                 setFeedback('intro-video', '', false);
             }
 
@@ -195,6 +198,7 @@
                 videoPreview.src = uploadedVideoUrl;
                 videoPreview.hidden = false;
                 videoPlaceholder.hidden = true;
+                if (videoPreviewWrap) videoPreviewWrap.classList.add('has-video');
             });
 
             removeVideoBtn.addEventListener('click', function () {

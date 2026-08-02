@@ -24,8 +24,8 @@
   --gospel-border: #E5E7EB;
   --gospel-bg-light: #F5F7FA;
 
-  /* Site content width — matches original Eduka container */
-  --gospel-container: 1200px;
+  /* Site content width — all pages */
+  --gospel-container: 1140px;
 
   /* Eduka theme variables remapped to Gospel branding */
   --theme-color: #E08E00;
@@ -904,18 +904,51 @@
   position: relative;
 }
 
+/* Intro video box — shorter fixed height, media fits inside */
+#video-preview-wrap.class-image-preview,
+.class-image-preview.is-video {
+  aspect-ratio: auto;
+  width: 100%;
+  height: 200px;
+  max-height: 200px;
+  background: var(--color-white);
+  border-style: dashed;
+}
+
+@media (max-width: 575px) {
+  #video-preview-wrap.class-image-preview,
+  .class-image-preview.is-video {
+    height: 160px;
+    max-height: 160px;
+  }
+}
+
 .class-image-preview img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.class-image-preview video {
+.class-image-preview video,
+#video-preview-wrap video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-height: 100%;
+  object-fit: contain;
   display: block;
-  background: var(--gospel-bg-light);
+  background: #0f172a;
+  position: absolute;
+  inset: 0;
+}
+
+#video-preview-wrap.has-video {
+  border-style: solid;
+  border-color: var(--gospel-orange-line, rgba(255, 165, 0, 0.45));
+  background: #0f172a;
+}
+
+#video-preview-wrap.has-video .class-image-placeholder {
+  display: none;
 }
 
 .class-image-placeholder {
@@ -951,26 +984,56 @@
 }
 
 .price-input-wrap {
+  display: flex;
+  align-items: center;
   position: relative;
+  width: 100%;
+  border: 1px solid var(--gospel-border, #e5e7eb);
+  border-radius: 8px;
+  background: var(--color-white, #fff);
+  overflow: hidden;
+}
+
+.price-input-wrap:focus-within {
+  border-color: var(--gospel-orange, #ffa500);
+  box-shadow: 0 0 0 3px var(--gospel-orange-soft, rgba(255, 165, 0, 0.14));
 }
 
 .price-input-wrap .price-prefix {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--color-dark);
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.1em;
+  padding: 0 2px 0 14px;
+  color: var(--gospel-heading, #1f2937);
   font-size: 15px;
   font-weight: 700;
   font-family: var(--heading-font);
   line-height: 1;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
+  user-select: none;
 }
 
 .price-input-wrap .form-control {
-  padding-left: 42px;
-  padding-right: 14px;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  border: none !important;
+  box-shadow: none !important;
+  padding-left: 8px !important;
+  padding-right: 14px !important;
+  background: transparent !important;
+}
+
+.price-input-wrap .form-control:focus {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .price-input-wrap input[type="number"] {
@@ -9777,7 +9840,7 @@ iframe {
   .container-lg,
   .container-xl,
   .container-xxl {
-    max-width: var(--gospel-container, 1200px) !important;
+    max-width: var(--gospel-container, 1140px) !important;
   }
 }
 
@@ -9791,7 +9854,7 @@ iframe {
 .teachers-market-area > .container,
 .teacher-public-area > .container,
 .class-detail-area > .container {
-  max-width: var(--gospel-container, 1200px);
+  max-width: var(--gospel-container, 1140px);
 }
 
 /* ==========================================================
@@ -9800,15 +9863,47 @@ iframe {
    Danger / delete buttons stay red.
    ========================================================== */
 
-/* Kill Eduka ::before wipe on outline buttons — it covers label text on hover */
+/* Kill Eduka ::before wipe — it covers labels/icons on buttons */
+.theme-btn::before,
 .theme-btn-outline::before,
 .theme-btn.theme-btn-outline::before,
+a.theme-btn::before,
 a.theme-btn-outline::before,
-button.theme-btn-outline::before {
+button.theme-btn::before,
+button.theme-btn-outline::before,
+.theme-btn2::before {
   content: none !important;
   display: none !important;
   transform: none !important;
   opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+}
+
+/* Keep Font Awesome icons working inside buttons (never kill i::before) */
+.theme-btn > i,
+.theme-btn-outline > i,
+.theme-btn2 > i {
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "FontAwesome" !important;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-fill-color: currentColor !important;
+  color: inherit !important;
+  position: relative;
+  z-index: 2;
+}
+
+.theme-btn > i::before,
+.theme-btn-outline > i::before,
+.theme-btn2 > i::before {
+  display: inline-block !important;
+  opacity: 1 !important;
+  transform: none !important;
+  background: none !important;
+  width: auto !important;
+  height: auto !important;
+  position: static !important;
 }
 
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
@@ -9817,12 +9912,8 @@ button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-
 .theme-btn2 {
   background: var(--gospel-orange) !important;
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   border-color: var(--gospel-orange) !important;
-}
-
-.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn)::before,
-.theme-btn2::before {
-  background: var(--gospel-orange-dark) !important;
 }
 
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn):hover,
@@ -9831,6 +9922,7 @@ button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-
 .theme-btn2:focus {
   background: var(--gospel-orange-dark) !important;
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   border-color: var(--gospel-orange-dark) !important;
 }
 
@@ -9838,6 +9930,7 @@ button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):hover i,
 .theme-btn2 i {
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
 .theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
@@ -9848,6 +9941,7 @@ a.theme-btn.theme-btn-outline:not(.theme-btn-danger),
 button.theme-btn.theme-btn-outline:not(.theme-btn-danger) {
   background: #fff !important;
   color: var(--gospel-orange) !important;
+  -webkit-text-fill-color: var(--gospel-orange) !important;
   border: 2px solid var(--gospel-orange) !important;
 }
 
@@ -9896,4 +9990,12 @@ button.theme-btn.theme-btn-outline:focus,
 .theme-btn.theme-btn-outline:not(:hover):not(:focus) i {
   color: var(--gospel-orange) !important;
   -webkit-text-fill-color: var(--gospel-orange) !important;
+}
+
+/* Never let a stray $ prefix sit on top of buttons */
+.theme-btn .price-prefix,
+.theme-btn-outline .price-prefix,
+button.theme-btn > .price-prefix,
+a.theme-btn > .price-prefix {
+  display: none !important;
 }

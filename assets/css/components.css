@@ -740,15 +740,32 @@ p.td-empty-state.gmm-empty {
    Hover text always white.
    ========================================================== */
 
-/* Eduka ::before wipe hides outline button labels — disable it */
+/* Eduka ::before wipe — disable on all theme buttons */
+.theme-btn::before,
 .theme-btn-outline::before,
 .theme-btn.theme-btn-outline::before,
+a.theme-btn::before,
 a.theme-btn-outline::before,
+button.theme-btn::before,
 button.theme-btn-outline::before {
   content: none !important;
   display: none !important;
   transform: none !important;
   opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+}
+
+.theme-btn > i::before,
+.theme-btn-outline > i::before {
+  display: inline-block !important;
+  opacity: 1 !important;
+  transform: none !important;
+  background: none !important;
+  width: auto !important;
+  height: auto !important;
+  position: static !important;
 }
 
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
@@ -756,11 +773,8 @@ a.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger),
 button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) {
   background: var(--gospel-orange) !important;
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   border-color: var(--gospel-orange) !important;
-}
-
-.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger)::before {
-  background: var(--gospel-orange-dark) !important;
 }
 
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger):hover,
@@ -773,6 +787,7 @@ button.theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) {
 
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) i {
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
 .theme-btn-outline:not(.theme-btn-danger):not(.apr-delete-btn):not(.aset-danger-btn),
