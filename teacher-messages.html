@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Message your students on Gospel Music Mastery">
+    <title>Messages - Gospel Music Mastery</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gospel-custom.css">
+    <link rel="stylesheet" href="assets/css/gospel-animations.css">
+    <link rel="stylesheet" href="assets/css/gospel-responsive.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/components.js"></script>
+</head>
+
+<body>
+
+<main class="main">
+        <div class="teacher-dashboard-area py-120">
+            <div class="container">
+
+                <div class="td-profile-header">
+                    <div class="td-profile-main">
+                        <div class="td-profile-avatar">
+                            <img src="assets/img/team/01.jpg" alt="John Smith">
+                        </div>
+                        <div class="td-profile-meta">
+                            <h2>John Smith</h2>
+                            <span class="td-role">Gospel Music Instructor</span>
+                            <div class="td-profile-stats">
+                                <span class="td-stat-item"><i class="fas fa-star"></i> 4.9</span>
+                                <span class="td-stat-item"><i class="far fa-users"></i> 25 Students</span>
+                                <span class="td-stat-item"><i class="far fa-books"></i> 12 Classes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="td-profile-actions">
+                        <a href="teacher-onboarding-class.html" class="theme-btn"><i class="far fa-plus"></i> Create New Class</a>
+                    </div>
+                </div>
+
+                <div class="td-shell">
+                    <button type="button" class="td-sidebar-toggle theme-btn theme-btn-outline" id="td-sidebar-toggle" aria-expanded="false" aria-controls="td-sidebar">
+                        <i class="far fa-bars"></i> Menu
+                    </button>
+
+                    <aside class="td-sidebar" id="td-sidebar" aria-label="Instructor navigation">
+                        <nav class="td-nav">
+                            <ul>
+                                <li><a href="teacher-dashboard.html" class="td-nav-link" data-nav="dashboard"><i class="far fa-grid-2"></i> Dashboard</a></li>
+                                <li><a href="teacher-profile.html" class="td-nav-link" data-nav="profile"><i class="far fa-user"></i> My Profile</a></li>
+                                <li><a href="teacher-availability.html" class="td-nav-link" data-nav="availability"><i class="far fa-calendar-days"></i> Availability</a></li>
+                                <li><a href="teacher-bookings.html" class="td-nav-link" data-nav="bookings"><i class="far fa-calendar-check"></i> My Bookings</a></li>
+                                <li><a href="teacher-classes.html" class="td-nav-link" data-nav="classes"><i class="far fa-chalkboard"></i> My Classes</a></li>
+                                <li><a href="teacher-messages.html" class="td-nav-link active" data-nav="messages"><i class="far fa-comments"></i> Messages</a></li>
+                                <li><a href="teacher-withdrawals.html" class="td-nav-link" data-nav="withdrawals"><i class="far fa-wallet"></i> Withdrawals</a></li>
+                                <li><a href="teacher-settings.html" class="td-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
+                                <li><a href="teacher-login.html" class="td-nav-link td-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <div class="td-sidebar-backdrop" id="td-sidebar-backdrop" hidden></div>
+
+                    <div class="td-main">
+                        <section class="td-card">
+                            <div class="td-card-head">
+                                <div>
+                                    <span class="login-portal-badge">Inbox</span>
+                                    <h3>Messages</h3>
+                                    <p>Chat with your students about lessons, schedules, and practice.</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="td-card gmm-msg-card">
+                            <div class="gmm-msg-layout">
+                                <aside class="gmm-msg-list" id="gmm-msg-list" aria-label="Conversations"></aside>
+                                <div class="gmm-msg-chat" id="gmm-msg-chat" aria-label="Chat"></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/messages.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.GmmMessages) {
+            GmmMessages.mountInbox({
+                role: 'teacher',
+                listEl: '#gmm-msg-list',
+                chatEl: '#gmm-msg-chat'
+            });
+        }
+    });
+</script>
+</body>
+</html>

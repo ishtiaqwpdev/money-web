@@ -74,6 +74,7 @@
                                 <li><a href="teacher-availability.html" class="td-nav-link" data-nav="availability"><i class="far fa-calendar-days"></i> Availability</a></li>
                                 <li><a href="teacher-bookings.html" class="td-nav-link active" data-nav="bookings"><i class="far fa-calendar-check"></i> My Bookings</a></li>
                                 <li><a href="teacher-classes.html" class="td-nav-link" data-nav="classes"><i class="far fa-chalkboard"></i> My Classes</a></li>
+                                <li><a href="teacher-messages.html" class="td-nav-link" data-nav="messages"><i class="far fa-comments"></i> Messages</a></li>
                                 <li><a href="teacher-withdrawals.html" class="td-nav-link" data-nav="withdrawals"><i class="far fa-wallet"></i> Withdrawals</a></li>
                                 <li><a href="teacher-settings.html" class="td-nav-link" data-nav="settings"><i class="far fa-gear"></i> Settings</a></li>
                                 <li><a href="teacher-login.html" class="td-nav-link td-nav-logout" data-nav="logout"><i class="far fa-right-from-bracket"></i> Logout</a></li>
@@ -346,6 +347,7 @@
     <script src="assets/js/counter-up.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/messages.js"></script>
 
     <!-- teacher bookings interactions -->
     <script>
@@ -513,7 +515,22 @@
                     }
 
                     if (messageBtn) {
-                        window.alert('Message Student is a frontend demo. Messaging will be connected later.');
+                        var nameEl = row.querySelector('[data-label="Student"] strong') || row.querySelector('[data-label="Student"]');
+                        var studentName = (nameEl && nameEl.textContent) ? nameEl.textContent.trim() : 'Student';
+                        var details = row.querySelector('.booking-details-btn');
+                        var avatar = details ? (details.getAttribute('data-image') || 'assets/img/team/02.jpg') : 'assets/img/team/02.jpg';
+                        if (window.GmmMessages) {
+                            var th = GmmMessages.ensureThread({
+                                teacherId: 'john-smith',
+                                teacherName: 'John Smith',
+                                studentId: GmmMessages.slugify(studentName),
+                                studentName: studentName,
+                                studentAvatar: avatar
+                            });
+                            window.location.href = 'teacher-messages.html?thread=' + encodeURIComponent(th.id);
+                        } else {
+                            window.location.href = 'teacher-messages.html?student=' + encodeURIComponent(studentName);
+                        }
                         return;
                     }
 
