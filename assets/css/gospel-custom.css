@@ -25,7 +25,7 @@
   --gospel-bg-light: #F5F7FA;
 
   /* Site content width — all pages */
-  --gospel-container: 1140px;
+  --gospel-container: 1280px;
 
   /* Eduka theme variables remapped to Gospel branding */
   --theme-color: #E08E00;
@@ -9840,7 +9840,7 @@ iframe {
   .container-lg,
   .container-xl,
   .container-xxl {
-    max-width: var(--gospel-container, 1140px) !important;
+    max-width: var(--gospel-container, 1280px) !important;
   }
 }
 
@@ -9854,7 +9854,7 @@ iframe {
 .teachers-market-area > .container,
 .teacher-public-area > .container,
 .class-detail-area > .container {
-  max-width: var(--gospel-container, 1140px);
+  max-width: var(--gospel-container, 1280px);
 }
 
 /* ==========================================================
