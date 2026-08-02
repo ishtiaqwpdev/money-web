@@ -96,11 +96,24 @@ body:has(.td-shell.is-sidebar-open) {
   }
 
   .sd-sidebar-toggle,
-  .td-sidebar-toggle {
-    display: inline-flex;
+  .td-sidebar-toggle,
+  .sd-sidebar-toggle.theme-btn,
+  .sd-sidebar-toggle.theme-btn-outline,
+  .td-sidebar-toggle.theme-btn,
+  .td-sidebar-toggle.theme-btn-outline {
+    display: inline-flex !important;
     align-items: center;
     gap: 8px;
     min-height: 44px;
+    grid-column: 1;
+  }
+
+  .sd-shell > .sd-sidebar,
+  .sd-shell > .sd-main,
+  .sd-shell > .ad-main,
+  .td-shell > .td-sidebar,
+  .td-shell > .td-main {
+    grid-column: 1;
   }
 
   .sd-sidebar,

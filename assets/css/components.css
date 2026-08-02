@@ -51,6 +51,23 @@
     border-color 0.25s ease;
 }
 
+/* Keep dashboard shells intact: never force mobile Menu into the desktop grid */
+.sd-sidebar-toggle.theme-btn,
+.sd-sidebar-toggle.theme-btn-outline,
+.td-sidebar-toggle.theme-btn,
+.td-sidebar-toggle.theme-btn-outline {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .sd-sidebar-toggle.theme-btn,
+  .sd-sidebar-toggle.theme-btn-outline,
+  .td-sidebar-toggle.theme-btn,
+  .td-sidebar-toggle.theme-btn-outline {
+    display: inline-flex;
+  }
+}
+
 /* Primary — Gospel orange */
 .theme-btn:not(.theme-btn-outline):not(.theme-btn-danger) {
   background: var(--gospel-orange);
